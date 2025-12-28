@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { LuMail } from 'react-icons/lu';
 
 interface FAQItemProps {
   question: string;
@@ -65,29 +66,24 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-[100px] bg-white">
-      <div className="max-w-[1728px] mx-auto px-[284px]">
+    <section id="faq" className="py-[50px] bg-white">
+      <div className="max-w-[1728px] mx-auto px-[200px]">
         <div className="flex items-start gap-[60px]">
           {/* Left Text */}
           <div className="flex-1">
             <div className="mb-[48px]">
-              <span className="text-[20px] font-medium uppercase text-[#2CCCC8] mb-[29px] block">
+              <h2 className="text-[47px] font-bold leading-[1.23] text-[#242A41] mb-[30px]">
                 FAQ
-              </span>
-              <h2 className="text-[47px] font-bold leading-[1.23] text-[#7DE0EA] mb-[30px]">
-                Frequently Asked
               </h2>
-              <h2 className="text-[47px] font-bold leading-[1.23] text-[#7DE0EA] mb-[30px]">
-                Questions
-              </h2>
+              
               <p className="text-[16px] font-normal leading-[1.5] text-[#1D2130] mb-[20px]">
                 If you have any other questions, you can contact me by email
               </p>
               <a
                 href="mailto:thuyhankim@gmail.com"
-                className="text-[15px] font-normal text-[#2CCCC8] hover:underline"
+                className="flex text-[15px] font-normal text-[#242A41] hover:underline gap-[10px] items-center"
               >
-                thuyhankim@gmail.com
+                <LuMail/> thuyhankim@gmail.com
               </a>
             </div>
           </div>

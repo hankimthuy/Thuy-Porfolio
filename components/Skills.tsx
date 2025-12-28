@@ -12,9 +12,9 @@ interface SkillCardProps {
 
 function SkillCard({ number, title, description, rotation = 0 }: SkillCardProps) {
   return (
-    <div 
-      className="bg-[#EDF0F9] border-2 border-[#585F6F] rounded-[8px] p-[38px] relative overflow-hidden transition-transform hover:scale-[1.02]"
-      style={{ 
+    <div
+      className="bg-[#EDF0F9] border-2 border-[#585F6F] rounded-[8px] p-[20px] relative overflow-hidden transition-transform hover:scale-[1.02]"
+      style={{
         transform: `rotate(${rotation}deg)`,
         transformOrigin: 'center',
       }}
@@ -24,11 +24,8 @@ function SkillCard({ number, title, description, rotation = 0 }: SkillCardProps)
       <div className="absolute top-[166px] left-[-18px] w-[145px] h-[145px] rounded-full bg-[rgba(217,223,242,0.5)]" />
       <div className="absolute top-[200px] right-[86px] w-[89px] h-[89px] rounded-full bg-[rgba(217,223,242,0.5)]" />
       <div className="absolute top-[-9px] left-[-31px] w-[69px] h-[69px] rounded-full bg-[#D9DFF2]" />
-      
+
       <div className="relative z-10">
-        <div className="text-[25.6px] font-bold text-[#585F6F] mb-[30px]">
-          {number}
-        </div>
         <h3 className="text-[31px] font-bold leading-[1.24] text-[#242A41] mb-[20px]">
           {title}
         </h3>
@@ -44,7 +41,7 @@ export default function Skills() {
   const skills = [
     {
       number: '1',
-      title: 'UX-Oriented Development',
+      title: 'UX-Oriented Mindset',
       description: 'Certified by Google in UX Design, I combine technical engineering with user-centric principles to build applications that are both functional and intuitive.',
     },
     {
@@ -59,70 +56,82 @@ export default function Skills() {
     },
   ];
 
-  // Tech icons configuration - memoized to prevent hydration issues
+  // Tech icons configuration - Updated with Brand Colors (bgColor)
   const techIconsConfig = useMemo(() => [
-    { name: 'Angular', color: '#DD0031', angle: 0, radius: 200 },
-    { name: 'React', color: '#61DAFB', angle: 72, radius: 200 },
-    { name: 'Figma', color: '#F24E1E', angle: 144, radius: 200 },
-    { name: 'Spring Boot', color: '#6DB33F', angle: 216, radius: 200 },
-    { name: 'Copilot', color: '#4285F4', angle: 288, radius: 200 },
+    { name: 'Angular', bgColor: '#DD0031', angle: 0 },
+    { name: 'React', bgColor: '#61DAFB', angle: 72 },
+    { name: 'Figma', bgColor: '#1E1E1E', angle: 144 },
+    { name: 'Spring Boot', bgColor: '#6DB33F', angle: 216 },
+    { name: 'Copilot', bgColor: '#000000', angle: 288 },
   ], []);
 
-  // Reduced size for circular icons section to give more space to skill cards
+  // Reduced size for circular icons section
   const circularSectionSize = 500;
   const centerX = circularSectionSize / 2;
   const centerY = circularSectionSize / 2;
-  
-  // Adjust radius for smaller circle
-  const adjustedIconPositions = useMemo(() => 
+
+  // Adjust radius for orbit positions
+  const adjustedIconPositions = useMemo(() =>
     techIconsConfig.map(tech => ({
       ...tech,
-      radius: 150, // Reduced from 200
-      x: centerX + Math.cos((tech.angle * Math.PI) / 180) * 150,
-      y: centerY + Math.sin((tech.angle * Math.PI) / 180) * 150,
-    })), 
+      radius: 170, // Slightly wider to sit on the orbits
+      x: centerX + Math.cos((tech.angle * Math.PI) / 180) * 170,
+      y: centerY + Math.sin((tech.angle * Math.PI) / 180) * 170,
+    })),
     [techIconsConfig, centerX, centerY]
   );
 
 
-  // SVG components for each tech - smaller size for compact layout
-  const getTechIcon = (name: string, color: string) => {
+  // SVG components - Updated to use White Fill for colored backgrounds
+  const getTechIcon = (name: string) => {
     switch (name) {
       case 'Angular':
         return (
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.96 19.69L12 13.93L14.03 19.69H9.96ZM11.99 0L1.5 3.99L2.79 19.36L11.99 24L21.19 19.36L22.5 3.99L11.99 0ZM18.23 17.31L11.99 20.31L5.75 17.31L4.73 6.69L11.99 3.69L19.25 6.69L18.23 17.31Z" fill={color}/>
+          // White Icon
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.3705 17.5137L12 13.5795L13.6295 17.5137H10.3705ZM12 0L1.75114 3.65684L3.33716 18.5723L12 24L20.6628 18.5723L22.2489 3.65684L12 0ZM18.7997 19.3444L12 22.25L5.20034 19.3444L3.92966 4.77443L12 2.5L20.0703 4.77443L18.7997 19.3444Z" fill="white" />
+            <path d="M12 5.61365L6.96591 17.5136H9.27273L10.3705 14.8614H13.6295L14.7273 17.5136H17.0341L12 5.61365Z" fill="white" />
           </svg>
         );
       case 'React':
         return (
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="2" fill={color}/>
-            <ellipse cx="12" cy="12" rx="11" ry="4.2" fill="none" stroke={color} strokeWidth="1"/>
-            <ellipse cx="12" cy="12" rx="11" ry="4.2" fill="none" stroke={color} strokeWidth="1" transform="rotate(60 12 12)"/>
-            <ellipse cx="12" cy="12" rx="11" ry="4.2" fill="none" stroke={color} strokeWidth="1" transform="rotate(-60 12 12)"/>
+          // White Icon
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="2" fill="white" />
+            <g stroke="white" strokeWidth="1.5">
+              <ellipse cx="12" cy="12" rx="10" ry="4" />
+              <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)" />
+              <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)" />
+            </g>
           </svg>
         );
       case 'Figma':
         return (
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.264 4.73h3.588c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.588v6.038zm0 1.27H8.26c-2.476 0-4.49-2.014-4.49-4.49S5.784-2.509 8.26-2.509h3.588v4.509h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49H12.264v4.509c0 2.503-2.047 4.49-4.49 4.49S3.284 22.503 3.284 20s2.047-4.49 4.49-4.49h4.49zm-4.004-1.27c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.02 3.019 3.02h3.588V4.73H8.26zm4.004 5.509H8.26c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h4.49c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019z" fill={color}/>
+          // Original Colors (Figma logo needs colors)
+          <svg width="32" height="32" viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 28.5C19 28.5 19 38 9.5 38C0 38 0 28.5 0 28.5C0 19 9.5 19 9.5 19H19V28.5Z" fill="#0ACF83" />
+            <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83" />
+            <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262" />
+            <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E" />
+            <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF" />
+            <path d="M19 19V38C24.2467 38 28.5 33.7467 28.5 28.5C28.5 23.2533 24.2467 19 19 19Z" fill="#1ABCFE" />
           </svg>
         );
       case 'Spring Boot':
         return (
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill={color}/>
-            <path d="M8 7h8v2H8V7zm0 3h8v2H8v-2zm0 3h6v2H8v-2z" fill={color}/>
+          // White Icon
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.0833 13.9213C22.2592 13.5654 22.352 13.1678 22.352 12.7523C22.352 11.2335 21.2269 9.97235 19.7619 9.77093C19.7619 9.77093 19.6644 4.38139 14.2882 2.30237C11.595 1.25878 7.37526 2.5029 7.37526 2.5029C5.38883 3.32179 3.51866 5.86016 3.51866 5.86016C1.94424 7.64411 1.70116 10.3444 2.82236 12.3853C3.01692 12.7402 3.28723 13.048 3.6067 13.2929L3.58529 13.3364C3.58529 13.3364 9.07096 22.6588 17.0654 21.4641C17.0654 21.4641 20.3204 20.7255 21.6112 17.5873C21.8485 17.0135 21.9897 16.386 21.9897 15.7262C21.9897 15.0877 21.8596 14.4815 21.6335 13.9274L22.0833 13.9213ZM10.5746 15.8276C10.5746 15.8276 10.9995 14.7214 11.4116 13.6335L15.4267 15.6587L10.5746 15.8276ZM13.8837 8.0121C13.8837 8.0121 16.6346 12.3392 17.6534 14.591L13.7912 12.6366L13.8837 8.0121Z" fill="white" />
           </svg>
         );
       case 'Copilot':
         return (
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill={color}/>
-            <path d="M8 9h8v1.5H8V9zm0 2.5h8v1.5H8v-1.5zm0 2.5h6v1.5H8V14z" fill={color}/>
-            <circle cx="7" cy="7.5" r="1" fill={color}/>
-            <circle cx="17" cy="7.5" r="1" fill={color}/>
+           // White Icon
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="white" />
+            <circle cx="8" cy="11" r="1.5" fill="black" />
+            <circle cx="16" cy="11" r="1.5" fill="black" />
+            <path d="M17 14c-1.5 2-3 3-5 3s-3.5-1-5-3" stroke="black" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         );
       default:
@@ -131,29 +140,27 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-[100px] bg-white">
-      <div className="max-w-[1728px] mx-auto px-[284px]">
-        <div className="flex items-start gap-[40px]">
-          {/* Left - Circular Tech Icons - Reduced size */}
+    <section id="skills" className="py-[50px] bg-white">
+      <h2 className="text-[56px] font-semibold leading-[1.1] text-[#242A41] text-center mb-[80px]">
+        Skill Sets
+      </h2>
+      <div className="max-w-[1728px] mx-auto px-[200px]">
+        <div className="flex items-center gap-[40px]">
+          {/* Left - Circular Tech Icons */}
           <div className="relative flex items-center justify-center flex-shrink-0" style={{ width: `${circularSectionSize}px`, height: `${circularSectionSize}px` }}>
-            {/* Connecting Lines */}
-            <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
-              {adjustedIconPositions.map((tech, index) => (
-                <line
-                  key={index}
-                  x1={centerX}
-                  y1={centerY}
-                  x2={tech.x}
-                  y2={tech.y}
-                  stroke="#EBECF0"
-                  strokeWidth="1"
-                  opacity="0.5"
-                />
-              ))}
-            </svg>
+            
+            {/* NEW: Orbits (Replaced the old <line> SVGs with concentric rings) */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                {/* Ring 1 - Tilted */}
+               <div className="w-[380px] h-[380px] border border-slate-200 rounded-full absolute transform rotate-[25deg] scale-y-90"></div>
+                {/* Ring 2 - Tilted opposite */}
+               <div className="w-[380px] h-[380px] border border-slate-200 rounded-full absolute transform -rotate-[25deg] scale-y-90"></div>
+                {/* Ring 3 - Wider and thinner */}
+               <div className="w-[450px] h-[450px] border border-slate-100 rounded-full absolute opacity-50"></div>
+            </div>
 
             {/* Center Circle - Main Focus */}
-            <div className="absolute top-1/2 left-1/2 w-[100px] h-[100px] rounded-full bg-[#4353FF] flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2 z-10 shadow-lg">
+            <div className="absolute top-1/2 left-1/2 w-[100px] h-[100px] rounded-full bg-slate-900 flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2 z-10 shadow-xl">
               <CodeIcon sx={{ fontSize: 40, color: 'white' }} />
             </div>
 
@@ -161,32 +168,30 @@ export default function Skills() {
             {adjustedIconPositions.map((tech, index) => (
               <div
                 key={index}
-                className="absolute w-[100px] h-[100px] rounded-full bg-white border-2 border-[#EBECF0] flex items-center justify-center shadow-md hover:shadow-lg transition-all hover:scale-110 z-10"
+                className="absolute w-[80px] h-[80px] rounded-full flex items-center justify-center shadow-md hover:shadow-xl transition-all hover:scale-110 z-20"
                 style={{
-                  left: `${tech.x - 50}px`,
-                  top: `${tech.y - 50}px`,
+                  left: `${tech.x - 40}px`, // -40 because width/2 is 40
+                  top: `${tech.y - 40}px`,
+                  backgroundColor: tech.bgColor, // Use specific bg color
+                  border: '4px solid white', // Add white border to separate from orbit lines
                 }}
                 title={tech.name}
               >
-                <div style={{ width: '40px', height: '40px' }}>
-                  {getTechIcon(tech.name, tech.color)}
+                <div style={{ width: '32px', height: '32px' }}>
+                  {getTechIcon(tech.name)}
                 </div>
               </div>
             ))}
           </div>
-          
-          {/* Right Skills Cards - Expanded width */}
+
+          {/* Right Skills Cards */}
           <div className="flex-1 min-w-0" style={{ maxWidth: '800px' }}>
-            <h2 className="text-[42px] font-semibold leading-[1.37] text-[#242A41] mb-[60px]">
-              I specialize in
-            </h2>
-            
             <div className="flex flex-col gap-[20px]">
               {skills.map((skill, index) => (
-                <SkillCard 
-                  key={index} 
-                  {...skill} 
-                  rotation={index === 0 ? 1.5 : index === 1 ? -1 : 1} 
+                <SkillCard
+                  key={index}
+                  {...skill}
+                  rotation={index === 0 ? 1.5 : index === 1 ? -1 : 1}
                 />
               ))}
             </div>
@@ -196,4 +201,3 @@ export default function Skills() {
     </section>
   );
 }
-

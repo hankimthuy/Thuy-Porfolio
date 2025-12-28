@@ -10,7 +10,7 @@ interface ProjectCardProps {
 
 function ProjectCard({ title, tags, description, imageBg, caseStudyLink }: ProjectCardProps) {
   return (
-    <div className="relative rounded-[20px] overflow-hidden h-[540px]">
+    <div className="relative rounded-[20px] overflow-hidden h-[480px]">
       {/* Background */}
       <div 
         className="absolute inset-0"
@@ -20,7 +20,7 @@ function ProjectCard({ title, tags, description, imageBg, caseStudyLink }: Proje
       />
       
       {/* Content */}
-      <div className="relative z-10 p-[70px] h-full flex flex-col justify-between">
+      <div className="relative z-10 p-[40px] h-full flex flex-col justify-between">
         <div>
           <h3 className="text-[40px] font-semibold leading-[1.1] text-[#242F65] mb-[25px]">
             {title}
@@ -41,16 +41,6 @@ function ProjectCard({ title, tags, description, imageBg, caseStudyLink }: Proje
             {description}
           </p>
         </div>
-        
-        <a 
-          href={caseStudyLink || '#'}
-          className="bg-[#583FBC] text-white px-[38px] py-[19px] rounded-[15px] text-[18px] font-bold flex items-center gap-[5px] w-fit hover:bg-[#4a35a0] transition-colors"
-        >
-          Read Case Study
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M7.5 5L12.5 10L7.5 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </a>
       </div>
     </div>
   );
@@ -75,10 +65,10 @@ export default function Projects() {
   ];
 
   return (
-    <section id="portfolio" className="py-[100px] bg-white">
-      <div className="max-w-[1728px] mx-auto px-[284px]">
+    <section id="portfolio" className="py-[50px] bg-white">
+      <div className="max-w-[1728px] mx-auto px-[200px]">
         <h2 className="text-[56px] font-semibold leading-[1.1] text-[#242A41] text-center mb-[80px]">
-          Portfolio
+          Projects
         </h2>
         
         <div className="flex flex-col gap-[60px]">
@@ -90,4 +80,3 @@ export default function Projects() {
     </section>
   );
 }
-
