@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Thuy.io - Product-Focused Engineer",
   description: "Bridging the gap between business goals and technical solutions. Building holistic, value-driven user experiences.",
   icons: {
-    icon: '/icons/favicon.ico',
+    icon: '/icons/purzle.ico',
   },
 };
 
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>{children}</body>
     </html>
   );

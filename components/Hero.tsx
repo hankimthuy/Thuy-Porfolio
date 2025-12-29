@@ -26,20 +26,35 @@ const Hero = () => {
         </p>
 
         {/* Social Icons */}
-        <div className="flex items-center justify-center md:justify-start gap-4 pt-2">
-          {[
-            { icon: FiLinkedin },
-            { icon: FiGithub },
-            { icon: LuMail }
-          ].map((Item, index) => (
-            <a
-              key={index}
-              href="#"
-              className="w-12 h-12 border border-[#424874] rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg text-[#424874] hover:bg-[#F4EEFF] hover:border-[#A6B1E1]"
-            >
-              <Item.icon size={20} strokeWidth={1.5} />
-            </a>
-          ))}
+        <div className="flex items-center justify-center md:justify-start gap-4 pt-2 relative z-10">
+          <a
+            href="http://www.linkedin.com/in/thuyhankim"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 border border-[#424874] rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg text-[#424874] hover:bg-[#F4EEFF] hover:border-[#A6B1E1]"
+            aria-label="LinkedIn Profile"
+          >
+            <FiLinkedin size={20} strokeWidth={1.5} />
+          </a>
+          <a
+            href="https://github.com/hankimthuy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 border border-[#424874] rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg text-[#424874] hover:bg-[#F4EEFF] hover:border-[#A6B1E1]"
+            aria-label="GitHub Profile"
+          >
+            <FiGithub size={20} strokeWidth={1.5} />
+          </a>
+          <a
+            href="mailto:thuyhankim@gmail.com"
+            onClick={(e) => {
+              window.location.href = 'mailto:thuyhankim@gmail.com';
+            }}
+            className="w-12 h-12 border border-[#424874] rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg text-[#424874] hover:bg-[#F4EEFF] hover:border-[#A6B1E1] cursor-pointer"
+            aria-label="Send Email"
+          >
+            <LuMail size={20} strokeWidth={1.5} />
+          </a>
         </div>
 
         {/* Stats Row */}
