@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import CodeIcon from '@mui/icons-material/Code';
 
 interface SkillCardProps {
@@ -13,23 +13,23 @@ interface SkillCardProps {
 function SkillCard({ number, title, description, rotation = 0 }: SkillCardProps) {
   return (
     <div
-      className="bg-[#EDF0F9] border-2 border-[#585F6F] rounded-[8px] p-[20px] relative overflow-hidden transition-transform hover:scale-[1.02]"
+      className="bg-[#EDF0F9] border-2 border-[#585F6F] rounded-[8px] p-4 lg:p-[20px] relative overflow-hidden transition-transform hover:scale-[1.02]"
       style={{
         transform: `rotate(${rotation}deg)`,
         transformOrigin: 'center',
       }}
     >
-      {/* Decorative Elements */}
-      <div className="absolute top-[-6px] right-[512px] w-[181px] h-[258px] bg-[#D9DFF2] rounded-tl-[253.5px] rounded-tr-[26px] opacity-50" />
-      <div className="absolute top-[166px] left-[-18px] w-[145px] h-[145px] rounded-full bg-[rgba(217,223,242,0.5)]" />
-      <div className="absolute top-[200px] right-[86px] w-[89px] h-[89px] rounded-full bg-[rgba(217,223,242,0.5)]" />
-      <div className="absolute top-[-9px] left-[-31px] w-[69px] h-[69px] rounded-full bg-[#D9DFF2]" />
+      {/* Decorative Elements - Hidden on mobile */}
+      <div className="hidden lg:block absolute top-[-6px] right-[512px] w-[181px] h-[258px] bg-[#D9DFF2] rounded-tl-[253.5px] rounded-tr-[26px] opacity-50" />
+      <div className="hidden lg:block absolute top-[166px] left-[-18px] w-[145px] h-[145px] rounded-full bg-[rgba(217,223,242,0.5)]" />
+      <div className="hidden lg:block absolute top-[200px] right-[86px] w-[89px] h-[89px] rounded-full bg-[rgba(217,223,242,0.5)]" />
+      <div className="hidden lg:block absolute top-[-9px] left-[-31px] w-[69px] h-[69px] rounded-full bg-[#D9DFF2]" />
 
       <div className="relative z-10">
-        <h3 className="text-[31px] font-bold leading-[1.24] text-[#242A41] mb-[20px]">
+        <h3 className="text-xl lg:text-[31px] font-bold leading-[1.24] text-[#242A41] mb-3 lg:mb-[20px]">
           {title}
         </h3>
-        <p className="text-[16px] font-normal leading-[1.5] text-[#585F6F]">
+        <p className="text-sm lg:text-[16px] font-normal leading-[1.5] text-[#585F6F]">
           {description}
         </p>
       </div>
@@ -38,6 +38,17 @@ function SkillCard({ number, title, description, rotation = 0 }: SkillCardProps)
 }
 
 export default function Skills() {
+  const [isLaptop, setIsLaptop] = useState(false);
+
+  useEffect(() => {
+    const checkSize = () => {
+      setIsLaptop(window.innerWidth >= 1024);
+    };
+    checkSize();
+    window.addEventListener('resize', checkSize);
+    return () => window.removeEventListener('resize', checkSize);
+  }, []);
+
   const skills = [
     {
       number: '1',
@@ -65,20 +76,21 @@ export default function Skills() {
     { name: 'Copilot', bgColor: '#000000', angle: 288 },
   ], []);
 
-  // Reduced size for circular icons section
-  const circularSectionSize = 500;
+  // Reduced size for circular icons section - responsive
+  const circularSectionSize = isLaptop ? 500 : 300;
   const centerX = circularSectionSize / 2;
   const centerY = circularSectionSize / 2;
 
-  // Adjust radius for orbit positions
+  // Adjust radius for orbit positions - responsive
+  const radius = isLaptop ? 170 : 100;
   const adjustedIconPositions = useMemo(() =>
     techIconsConfig.map(tech => ({
       ...tech,
-      radius: 170, // Slightly wider to sit on the orbits
-      x: centerX + Math.cos((tech.angle * Math.PI) / 180) * 170,
-      y: centerY + Math.sin((tech.angle * Math.PI) / 180) * 170,
+      radius: radius,
+      x: centerX + Math.cos((tech.angle * Math.PI) / 180) * radius,
+      y: centerY + Math.sin((tech.angle * Math.PI) / 180) * radius,
     })),
-    [techIconsConfig, centerX, centerY]
+    [techIconsConfig, centerX, centerY, radius]
   );
 
 
@@ -140,53 +152,60 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-[50px] bg-white">
-      <h2 className="text-[56px] font-semibold leading-[1.1] text-[#242A41] text-center mb-[80px]">
+    <section id="skills" className="py-8 lg:py-[50px] bg-white">
+      <h2 className="text-3xl lg:text-[56px] font-semibold leading-[1.1] text-[#242A41] text-center mb-8 lg:mb-[80px]">
         Skill Sets
       </h2>
-      <div className="max-w-[1728px] mx-auto px-[200px]">
-        <div className="flex items-center gap-[40px]">
+      <div className="max-w-[1728px] mx-auto px-6 lg:px-[200px]">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-[40px]">
           {/* Left - Circular Tech Icons */}
-          <div className="relative flex items-center justify-center flex-shrink-0" style={{ width: `${circularSectionSize}px`, height: `${circularSectionSize}px` }}>
+          <div className="relative flex items-center justify-center flex-shrink-0 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px]">
             
             {/* NEW: Orbits (Replaced the old <line> SVGs with concentric rings) */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 {/* Ring 1 - Tilted */}
-               <div className="w-[380px] h-[380px] border border-slate-200 rounded-full absolute transform rotate-[25deg] scale-y-90"></div>
+               <div className="w-[220px] h-[220px] lg:w-[380px] lg:h-[380px] border border-slate-200 rounded-full absolute transform rotate-[25deg] scale-y-90"></div>
                 {/* Ring 2 - Tilted opposite */}
-               <div className="w-[380px] h-[380px] border border-slate-200 rounded-full absolute transform -rotate-[25deg] scale-y-90"></div>
+               <div className="w-[220px] h-[220px] lg:w-[380px] lg:h-[380px] border border-slate-200 rounded-full absolute transform -rotate-[25deg] scale-y-90"></div>
                 {/* Ring 3 - Wider and thinner */}
-               <div className="w-[450px] h-[450px] border border-slate-100 rounded-full absolute opacity-50"></div>
+               <div className="w-[270px] h-[270px] lg:w-[450px] lg:h-[450px] border border-slate-100 rounded-full absolute opacity-50"></div>
             </div>
 
             {/* Center Circle - Main Focus */}
-            <div className="absolute top-1/2 left-1/2 w-[100px] h-[100px] rounded-full bg-slate-900 flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2 z-10 shadow-xl">
-              <CodeIcon sx={{ fontSize: 40, color: 'white' }} />
+            <div className="absolute top-1/2 left-1/2 w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] rounded-full bg-slate-900 flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2 z-10 shadow-xl">
+              <CodeIcon sx={{ fontSize: isLaptop ? 40 : 24, color: 'white' }} />
             </div>
 
             {/* Tech Icons around circle */}
-            {adjustedIconPositions.map((tech, index) => (
-              <div
-                key={index}
-                className="absolute w-[80px] h-[80px] rounded-full flex items-center justify-center shadow-md hover:shadow-xl transition-all hover:scale-110 z-20"
-                style={{
-                  left: `${tech.x - 40}px`, // -40 because width/2 is 40
-                  top: `${tech.y - 40}px`,
-                  backgroundColor: tech.bgColor, // Use specific bg color
-                  border: '4px solid white', // Add white border to separate from orbit lines
-                }}
-                title={tech.name}
-              >
-                <div style={{ width: '32px', height: '32px' }}>
-                  {getTechIcon(tech.name)}
+            {adjustedIconPositions.map((tech, index) => {
+              const iconSize = isLaptop ? 80 : 50;
+              const iconOffset = iconSize / 2;
+              const svgSize = isLaptop ? '32px' : '20px';
+              return (
+                <div
+                  key={index}
+                  className="absolute rounded-full flex items-center justify-center shadow-md hover:shadow-xl transition-all hover:scale-110 z-20"
+                  style={{
+                    width: `${iconSize}px`,
+                    height: `${iconSize}px`,
+                    left: `${tech.x - iconOffset}px`,
+                    top: `${tech.y - iconOffset}px`,
+                    backgroundColor: tech.bgColor,
+                    border: '3px solid white',
+                  }}
+                  title={tech.name}
+                >
+                  <div style={{ width: svgSize, height: svgSize }}>
+                    {getTechIcon(tech.name)}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Right Skills Cards */}
-          <div className="flex-1 min-w-0" style={{ maxWidth: '800px' }}>
-            <div className="flex flex-col gap-[20px]">
+          <div className="flex-1 min-w-0 w-full lg:w-auto" style={{ maxWidth: '800px' }}>
+            <div className="flex flex-col gap-4 lg:gap-[20px]">
               {skills.map((skill, index) => (
                 <SkillCard
                   key={index}

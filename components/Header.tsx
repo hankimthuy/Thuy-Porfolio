@@ -46,7 +46,7 @@ const Header = () => {
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 text-md font-medium text-[#424874]">
+        <div className="hidden lg:flex space-x-6 lg:space-x-8 text-sm lg:text-md font-medium text-[#424874]">
           {menuItems.map((item) => (
             <a 
               key={item.id} 
@@ -63,14 +63,14 @@ const Header = () => {
         {/* Desktop CTA */}
         <button 
           onClick={(e) => handleNavClick(e, 'footer')}
-          className="hidden md:flex items-center gap-2 bg-[#424874] text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-[#A6B1E1]/50 hover:shadow-xl hover:bg-[#424874]/90 hover:-translate-y-0.5 transition-all"
+          className="hidden lg:flex items-center gap-2 bg-[#424874] text-white px-4 lg:px-6 py-2 lg:py-2.5 rounded-full text-sm lg:text-base font-semibold shadow-lg shadow-[#A6B1E1]/50 hover:shadow-xl hover:bg-[#424874]/90 hover:-translate-y-0.5 transition-all"
         >
           Contact <FiArrowRight size={16} />
         </button>
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden text-[#424874]"
+          className="lg:hidden text-[#424874]"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X fontSize="large" /> : <LuMenu fontSize="large" />}
@@ -79,7 +79,7 @@ const Header = () => {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-[#A6B1E1]/30 p-6 flex flex-col space-y-4 shadow-2xl absolute w-full left-0 top-20">
+        <div className="lg:hidden bg-white border-t border-[#A6B1E1]/30 p-6 flex flex-col space-y-4 shadow-2xl absolute w-full left-0 top-20">
           {menuItems.map((item) => (
             <a 
               key={item.id} 

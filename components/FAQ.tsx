@@ -15,17 +15,17 @@ function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
     <div className="bg-[#EDF0F9] rounded-[8px] overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full p-[32px] flex items-center justify-between text-left"
+        className="w-full p-4 lg:p-[32px] flex items-center justify-between text-left"
       >
-        <p className="text-[18px] font-bold leading-[1.28] text-[#242A41] flex-1">
+        <p className="text-base lg:text-[18px] font-bold leading-[1.28] text-[#242A41] flex-1 pr-2">
           {question}
         </p>
         <svg
-          width="32"
-          height="32"
+          width="24"
+          height="24"
           viewBox="0 0 32 32"
           fill="none"
-          className={`transform transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          className={`transform transition-transform flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
         >
           <path
             d="M8 12L16 20L24 12"
@@ -37,8 +37,8 @@ function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
         </svg>
       </button>
       {isOpen && (
-        <div className="px-[32px] pb-[32px]">
-          <p className="text-[17px] font-normal leading-[1.41] text-[#585F6F]">
+        <div className="px-4 lg:px-[32px] pb-4 lg:pb-[32px]">
+          <p className="text-sm lg:text-[17px] font-normal leading-[1.41] text-[#585F6F]">
             {answer}
           </p>
         </div>
@@ -66,22 +66,22 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-[50px] bg-white">
-      <div className="max-w-[1728px] mx-auto px-[200px]">
-        <div className="flex items-start gap-[60px]">
+    <section id="faq" className="py-8 lg:py-[50px] bg-white">
+      <div className="max-w-[1728px] mx-auto px-6 lg:px-[200px]">
+        <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-[60px]">
           {/* Left Text */}
-          <div className="flex-1">
-            <div className="mb-[48px]">
-              <h2 className="text-[47px] font-bold leading-[1.23] text-[#242A41] mb-[30px]">
+          <div className="flex-1 w-full lg:w-auto">
+            <div className="mb-6 lg:mb-[48px]">
+              <h2 className="text-3xl lg:text-[47px] font-bold leading-[1.23] text-[#242A41] mb-4 lg:mb-[30px]">
                 FAQ
               </h2>
               
-              <p className="text-[16px] font-normal leading-[1.5] text-[#1D2130] mb-[20px]">
+              <p className="text-sm lg:text-[16px] font-normal leading-[1.5] text-[#1D2130] mb-4 lg:mb-[20px]">
                 If you have any other questions, you can contact me by email
               </p>
               <a
                 href="mailto:thuyhankim@gmail.com"
-                className="flex text-[15px] font-normal text-[#242A41] hover:underline gap-[10px] items-center"
+                className="flex text-sm lg:text-[15px] font-normal text-[#242A41] hover:underline gap-2 lg:gap-[10px] items-center"
               >
                 <LuMail/> thuyhankim@gmail.com
               </a>
@@ -89,8 +89,8 @@ export default function FAQ() {
           </div>
 
           {/* Right FAQ List */}
-          <div className="flex-1">
-            <div className="flex flex-col gap-[20px]">
+          <div className="flex-1 w-full lg:w-auto">
+            <div className="flex flex-col gap-4 lg:gap-[20px]">
               {faqs.map((faq, index) => (
                 <FAQItem
                   key={index}
