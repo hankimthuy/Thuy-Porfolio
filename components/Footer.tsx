@@ -3,7 +3,7 @@
 
 export default function Footer() {
   return (
-    <footer className="bg-[#D9DFF2] py-[50px]">
+    <footer id="footer" className="bg-[#D9DFF2] py-[50px]">
       <div className="max-w-[1728px] mx-auto px-[200px]">
         {/* Info Block */}
         <div className="flex items-start gap-[60px] mb-[80px]">

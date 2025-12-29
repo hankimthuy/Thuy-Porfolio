@@ -5,7 +5,7 @@ import { LuMail } from "react-icons/lu";
 
 const Hero = () => {
   return (
-    <main className="max-w-7xl mx-auto px-6 pt-[8rem] pb-16 flex flex-col md:flex-row items-center gap-8 lg:gap-16 bg-white">
+    <main id="home" className="max-w-7xl mx-auto px-6 pt-[8rem] pb-16 flex flex-col md:flex-row items-center gap-8 lg:gap-16 bg-white">
 
       {/* LEFT COLUMN: Text Content - Reduced spacing for cleaner look */}
       <div className="flex-1 space-y-6 z-10 text-center md:text-left relative">
