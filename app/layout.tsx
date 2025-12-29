@@ -4,6 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Thuy.io - Product-Focused Engineer",
   description: "Bridging the gap between business goals and technical solutions. Building holistic, value-driven user experiences.",
+  icons: {
+    icon: '/icons/favicon.ico',
+  },
 };
 
 export default function RootLayout({
