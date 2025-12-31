@@ -16,7 +16,7 @@ const Hero = () => {
           <h1 className="text-3xl lg:text-6xl font-semibold leading-[1.15] text-[#424874] tracking-tight">
             Hi! I'm Thuy,<br />
             <span className="text-2xl lg:text-5xl text-[#424874]">
-              Product-focused Engineer
+              UX Engineer
             </span>
           </h1>
         </div>
