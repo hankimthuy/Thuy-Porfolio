@@ -4,6 +4,7 @@ import { X } from "@mui/icons-material";
 import { useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import { LuMenu } from "react-icons/lu";
+import Link from 'next/link';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -37,13 +38,10 @@ const Header = () => {
     <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-lg z-50 border-b border-[#A6B1E1]/30 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
-        <a 
-          href="#home"
-          onClick={(e) => handleNavClick(e, 'home')}
-          className="text-xl font-bold tracking-tight text-[#424874] flex items-center gap-2 cursor-pointer hover:text-[#A6B1E1] transition-colors"
-        >
-          Thuy.io
-        </a>
+      <Link href="/" className="flex items-center font-mono text-xl font-bold text-slate-900">
+        <span>Thuy</span>
+        <span className="animate-pulse text-blue-600">_</span>
+      </Link>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex space-x-6 lg:space-x-8 text-sm lg:text-md font-medium text-[#424874]">
