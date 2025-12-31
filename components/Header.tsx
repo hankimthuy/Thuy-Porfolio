@@ -38,10 +38,10 @@ const Header = () => {
     <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-lg z-50 border-b border-[#A6B1E1]/30 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
-      <Link href="/" className="flex items-center font-mono text-xl font-bold text-slate-900">
-        <span>Thuy</span>
-        <span className="animate-pulse text-blue-600">_</span>
-      </Link>
+    <Link href="/" className="flex items-center font-mono text-xl font-bold text-slate-400 transition-colors hover:text-slate-600">
+       <span>Thuy</span>
+       <span className="animate-pulse text-blue-600 ml-0.5">_</span>
+    </Link>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex space-x-6 lg:space-x-8 text-sm lg:text-md font-medium text-[#424874]">
