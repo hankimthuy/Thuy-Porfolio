@@ -39,8 +39,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
     <Link href="/" className="flex items-center font-mono text-xl font-bold text-slate-400 transition-colors hover:text-slate-600">
-  <span>Thuy</span>
-  <span className="animate-pulse text-[#424874] ml-0.5">_</span>
+  <span>Thuy</span><span className="animate-pulse text-[#424874] ml-0.5">_</span>
    </Link>
 
         {/* Desktop Menu */}
