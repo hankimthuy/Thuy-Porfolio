@@ -29,7 +29,7 @@ function ProjectCard({ title, tags, problem, solution, impact, cta, illustration
       <div className="absolute inset-0 bg-gradient-to-br from-[#F4EEFF]/55 via-white to-[#DCD6F7]/40" />
 
       <div className="relative z-10 p-6">
-        <h3 className="mt-6 text-xl lg:text-[24px] font-semibold leading-[1.15] text-[#424874]">
+        <h3 className="mt-0 text-xl lg:text-[24px] font-semibold leading-[1.15] text-[#424874]">
           {title}
         </h3>
 

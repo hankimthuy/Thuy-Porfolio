@@ -6,29 +6,13 @@ export default function Footer() {
     <footer id="footer" className="bg-[#D9DFF2] py-8 lg:py-[50px]">
       <div className="max-w-[1728px] mx-auto px-6 lg:px-[200px]">
         {/* Info Block */}
-        <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-[60px] mb-8 lg:mb-[80px]">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[60px] mb-8 lg:mb-[80px]">
           <div className="flex-1 w-full lg:w-auto">
             <div className="relative w-[48px] h-[48px] lg:w-[64px] lg:h-[64px] rounded-full mb-6 lg:mb-[40px] overflow-hidden">
             </div>
-            <h3 className="text-2xl lg:text-[39px] font-bold leading-[1.23] text-[#242A41] mb-6 lg:mb-[40px]">
+            <h3 className="text-2xl lg:text-[39px] font-bold leading-[1.23] text-[#242A41] mb-0">
               Let's connect
             </h3>
-            <div className="flex flex-col sm:flex-row gap-3 lg:gap-[18px]">
-              <a 
-                href="http://www.linkedin.com/in/thuyhankim"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#1D2130] text-white px-5 lg:px-[24px] py-3 lg:py-[17px] rounded-[10px] lg:rounded-[12.8px] text-sm lg:text-[18px] font-semibold flex items-center justify-center gap-2 lg:gap-[5px] hover:bg-[#6dd0d9] transition-colors w-full sm:w-fit"
-              >
-                My Linkedin
-              </a>
-              <a 
-                href="#"
-                className="bg-[#1D2130] text-white px-5 lg:px-[24px] py-3 lg:py-[17px] rounded-[10px] lg:rounded-[12.8px] text-sm lg:text-[18px] font-semibold flex items-center justify-center gap-2 lg:gap-[5px] hover:bg-[#6dd0d9] transition-colors w-full sm:w-fit"
-              >
-                Download my resume
-              </a>
-            </div>
           </div>
 
           {/* CTA Block */}
@@ -38,9 +22,6 @@ export default function Footer() {
               <h3 className="text-xl lg:text-[32px] font-bold leading-[1.2] text-white mb-2 lg:mb-[10px]">
                 Ready to build something great?
               </h3>
-              <p className="text-sm lg:text-[16px] font-normal leading-[1.5] text-white mb-6 lg:mb-[40px]">
-                Let's build something great together
-              </p>
               <a 
                 href="#contact"
                 className="bg-[#A6B1E1] text-white px-5 lg:px-[24px] py-3 lg:py-[17px] rounded-[10px] lg:rounded-[12.8px] text-sm lg:text-[18px] font-semibold flex items-center gap-2 lg:gap-[5px] hover:bg-[#6dd0d9] transition-colors w-fit"
