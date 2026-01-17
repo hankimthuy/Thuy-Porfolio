@@ -3,7 +3,7 @@ import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: "Thuy.io - Product-Focused Engineer",
+  title: "Thuy - UX Engineer",
   description: "Bridging the gap between business goals and technical solutions. Building holistic, value-driven user experiences.",
   icons: {
     icon: '/icons/purzle.ico',
