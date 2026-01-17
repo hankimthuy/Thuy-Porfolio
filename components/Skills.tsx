@@ -2,6 +2,10 @@
 
 import { useMemo, useState, useEffect } from 'react';
 import CodeIcon from '@mui/icons-material/Code';
+import { FaAngular } from "react-icons/fa";
+import { SiSpring } from "react-icons/si";
+import { FaReact } from "react-icons/fa";
+import { TbAi } from "react-icons/tb";
 
 interface SkillCardProps {
   number: string;
@@ -58,7 +62,7 @@ export default function Skills() {
     {
       number: '2',
       title: 'Full-Stack Development',
-      description: 'Proficient in React & Angular (Frontend) and Spring Boot (Java) (Backend). I am also actively exploring AI-driven workflows (e.g., n8n, text-to-speech) to enhance products.',
+      description: 'Proficient in React, Angular, and Spring Boot (Java). I specialize in architecting scalable, data-driven web applications, ensuring seamless integration between complex backend logic and intuitive frontend experiences.',
     },
     {
       number: '3',
@@ -73,25 +77,11 @@ export default function Skills() {
     { name: 'React', bgColor: '#61DAFB', angle: 72 },
     { name: 'Figma', bgColor: '#1E1E1E', angle: 144 },
     { name: 'Spring Boot', bgColor: '#6DB33F', angle: 216 },
-    { name: 'Copilot', bgColor: '#000000', angle: 288 },
+    { name: 'AI', bgColor: '#000000', angle: 288 },
   ], []);
 
-  // Reduced size for circular icons section - responsive
-  const circularSectionSize = isLaptop ? 500 : 300;
-  const centerX = circularSectionSize / 2;
-  const centerY = circularSectionSize / 2;
-
   // Adjust radius for orbit positions - responsive
-  const radius = isLaptop ? 170 : 100;
-  const adjustedIconPositions = useMemo(() =>
-    techIconsConfig.map(tech => ({
-      ...tech,
-      radius: radius,
-      x: centerX + Math.cos((tech.angle * Math.PI) / 180) * radius,
-      y: centerY + Math.sin((tech.angle * Math.PI) / 180) * radius,
-    })),
-    [techIconsConfig, centerX, centerY, radius]
-  );
+  const radius = isLaptop ? 170 : 105;
 
 
   // SVG components - Updated to use White Fill for colored backgrounds
@@ -99,28 +89,16 @@ export default function Skills() {
     switch (name) {
       case 'Angular':
         return (
-          // White Icon
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10.3705 17.5137L12 13.5795L13.6295 17.5137H10.3705ZM12 0L1.75114 3.65684L3.33716 18.5723L12 24L20.6628 18.5723L22.2489 3.65684L12 0ZM18.7997 19.3444L12 22.25L5.20034 19.3444L3.92966 4.77443L12 2.5L20.0703 4.77443L18.7997 19.3444Z" fill="white" />
-            <path d="M12 5.61365L6.96591 17.5136H9.27273L10.3705 14.8614H13.6295L14.7273 17.5136H17.0341L12 5.61365Z" fill="white" />
-          </svg>
+          <FaAngular style={{ width: '100%', height: '100%' }} color="white" />
+
         );
       case 'React':
         return (
-          // White Icon
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="2" fill="white" />
-            <g stroke="white" strokeWidth="1.5">
-              <ellipse cx="12" cy="12" rx="10" ry="4" />
-              <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)" />
-              <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)" />
-            </g>
-          </svg>
+          <FaReact style={{ width: '100%', height: '100%' }} color="white" />
         );
       case 'Figma':
         return (
-          // Original Colors (Figma logo needs colors)
-          <svg width="32" height="32" viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="100%" height="100%" viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M19 28.5C19 28.5 19 38 9.5 38C0 38 0 28.5 0 28.5C0 19 9.5 19 9.5 19H19V28.5Z" fill="#0ACF83" />
             <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83" />
             <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262" />
@@ -131,20 +109,13 @@ export default function Skills() {
         );
       case 'Spring Boot':
         return (
-          // White Icon
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.0833 13.9213C22.2592 13.5654 22.352 13.1678 22.352 12.7523C22.352 11.2335 21.2269 9.97235 19.7619 9.77093C19.7619 9.77093 19.6644 4.38139 14.2882 2.30237C11.595 1.25878 7.37526 2.5029 7.37526 2.5029C5.38883 3.32179 3.51866 5.86016 3.51866 5.86016C1.94424 7.64411 1.70116 10.3444 2.82236 12.3853C3.01692 12.7402 3.28723 13.048 3.6067 13.2929L3.58529 13.3364C3.58529 13.3364 9.07096 22.6588 17.0654 21.4641C17.0654 21.4641 20.3204 20.7255 21.6112 17.5873C21.8485 17.0135 21.9897 16.386 21.9897 15.7262C21.9897 15.0877 21.8596 14.4815 21.6335 13.9274L22.0833 13.9213ZM10.5746 15.8276C10.5746 15.8276 10.9995 14.7214 11.4116 13.6335L15.4267 15.6587L10.5746 15.8276ZM13.8837 8.0121C13.8837 8.0121 16.6346 12.3392 17.6534 14.591L13.7912 12.6366L13.8837 8.0121Z" fill="white" />
-          </svg>
+          <SiSpring style={{ width: '100%', height: '100%' }} color="white" />
+
         );
-      case 'Copilot':
+      case 'AI':
         return (
            // White Icon
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="white" />
-            <circle cx="8" cy="11" r="1.5" fill="black" />
-            <circle cx="16" cy="11" r="1.5" fill="black" />
-            <path d="M17 14c-1.5 2-3 3-5 3s-3.5-1-5-3" stroke="black" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
+          <TbAi style={{ width: '100%', height: '100%' }} color="white" />
         );
       default:
         return null;
@@ -159,7 +130,7 @@ export default function Skills() {
       <div className="max-w-[1728px] mx-auto px-6 lg:px-[200px]">
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-[40px]">
           {/* Left - Circular Tech Icons */}
-          <div className="relative flex items-center justify-center flex-shrink-0 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px]">
+          <div className="relative flex items-center justify-center flex-shrink-0 w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] lg:w-[500px] lg:h-[500px]">
             
             {/* NEW: Orbits (Replaced the old <line> SVGs with concentric rings) */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -177,10 +148,11 @@ export default function Skills() {
             </div>
 
             {/* Tech Icons around circle */}
-            {adjustedIconPositions.map((tech, index) => {
+            {techIconsConfig.map((tech, index) => {
               const iconSize = isLaptop ? 80 : 50;
-              const iconOffset = iconSize / 2;
-              const svgSize = isLaptop ? '32px' : '20px';
+              const svgSize = tech.name === 'Angular'
+                ? (isLaptop ? '52px' : '36px')
+                : (isLaptop ? '40px' : '28px');
               return (
                 <div
                   key={index}
@@ -188,10 +160,11 @@ export default function Skills() {
                   style={{
                     width: `${iconSize}px`,
                     height: `${iconSize}px`,
-                    left: `${tech.x - iconOffset}px`,
-                    top: `${tech.y - iconOffset}px`,
+                    left: '50%',
+                    top: '50%',
+                    transform: `translate(-50%, -50%) rotate(${tech.angle}deg) translate(${radius}px) rotate(${-tech.angle}deg)`,
                     backgroundColor: tech.bgColor,
-                    border: '3px solid white',
+                    border: tech.name === 'Angular' ? '3px solid #DD0031' : '3px solid white',
                   }}
                   title={tech.name}
                 >

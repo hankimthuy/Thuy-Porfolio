@@ -5,7 +5,7 @@ import { LuMail } from "react-icons/lu";
 
 const Hero = () => {
   return (
-    <main id="home" className="max-w-7xl mx-auto px-6 lg:px-6 pt-24 lg:pt-[8rem] pb-12 lg:pb-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 bg-white">
+    <section id="home" className="max-w-7xl mx-auto px-6 lg:px-6 pt-24 lg:pt-[8rem] pb-12 lg:pb-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 bg-white">
 
       {/* LEFT COLUMN: Text Content - Reduced spacing for cleaner look */}
       <div className="flex-1 space-y-4 lg:space-y-6 z-10 text-center lg:text-left relative">
@@ -22,7 +22,7 @@ const Hero = () => {
         </div>
 
         <p className="text-[#424874] text-base lg:text-lg max-w-lg mx-auto lg:mx-0 leading-normal font-normal opacity-80">
-          Transforming complex ideas into scalable solutions. Blending engineering expertise with product thinking to deliver accessible, user-centric web applications.
+          Bridging <strong className="font-bold">technical logic</strong> with <strong className="font-bold">human empathy</strong>. I build scalable solutions by asking <strong className="font-bold">'Why'</strong> before <strong className="font-bold">'How'</strong>, ensuring every line of code creates real-world value.
         </p>
 
         {/* Social Icons */}
@@ -55,18 +55,6 @@ const Hero = () => {
           >
             <LuMail size={20} strokeWidth={1.5} />
           </a>
-        </div>
-
-        {/* Stats Row */}
-        <div className="pt-4 lg:pt-6 flex items-center justify-center lg:justify-start gap-8 lg:gap-12 border-t border-[#A6B1E1]/30 mt-4 lg:mt-6">
-          <div>
-            <div className="text-2xl lg:text-3xl font-semibold text-[#424874]">3<span className="text-[#A6B1E1]">+</span></div>
-            <div className="text-[10px] lg:text-xs text-[#424874] font-medium uppercase tracking-wider mt-1 opacity-70">Years Exp.</div>
-          </div>
-          <div>
-            <div className="text-2xl lg:text-3xl font-semibold text-[#424874]">7<span className="text-[#A6B1E1]">+</span></div>
-            <div className="text-[10px] lg:text-xs text-[#424874] font-medium uppercase tracking-wider mt-1 opacity-70">Projects</div>
-          </div>
         </div>
       </div>
 
@@ -113,7 +101,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

@@ -17,8 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <ScrollToTop />
-        <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        {children}
+        <ScrollToTop />
+      </body>
     </html>
   );
 }

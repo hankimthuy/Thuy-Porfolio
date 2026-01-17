@@ -1,57 +1,101 @@
 'use client';
 
+import type { ReactNode } from 'react';
+import { FiAlertTriangle, FiBarChart2 } from 'react-icons/fi';
+import { LuLightbulb } from 'react-icons/lu';
+
 interface ProjectCardProps {
   title: string;
   tags: string[];
-  description: string;
-  imageBg?: string;
-  image?: string; // Path to project image
-  caseStudyLink?: string;
+  problem: ReactNode;
+  solution: ReactNode;
+  impact: ReactNode;
+  cta?: {
+    label: string;
+    href: string;
+  };
+  illustrationVariant?: 'manufacturing' | 'ai' | 'talent';
 }
 
-function ProjectCard({ title, tags, description, imageBg, image, caseStudyLink }: ProjectCardProps) {
+function Icon({ name, className }: { name: 'warning' | 'lightbulb' | 'chart'; className?: string }) {
+  if (name === 'warning') return <FiAlertTriangle aria-hidden="true" className={className} />;
+  if (name === 'lightbulb') return <LuLightbulb aria-hidden="true" className={className} />;
+  return <FiBarChart2 aria-hidden="true" className={className} />;
+}
+
+function ProjectCard({ title, tags, problem, solution, impact, cta, illustrationVariant }: ProjectCardProps) {
   return (
-    <div className="relative rounded-[12px] lg:rounded-[20px] overflow-hidden h-auto lg:h-[540px] min-h-[400px] lg:min-h-[540px]">
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: imageBg || 'linear-gradient(135deg, #F4EEFF 0%, #DCD6F7 100%)',
-        }}
-      />
-      
-      <div className="relative z-10 p-6 lg:p-[40px] h-full flex flex-col lg:flex-row items-center gap-6 lg:gap-[30px]">
-        {/* Content Section */}
-        <div className="flex-1 flex flex-col justify-center w-full lg:w-auto">
-          <h3 className="text-2xl lg:text-[40px] font-semibold leading-[1.1] text-[#424874] mb-4 lg:mb-[25px]">
-            {title}
-          </h3>
-          
-          <div className="flex flex-wrap gap-2 lg:gap-[12px] mb-4 lg:mb-[25px]">
-            {tags.map((tag, index) => (
-              <span
-                key={index}
-                className="bg-white text-[#424874] px-3 py-1.5 lg:px-[17px] lg:py-[11px] rounded-[8px] lg:rounded-[10px] text-sm lg:text-[18px] font-semibold"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-          
-          <p className="text-base lg:text-[20px] font-medium leading-[1.28] text-[#424874] max-w-full lg:max-w-[442px] opacity-90">
-            {description}
-          </p>
+    <div className="relative rounded-[14px] overflow-hidden border border-indigo-100 bg-white shadow-sm transition-transform duration-200 will-change-transform hover:shadow-lg hover:shadow-indigo-200/60 hover:scale-[1.01]">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#F4EEFF]/55 via-white to-[#DCD6F7]/40" />
+
+      <div className="relative z-10 p-6">
+        <h3 className="mt-6 text-xl lg:text-[24px] font-semibold leading-[1.15] text-[#424874]">
+          {title}
+        </h3>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          {tags.map((tag, index) => (
+            <span
+              key={index}
+              className="bg-white text-[#424874] border border-indigo-100 px-3 py-1.5 rounded-[10px] text-sm font-semibold"
+            >
+              {tag}
+            </span>
+          ))}
         </div>
 
-        {/* Image Section */}
-        {image && (
-          <div className="flex-1 flex items-center justify-center w-full lg:w-auto">
-            <div className="relative w-full max-w-full lg:max-w-[500px] h-[250px] lg:h-[400px] rounded-[12px] lg:rounded-[16px] overflow-hidden">
-              <img
-                src={image}
-                alt={title}
-                className="w-full h-full object-cover"
-              />
+        <div className="mt-6">
+          <div className="space-y-5 text-[15px] leading-[1.65] text-[#424874]/90">
+            <div className="flex gap-3">
+              <div className="relative w-8 flex-shrink-0 flex justify-center">
+                <div className="mt-0.5 h-8 w-8 rounded-[10px] bg-white border border-indigo-100 text-[#424874] flex items-center justify-center shadow-sm">
+                  <Icon name="warning" className="h-4.5 w-4.5" />
+                </div>
+                <div className="absolute left-1/2 top-9 bottom-[-18px] -translate-x-1/2 border-l border-indigo-200/70" />
+              </div>
+              <div className="min-w-0">
+                <div className="text-[#424874]/70 font-semibold">Problem:</div>
+                <div className="mt-1">{problem}</div>
+              </div>
             </div>
+
+            <div className="flex gap-3">
+              <div className="relative w-8 flex-shrink-0 flex justify-center">
+                <div className="mt-0.5 h-8 w-8 rounded-[10px] bg-white border border-indigo-100 text-[#424874] flex items-center justify-center shadow-sm">
+                  <Icon name="lightbulb" className="h-4.5 w-4.5" />
+                </div>
+                <div className="absolute left-1/2 top-9 bottom-[-18px] -translate-x-1/2 border-l border-indigo-200/70" />
+              </div>
+              <div className="min-w-0">
+                <div className="text-[#424874]/70 font-semibold">Solution:</div>
+                <div className="mt-1">{solution}</div>
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <div className="relative w-8 flex-shrink-0 flex justify-center">
+                <div className="mt-0.5 h-8 w-8 rounded-[10px] bg-white border border-indigo-100 text-[#424874] flex items-center justify-center shadow-sm">
+                  <Icon name="chart" className="h-4.5 w-4.5" />
+                </div>
+              </div>
+              <div className="min-w-0">
+                <div className="text-[#424874]/70 font-semibold">Impact:</div>
+                <div className="mt-1">{impact}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {cta && (
+          <div className="mt-6">
+            <a
+              href={cta.href}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-[12px] px-5 py-3 text-sm font-semibold bg-[#424874] text-white shadow-sm transition-colors hover:bg-[#34385f] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-400"
+            >
+              {cta.label}
+            </a>
           </div>
         )}
       </div>
@@ -60,33 +104,91 @@ function ProjectCard({ title, tags, description, imageBg, image, caseStudyLink }
 }
 
 export default function Projects() {
-  const projects = [
+  const projects: ProjectCardProps[] = [
     {
       title: 'Centralized Manufacturing Lifecycle Platform',
-      tags: ['Angular', 'Python', 'Figma', 'Restful API'],
-      description: 'Digitalized a complex manufacturing lifecycle by consolidating disparate operational processes into a unified web platform. The system manages the critical end-to-end workflow—spanning inventory and BOM management to financial invoicing and compliance audits. This integration eliminates data silos, establishing a single source of truth that guarantees operational precision and real-time visibility across departments.',
-      imageBg: 'linear-gradient(135deg, #F4EEFF 0%, #DCD6F7 100%)',
-      image: '/images/1.jpg', 
-      caseStudyLink: '#',
+      tags: ['Angular 20+', 'Figma', 'Restful API'],
+      problem: (
+        <>
+          <strong className="font-bold text-indigo-900">Fragmented workflows</strong> and{' '}
+          <strong className="font-bold text-indigo-900">data silos</strong> made tracking the end-to-end manufacturing lifecycle impossible.
+        </>
+      ),
+      solution: (
+        <>
+          Architected a <strong className="font-bold text-indigo-900">unified platform</strong> integrating inventory,{' '}
+          <strong className="font-bold text-indigo-900">BOM management</strong>, invoicing, and{' '}
+          <strong className="font-bold text-indigo-900">compliance audits</strong>.
+        </>
+      ),
+      impact: (
+        <>
+          Eliminated data redundancy, ensuring <strong className="font-bold text-indigo-900">100% operational precision</strong>.
+        </>
+      ),
+      illustrationVariant: 'manufacturing',
     },
     {
-      title: 'Reflectly (Side Project)',
-      tags: ['React', 'Spring Boot', 'UX Design'], 
-      description: 'An interpersonal development platform designed to build consistent self-awareness habits. The core value lies in helping users visualize emotional patterns and understand their own behavioral triggers. To achieve this without the friction of manual journaling, the app leverages AI as a supportive tool: utilizing a "Voice-to-Insight" workflow to capture spoken thoughts and an "Insight Crystallizer" to help users distill raw experiences into clear, actionable life principles.',
-      imageBg: 'linear-gradient(135deg, #DCD6F7 0%, #A6B1E1 100%)',
-      image: '/images/IMG_2304.JPG',
-      caseStudyLink: '#',
+      title: 'MimoSe (Leading Self Focus)',
+      tags: ['React', 'Spring Boot', 'Figma', 'AI', 'n8n'],
+      problem: (
+        <>
+          <strong className="font-bold text-indigo-900">High friction</strong> in traditional journaling leads to inconsistent self-awareness.
+        </>
+      ),
+      solution: (
+        <>
+          A <strong className="font-bold text-indigo-900">Low-Friction Framework</strong> powered by{' '}
+          <strong className="font-bold text-indigo-900">Proactive AI</strong>—acting as a companion through the{' '}
+          <strong className="font-bold text-indigo-900">Innerverse</strong> and{' '}
+          <strong className="font-bold text-indigo-900">Outerverse</strong>.
+        </>
+      ),
+      impact: (
+        <>
+          Empowered <strong className="font-bold text-indigo-900">Personal Autonomy</strong> using AI-driven insights.
+        </>
+      ),
+      cta: {
+        label: 'Visit MimoSe',
+        href: 'https://www.mimose.io.vn/',
+      },
+      illustrationVariant: 'ai',
+    },
+    {
+      title: 'Talent Development Platform',
+      tags: ['Angular', 'Spring Boot'],
+      problem: (
+        <>
+          Alignment gap between <strong className="font-bold text-indigo-900">individual aspirations</strong> and organizational goals.
+        </>
+      ),
+      solution: (
+        <>
+          Developed an end-to-end platform for managers and L&D teams to co-create{' '}
+          <strong className="font-bold text-indigo-900">personalized learning roadmaps</strong>.
+        </>
+      ),
+      impact: (
+        <>
+          Streamlined <strong className="font-bold text-indigo-900">performance evaluation</strong> and enhanced employee engagement.
+        </>
+      ),
+      illustrationVariant: 'talent',
     },
   ];
 
   return (
-    <section id="projects" className="py-8 lg:py-[50px] bg-white">
+    <section id="projects" className="py-10 lg:py-[70px] bg-white">
       <div className="max-w-[1728px] mx-auto px-6 lg:px-[200px]">
-        <h2 className="text-3xl lg:text-[56px] font-semibold leading-[1.1] text-[#424874] text-center mb-8 lg:mb-[80px]">
-          Projects
-        </h2>
-        
-        <div className="flex flex-col gap-8 lg:gap-[60px]">
+        <div className="text-center">
+          <h2 className="text-3xl lg:text-[56px] font-semibold leading-[1.1] text-[#424874]">Projects</h2>
+          <p className="mt-4 text-base lg:text-[18px] text-[#424874]/80 max-w-[920px] mx-auto">
+            A selection of product and platform work focused on clarity, scalability, and measurable outcomes.
+          </p>
+        </div>
+
+        <div className="mt-10 lg:mt-[80px] grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}

@@ -57,7 +57,7 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="border-t border-dashed border-[#26252B] pt-6 lg:pt-[32px] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm lg:text-[16px] font-normal text-[#1D2130]">
-            Built by Thuy.io
+            Built by Thuy_
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-2 lg:gap-[20px]">
             <p className="text-sm lg:text-[16px] font-normal text-[#1D2130]">
