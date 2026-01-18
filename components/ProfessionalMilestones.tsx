@@ -26,7 +26,7 @@ function MilestoneCard({ title, subtitle, content }: MilestoneCardProps) {
 export default function ProfessionalMilestones() {
     return (
         <section id="professional-milestones" className="py-10 lg:py-[70px] bg-white">
-            <div className="max-w-[1728px] mx-auto px-6 lg:px-[200px]">
+            <div className="max-w-[1728px] mx-auto px-6 lg:px-[150px]">
                 <div className="text-center">
                     <h2 className="text-3xl lg:text-[56px] font-semibold leading-[1.1] text-[#424874]">Professional Milestones</h2>
                     <p className="mt-4 text-base lg:text-[18px] text-[#424874]/80 max-w-[920px] mx-auto">
@@ -39,12 +39,12 @@ export default function ProfessionalMilestones() {
                         title="Bosch Global Software Technologies"
                         content={
                             <div className="space-y-4">
-                                <div className="flex gap-3">
+                                <div className="flex gap-3 items-center">
                                     <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[10px] bg-white border border-indigo-100 text-[#424874] shadow-sm">
                                         <FiCpu aria-hidden="true" className="h-4 w-4" />
                                     </div>
                                     <div className="min-w-0">
-                                        <strong className="font-bold text-indigo-900">Complex UI:</strong> Digitalized manufacturing processes into one simple web interface.
+                                        <strong className="font-bold text-indigo-900">Complex UI:</strong> Digitalized the entire manufacturing lifecycle by merging manual tracking (Excel/Paper) into a unified, high-precision web platform for BOM and inventory management.
                                     </div>
                                 </div>
 
@@ -62,7 +62,7 @@ export default function ProfessionalMilestones() {
                                         <FiZap aria-hidden="true" className="h-4 w-4" />
                                     </div>
                                     <div className="min-w-0">
-                                        <strong className="font-bold text-indigo-900">Problem Solver:</strong> Designed workflows that improved team efficiency and earned high praise.
+                                        <strong className="font-bold text-indigo-900">Problem Solver:</strong> Designed workflows that improved team efficiency.
                                     </div>
                                 </div>
                             </div>

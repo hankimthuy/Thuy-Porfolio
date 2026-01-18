@@ -4,7 +4,7 @@
 export default function Footer() {
   return (
     <footer id="footer" className="bg-[#D9DFF2] py-8 lg:py-[50px]">
-      <div className="max-w-[1728px] mx-auto px-6 lg:px-[200px]">
+      <div className="max-w-[1728px] mx-auto px-6 lg:px-[150px]">
         {/* Info Block */}
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[60px] mb-8 lg:mb-[80px]">
           <div className="flex-1 w-full lg:w-auto">

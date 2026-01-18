@@ -67,7 +67,7 @@ export default function Testimonials() {
 
   return (
     <section id="reviews" className="py-8 lg:py-[50px] bg-[#F6F7FC]">
-      <div className="max-w-[1728px] mx-auto px-6 lg:px-[200px]">
+      <div className="max-w-[1728px] mx-auto px-6 lg:px-[150px]">
         <h2 className="text-2xl lg:text-[46px] font-semibold leading-[1.37] text-[#242A41] text-center mb-8 lg:mb-[80px]">
           Customers reviews
         </h2>

@@ -45,13 +45,14 @@ function ProjectCard({ title, tags, problem, solution, impact, cta, illustration
         </div>
 
         <div className="mt-6">
-          <div className="space-y-5 text-[15px] leading-[1.65] text-[#424874]/90">
+          <div className="relative space-y-5 text-[15px] leading-[1.65] text-[#424874]/90">
+            <div className="pointer-events-none absolute left-4 top-5 bottom-5 z-0 border-l border-indigo-200/70" />
+            <div className="pointer-events-none absolute left-4 bottom-5 z-0 h-2.5 w-2.5 -translate-x-1/2 translate-y-1/2 rounded-full border border-indigo-200/70 bg-white" />
             <div className="flex gap-3">
               <div className="relative w-8 flex-shrink-0 flex justify-center">
-                <div className="mt-0.5 h-8 w-8 rounded-[10px] bg-white border border-indigo-100 text-[#424874] flex items-center justify-center shadow-sm">
+                <div className="relative z-10 mt-0.5 h-8 w-8 rounded-[10px] bg-white border border-indigo-100 text-[#424874] flex items-center justify-center shadow-sm">
                   <Icon name="warning" className="h-4.5 w-4.5" />
                 </div>
-                <div className="absolute left-1/2 top-9 bottom-[-18px] -translate-x-1/2 border-l border-indigo-200/70" />
               </div>
               <div className="min-w-0">
                 <div className="text-[#424874]/70 font-semibold">Problem:</div>
@@ -61,10 +62,9 @@ function ProjectCard({ title, tags, problem, solution, impact, cta, illustration
 
             <div className="flex gap-3">
               <div className="relative w-8 flex-shrink-0 flex justify-center">
-                <div className="mt-0.5 h-8 w-8 rounded-[10px] bg-white border border-indigo-100 text-[#424874] flex items-center justify-center shadow-sm">
+                <div className="relative z-10 mt-0.5 h-8 w-8 rounded-[10px] bg-white border border-indigo-100 text-[#424874] flex items-center justify-center shadow-sm">
                   <Icon name="lightbulb" className="h-4.5 w-4.5" />
                 </div>
-                <div className="absolute left-1/2 top-9 bottom-[-18px] -translate-x-1/2 border-l border-indigo-200/70" />
               </div>
               <div className="min-w-0">
                 <div className="text-[#424874]/70 font-semibold">Solution:</div>
@@ -74,7 +74,7 @@ function ProjectCard({ title, tags, problem, solution, impact, cta, illustration
 
             <div className="flex gap-3">
               <div className="relative w-8 flex-shrink-0 flex justify-center">
-                <div className="mt-0.5 h-8 w-8 rounded-[10px] bg-white border border-indigo-100 text-[#424874] flex items-center justify-center shadow-sm">
+                <div className="relative z-10 mt-0.5 h-8 w-8 rounded-[10px] bg-white border border-indigo-100 text-[#424874] flex items-center justify-center shadow-sm">
                   <Icon name="chart" className="h-4.5 w-4.5" />
                 </div>
               </div>
@@ -129,8 +129,8 @@ export default function Projects() {
       illustrationVariant: 'manufacturing',
     },
     {
-      title: 'MimoSe (Leading Self Focus)',
-      tags: ['React', 'Spring Boot', 'Figma', 'AI', 'n8n'],
+      title: 'MimoSe: Make Sense of Me',
+      tags: ['React', 'Spring Boot', 'Leading-self', 'AI', 'Figma'],
       problem: (
         <>
           <strong className="font-bold text-indigo-900">High friction</strong> in traditional journaling leads to inconsistent self-awareness.
@@ -180,7 +180,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-10 lg:py-[70px] bg-white">
-      <div className="max-w-[1728px] mx-auto px-6 lg:px-[200px]">
+      <div className="max-w-[1728px] mx-auto px-6 lg:px-[150px]">
         <div className="text-center">
           <h2 className="text-3xl lg:text-[56px] font-semibold leading-[1.1] text-[#424874]">Projects</h2>
           <p className="mt-4 text-base lg:text-[18px] text-[#424874]/80 max-w-[920px] mx-auto">

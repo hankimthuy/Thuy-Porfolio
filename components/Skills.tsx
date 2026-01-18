@@ -127,7 +127,7 @@ export default function Skills() {
       <h2 className="text-3xl lg:text-[56px] font-semibold leading-[1.1] text-[#242A41] text-center mb-8 lg:mb-[80px]">
         Skill Sets
       </h2>
-      <div className="max-w-[1728px] mx-auto px-6 lg:px-[200px]">
+      <div className="max-w-[1728px] mx-auto px-6 lg:px-[150px]">
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-[40px]">
           {/* Left - Circular Tech Icons */}
           <div className="relative flex items-center justify-center flex-shrink-0 w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] lg:w-[500px] lg:h-[500px]">
