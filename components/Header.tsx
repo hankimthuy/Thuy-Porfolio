@@ -2,7 +2,6 @@
 
 import { X } from "@mui/icons-material";
 import { useState } from "react";
-import { FiArrowRight } from "react-icons/fi";
 import { LuMenu } from "react-icons/lu";
 import Link from 'next/link';
 
@@ -11,10 +10,12 @@ const Header = () => {
 
   // Map menu items to section IDs
   const menuItems = [
-    { label: 'Home', id: 'home' },
+    { label: 'About', id: 'about' },
     { label: 'Skill Sets', id: 'skills' },
     { label: 'Projects', id: 'projects' },
+    { label: 'Milestones', id: 'professional-milestones' },
     { label: 'FAQ', id: 'faq' },
+    { label: 'Contact', id: 'footer' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, sectionId: string) => {
@@ -34,11 +35,21 @@ const Header = () => {
     setMobileMenuOpen(false);
   };
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setMobileMenuOpen(false);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-lg z-50 border-b border-[#A6B1E1]/30 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
-    <Link href="/" className="flex items-center font-mono text-xl font-bold text-slate-400 transition-colors hover:text-slate-600">
+    <Link
+      href="/"
+      onClick={handleLogoClick}
+      className="flex items-center font-mono text-xl font-bold text-slate-400 transition-colors hover:text-slate-600"
+    >
   <span>Thuy</span><span className="animate-pulse text-[#424874] ml-0.5">_</span>
    </Link>
 
@@ -56,14 +67,6 @@ const Header = () => {
             </a>
           ))}
         </div>
-
-        {/* Desktop CTA */}
-        <button 
-          onClick={(e) => handleNavClick(e, 'footer')}
-          className="hidden lg:flex items-center gap-2 bg-[#424874] text-white px-4 lg:px-6 py-2 lg:py-2.5 rounded-full text-sm lg:text-base font-semibold shadow-lg shadow-[#A6B1E1]/50 hover:shadow-xl hover:bg-[#424874]/90 hover:-translate-y-0.5 transition-all"
-        >
-          Contact <FiArrowRight size={16} />
-        </button>
 
         {/* Mobile Menu Toggle */}
         <button 
@@ -87,12 +90,6 @@ const Header = () => {
               {item.label}
             </a>
           ))}
-          <button 
-            onClick={(e) => handleNavClick(e, 'footer')}
-            className="flex items-center justify-center gap-2 bg-[#424874] text-white px-6 py-4 rounded-xl font-bold mt-4 shadow-lg shadow-[#A6B1E1]/40"
-          >
-            Contact <FiArrowRight size={18} />
-          </button>
         </div>
       )}
     </nav>

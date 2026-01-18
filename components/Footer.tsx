@@ -3,14 +3,12 @@
 
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-[#D9DFF2] py-8 lg:py-[50px]">
+    <footer id="footer" className="bg-[#D9DFF2] pb-8 lg:pb-[50px]">
       <div className="max-w-[1728px] mx-auto px-6 lg:px-[150px]">
         {/* Info Block */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[60px] mb-8 lg:mb-[80px]">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[60px] py-6 lg:py-[60px]">
           <div className="flex-1 w-full lg:w-auto">
-            <div className="relative w-[48px] h-[48px] lg:w-[64px] lg:h-[64px] rounded-full mb-6 lg:mb-[40px] overflow-hidden">
-            </div>
-            <h3 className="text-2xl lg:text-[39px] font-bold leading-[1.23] text-[#242A41] mb-0">
+            <h3 className="text-2xl lg:text-[39px] font-bold leading-[1.23] text-[#242A41] mx-0">
               Let's connect
             </h3>
           </div>
@@ -19,11 +17,13 @@ export default function Footer() {
           <div className="flex-1 w-full lg:w-auto bg-[#583FBC] rounded-[20px] lg:rounded-[32px] p-6 lg:p-[42px] relative overflow-hidden">
             <div className="absolute -top-[11px] -left-[4px] w-full lg:w-[588px] h-[200px] lg:h-[276px] bg-[#7DE0EA] rounded-[20px] lg:rounded-[32px] opacity-20" />
             <div className="relative z-10">
-              <h3 className="text-xl lg:text-[32px] font-bold leading-[1.2] text-white mb-2 lg:mb-[10px]">
+              <h3 className="text-xl lg:text-[32px] font-bold leading-[1.2] text-white mb-6 lg:mb-[20px]">
                 Ready to build something great?
               </h3>
               <a 
-                href="#contact"
+                href="https://www.linkedin.com/in/thuyhankim/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-[#A6B1E1] text-white px-5 lg:px-[24px] py-3 lg:py-[17px] rounded-[10px] lg:rounded-[12.8px] text-sm lg:text-[18px] font-semibold flex items-center gap-2 lg:gap-[5px] hover:bg-[#6dd0d9] transition-colors w-fit"
               >
                 Get in Touch

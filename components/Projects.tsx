@@ -179,7 +179,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-10 lg:py-[70px] bg-white">
+    <section id="projects" className="py-10 lg:py-[40px] bg-white">
       <div className="max-w-[1728px] mx-auto px-6 lg:px-[150px]">
         <div className="text-center">
           <h2 className="text-3xl lg:text-[56px] font-semibold leading-[1.1] text-[#424874]">Projects</h2>
@@ -188,7 +188,7 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="mt-10 lg:mt-[80px] grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="mt-10 lg:mt-[50px] grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}

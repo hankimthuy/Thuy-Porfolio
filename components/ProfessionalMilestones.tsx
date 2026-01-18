@@ -25,7 +25,7 @@ function MilestoneCard({ title, subtitle, content }: MilestoneCardProps) {
 
 export default function ProfessionalMilestones() {
     return (
-        <section id="professional-milestones" className="py-10 lg:py-[70px] bg-white">
+        <section id="professional-milestones" className="py-10 lg:py-[40px] bg-white">
             <div className="max-w-[1728px] mx-auto px-6 lg:px-[150px]">
                 <div className="text-center">
                     <h2 className="text-3xl lg:text-[56px] font-semibold leading-[1.1] text-[#424874]">Professional Milestones</h2>
@@ -34,7 +34,7 @@ export default function ProfessionalMilestones() {
                     </p>
                 </div>
 
-                <div className="mt-10 lg:mt-[80px] grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                <div className="mt-10 lg:mt-[50px] grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                     <MilestoneCard
                         title="Bosch Global Software Technologies"
                         content={
@@ -48,7 +48,7 @@ export default function ProfessionalMilestones() {
                                     </div>
                                 </div>
 
-                                <div className="flex gap-3">
+                                <div className="flex gap-3 items-center">
                                     <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[10px] bg-white border border-indigo-100 text-[#424874] shadow-sm">
                                         <FiGlobe aria-hidden="true" className="h-4 w-4" />
                                     </div>
@@ -57,7 +57,7 @@ export default function ProfessionalMilestones() {
                                     </div>
                                 </div>
 
-                                <div className="flex gap-3">
+                                <div className="flex gap-3 items-center">
                                     <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[10px] bg-white border border-indigo-100 text-[#424874] shadow-sm">
                                         <FiZap aria-hidden="true" className="h-4 w-4" />
                                     </div>

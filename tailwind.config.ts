@@ -8,6 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        "badge-pulse": {
+          "0%, 75%, 100%": { transform: "scale(1)", opacity: "1" },
+          "82%": { transform: "scale(1.035)", opacity: "1" },
+          "90%": { transform: "scale(1.035)", opacity: "1" },
+          "97%": { transform: "scale(1)", opacity: "1" },
+        },
+      },
+      animation: {
+        "badge-pulse": "badge-pulse 6s ease-in-out infinite",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

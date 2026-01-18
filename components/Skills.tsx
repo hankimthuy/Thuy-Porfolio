@@ -5,7 +5,7 @@ import CodeIcon from '@mui/icons-material/Code';
 import { FaAngular } from "react-icons/fa";
 import { SiSpring } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
-import { TbAi } from "react-icons/tb";
+import { LuBrain } from "react-icons/lu";
 
 interface SkillCardProps {
   number: string;
@@ -115,7 +115,7 @@ export default function Skills() {
       case 'AI':
         return (
            // White Icon
-          <TbAi style={{ width: '100%', height: '100%' }} color="white" />
+          <LuBrain style={{ width: '100%', height: '100%' }} color="white" />
         );
       default:
         return null;

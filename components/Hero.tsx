@@ -5,7 +5,7 @@ import { LuMail } from "react-icons/lu";
 
 const Hero = () => {
   return (
-    <section id="home" className="max-w-7xl mx-auto px-6 lg:px-6 pt-24 lg:pt-[8rem] pb-12 lg:pb-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 bg-white">
+    <section id="about" className="max-w-7xl mx-auto px-6 lg:px-6 pt-24 lg:pt-[9rem] pb-12 lg:pb-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 bg-white">
 
       {/* LEFT COLUMN: Text Content - Reduced spacing for cleaner look */}
       <div className="flex-1 space-y-4 lg:space-y-6 z-10 text-center lg:text-left relative">
@@ -93,7 +93,7 @@ const Hero = () => {
           />
 
           {/* Floating Badge */}
-          <div className="absolute bottom-4 -left-4 lg:bottom-8 lg:-left-8 bg-white/95 backdrop-blur-sm p-3 lg:p-4 rounded-xl shadow-xl shadow-[#424874]/10 flex items-center gap-2 lg:gap-3 animate-[pulse_6s_infinite] border border-[#F4EEFF] max-w-[140px] lg:max-w-[180px]">
+          <div className="absolute bottom-4 -left-4 lg:bottom-8 lg:-left-8 bg-white/95 backdrop-blur-sm p-3 lg:p-4 rounded-xl shadow-xl shadow-[#424874]/10 flex items-center gap-2 lg:gap-3 animate-badge-pulse border border-[#F4EEFF] max-w-[140px] lg:max-w-[180px]">
             <div className="flex flex-col">
               <div className="text-[8px] lg:text-[10px] text-[#A6B1E1] font-bold uppercase tracking-wider">Expert in</div>
               <div className="text-xs lg:text-sm font-semibold text-[#424874] leading-tight">Web Development</div>
