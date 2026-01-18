@@ -151,7 +151,7 @@ export default function Projects() {
       ),
       cta: {
         label: 'Visit MimoSe',
-        href: 'https://www.mimose.io.vn/',
+        href: 'https://dev.mimose.io.vn/',
       },
       illustrationVariant: 'ai',
     },
