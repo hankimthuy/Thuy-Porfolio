@@ -150,7 +150,7 @@ export default function Projects() {
         </>
       ),
       cta: {
-        label: 'Visit MimoSe',
+        label: 'Visit MimoSE',
         href: 'https://dev.mimose.io.vn/',
       },
       illustrationVariant: 'ai',
