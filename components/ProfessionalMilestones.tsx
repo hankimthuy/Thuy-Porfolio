@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { FiCpu, FiGlobe, FiZap } from 'react-icons/fi';
+import PdfThumbnail from '@/components/PdfThumbnail';
 
 interface MilestoneCardProps {
     title: string;
@@ -72,7 +73,7 @@ export default function ProfessionalMilestones() {
                         title="Google UX Design Professional Certificate"
                         content={
                             <div className="flex flex-col lg:flex-row gap-5 lg:gap-6">
-                                <div className="lg:basis-3/5">
+                                <div className="lg:basis-1/2">
                                     <div className="space-y-3">
                                         <div className="space-y-2">
                                             <div>
@@ -91,11 +92,10 @@ export default function ProfessionalMilestones() {
                                     </div>
                                 </div>
 
-                                <div className="lg:basis-2/5">
-                                    <img
-                                        src="/images/certificate-placeholder.png"
-                                        alt="Google UX Certificate"
-                                        className="w-full h-auto border border-[#E0E7FF] rounded-lg shadow-sm"
+                                <div className="lg:basis-1/2">
+                                    <PdfThumbnail
+                                        pdfUrl="/pdf/Coursera%20K0EK4KJTLR3S.pdf"
+                                        className="w-full border border-[#E0E7FF] rounded-lg shadow-sm overflow-hidden bg-white"
                                     />
                                 </div>
                             </div>
