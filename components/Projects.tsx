@@ -183,26 +183,26 @@ export default function Projects() {
       illustrationVariant: 'ai',
     },
     {
-      title: 'FlowStreaks: Life OS',
-      tags: ['Next.js', 'Supabase', 'TypeScript', 'Tailwind CSS', 'PWA'],
+      title: 'Phụng Sự Đầu Tư (PS Invest)',
+      tags: ['Next.js', 'React', 'Ant Design', 'Headless CMS', 'Technical SEO'],
       problem: (
         <>
-          Rigid streak trackers ignore <strong className="font-semibold text-indigo-900">daily context</strong> and <strong className="font-semibold text-indigo-900">energy capacity</strong>, creating a punitive experience that leads to burnout.
+          Editors needed to <strong className="font-semibold text-indigo-900">publish blogs, books, and landing pages</strong> on their own — with <strong className="font-semibold text-indigo-900">technical SEO</strong> built in — without waiting on a dev for every release.
         </>
       ),
       solution: (
         <>
-          Engineered a <strong className="font-semibold text-indigo-900">Flow Engine</strong> and <strong className="font-semibold text-indigo-900">Capacity Manager</strong> that dynamically adjust expectations based on real-life events.
+          Shipped a <strong className="font-semibold text-indigo-900">headless CMS admin</strong> (React, Ant Design, RBAC) and a <strong className="font-semibold text-indigo-900">Next.js 15 storefront</strong> with SSR, Apollo GraphQL, and SEO (metadata, JSON-LD, sitemap, slug redirects). Defined <strong className="font-semibold text-indigo-900">content modules & editor workflows</strong> for blogs, books, categories, and site-wide SEO.
         </>
       ),
       impact: (
         <>
-          Delivered a <strong className="font-semibold text-indigo-900">pressure-free reality</strong> with reduced cognitive load, promoting sustainable consistency over unbroken chains.
+          <strong className="font-semibold text-indigo-900">Live at psinvest.vn</strong> — content team self-publishes; storefront serves structured SEO on articles and the High Margin landing.
         </>
       ),
       cta: {
-        label: 'Visit FlowStreaks',
-        href: 'https://habit-streaks.vercel.app/',
+        label: 'Visit PS Invest',
+        href: 'https://psinvest.vn/',
       },
     },
   ];

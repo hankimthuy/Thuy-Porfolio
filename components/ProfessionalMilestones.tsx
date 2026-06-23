@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { FiCpu, FiGlobe, FiZap } from 'react-icons/fi';
 import PdfThumbnail from '@/components/PdfThumbnail';
+import { PERSON } from '@/lib/seo';
 
 interface MilestoneCardProps {
     title: string;
@@ -14,8 +15,14 @@ function MilestoneCard({ title, subtitle, content }: MilestoneCardProps) {
             <div className="absolute inset-0 bg-gradient-to-br from-[#F4EEFF]/55 via-white to-[#DCD6F7]/40" />
 
             <div className="relative z-10 p-6">
-                <h3 className="mt-0 text-xl lg:text-[24px] font-semibold leading-[1.15] text-[#424874]">{title}</h3>
-                {subtitle && <div className="mt-2 text-sm font-semibold text-[#424874]/70">{subtitle}</div>}
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                    <h3 className="mt-0 text-xl lg:text-[24px] font-semibold leading-[1.15] text-[#424874]">{title}</h3>
+                    {subtitle && (
+                        <span className="inline-flex items-center rounded-full border border-[#A6B1E1]/60 bg-[#F4EEFF]/80 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#583FBC]">
+                            {subtitle}
+                        </span>
+                    )}
+                </div>
 
                 <div className="mt-5 text-[15px] leading-[1.7] text-[#424874]/90">{content}</div>
             </div>
@@ -37,6 +44,7 @@ export default function ProfessionalMilestones() {
                 <div className="mt-10 lg:mt-[50px] grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                     <MilestoneCard
                         title="Bosch Global Software Technologies"
+                        subtitle={PERSON.yearsExperienceShort}
                         content={
                             <div className="space-y-4">
                                 <div className="flex gap-3 items-center">

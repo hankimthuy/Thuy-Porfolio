@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
+import JsonLd from "@/components/JsonLd";
+import { defaultMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Thuy - UX Engineer",
-  description: "Bridging the gap between business goals and technical solutions. Building holistic, value-driven user experiences.",
-  icons: {
-    icon: '/icons/purzle.ico',
-  },
-};
+export const metadata: Metadata = defaultMetadata;
 
 export default function RootLayout({
   children,
@@ -17,6 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <JsonLd />
+      </head>
       <body suppressHydrationWarning>
         {children}
         <ScrollToTop />
@@ -24,5 +23,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-

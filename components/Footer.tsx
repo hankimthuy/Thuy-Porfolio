@@ -1,59 +1,78 @@
 'use client';
 
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
+import { LuMail } from 'react-icons/lu';
+import { SiZalo } from 'react-icons/si';
+import { PERSON } from '@/lib/seo';
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer id="footer" className="bg-[#D9DFF2] pb-8 lg:pb-[50px]">
-      <div className="max-w-[1728px] mx-auto px-6 lg:px-[150px]">
-        {/* Info Block */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[60px] py-6 lg:py-[60px]">
-          <div className="flex-1 w-full lg:w-auto">
-            <h3 className="text-2xl lg:text-[39px] font-bold leading-[1.23] text-[#242A41] mx-0">
-              Let's connect
-            </h3>
+    <footer id="footer" className="bg-white border-t border-[#A6B1E1]/25">
+      <div className="max-w-7xl mx-auto px-6 py-10 lg:py-14">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-10">
+          <div className="max-w-md">
+            <h2 className="text-2xl lg:text-[2rem] font-bold text-[#424874] tracking-tight">
+              Let&apos;s connect
+            </h2>
+            <p className="mt-2 text-sm lg:text-base text-[#424874]/65 leading-relaxed">
+              Open for product work &amp; freelance. Zalo is fastest for work inquiries.
+            </p>
           </div>
 
-          {/* CTA Block */}
-          <div className="flex-1 w-full lg:w-auto bg-[#583FBC] rounded-[20px] lg:rounded-[32px] p-6 lg:p-[42px] relative overflow-hidden">
-            <div className="absolute -top-[11px] -left-[4px] w-full lg:w-[588px] h-[200px] lg:h-[276px] bg-[#7DE0EA] rounded-[20px] lg:rounded-[32px] opacity-20" />
-            <div className="relative z-10">
-              <h3 className="text-xl lg:text-[32px] font-bold leading-[1.2] text-white mb-6 lg:mb-[20px]">
-                Ready to build something great?
-              </h3>
-              <a 
-                href="https://www.linkedin.com/in/thuyhankim/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#A6B1E1] text-white px-5 lg:px-[24px] py-3 lg:py-[17px] rounded-[10px] lg:rounded-[12.8px] text-sm lg:text-[18px] font-semibold flex items-center gap-2 lg:gap-[5px] hover:bg-[#6dd0d9] transition-colors w-fit"
-              >
-                Get in Touch
-                <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
-                  <path d="M6 4L10 8.5L6 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </a>
-            </div>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <a
+              href={PERSON.zaloHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#583FBC] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#4a35a3]"
+            >
+              <SiZalo size={18} />
+              Zalo · {PERSON.zaloPhone}
+            </a>
+            <a
+              href={PERSON.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#424874]/15 bg-[#F4EEFF]/50 px-5 py-3 text-sm font-semibold text-[#424874] transition-colors hover:border-[#A6B1E1] hover:bg-[#F4EEFF]"
+            >
+              <FiLinkedin size={17} />
+              LinkedIn
+            </a>
           </div>
         </div>
 
-        {/* Bottom Footer */}
-        <div className="border-t border-dashed border-[#26252B] pt-6 lg:pt-[32px] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm lg:text-[16px] font-normal text-[#1D2130]">
-            Built by Thuy_
+        <div className="mt-8 pt-6 border-t border-dashed border-[#A6B1E1]/35 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+          <p className="font-mono font-bold text-[#424874]/80">
+            {PERSON.brandName}
+            <span className="text-[#583FBC]">_</span>
           </p>
-          <div className="flex flex-col sm:flex-row items-center gap-2 lg:gap-[20px]">
-            <p className="text-sm lg:text-[16px] font-normal text-[#1D2130]">
-              Got a question?
-            </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[#424874]/70">
             <a
-              href="mailto:thuyhankim@gmail.com"
-              className="text-sm lg:text-[15px] font-semibold text-[#583FBC] hover:underline"
+              href={`mailto:${PERSON.email}`}
+              className="inline-flex items-center gap-1.5 hover:text-[#583FBC] transition-colors"
             >
-              thuyhankim@gmail.com
+              <LuMail size={15} />
+              {PERSON.email}
+            </a>
+            <a
+              href="https://github.com/hankimthuy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-[#583FBC] transition-colors"
+            >
+              <FiGithub size={15} />
+              GitHub
             </a>
           </div>
+
+          <p className="text-[#424874]/45 text-xs sm:text-sm">
+            © {year} {PERSON.brandName}
+          </p>
         </div>
       </div>
     </footer>
   );
 }
-

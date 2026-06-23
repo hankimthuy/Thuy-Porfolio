@@ -4,6 +4,7 @@ import { X } from "@mui/icons-material";
 import { useState } from "react";
 import { LuMenu } from "react-icons/lu";
 import Link from 'next/link';
+import { PERSON } from '@/lib/seo';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -50,7 +51,7 @@ const Header = () => {
       onClick={handleLogoClick}
       className="flex items-center font-mono text-xl font-bold text-slate-400 transition-colors hover:text-slate-600"
     >
-  <span>Thuy</span><span className="animate-pulse text-[#424874] ml-0.5">_</span>
+  <span>{PERSON.brandName}</span><span className="animate-pulse text-[#424874] ml-0.5">_</span>
    </Link>
 
         {/* Desktop Menu */}
@@ -69,9 +70,12 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button 
+        <button
+          type="button"
           className="lg:hidden text-[#424874]"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileMenuOpen}
         >
           {mobileMenuOpen ? <X fontSize="large" /> : <LuMenu fontSize="large" />}
         </button>
