@@ -1,0 +1,212 @@
+{
+  "metadata": {
+    "title": "Han Kim Thuy | Product Engineer | Product Owner — Portfolio",
+    "description": "Han Kim Thuy — Product Engineer & Product Owner for hire in Vietnam. 4+ years building CMS platforms, enterprise apps, and freelance product work. Problem solver, UX-focused.",
+    "ogTitle": "Han Kim Thuy | Product Engineer | Product Owner",
+    "siteName": "Han Kim Thuy — Portfolio",
+    "keywords": "Han Kim Thuy,Hàn Kim Thủy,Thuy,hankimthuy,thuyhankim,Product Engineer,Product Owner,UX Software Engineer,Software Engineer,Vietnam,freelance Vietnam,product engineer Vietnam"
+  },
+  "person": {
+    "brandName": "Han Kim Thuy",
+    "fullName": "Hàn Kim Thủy",
+    "greeting": "Hi! I'm",
+    "greeting": "Hi! I'm",
+    "jobTitles": ["End-to-End Product Builder"],
+    "jobTitleSecondary": "UX Software Engineer | Product Owner",
+    "yearsExperience": "4+ Years Experience",
+    "yearsExperienceShort": "4+ Years",
+    "jobTitle": "End-to-End Product Builder"
+  },
+  "header": {
+    "nav": {
+      "about": "About",
+      "skills": "Skill Sets",
+      "projects": "Projects",
+      "milestones": "Milestones",
+      "faq": "FAQ",
+      "contact": "Contact"
+    },
+    "getInTouch": "Get in touch",
+    "youAreHere": "You are here",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchLanguage": "Switch language",
+    "logoAlt": "THUY site logo"
+  },
+  "hero": {
+    "availability": "Available for freelance · Vietnam",
+    "stats": {
+      "experience": "4+ Years",
+      "projects": "5+ Projects",
+      "delivery": "User-focused delivery"
+    },
+    "bio": "Bridging <technicalLogic>technical logic</technicalLogic> with <humanEmpathy>human empathy</humanEmpathy>. I build scalable solutions by asking <why>Why</why> before <how>How</how>, ensuring every line of code creates real-world value.",
+    "chips": {
+      "problemSolving": "Problem Solving",
+      "userExperience": "User Experience",
+      "productDiscovery": "Product Discovery",
+      "customerNeeds": "Customer Needs"
+    },
+    "ctas": {
+      "primary": "View Projects",
+      "secondary": "Let's connect"
+    },
+    "portraitAlt": "Han Kim Thuy (Hàn Kim Thủy) — End-to-End Product Builder, professional portrait",
+    "social": {
+      "linkedin": "LinkedIn Profile",
+      "github": "GitHub — hankimthuy",
+      "email": "Send Email"
+    }
+  },
+  "skills": {
+    "title": "Skill Sets",
+    "subtitle": "From clarifying user needs to shipping products people actually want to use",
+    "cards": [
+      {
+        "title": "UX-Oriented Mindset",
+        "description": "Certified by Google in UX Design, I combine technical engineering with user-centric principles to build applications that are both functional and intuitive."
+      },
+      {
+        "title": "Full-Stack Development",
+        "description": "Proficient in React, Angular, and Spring Boot (Java). I specialize in architecting scalable, data-driven web applications, ensuring seamless integration between complex backend logic and intuitive frontend experiences."
+      },
+      {
+        "title": "Agile & Product Mindset",
+        "description": "As an active member in a Scrum environment, I focus on process improvement, fostering team collaboration, and viewing products holistically from concept to launch."
+      }
+    ]
+  },
+  "projects": {
+    "showcases": "Showcases",
+    "subtitle": "Focused on clarity, scalability, and measurable outcomes",
+    "highlights": "Bosch enterprise · MimoSe · Headless CMS (live)",
+    "companyProjects": "Company Projects",
+    "companySubtitle": "Enterprise-scale platforms & solutions",
+    "sideProjects": "Side Projects",
+    "sideSubtitle": "Human-Centered Product Lab",
+    "problem": "Problem",
+    "solution": "Solution",
+    "impact": "Impact",
+    "viewLiveSite": "View live site",
+    "items": {
+      "manufacturing-lifecycle": {
+        "title": "Centralized Manufacturing Lifecycle",
+        "problemText": "Fragmented workflows and data silos made tracking the end-to-end manufacturing lifecycle impossible.",
+        "problemHighlights": ["Fragmented workflows", "data silos"],
+        "solutionText": "Architected a unified platform integrating inventory, BOM management, invoicing, and compliance audits.",
+        "solutionHighlights": ["unified platform", "BOM management", "compliance audits"],
+        "impactText": "Replaced manual Excel tracking with a unified digital tool and eliminating data redundancy.",
+        "schemaDescription": "Enterprise Angular platform at Bosch digitalizing manufacturing lifecycle, BOM, and inventory management."
+      },
+      "talent-development": {
+        "title": "Talent Development Platform",
+        "problemText": "Alignment gap between individual aspirations and organizational goals.",
+        "problemHighlights": ["individual aspirations"],
+        "solutionText": "Developed an end-to-end platform for managers and L&D teams to co-create personalized learning roadmaps.",
+        "solutionHighlights": ["personalized learning roadmaps"],
+        "impactText": "Streamlined performance evaluation and enhanced employee engagement.",
+        "impactHighlights": ["performance evaluation"],
+        "schemaDescription": "Angular and Spring Boot talent development platform for personalized learning roadmaps at Bosch."
+      },
+      "mimose": {
+        "title": "MimoSe: Make Sense of Me",
+        "problemText": "High friction in traditional journaling leads to inconsistent self-awareness.",
+        "problemHighlights": ["High friction"],
+        "solutionText": "A Low-Friction Framework powered by Proactive AI—acting as a companion through the Innerverse and Outerverse.",
+        "solutionHighlights": ["Low-Friction Framework", "Proactive AI", "Innerverse", "Outerverse"],
+        "impactText": "Empowered Personal Autonomy using AI-driven insights.",
+        "impactHighlights": ["Personal Autonomy"],
+        "schemaDescription": "AI-powered self-awareness journaling app built with React and Spring Boot."
+      },
+      "ps-invest": {
+        "title": "Phụng Sự Đầu Tư (Headless CMS)",
+        "problemText": "Editors needed to publish blogs, books, and landing pages on their own — with technical SEO built in — without waiting on a dev for every release.",
+        "problemHighlights": ["publish blogs, books, and landing pages", "technical SEO"],
+        "solutionText": "Shipped a headless CMS admin (React, RBAC) and a Next.js 15 storefront with SSR, Apollo GraphQL, and SEO (metadata, JSON-LD, sitemap, slug redirects). Defined content modules & editor workflows for blogs, books, categories, and site-wide SEO.",
+        "solutionHighlights": ["headless CMS admin", "Next.js 15 storefront", "content modules & editor workflows"],
+        "impactText": "Live at psinvest.vn — content team self-publishes; storefront serves structured SEO on articles and the High Margin landing.",
+        "impactHighlights": ["Live at psinvest.vn"],
+        "schemaDescription": "Custom headless CMS admin and Next.js storefront with technical SEO — built for Phụng Sự Đầu Tư."
+      }
+    }
+  },
+  "milestones": {
+    "title": "Professional Milestones",
+    "subtitle": "Highlights from Bosch, international client collaboration, and Google UX Design certification.",
+    "bosch": {
+      "title": "Bosch Global Software Technologies",
+      "complexUi": {
+        "label": "Complex UI:",
+        "text": "Digitalized the entire manufacturing lifecycle by merging manual tracking (Excel/Paper) into a unified, high-precision web platform for BOM and inventory management."
+      },
+      "collaboration": {
+        "label": "Direct Collaboration:",
+        "text": "Worked with international clients in English from requirements to final delivery at Bosch."
+      },
+      "problemSolver": {
+        "label": "Problem Solver:",
+        "text": "Designed workflows that improved team efficiency."
+      }
+    },
+    "credential": {
+      "title": "Google UX Design Professional Certificate",
+      "skills": ["UX Research", "Wireframing & Prototyping", "Usability Testing", "User-Centric Bridge"]
+    }
+  },
+  "faq": {
+    "title": "FAQ",
+    "contactLine": "If you have any other questions, you can contact {brandName} by email",
+    "items": [
+      {
+        "question": "Who is Han Kim Thuy?",
+        "answer": "This is the portfolio of Han Kim Thuy (Hàn Kim Thủy), also written as Thuy Han Kim or hankimthuy online. I am a Product Engineer and Product Owner based in Vietnam. You can reach me at {email}, on GitHub (hankimthuy), LinkedIn (thuyhankim), or at {siteUrl}."
+      },
+      {
+        "question": "Are you available as a freelance Product Owner or Product Engineer in Vietnam?",
+        "answer": "Yes—outside my full-time role I take scoped freelance work in Vietnam (GMT+7) and abroad. Typical engagements include product discovery, UX-oriented delivery, and helping small teams ship usable products. Zalo (0947 701 601) is fastest; you can also email or message me on LinkedIn with the problem, audience, and timeline."
+      },
+      {
+        "question": "What drives you to build products?",
+        "answer": "I'm driven by empathy. For me, a product is simply a solution to a real human problem. My motivation comes from seeing something I've built actually reduce someone's frustration, save them time, or (like in my MimoSe project) help them understand themselves better."
+      },
+      {
+        "question": "Why do you focus on UX-Oriented Development?",
+        "answer": "As a Product Engineer, I'm the closest person to the end-user. Focusing on UX is a natural extension of that role. I believe a 'feature' isn't 'done' when the code is merged; it's 'done' when the user can achieve their goal effortlessly. This mindset is the foundation of my product-focused approach."
+      },
+      {
+        "question": "How do you handle ambiguity and changing requirements?",
+        "answer": "I embrace them—change is a core part of the Agile/Scrum process. When requirements change, I don't see it as a problem; I see it as 'new information.' My first step is to ask 'why' to understand the new business goal or user insight. Then, I collaborate with the team (PO, BA, Designers) to assess the impact, break down the new task, and re-prioritize."
+      },
+      {
+        "question": "How do you work with a freelance client?",
+        "answer": "We start with a short conversation about the problem, who's affected, and what success looks like—you don't need a technical spec upfront. I help clarify scope and timing, keep communication simple, and focus on whether the solution works for real users. My goal is to solve the right need, not to impress with tools."
+      },
+      {
+        "question": "How can I reach you about freelance work?",
+        "answer": "Zalo (0947 701 601) is fastest. You can also email thuyhankim@gmail.com or message me on LinkedIn. Share what you're trying to solve, who it's for, and any timeline—I will let you know if freelance collaboration is a good fit."
+      }
+    ]
+  },
+  "footer": {
+    "connect": "Let's connect",
+    "freelancePrompt": "Have a freelance project in mind? Zalo is the fastest way to reach me.",
+    "freelanceNote": "Freelance only — problem-solving & UX-focused work, Vietnam (GMT+7)",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "copyright": "© {year} {brandName} ({fullName})"
+  },
+  "jsonLd": {
+    "personDescription": "Product Engineer and Product Owner available for freelance collaborations in Vietnam. Also known as Hàn Kim Thủy, Thuy Han Kim, hankimthuy, and thuyhankim.",
+    "websiteDescription": "Portfolio of Han Kim Thuy (Hàn Kim Thủy) — Product Engineer & Product Owner. Freelance collaborations in Vietnam.",
+    "profilePageName": "Han Kim Thuy (Hàn Kim Thủy) | Product Engineer — Portfolio",
+    "occupationEngineer": "Freelance product engineering and UX-oriented delivery for teams in Vietnam.",
+    "occupationOwner": "Freelance product ownership—discovery, prioritization, and shipping user-focused outcomes.",
+    "occupationEngineerName": "Product Engineer",
+    "occupationOwnerName": "Product Owner",
+    "projectListName": "Portfolio Projects",
+    "ogImageAlt": "Han Kim Thuy (Hàn Kim Thủy) — End-to-End Product Builder, portfolio · Freelance Vietnam"
+  },
+  "common": {
+    "scrollToTop": "Scroll to top"
+  }
+}

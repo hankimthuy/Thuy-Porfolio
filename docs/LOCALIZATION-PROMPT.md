@@ -12,7 +12,7 @@ Implement **English + Vietnamese localization** for the Next.js 16 portfolio at 
 
 - **Single-page portfolio** (App Router): `app/page.tsx`, sections in `components/`
 - **Person:** Han Kim Thuy (EN display) / Hàn Kim Thủy (VI legal/branded name)
-- **Roles:** Product Engineer | Product Owner · Full-stack Developer (freelance)
+- **Roles:** Product Engineer | Product Owner · Software Engineer (freelance)
 - **Experience:** 4+ years
 - **Contact:** Zalo 0947 701 601, LinkedIn /in/thuyhankim, thuyhankim@gmail.com, GitHub hankimthuy
 - **Current SEO:** `lib/seo.ts`, `components/JsonLd.tsx`, `app/sitemap.ts`, `app/robots.ts`
@@ -45,10 +45,10 @@ Choose and implement one approach (prefer **next-intl** or Next.js built-in `[lo
 
 ### 2. Name & branding per locale
 
-| Locale | Display name | H1 / title |
-|--------|--------------|------------|
-| `en` | Han Kim Thuy | Hi! I'm Han Kim Thuy |
-| `vi` | Hàn Kim Thủy | Xin chào! Tôi là Hàn Kim Thủy |
+| Locale | Display name | H1 / title                    |
+| ------ | ------------ | ----------------------------- |
+| `en`   | Han Kim Thuy | Hi! I'm Han Kim Thuy          |
+| `vi`   | Hàn Kim Thủy | Xin chào! Tôi là Hàn Kim Thủy |
 
 - JSON-LD `Person.name` = locale primary; `alternateName` always includes both forms + Thuy, thuyhankim
 - Logo: `Han Kim Thuy_` (EN) / `Hàn Kim Thủy_` (VI) or keep ASCII logo on both — decide with UX consistency
@@ -58,16 +58,19 @@ Choose and implement one approach (prefer **next-intl** or Next.js built-in `[lo
 **Each locale gets its own metadata** via `generateMetadata` in `app/[locale]/layout.tsx`:
 
 **English (`/en`):**
+
 - title: `Han Kim Thuy | Product Engineer | Product Owner — Portfolio`
 - description: EN only, mention 4+ years, CMS, freelance
 - `html lang="en"`, OG `locale: en_US`
 
 **Vietnamese (`/vi`):**
+
 - title: `Hàn Kim Thủy | Kỹ sư Sản phẩm | Product Owner — Portfolio`
 - description: VI only
 - `html lang="vi"`, OG `locale: vi_VN`
 
 **Both:**
+
 - `hreflang` alternates: `en`, `vi`, `x-default` (point to `/en` or user preference)
 - `canonical` per locale URL
 - **Sitemap** lists both `/en` and `/vi` with `alternates.languages`
@@ -76,16 +79,16 @@ Choose and implement one approach (prefer **next-intl** or Next.js built-in `[lo
 
 ### 4. Content to translate
 
-| File / area | Strings |
-|-------------|---------|
-| `Hero.tsx` | greeting, roles, experience badge, bio paragraph |
-| `Header.tsx` | nav labels |
-| `Skills.tsx` | section title, descriptions if any |
-| `Projects.tsx` | section titles, all 4 project cards (problem/solution/impact) |
-| `ProfessionalMilestones.tsx` | headings, milestone copy |
-| `FAQ.tsx` | heading, contact line, all Q&A |
-| `Footer.tsx` | connect copy, button labels |
-| `lib/faq-data.ts` | move into message files |
+| File / area                  | Strings                                                       |
+| ---------------------------- | ------------------------------------------------------------- |
+| `Hero.tsx`                   | greeting, roles, experience badge, bio paragraph              |
+| `Header.tsx`                 | nav labels                                                    |
+| `Skills.tsx`                 | section title, descriptions if any                            |
+| `Projects.tsx`               | section titles, all 4 project cards (problem/solution/impact) |
+| `ProfessionalMilestones.tsx` | headings, milestone copy                                      |
+| `FAQ.tsx`                    | heading, contact line, all Q&A                                |
+| `Footer.tsx`                 | connect copy, button labels                                   |
+| `lib/faq-data.ts`            | move into message files                                       |
 
 **PS Invest project** (side project): keep technical terms (Next.js, GraphQL) untranslated; translate problem/solution/impact.
 

@@ -6,6 +6,7 @@ export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || DEFAULT_SITE_URL;
 
 export const PORTRAIT_IMAGE_PATH = '/images/han-kim-thuy-portrait.jpg';
+export const LOGO_IMAGE_PATH = '/images/thuy-site-logo.png';
 
 export const SITE_NAME = 'Han Kim Thuy — Portfolio';
 
@@ -139,7 +140,8 @@ export const defaultMetadata: Metadata = {
     images: ['/og-image.png'],
   },
   icons: {
-    icon: '/icons/purzle.ico',
+    icon: LOGO_IMAGE_PATH,
+    apple: LOGO_IMAGE_PATH,
   },
   ...(googleVerification
     ? { verification: { google: googleVerification } }

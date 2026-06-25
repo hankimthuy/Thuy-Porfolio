@@ -3,14 +3,8 @@
 import Image from 'next/image';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { LuMail } from 'react-icons/lu';
+import { useTranslations } from 'next-intl';
 import { PERSON, PORTRAIT_IMAGE_PATH } from '@/lib/seo';
-import {
-  HERO_AVAILABILITY,
-  HERO_CTAS,
-  HERO_STATS,
-  HERO_FOCUS_CHIPS,
-  PORTRAIT_ALT,
-} from '@/lib/hero-content';
 import { HEADER_HEIGHT_PX, HERO_SECTION } from '@/lib/layout';
 
 function scrollToSection(e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) {
@@ -24,6 +18,18 @@ function scrollToSection(e: React.MouseEvent<HTMLAnchorElement>, sectionId: stri
 }
 
 const Hero = () => {
+  const t = useTranslations('hero');
+  const tPerson = useTranslations('person');
+
+  const jobTitles = tPerson.raw('jobTitles') as string[];
+  const focusChips = [
+    t('chips.problemSolving'),
+    t('chips.userExperience'),
+    t('chips.productDiscovery'),
+    t('chips.customerNeeds'),
+  ];
+  const stats = [t('stats.experience'), t('stats.projects'), t('stats.delivery')];
+
   return (
     <section id="about" className={HERO_SECTION}>
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-10 px-6 lg:flex-row lg:items-center lg:gap-12 lg:px-16 xl:px-20">
@@ -31,17 +37,17 @@ const Hero = () => {
           <div className="pointer-events-none absolute -top-20 -left-20 h-32 w-32 rounded-full bg-[#F4EEFF] opacity-80 blur-3xl lg:h-64 lg:w-64" />
 
           <span className="relative inline-flex w-fit self-center items-center rounded-full border border-[#A6B1E1]/60 bg-[#F4EEFF]/80 px-3 py-1 text-xs font-semibold tracking-wide text-[#583FBC] lg:self-start">
-            {HERO_AVAILABILITY}
+            {t('availability')}
           </span>
 
           <h1 className="relative font-semibold tracking-tight text-[#424874]">
             <span className="block text-3xl leading-[1.15] text-balance lg:text-6xl">
-              Hi! I&apos;m{' '}
-              <span className="text-[#583FBC]">{PERSON.brandName}</span>,
+              {tPerson('greeting')}{' '}
+              <span className="text-[#583FBC]">{tPerson('brandName')}</span>,
             </span>
 
             <span className="mt-3 flex flex-wrap items-baseline justify-center gap-x-2.5 gap-y-1 lg:mt-4 lg:justify-start">
-              {PERSON.jobTitles.map((title, index) => (
+              {jobTitles.map((title, index) => (
                 <span key={title} className="inline-flex items-baseline gap-x-2.5">
                   {index > 0 && (
                     <span
@@ -59,42 +65,48 @@ const Hero = () => {
             </span>
 
             <span className="mt-3 block text-base font-normal opacity-70 lg:text-xl">
-              {PERSON.jobTitleSecondary}
+              {tPerson('jobTitleSecondary')}
             </span>
           </h1>
 
           <p className="mx-auto max-w-lg text-base leading-normal font-normal text-[#424874]/90 lg:mx-0 lg:text-lg">
-            Bridging <strong className="font-bold">technical logic</strong> with{' '}
-            <strong className="font-bold">human empathy</strong>. I build scalable solutions by asking{' '}
-            <strong className="font-bold">&apos;Why&apos;</strong> before{' '}
-            <strong className="font-bold">&apos;How&apos;</strong>, ensuring every line of code creates real-world value.
+            {t.rich('bio', {
+              technicalLogic: (chunks) => (
+                <strong className="font-bold">{chunks}</strong>
+              ),
+              humanEmpathy: (chunks) => (
+                <strong className="font-bold">{chunks}</strong>
+              ),
+              why: (chunks) => <strong className="font-bold">{chunks}</strong>,
+              how: (chunks) => <strong className="font-bold">{chunks}</strong>,
+            })}
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-2 lg:justify-start">
-            {HERO_STATS.map((stat) => (
+            {stats.map((label) => (
               <span
-                key={stat.label}
+                key={label}
                 className="rounded-full border border-[#A6B1E1]/50 bg-white/80 px-3 py-1 text-xs font-semibold text-[#424874]"
               >
-                {stat.label}
+                {label}
               </span>
             ))}
           </div>
 
           <div className="flex flex-col items-center gap-4 pt-1 sm:flex-row sm:items-center lg:justify-start">
             <a
-              href={HERO_CTAS.primary.href}
+              href="#projects"
               onClick={(e) => scrollToSection(e, 'projects')}
               className="inline-flex items-center justify-center rounded-xl bg-[#583FBC] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#4a35a3]"
             >
-              {HERO_CTAS.primary.label}
+              {t('ctas.primary')}
             </a>
             <a
-              href={HERO_CTAS.secondary.href}
+              href="#footer"
               onClick={(e) => scrollToSection(e, 'footer')}
               className="inline-flex items-center justify-center rounded-xl border border-[#424874]/15 bg-white/80 px-6 py-3 text-sm font-semibold text-[#424874] transition-colors hover:border-[#A6B1E1] hover:bg-[#F4EEFF]"
             >
-              {HERO_CTAS.secondary.label}
+              {t('ctas.secondary')}
             </a>
           </div>
 
@@ -104,7 +116,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-12 w-12 items-center justify-center rounded-full border border-[#424874] text-[#424874] transition-all duration-300 hover:-translate-y-1 hover:border-[#A6B1E1] hover:bg-[#F4EEFF] hover:shadow-lg"
-              aria-label="LinkedIn Profile"
+              aria-label={t('social.linkedin')}
             >
               <FiLinkedin size={20} strokeWidth={1.5} />
             </a>
@@ -113,7 +125,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-12 w-12 items-center justify-center rounded-full border border-[#424874] text-[#424874] transition-all duration-300 hover:-translate-y-1 hover:border-[#A6B1E1] hover:bg-[#F4EEFF] hover:shadow-lg"
-              aria-label="GitHub — hankimthuy"
+              aria-label={t('social.github')}
             >
               <FiGithub size={20} strokeWidth={1.5} />
             </a>
@@ -124,7 +136,7 @@ const Hero = () => {
                 window.location.href = `mailto:${PERSON.email}`;
               }}
               className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-[#424874] text-[#424874] transition-all duration-300 hover:-translate-y-1 hover:border-[#A6B1E1] hover:bg-[#F4EEFF] hover:shadow-lg"
-              aria-label="Send Email"
+              aria-label={t('social.email')}
             >
               <LuMail size={20} strokeWidth={1.5} />
             </a>
@@ -141,7 +153,7 @@ const Hero = () => {
 
               <Image
                 src={PORTRAIT_IMAGE_PATH}
-                alt={PORTRAIT_ALT}
+                alt={t('portraitAlt')}
                 width={360}
                 height={454}
                 priority
@@ -150,7 +162,7 @@ const Hero = () => {
               />
 
               <div className="absolute -right-3 top-10 flex flex-col items-end gap-2 sm:-right-4 sm:top-12 lg:-right-10 lg:top-12 lg:gap-2">
-                {HERO_FOCUS_CHIPS.map((chip) => (
+                {focusChips.map((chip) => (
                   <a
                     key={chip}
                     href="#skills"

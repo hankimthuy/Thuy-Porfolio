@@ -1,0 +1,211 @@
+{
+  "metadata": {
+    "title": "Hàn Kim Thủy | Kỹ sư Sản phẩm | Product Owner — Portfolio",
+    "description": "Hàn Kim Thủy — Kỹ sư sản phẩm & Product Owner. Hơn 4 năm kinh nghiệm xây dựng CMS, ứng dụng doanh nghiệp và dự án freelance. Tập trung giải quyết vấn đề, trải nghiệm người dùng và sản phẩm có giá trị thực. Nhận dự án freelance tại Việt Nam.",
+    "ogTitle": "Hàn Kim Thủy | Kỹ sư Sản phẩm | Product Owner",
+    "siteName": "Hàn Kim Thủy — Portfolio",
+    "keywords": "Hàn Kim Thủy,Han Kim Thuy,Thuy,hankimthuy,thuyhankim,kỹ sư sản phẩm,Product Engineer,Product Owner,UX Software Engineer,Việt Nam,freelance Vietnam"
+  },
+  "person": {
+    "brandName": "Hàn Kim Thủy",
+    "fullName": "Hàn Kim Thủy",
+    "greeting": "Xin chào! Tôi là",
+    "jobTitles": ["Người xây dựng sản phẩm trọn vẹn"],
+    "jobTitleSecondary": "Kỹ sư UX | Product Owner",
+    "yearsExperience": "Hơn 4 năm kinh nghiệm",
+    "yearsExperienceShort": "4+ năm",
+    "jobTitle": "Người xây dựng sản phẩm trọn vẹn"
+  },
+  "header": {
+    "nav": {
+      "about": "Giới thiệu",
+      "skills": "Kỹ năng",
+      "projects": "Dự án",
+      "milestones": "Cột mốc",
+      "faq": "FAQ",
+      "contact": "Liên hệ"
+    },
+    "getInTouch": "Liên hệ ngay",
+    "youAreHere": "Bạn đang ở đây",
+    "openMenu": "Mở menu",
+    "closeMenu": "Đóng menu",
+    "switchLanguage": "Chuyển ngôn ngữ",
+    "logoAlt": "Logo THUY site"
+  },
+  "hero": {
+    "availability": "Nhận freelance · Việt Nam",
+    "stats": {
+      "experience": "4+ năm",
+      "projects": "5+ dự án",
+      "delivery": "Tập trung người dùng"
+    },
+    "bio": "Kết nối <technicalLogic>tư duy kỹ thuật</technicalLogic> với <humanEmpathy>sự đồng cảm con người</humanEmpathy>. Tôi xây dựng giải pháp bền vững bằng cách hỏi <why>Tại sao</why> trước <how>Như thế nào</how>, đảm bảo mỗi dòng code tạo ra giá trị thực tế.",
+    "chips": {
+      "problemSolving": "Giải quyết vấn đề",
+      "userExperience": "Trải nghiệm người dùng",
+      "productDiscovery": "Khám phá sản phẩm",
+      "customerNeeds": "Nhu cầu khách hàng"
+    },
+    "ctas": {
+      "primary": "Xem dự án",
+      "secondary": "Kết nối"
+    },
+    "portraitAlt": "Hàn Kim Thủy (Han Kim Thuy) — Người xây dựng sản phẩm trọn vẹn, ảnh chân dung chuyên nghiệp",
+    "social": {
+      "linkedin": "Hồ sơ LinkedIn",
+      "github": "GitHub — hankimthuy",
+      "email": "Gửi email"
+    }
+  },
+  "skills": {
+    "title": "Bộ kỹ năng",
+    "subtitle": "Từ làm rõ nhu cầu người dùng đến ra mắt sản phẩm mà mọi người thực sự muốn dùng",
+    "cards": [
+      {
+        "title": "Tư duy hướng UX",
+        "description": "Được Google chứng nhận về Thiết kế UX, tôi kết hợp kỹ thuật với nguyên tắc lấy người dùng làm trung tâm để xây dựng ứng dụng vừa chức năng vừa trực quan."
+      },
+      {
+        "title": "Phát triển Full-Stack",
+        "description": "Thành thạo React, Angular và Spring Boot (Java). Tôi chuyên thiết kế ứng dụng web có khả năng mở rộng, dữ liệu hóa, đảm bảo tích hợp liền mạch giữa logic backend phức tạp và trải nghiệm frontend trực quan."
+      },
+      {
+        "title": "Tư duy Agile & Sản phẩm",
+        "description": "Là thành viên tích cực trong môi trường Scrum, tôi tập trung cải tiến quy trình, thúc đẩy hợp tác nhóm và nhìn sản phẩm một cách toàn diện từ ý tưởng đến ra mắt."
+      }
+    ]
+  },
+  "projects": {
+    "showcases": "Dự án tiêu biểu",
+    "subtitle": "Tập trung vào sự rõ ràng, khả năng mở rộng và kết quả đo lường được",
+    "highlights": "Bosch doanh nghiệp · MimoSe · Headless CMS (đang live)",
+    "companyProjects": "Dự án công ty",
+    "companySubtitle": "Nền tảng & giải pháp quy mô doanh nghiệp",
+    "sideProjects": "Dự án cá nhân",
+    "sideSubtitle": "Phòng thí nghiệm sản phẩm lấy con người làm trung tâm",
+    "problem": "Vấn đề",
+    "solution": "Giải pháp",
+    "impact": "Tác động",
+    "viewLiveSite": "Xem site live",
+    "items": {
+      "manufacturing-lifecycle": {
+        "title": "Quản lý vòng đời sản xuất tập trung",
+        "problemText": "Quy trình phân mảnh và dữ liệu rời rạc khiến việc theo dõi toàn bộ vòng đời sản xuất trở nên không khả thi.",
+        "problemHighlights": ["Quy trình phân mảnh", "dữ liệu rời rạc"],
+        "solutionText": "Thiết kế nền tảng thống nhất tích hợp kho, quản lý BOM, hóa đơn và kiểm toán tuân thủ.",
+        "solutionHighlights": ["nền tảng thống nhất", "quản lý BOM", "kiểm toán tuân thủ"],
+        "impactText": "Thay thế theo dõi Excel thủ công bằng công cụ số hóa thống nhất, loại bỏ trùng lặp dữ liệu.",
+        "schemaDescription": "Nền tảng Angular doanh nghiệp tại Bosch số hóa vòng đời sản xuất, BOM và quản lý kho."
+      },
+      "talent-development": {
+        "title": "Nền tảng phát triển nhân tài",
+        "problemText": "Khoảng cách giữa nguyện vọng cá nhân và mục tiêu tổ chức.",
+        "problemHighlights": ["nguyện vọng cá nhân"],
+        "solutionText": "Phát triển nền tảng end-to-end cho quản lý và đội L&D cùng xây dựng lộ trình học tập cá nhân hóa.",
+        "solutionHighlights": ["lộ trình học tập cá nhân hóa"],
+        "impactText": "Tinh gọn đánh giá hiệu suất và nâng cao sự gắn kết nhân viên.",
+        "impactHighlights": ["đánh giá hiệu suất"],
+        "schemaDescription": "Nền tảng phát triển nhân tài Angular và Spring Boot cho lộ trình học tập cá nhân hóa tại Bosch."
+      },
+      "mimose": {
+        "title": "MimoSe: Make Sense of Me",
+        "problemText": "Ma sát cao trong journaling truyền thống dẫn đến tự nhận thức không ổn định.",
+        "problemHighlights": ["Ma sát cao"],
+        "solutionText": "Khung Low-Friction Framework với Proactive AI — đồng hành qua Innerverse và Outerverse.",
+        "solutionHighlights": ["Low-Friction Framework", "Proactive AI", "Innerverse", "Outerverse"],
+        "impactText": "Trao quyền tự chủ cá nhân qua insight từ AI.",
+        "impactHighlights": ["tự chủ cá nhân"],
+        "schemaDescription": "Ứng dụng journaling tự nhận thức với AI, xây bằng React và Spring Boot."
+      },
+      "ps-invest": {
+        "title": "Phụng Sự Đầu Tư (Headless CMS)",
+        "problemText": "Biên tập viên cần tự xuất bản blog, sách và landing page — kèm technical SEO — mà không phải chờ dev mỗi lần release.",
+        "problemHighlights": ["tự xuất bản blog, sách và landing page", "technical SEO"],
+        "solutionText": "Triển khai admin headless CMS (React, Ant Design, RBAC) và storefront Next.js 15 với SSR, Apollo GraphQL và SEO (metadata, JSON-LD, sitemap, slug redirects). Định nghĩa module nội dung & quy trình biên tập cho blog, sách, danh mục và SEO toàn site.",
+        "solutionHighlights": ["admin headless CMS", "storefront Next.js 15", "module nội dung & quy trình biên tập"],
+        "impactText": "Live tại psinvest.vn — đội nội dung tự xuất bản; storefront phục vụ SEO có cấu trúc cho bài viết và landing High Margin.",
+        "impactHighlights": ["Live tại psinvest.vn"],
+        "schemaDescription": "Admin headless CMS tùy chỉnh và storefront Next.js với technical SEO — xây cho Phụng Sự Đầu Tư."
+      }
+    }
+  },
+  "milestones": {
+    "title": "Cột mốc nghề nghiệp",
+    "subtitle": "Điểm nổi bật từ Bosch, hợp tác khách hàng quốc tế và chứng chỉ Google UX Design.",
+    "bosch": {
+      "title": "Bosch Global Software Technologies",
+      "complexUi": {
+        "label": "UI phức tạp:",
+        "text": "Số hóa toàn bộ vòng đời sản xuất bằng cách gộp theo dõi thủ công (Excel/Giấy) vào nền tảng web thống nhất, độ chính xác cao cho BOM và quản lý kho."
+      },
+      "collaboration": {
+        "label": "Hợp tác trực tiếp:",
+        "text": "Làm việc với khách hàng quốc tế bằng tiếng Anh từ yêu cầu đến bàn giao tại Bosch."
+      },
+      "problemSolver": {
+        "label": "Giải quyết vấn đề:",
+        "text": "Thiết kế quy trình giúp nâng cao hiệu quả làm việc của đội."
+      }
+    },
+    "credential": {
+      "title": "Google UX Design Professional Certificate",
+      "skills": ["Nghiên cứu UX", "Wireframing & Prototyping", "Kiểm thử khả dụng", "Cầu nối lấy người dùng làm trung tâm"]
+    }
+  },
+  "faq": {
+    "title": "FAQ",
+    "contactLine": "Nếu bạn có câu hỏi khác, hãy liên hệ {brandName} qua email",
+    "items": [
+      {
+        "question": "Hàn Kim Thủy là ai?",
+        "answer": "Đây là portfolio của Hàn Kim Thủy (Han Kim Thuy), còn được viết là Thuy Han Kim hoặc hankimthuy trực tuyến. Tôi là Kỹ sư Sản phẩm và Product Owner tại Việt Nam. Bạn có thể liên hệ qua {email}, GitHub (hankimthuy), LinkedIn (thuyhankim) hoặc {siteUrl}."
+      },
+      {
+        "question": "Bạn có nhận freelance Product Owner hoặc Kỹ sư Sản phẩm tại Việt Nam không?",
+        "answer": "Có — ngoài công việc full-time, tôi nhận dự án freelance có phạm vi rõ ràng tại Việt Nam (GMT+7) và quốc tế. Các hình thức thường gặp: khám phá sản phẩm, triển khai hướng UX và hỗ trợ team nhỏ ship sản phẩm dùng được. Zalo (0947 701 601) là cách nhanh nhất; bạn cũng có thể email hoặc nhắn LinkedIn kèm vấn đề, đối tượng và timeline."
+      },
+      {
+        "question": "Điều gì thúc đẩy bạn xây dựng sản phẩm?",
+        "answer": "Tôi được thúc đẩy bởi sự đồng cảm. Với tôi, sản phẩm đơn giản là giải pháp cho vấn đề con người thực sự. Động lực đến từ việc thấy thứ mình xây dựng thực sự giảm bực bội, tiết kiệm thời gian, hoặc (như dự án MimoSe) giúp người dùng hiểu bản thân hơn."
+      },
+      {
+        "question": "Tại sao bạn tập trung vào Phát triển hướng UX?",
+        "answer": "Là Kỹ sư Sản phẩm, tôi là người gần người dùng cuối nhất. Tập trung UX là phần mở rộng tự nhiên của vai trò đó. Tôi tin một 'tính năng' chưa 'xong' khi code được merge; nó 'xong' khi người dùng đạt mục tiêu một cách dễ dàng. Tư duy này là nền tảng cho cách tiếp cận lấy sản phẩm làm trung tâm."
+      },
+      {
+        "question": "Bạn xử lý sự mơ hồ và thay đổi yêu cầu như thế nào?",
+        "answer": "Tôi đón nhận chúng — thay đổi là phần cốt lõi của Agile/Scrum. Khi yêu cầu thay đổi, tôi không coi đó là vấn đề mà là 'thông tin mới'. Bước đầu tôi hỏi 'tại sao' để hiểu mục tiêu kinh doanh hoặc insight người dùng mới. Sau đó cùng team (PO, BA, Designer) đánh giá tác động, chia nhỏ task và ưu tiên lại."
+      },
+      {
+        "question": "Bạn làm việc với khách freelance như thế nào?",
+        "answer": "Chúng ta bắt đầu bằng cuộc trò chuyện ngắn về vấn đề, ai bị ảnh hưởng và thành công trông như thế nào — bạn không cần spec kỹ thuật ngay từ đầu. Tôi giúp làm rõ phạm vi và thời gian, giữ giao tiếp đơn giản và tập trung vào việc giải pháp có hoạt động với người dùng thật. Mục tiêu là giải đúng nhu cầu, không phải gây ấn tượng bằng công cụ."
+      },
+      {
+        "question": "Làm sao liên hệ về công việc freelance?",
+        "answer": "Zalo (0947 701 601) là cách nhanh nhất. Bạn cũng có thể email thuyhankim@gmail.com hoặc nhắn LinkedIn. Chia sẻ vấn đề bạn muốn giải quyết, đối tượng và timeline — tôi sẽ cho biết hợp tác freelance có phù hợp không."
+      }
+    ]
+  },
+  "footer": {
+    "connect": "Kết nối",
+    "freelancePrompt": "Có dự án freelance? Zalo là cách liên hệ nhanh nhất.",
+    "freelanceNote": "Chỉ freelance — giải quyết vấn đề & công việc hướng UX, Việt Nam (GMT+7)",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "copyright": "© {year} {brandName} ({fullName})"
+  },
+  "jsonLd": {
+    "personDescription": "Kỹ sư Sản phẩm và Product Owner nhận hợp tác freelance tại Việt Nam. Còn được biết đến là Han Kim Thuy, Thuy Han Kim, hankimthuy và thuyhankim.",
+    "websiteDescription": "Portfolio của Hàn Kim Thủy (Han Kim Thuy) — Kỹ sư Sản phẩm & Product Owner. Hợp tác freelance tại Việt Nam.",
+    "profilePageName": "Hàn Kim Thủy (Han Kim Thuy) | Kỹ sư Sản phẩm — Portfolio",
+    "occupationEngineer": "Kỹ thuật sản phẩm freelance và triển khai hướng UX cho team tại Việt Nam.",
+    "occupationOwner": "Product ownership freelance — khám phá, ưu tiên hóa và ship kết quả lấy người dùng làm trung tâm.",
+    "occupationEngineerName": "Kỹ sư Sản phẩm",
+    "occupationOwnerName": "Product Owner",
+    "projectListName": "Dự án Portfolio",
+    "ogImageAlt": "Hàn Kim Thủy (Han Kim Thuy) — Người xây dựng sản phẩm trọn vẹn, portfolio · Freelance Vietnam"
+  },
+  "common": {
+    "scrollToTop": "Cuộn lên đầu trang"
+  }
+}

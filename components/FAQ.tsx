@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { LuMail } from 'react-icons/lu';
-import { FAQ_ITEMS } from '@/lib/faq-data';
+import { useTranslations } from 'next-intl';
 import { SECTION_INNER, SECTION_SCROLL_MARGIN } from '@/lib/layout';
-import { PERSON } from '@/lib/seo';
+import { PERSON, SITE_URL } from '@/lib/seo';
 
 interface FAQItemProps {
   question: string;
@@ -54,7 +54,20 @@ function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
 }
 
 export default function FAQ() {
+  const t = useTranslations('faq');
+  const tPerson = useTranslations('person');
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const brandName = tPerson('brandName');
+  const faqItems = t.raw('items') as Array<{ question: string; answer: string }>;
+
+  const resolvedItems = faqItems.map((item) => ({
+    question: item.question,
+    answer: item.answer
+      .replace('{email}', PERSON.email)
+      .replace('{siteUrl}', SITE_URL)
+      .replace('{brandName}', brandName),
+  }));
 
   return (
     <section id="faq" className={`${SECTION_SCROLL_MARGIN} bg-white`}>
@@ -63,11 +76,11 @@ export default function FAQ() {
           <div className="w-full lg:w-auto lg:flex-1">
             <div className="mb-6 lg:mb-12">
               <h2 className="mb-4 text-3xl font-bold leading-[1.23] text-[#242A41] lg:mb-8 lg:text-[47px]">
-                FAQ
+                {t('title')}
               </h2>
 
               <p className="mb-4 text-sm font-normal leading-[1.5] text-[#1D2130] lg:mb-5 lg:text-base">
-                If you have any other questions, you can contact {PERSON.brandName} by email
+                {t('contactLine', { brandName })}
               </p>
               <a
                 href={`mailto:${PERSON.email}`}
@@ -79,7 +92,7 @@ export default function FAQ() {
           </div>
 
           <div className="w-full space-y-4 lg:w-auto lg:flex-1 lg:space-y-5">
-            {FAQ_ITEMS.map((faq, index) => (
+            {resolvedItems.map((faq, index) => (
               <FAQItem
                 key={index}
                 question={faq.question}

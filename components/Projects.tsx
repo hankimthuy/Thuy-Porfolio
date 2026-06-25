@@ -4,7 +4,12 @@ import type { ReactNode } from 'react';
 import { FiAlertTriangle, FiBarChart2 } from 'react-icons/fi';
 import { LuLightbulb } from 'react-icons/lu';
 import { HiOutlineOfficeBuilding, HiOutlineLightBulb } from 'react-icons/hi';
-import { COMPANY_PROJECTS, SIDE_PROJECTS, type ProjectData } from '@/lib/projects-data';
+import { useTranslations } from 'next-intl';
+import {
+  COMPANY_PROJECTS,
+  SIDE_PROJECTS,
+  type ProjectStructure,
+} from '@/lib/projects-data';
 import { SECTION_INNER, SECTION_SCROLL_MARGIN, SECTION_HEADER_TO_CONTENT } from '@/lib/layout';
 
 interface ProjectCardProps {
@@ -13,6 +18,9 @@ interface ProjectCardProps {
   problem: ReactNode;
   solution: ReactNode;
   impact: ReactNode;
+  problemLabel: string;
+  solutionLabel: string;
+  impactLabel: string;
   cta?: {
     label: string;
     href: string;
@@ -39,14 +47,33 @@ function highlightText(text: string, highlights?: string[]): ReactNode {
   );
 }
 
-function projectToCardProps(project: ProjectData): ProjectCardProps {
+type ProjectItemMessages = {
+  title: string;
+  problemText: string;
+  problemHighlights?: string[];
+  solutionText: string;
+  solutionHighlights?: string[];
+  impactText: string;
+  impactHighlights?: string[];
+};
+
+function projectToCardProps(
+  project: ProjectStructure,
+  item: ProjectItemMessages,
+  labels: { problem: string; solution: string; impact: string; viewLiveSite: string },
+): ProjectCardProps {
   return {
-    title: project.title,
+    title: item.title,
     tags: project.tags,
-    problem: highlightText(project.problemText, project.problemHighlights),
-    solution: highlightText(project.solutionText, project.solutionHighlights),
-    impact: highlightText(project.impactText, project.impactHighlights),
-    cta: project.cta,
+    problem: highlightText(item.problemText, item.problemHighlights),
+    solution: highlightText(item.solutionText, item.solutionHighlights),
+    impact: highlightText(item.impactText, item.impactHighlights),
+    problemLabel: labels.problem,
+    solutionLabel: labels.solution,
+    impactLabel: labels.impact,
+    cta: project.ctaHref
+      ? { label: labels.viewLiveSite, href: project.ctaHref }
+      : undefined,
   };
 }
 
@@ -56,7 +83,17 @@ function Icon({ name, className }: { name: 'warning' | 'lightbulb' | 'chart'; cl
   return <FiBarChart2 aria-hidden="true" className={className} />;
 }
 
-function ProjectCard({ title, tags, problem, solution, impact, cta }: ProjectCardProps) {
+function ProjectCard({
+  title,
+  tags,
+  problem,
+  solution,
+  impact,
+  problemLabel,
+  solutionLabel,
+  impactLabel,
+  cta,
+}: ProjectCardProps) {
   return (
     <div className="relative h-full rounded-[14px] overflow-hidden border border-indigo-100 bg-white shadow-sm transition-transform duration-300 will-change-transform hover:shadow-xl hover:shadow-indigo-200/60 hover:-translate-y-1">
       <div className="absolute inset-0 bg-gradient-to-br from-[#F4EEFF]/60 via-white to-[#DCD6F7]/40" />
@@ -103,7 +140,9 @@ function ProjectCard({ title, tags, problem, solution, impact, cta }: ProjectCar
                 </div>
               </div>
               <div className="min-w-0 pt-1">
-                <div className="text-[#424874] font-bold text-[13px] uppercase tracking-wider mb-1">Problem</div>
+                <div className="text-[#424874] font-bold text-[13px] uppercase tracking-wider mb-1">
+                  {problemLabel}
+                </div>
                 <div className="text-gray-600">{problem}</div>
               </div>
             </div>
@@ -115,7 +154,9 @@ function ProjectCard({ title, tags, problem, solution, impact, cta }: ProjectCar
                 </div>
               </div>
               <div className="min-w-0 pt-1">
-                <div className="text-[#424874] font-bold text-[13px] uppercase tracking-wider mb-1">Solution</div>
+                <div className="text-[#424874] font-bold text-[13px] uppercase tracking-wider mb-1">
+                  {solutionLabel}
+                </div>
                 <div className="text-gray-600">{solution}</div>
               </div>
             </div>
@@ -127,7 +168,9 @@ function ProjectCard({ title, tags, problem, solution, impact, cta }: ProjectCar
                 </div>
               </div>
               <div className="min-w-0 pt-1">
-                <div className="text-[#424874] font-bold text-[13px] uppercase tracking-wider mb-1">Impact</div>
+                <div className="text-[#424874] font-bold text-[13px] uppercase tracking-wider mb-1">
+                  {impactLabel}
+                </div>
                 <div className="text-gray-600">{impact}</div>
               </div>
             </div>
@@ -139,8 +182,23 @@ function ProjectCard({ title, tags, problem, solution, impact, cta }: ProjectCar
 }
 
 export default function Projects() {
-  const companyProjects = COMPANY_PROJECTS.map(projectToCardProps);
-  const sideProjects = SIDE_PROJECTS.map(projectToCardProps);
+  const t = useTranslations('projects');
+
+  const labels = {
+    problem: t('problem'),
+    solution: t('solution'),
+    impact: t('impact'),
+    viewLiveSite: t('viewLiveSite'),
+  };
+
+  const projectItems = t.raw('items') as Record<string, ProjectItemMessages>;
+
+  const getItem = (id: string) => projectItems[id];
+
+  const companyProjects = COMPANY_PROJECTS.map((p) =>
+    projectToCardProps(p, getItem(p.id), labels),
+  );
+  const sideProjects = SIDE_PROJECTS.map((p) => projectToCardProps(p, getItem(p.id), labels));
 
   return (
     <section id="projects" className={`relative ${SECTION_SCROLL_MARGIN} overflow-hidden bg-[#f8f9ff]`}>
@@ -152,14 +210,10 @@ export default function Projects() {
       <div className={`relative z-10 ${SECTION_INNER}`}>
         <div className="mx-auto max-w-[800px] text-center">
           <h2 className="text-4xl font-bold leading-[1.1] tracking-tight text-[#424874] lg:text-[56px]">
-            Showcases
+            {t('showcases')}
           </h2>
-          <p className="mt-3 text-lg text-[#424874]/80 lg:text-xl">
-            Focused on clarity, scalability, and measurable outcomes
-          </p>
-          <p className="mt-2 text-sm text-[#424874]/65 lg:text-base">
-            Bosch enterprise · MimoSe · Headless CMS (live)
-          </p>
+          <p className="mt-3 text-lg text-[#424874]/80 lg:text-xl">{t('subtitle')}</p>
+          <p className="mt-2 text-sm text-[#424874]/65 lg:text-base">{t('highlights')}</p>
         </div>
 
         <div className={`${SECTION_HEADER_TO_CONTENT} grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-10`}>
@@ -168,8 +222,8 @@ export default function Projects() {
               <HiOutlineOfficeBuilding className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-[#424874]">Company Projects</h3>
-              <p className="mt-2 text-sm text-[#424874]/70">Enterprise-scale platforms & solutions</p>
+              <h3 className="text-2xl font-bold text-[#424874]">{t('companyProjects')}</h3>
+              <p className="mt-2 text-sm text-[#424874]/70">{t('companySubtitle')}</p>
             </div>
           </div>
 
@@ -178,8 +232,8 @@ export default function Projects() {
               <HiOutlineLightBulb className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-[#424874]">Side Projects</h3>
-              <p className="mt-2 text-sm text-[#424874]/70">Human-Centered Product Lab</p>
+              <h3 className="text-2xl font-bold text-[#424874]">{t('sideProjects')}</h3>
+              <p className="mt-2 text-sm text-[#424874]/70">{t('sideSubtitle')}</p>
             </div>
           </div>
 

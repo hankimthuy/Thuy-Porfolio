@@ -3,11 +3,16 @@
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { LuMail } from 'react-icons/lu';
 import { SiZalo } from 'react-icons/si';
+import { useTranslations } from 'next-intl';
 import { SECTION_INNER, SECTION_SCROLL_MARGIN } from '@/lib/layout';
 import { PERSON } from '@/lib/seo';
 
 export default function Footer() {
+  const t = useTranslations('footer');
+  const tPerson = useTranslations('person');
   const year = new Date().getFullYear();
+  const brandName = tPerson('brandName');
+  const fullName = tPerson('fullName');
 
   return (
     <footer id="footer" className={`border-t border-[#A6B1E1]/25 bg-white ${SECTION_SCROLL_MARGIN}`}>
@@ -15,14 +20,12 @@ export default function Footer() {
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
           <div className="max-w-lg">
             <h2 className="text-2xl lg:text-[2rem] font-bold text-[#424874] tracking-tight">
-              Let&apos;s connect
+              {t('connect')}
             </h2>
             <p className="mt-2 text-sm lg:text-base text-[#424874]/65 leading-relaxed">
-              Have a freelance project in mind? Zalo is the fastest way to reach me.
+              {t('freelancePrompt')}
             </p>
-            <p className="mt-2 text-sm text-[#424874]/55">
-              Freelance only — problem-solving &amp; UX-focused work, Vietnam (GMT+7)
-            </p>
+            <p className="mt-2 text-sm text-[#424874]/55">{t('freelanceNote')}</p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
@@ -42,14 +45,14 @@ export default function Footer() {
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#424874]/15 bg-[#F4EEFF]/50 px-5 py-3 text-sm font-semibold text-[#424874] transition-colors hover:border-[#A6B1E1] hover:bg-[#F4EEFF]"
             >
               <FiLinkedin size={17} />
-              LinkedIn
+              {t('linkedin')}
             </a>
           </div>
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-dashed border-[#A6B1E1]/35 pt-6 text-sm sm:flex-row">
           <p className="font-mono font-bold text-[#424874]/80">
-            {PERSON.brandName}
+            {brandName}
             <span className="text-[#583FBC]">_</span>
           </p>
 
@@ -69,12 +72,12 @@ export default function Footer() {
               aria-label="GitHub — hankimthuy"
             >
               <FiGithub size={15} />
-              GitHub
+              {t('github')}
             </a>
           </div>
 
           <p className="text-[#424874]/45 text-xs sm:text-sm">
-            © {year} {PERSON.brandName} ({PERSON.fullName})
+            {t('copyright', { year, brandName, fullName })}
           </p>
         </div>
       </div>

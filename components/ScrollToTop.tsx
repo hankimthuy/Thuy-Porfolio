@@ -1,8 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function ScrollToTop() {
+  const t = useTranslations('common');
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   const toggleVisibility = (): void => {
@@ -34,7 +36,7 @@ export default function ScrollToTop() {
         <button
           onClick={scrollToTop}
           className="p-3 rounded-full bg-indigo-600 text-white shadow-lg hover:bg-indigo-700 transition-all duration-300 focus:outline-none"
-          aria-label="Scroll to top"
+          aria-label={t('scrollToTop')}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

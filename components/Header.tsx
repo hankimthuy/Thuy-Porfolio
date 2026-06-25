@@ -1,7 +1,7 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import {
   LuChevronRight,
   LuCircleHelp,
@@ -13,22 +13,32 @@ import {
   LuUser,
   LuX,
 } from 'react-icons/lu';
-import { PERSON } from '@/lib/seo';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
+import { LOCALE_SWITCHER_ENABLED } from '@/lib/i18n-config';
 import { HEADER_HEIGHT_PX, SECTION_CONTAINER } from '@/lib/layout';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
-const menuItems = [
-  { label: 'About', id: 'about', icon: LuUser },
-  { label: 'Skill Sets', id: 'skills', icon: LuLayers },
-  { label: 'Projects', id: 'projects', icon: LuFolderKanban },
-  { label: 'Milestones', id: 'professional-milestones', icon: LuTrophy },
-  { label: 'FAQ', id: 'faq', icon: LuCircleHelp },
+const menuItemConfig = [
+  { key: 'about' as const, id: 'about', icon: LuUser },
+  { key: 'skills' as const, id: 'skills', icon: LuLayers },
+  { key: 'projects' as const, id: 'projects', icon: LuFolderKanban },
+  { key: 'milestones' as const, id: 'professional-milestones', icon: LuTrophy },
+  { key: 'faq' as const, id: 'faq', icon: LuCircleHelp },
 ] as const;
 
-const sectionIds = [...menuItems.map((item) => item.id), 'footer'];
+const sectionIds = [...menuItemConfig.map((item) => item.id), 'footer'];
 
 const Header = () => {
+  const t = useTranslations('header');
+  const tPerson = useTranslations('person');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('about');
+
+  const menuItems = menuItemConfig.map((item) => ({
+    ...item,
+    label: t(`nav.${item.key}`),
+  }));
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -86,6 +96,16 @@ const Header = () => {
     setMobileMenuOpen(false);
   };
 
+  const languageSwitcher = (
+    <>
+      {/* === Language switcher — uncomment block below OR set LOCALE_SWITCHER_ENABLED=true === */}
+      {LOCALE_SWITCHER_ENABLED && <LanguageSwitcher />}
+      {/*
+      <LanguageSwitcher />
+      */}
+    </>
+  );
+
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-lg z-50 border-b border-[#A6B1E1]/30 shadow-sm">
       <div className={`${SECTION_CONTAINER} flex h-16 items-center justify-between`}>
@@ -94,13 +114,13 @@ const Header = () => {
           onClick={handleLogoClick}
           className="flex items-center font-mono text-xl font-bold text-[#424874] transition-colors hover:text-[#583FBC]"
         >
-          <span>{PERSON.brandName}</span>
+          <span>{tPerson('brandName')}</span>
           <span className="animate-pulse text-[#583FBC] ml-0.5">_</span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-6">
           <div className="flex space-x-6 xl:space-x-8 text-sm lg:text-md font-medium text-[#424874]">
-            {[...menuItems, { label: 'Contact', id: 'footer' }].map((item) => (
+            {[...menuItems, { label: t('nav.contact'), id: 'footer', icon: LuMail }].map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
@@ -118,39 +138,42 @@ const Header = () => {
               </a>
             ))}
           </div>
+          {languageSwitcher}
           <a
             href="#footer"
             onClick={(e) => handleNavClick(e, 'footer')}
             className="inline-flex items-center justify-center rounded-xl bg-[#583FBC] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#4a35a3]"
           >
-            Contact
+            {t('nav.contact')}
           </a>
         </div>
 
-        <button
-          type="button"
-          className="lg:hidden"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={mobileMenuOpen}
-        >
-          {mobileMenuOpen ? (
-            <span className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-[#A6B1E1]/60 bg-gradient-to-br from-[#F4EEFF] to-white shadow-sm transition-all hover:border-[#583FBC]/60 hover:shadow-md active:scale-95">
-              <LuX className="h-5 w-5 text-[#583FBC] transition-transform duration-300 group-hover:rotate-90" />
-            </span>
-          ) : (
-            <span className="flex h-10 w-10 items-center justify-center rounded-full text-[#424874] transition-colors hover:bg-[#F4EEFF]/80">
-              <LuMenu className="h-6 w-6" />
-            </span>
-          )}
-        </button>
+        <div className="flex items-center gap-3 lg:hidden">
+          {LOCALE_SWITCHER_ENABLED && <LanguageSwitcher />}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? t('closeMenu') : t('openMenu')}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? (
+              <span className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-[#A6B1E1]/60 bg-gradient-to-br from-[#F4EEFF] to-white shadow-sm transition-all hover:border-[#583FBC]/60 hover:shadow-md active:scale-95">
+                <LuX className="h-5 w-5 text-[#583FBC] transition-transform duration-300 group-hover:rotate-90" />
+              </span>
+            ) : (
+              <span className="flex h-10 w-10 items-center justify-center rounded-full text-[#424874] transition-colors hover:bg-[#F4EEFF]/80">
+                <LuMenu className="h-6 w-6" />
+              </span>
+            )}
+          </button>
+        </div>
       </div>
 
       {mobileMenuOpen && (
         <>
           <button
             type="button"
-            aria-label="Close menu"
+            aria-label={t('closeMenu')}
             className="lg:hidden fixed inset-0 top-16 z-40 bg-[#424874]/20 backdrop-blur-[2px]"
             onClick={() => setMobileMenuOpen(false)}
           />
@@ -190,7 +213,7 @@ const Header = () => {
                       </span>
                       {isActive && (
                         <span className="mt-0.5 block text-xs font-medium text-[#583FBC]/70">
-                          You are here
+                          {t('youAreHere')}
                         </span>
                       )}
                     </span>
@@ -205,7 +228,10 @@ const Header = () => {
               })}
             </div>
 
-            <div className="mt-5 flex justify-center border-t border-[#A6B1E1]/20 pt-5">
+            <div className="mt-5 flex flex-col items-center gap-4 border-t border-[#A6B1E1]/20 pt-5">
+              {/*
+              <LanguageSwitcher />
+              */}
               <a
                 href="#footer"
                 onClick={(e) => handleNavClick(e, 'footer')}
@@ -214,7 +240,7 @@ const Header = () => {
                 }`}
               >
                 <LuMail className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
-                Get in touch
+                {t('getInTouch')}
               </a>
             </div>
           </div>
