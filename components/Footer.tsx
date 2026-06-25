@@ -2,7 +2,7 @@
 
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { LuMail } from 'react-icons/lu';
-import { SiZalo } from 'react-icons/si';
+import { SiWhatsapp, SiZalo } from 'react-icons/si';
 import { useTranslations } from 'next-intl';
 import { SECTION_INNER, SECTION_SCROLL_MARGIN } from '@/lib/layout';
 import { PERSON } from '@/lib/seo';
@@ -18,34 +18,43 @@ export default function Footer() {
     <footer id="footer" className={`border-t border-[#A6B1E1]/25 bg-white ${SECTION_SCROLL_MARGIN}`}>
       <div className={SECTION_INNER}>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
-          <div className="max-w-lg">
+          <div className="min-w-0 flex-1 lg:max-w-xl">
             <h2 className="text-2xl lg:text-[2rem] font-bold text-[#424874] tracking-tight">
               {t('connect')}
             </h2>
-            <p className="mt-2 text-sm lg:text-base text-[#424874]/65 leading-relaxed">
+            <p className="mt-2 text-sm lg:text-base text-[#424874]/65 leading-relaxed text-pretty">
               {t('freelancePrompt')}
             </p>
             <p className="mt-2 text-sm text-[#424874]/55">{t('freelanceNote')}</p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-            <a
-              href={PERSON.zaloHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#583FBC] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#4a35a3]"
-            >
-              <SiZalo size={18} />
-              Zalo · {PERSON.zaloPhone}
-            </a>
+          <div className="flex shrink-0 flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
             <a
               href={PERSON.linkedin}
               target="_blank"
               rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#583FBC] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#4a35a3]"
+            >
+              <FiLinkedin size={18} />
+              {t('linkedinCta')}
+            </a>
+            <a
+              href={PERSON.zaloHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#424874]/15 bg-[#F4EEFF]/50 px-5 py-3 text-sm font-semibold text-[#424874] transition-colors hover:border-[#A6B1E1] hover:bg-[#F4EEFF]"
             >
-              <FiLinkedin size={17} />
-              {t('linkedin')}
+              <SiZalo size={17} />
+              Zalo · {PERSON.phone}
+            </a>
+            <a
+              href={PERSON.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#424874]/15 bg-[#F4EEFF]/50 px-5 py-3 text-sm font-semibold text-[#424874] transition-colors hover:border-[#A6B1E1] hover:bg-[#F4EEFF]"
+            >
+              <SiWhatsapp size={17} />
+              WhatsApp · {PERSON.phone}
             </a>
           </div>
         </div>

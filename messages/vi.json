@@ -154,7 +154,8 @@
   },
   "faq": {
     "title": "FAQ",
-    "contactLine": "Nếu bạn có câu hỏi khác, hãy liên hệ {brandName} qua email",
+    "contactLine": "Nếu bạn có câu hỏi khác, hãy liên hệ {brandName} qua LinkedIn",
+    "linkedinCta": "Nhắn tin trên LinkedIn",
     "items": [
       {
         "question": "Hàn Kim Thủy là ai?",
@@ -162,7 +163,7 @@
       },
       {
         "question": "Bạn có nhận freelance Product Owner hoặc Kỹ sư Sản phẩm tại Việt Nam không?",
-        "answer": "Có — ngoài công việc full-time, tôi nhận dự án freelance có phạm vi rõ ràng tại Việt Nam (GMT+7) và quốc tế. Các hình thức thường gặp: khám phá sản phẩm, triển khai hướng UX và hỗ trợ team nhỏ ship sản phẩm dùng được. Zalo (0947 701 601) là cách nhanh nhất; bạn cũng có thể email hoặc nhắn LinkedIn kèm vấn đề, đối tượng và timeline."
+        "answer": "Có — ngoài công việc full-time, tôi nhận dự án freelance có phạm vi rõ ràng tại Việt Nam (GMT+7) và quốc tế. Các hình thức thường gặp: khám phá sản phẩm, triển khai hướng UX và hỗ trợ team nhỏ ship sản phẩm dùng được. Nhắn LinkedIn kèm vấn đề, đối tượng và timeline — hoặc email nếu bạn thích."
       },
       {
         "question": "Điều gì thúc đẩy bạn xây dựng sản phẩm?",
@@ -182,14 +183,15 @@
       },
       {
         "question": "Làm sao liên hệ về công việc freelance?",
-        "answer": "Zalo (0947 701 601) là cách nhanh nhất. Bạn cũng có thể email thuyhankim@gmail.com hoặc nhắn LinkedIn. Chia sẻ vấn đề bạn muốn giải quyết, đối tượng và timeline — tôi sẽ cho biết hợp tác freelance có phù hợp không."
+        "answer": "LinkedIn là nơi tốt nhất để bắt đầu — gửi tin nhắn kèm vấn đề bạn muốn giải quyết, đối tượng và timeline. Bạn cũng có thể email thuyhankim@gmail.com. Tôi sẽ cho biết hợp tác freelance có phù hợp không."
       }
     ]
   },
   "footer": {
     "connect": "Kết nối",
-    "freelancePrompt": "Có dự án freelance? Zalo là cách liên hệ nhanh nhất.",
-    "freelanceNote": "Chỉ freelance — giải quyết vấn đề & công việc hướng UX, Việt Nam (GMT+7)",
+    "freelancePrompt": "Có dự án freelance? LinkedIn là cách liên hệ tốt nhất.",
+    "linkedinCta": "Nhắn tin trên LinkedIn",
+    "freelanceNote": "Sẵn sàng nhận freelance — giải quyết vấn đề & công việc hướng UX, Việt Nam (GMT+7)",
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "copyright": "© {year} {brandName} ({fullName})"

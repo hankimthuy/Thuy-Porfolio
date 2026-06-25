@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { FiLinkedin } from 'react-icons/fi';
 import { LuMail } from 'react-icons/lu';
 import { useTranslations } from 'next-intl';
 import { SECTION_INNER, SECTION_SCROLL_MARGIN } from '@/lib/layout';
@@ -82,12 +83,23 @@ export default function FAQ() {
               <p className="mb-4 text-sm font-normal leading-[1.5] text-[#1D2130] lg:mb-5 lg:text-base">
                 {t('contactLine', { brandName })}
               </p>
-              <a
-                href={`mailto:${PERSON.email}`}
-                className="flex items-center gap-2 text-sm font-normal text-[#242A41] hover:underline lg:text-base"
-              >
-                <LuMail /> {PERSON.email}
-              </a>
+              <div className="flex flex-col gap-3">
+                <a
+                  href={PERSON.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-fit items-center gap-2 rounded-xl bg-[#583FBC] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#4a35a3] lg:text-base"
+                >
+                  <FiLinkedin size={18} />
+                  {t('linkedinCta')}
+                </a>
+                <a
+                  href={`mailto:${PERSON.email}`}
+                  className="flex items-center gap-2 text-sm font-normal text-[#585F6F] hover:text-[#242A41] hover:underline lg:text-base"
+                >
+                  <LuMail size={16} /> {PERSON.email}
+                </a>
+              </div>
             </div>
           </div>
 

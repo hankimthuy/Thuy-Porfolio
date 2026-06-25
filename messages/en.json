@@ -155,7 +155,8 @@
   },
   "faq": {
     "title": "FAQ",
-    "contactLine": "If you have any other questions, you can contact {brandName} by email",
+    "contactLine": "If you have any other questions, reach out to {brandName} on LinkedIn",
+    "linkedinCta": "Message on LinkedIn",
     "items": [
       {
         "question": "Who is Han Kim Thuy?",
@@ -163,7 +164,7 @@
       },
       {
         "question": "Are you available as a freelance Product Owner or Product Engineer in Vietnam?",
-        "answer": "Yes—outside my full-time role I take scoped freelance work in Vietnam (GMT+7) and abroad. Typical engagements include product discovery, UX-oriented delivery, and helping small teams ship usable products. Zalo (0947 701 601) is fastest; you can also email or message me on LinkedIn with the problem, audience, and timeline."
+        "answer": "Yes—outside my full-time role I take scoped freelance work in Vietnam (GMT+7) and abroad. Typical engagements include product discovery, UX-oriented delivery, and helping small teams ship usable products. Message me on LinkedIn with the problem, audience, and timeline—or email if you prefer."
       },
       {
         "question": "What drives you to build products?",
@@ -183,14 +184,15 @@
       },
       {
         "question": "How can I reach you about freelance work?",
-        "answer": "Zalo (0947 701 601) is fastest. You can also email thuyhankim@gmail.com or message me on LinkedIn. Share what you're trying to solve, who it's for, and any timeline—I will let you know if freelance collaboration is a good fit."
+        "answer": "LinkedIn is the best place to start—send a message with what you're trying to solve, who it's for, and any timeline. You can also email thuyhankim@gmail.com. I will let you know if freelance collaboration is a good fit."
       }
     ]
   },
   "footer": {
     "connect": "Let's connect",
-    "freelancePrompt": "Have a freelance project in mind? Zalo is the fastest way to reach me.",
-    "freelanceNote": "Freelance only — problem-solving & UX-focused work, Vietnam (GMT+7)",
+    "freelancePrompt": "Have a freelance project in mind? LinkedIn is the best way to reach\u00A0me.",
+    "linkedinCta": "Message on LinkedIn",
+    "freelanceNote": "Available for freelance — problem-solving & UX-focused work, Vietnam (GMT+7)",
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "copyright": "© {year} {brandName} ({fullName})"
