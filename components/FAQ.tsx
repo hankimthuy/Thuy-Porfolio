@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { LuMail } from 'react-icons/lu';
 import { FAQ_ITEMS } from '@/lib/faq-data';
+import { SECTION_INNER, SECTION_SCROLL_MARGIN } from '@/lib/layout';
 import { PERSON } from '@/lib/seo';
 
 interface FAQItemProps {
@@ -14,14 +15,14 @@ interface FAQItemProps {
 
 function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
   return (
-    <div className="bg-[#EDF0F9] rounded-[8px] overflow-hidden">
+    <div className="overflow-hidden rounded-[8px] bg-[#EDF0F9]">
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="w-full p-4 lg:p-[32px] flex items-center justify-between text-left"
+        className="flex w-full items-center justify-between p-4 text-left lg:p-8"
       >
-        <p className="text-base lg:text-[18px] font-bold leading-[1.28] text-[#242A41] flex-1 pr-2">
+        <p className="flex-1 pr-2 text-base font-bold leading-[1.28] text-[#242A41] lg:text-lg">
           {question}
         </p>
         <svg
@@ -42,8 +43,8 @@ function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
         </svg>
       </button>
       {isOpen && (
-        <div className="px-4 lg:px-[32px] pb-4 lg:pb-[32px]">
-          <p className="text-sm lg:text-[17px] font-normal leading-[1.41] text-[#585F6F]">
+        <div className="px-4 pb-4 lg:px-8 lg:pb-8">
+          <p className="text-sm font-normal leading-[1.41] text-[#585F6F] lg:text-base">
             {answer}
           </p>
         </div>
@@ -56,30 +57,28 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-8 lg:py-[50px] bg-white">
-      <div className="max-w-[1728px] mx-auto px-6 lg:px-[150px]">
-        <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-[60px]">
-          {/* Left Text */}
-          <div className="flex-1 w-full lg:w-auto">
-            <div className="mb-6 lg:mb-[48px]">
-              <h2 className="text-3xl lg:text-[47px] font-bold leading-[1.23] text-[#242A41] mb-4 lg:mb-[30px]">
+    <section id="faq" className={`${SECTION_SCROLL_MARGIN} bg-white`}>
+      <div className={SECTION_INNER}>
+        <div className="flex flex-col items-start gap-8 lg:flex-row lg:gap-[60px]">
+          <div className="w-full lg:w-auto lg:flex-1">
+            <div className="mb-6 lg:mb-12">
+              <h2 className="mb-4 text-3xl font-bold leading-[1.23] text-[#242A41] lg:mb-8 lg:text-[47px]">
                 FAQ
               </h2>
-              
-              <p className="text-sm lg:text-[16px] font-normal leading-[1.5] text-[#1D2130] mb-4 lg:mb-[20px]">
+
+              <p className="mb-4 text-sm font-normal leading-[1.5] text-[#1D2130] lg:mb-5 lg:text-base">
                 If you have any other questions, you can contact {PERSON.brandName} by email
               </p>
               <a
                 href={`mailto:${PERSON.email}`}
-                className="flex text-sm lg:text-[15px] font-normal text-[#242A41] hover:underline gap-2 lg:gap-[10px] items-center"
+                className="flex items-center gap-2 text-sm font-normal text-[#242A41] hover:underline lg:text-base"
               >
-                <LuMail/> {PERSON.email}
+                <LuMail /> {PERSON.email}
               </a>
             </div>
           </div>
 
-          {/* Right FAQ Items */}
-          <div className="flex-1 w-full lg:w-auto space-y-4 lg:space-y-[20px]">
+          <div className="w-full space-y-4 lg:w-auto lg:flex-1 lg:space-y-5">
             {FAQ_ITEMS.map((faq, index) => (
               <FAQItem
                 key={index}

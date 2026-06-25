@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 import { FiCpu, FiGlobe, FiZap } from 'react-icons/fi';
 import PdfThumbnail from '@/components/PdfThumbnail';
+import { SECTION_INNER, SECTION_SCROLL_MARGIN, SECTION_HEADER_TO_CONTENT } from '@/lib/layout';
+import { GOOGLE_UX_CREDENTIAL } from '@/lib/projects-data';
 import { PERSON } from '@/lib/seo';
 
 interface MilestoneCardProps {
@@ -14,7 +16,7 @@ function MilestoneCard({ title, subtitle, content }: MilestoneCardProps) {
         <div className="relative rounded-[14px] overflow-hidden border border-indigo-100 bg-white shadow-sm transition-transform duration-200 will-change-transform hover:shadow-lg hover:shadow-indigo-200/60 hover:scale-[1.01]">
             <div className="absolute inset-0 bg-gradient-to-br from-[#F4EEFF]/55 via-white to-[#DCD6F7]/40" />
 
-            <div className="relative z-10 p-6">
+            <div className="relative z-10 p-6 lg:p-8">
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
                     <h3 className="mt-0 text-xl lg:text-[24px] font-semibold leading-[1.15] text-[#424874]">{title}</h3>
                     {subtitle && (
@@ -32,16 +34,16 @@ function MilestoneCard({ title, subtitle, content }: MilestoneCardProps) {
 
 export default function ProfessionalMilestones() {
     return (
-        <section id="professional-milestones" className="py-10 lg:py-[40px] bg-white">
-            <div className="max-w-[1728px] mx-auto px-6 lg:px-[150px]">
+        <section id="professional-milestones" className={`${SECTION_SCROLL_MARGIN} bg-white`}>
+            <div className={SECTION_INNER}>
                 <div className="text-center">
-                    <h2 className="text-3xl lg:text-[56px] font-semibold leading-[1.1] text-[#424874]">Professional Milestones</h2>
-                    <p className="mt-4 text-base lg:text-[18px] text-[#424874]/80 max-w-[920px] mx-auto">
-                        Highlights that show how I collaborate, build, and design experiences that ship.
+                    <h2 className="text-3xl font-semibold leading-[1.1] text-[#424874] lg:text-[56px]">Professional Milestones</h2>
+                    <p className="mx-auto mt-4 max-w-[920px] text-base text-[#424874]/80 lg:text-lg">
+                        Highlights from Bosch, international client collaboration, and Google UX Design certification.
                     </p>
                 </div>
 
-                <div className="mt-10 lg:mt-[50px] grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                <div className={`${SECTION_HEADER_TO_CONTENT} grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8`}>
                     <MilestoneCard
                         title="Bosch Global Software Technologies"
                         subtitle={PERSON.yearsExperienceShort}
@@ -61,7 +63,7 @@ export default function ProfessionalMilestones() {
                                         <FiGlobe aria-hidden="true" className="h-4 w-4" />
                                     </div>
                                     <div className="min-w-0">
-                                        <strong className="font-bold text-indigo-900">Direct Collaboration:</strong> Worked with international clients in English from requirements to final delivery.
+                                        <strong className="font-bold text-indigo-900">Direct Collaboration:</strong> Worked with international clients in English from requirements to final delivery at Bosch.
                                     </div>
                                 </div>
 
@@ -78,7 +80,7 @@ export default function ProfessionalMilestones() {
                     />
 
                     <MilestoneCard
-                        title="Google UX Design Professional Certificate"
+                        title={GOOGLE_UX_CREDENTIAL.name}
                         content={
                             <div className="flex flex-col lg:flex-row gap-5 lg:gap-6">
                                 <div className="lg:basis-1/2">
@@ -102,7 +104,7 @@ export default function ProfessionalMilestones() {
 
                                 <div className="lg:basis-1/2">
                                     <PdfThumbnail
-                                        pdfUrl="/pdf/Coursera%20K0EK4KJTLR3S.pdf"
+                                        pdfUrl={GOOGLE_UX_CREDENTIAL.pdfPath}
                                         className="w-full border border-[#E0E7FF] rounded-lg shadow-sm overflow-hidden bg-white"
                                     />
                                 </div>

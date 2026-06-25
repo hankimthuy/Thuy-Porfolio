@@ -4,6 +4,8 @@ import type { ReactNode } from 'react';
 import { FiAlertTriangle, FiBarChart2 } from 'react-icons/fi';
 import { LuLightbulb } from 'react-icons/lu';
 import { HiOutlineOfficeBuilding, HiOutlineLightBulb } from 'react-icons/hi';
+import { COMPANY_PROJECTS, SIDE_PROJECTS, type ProjectData } from '@/lib/projects-data';
+import { SECTION_INNER, SECTION_SCROLL_MARGIN, SECTION_HEADER_TO_CONTENT } from '@/lib/layout';
 
 interface ProjectCardProps {
   title: string;
@@ -15,7 +17,37 @@ interface ProjectCardProps {
     label: string;
     href: string;
   };
-  illustrationVariant?: 'manufacturing' | 'ai' | 'talent';
+}
+
+function highlightText(text: string, highlights?: string[]): ReactNode {
+  if (!highlights?.length) return text;
+
+  const pattern = new RegExp(
+    `(${highlights.map((h) => h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`,
+    'gi',
+  );
+  const parts = text.split(pattern);
+
+  return parts.map((part, i) =>
+    highlights.some((h) => h.toLowerCase() === part.toLowerCase()) ? (
+      <strong key={i} className="font-semibold text-indigo-900">
+        {part}
+      </strong>
+    ) : (
+      part
+    ),
+  );
+}
+
+function projectToCardProps(project: ProjectData): ProjectCardProps {
+  return {
+    title: project.title,
+    tags: project.tags,
+    problem: highlightText(project.problemText, project.problemHighlights),
+    solution: highlightText(project.solutionText, project.solutionHighlights),
+    impact: highlightText(project.impactText, project.impactHighlights),
+    cta: project.cta,
+  };
 }
 
 function Icon({ name, className }: { name: 'warning' | 'lightbulb' | 'chart'; className?: string }) {
@@ -24,7 +56,7 @@ function Icon({ name, className }: { name: 'warning' | 'lightbulb' | 'chart'; cl
   return <FiBarChart2 aria-hidden="true" className={className} />;
 }
 
-function ProjectCard({ title, tags, problem, solution, impact, cta, illustrationVariant }: ProjectCardProps) {
+function ProjectCard({ title, tags, problem, solution, impact, cta }: ProjectCardProps) {
   return (
     <div className="relative h-full rounded-[14px] overflow-hidden border border-indigo-100 bg-white shadow-sm transition-transform duration-300 will-change-transform hover:shadow-xl hover:shadow-indigo-200/60 hover:-translate-y-1">
       <div className="absolute inset-0 bg-gradient-to-br from-[#F4EEFF]/60 via-white to-[#DCD6F7]/40" />
@@ -107,134 +139,37 @@ function ProjectCard({ title, tags, problem, solution, impact, cta, illustration
 }
 
 export default function Projects() {
-  const companyProjects: ProjectCardProps[] = [
-    {
-      title: 'Centralized Manufacturing Lifecycle',
-      tags: ['Angular 20+', 'Figma', 'Restful API'],
-      problem: (
-        <>
-          <strong className="font-semibold text-indigo-900">Fragmented workflows</strong> and{' '}
-          <strong className="font-semibold text-indigo-900">data silos</strong> made tracking the end-to-end manufacturing lifecycle impossible.
-        </>
-      ),
-      solution: (
-        <>
-          Architected a <strong className="font-semibold text-indigo-900">unified platform</strong> integrating inventory,{' '}
-          <strong className="font-semibold text-indigo-900">BOM management</strong>, invoicing, and{' '}
-          <strong className="font-semibold text-indigo-900">compliance audits</strong>.
-        </>
-      ),
-      impact: (
-        <>
-          Replaced manual Excel tracking with a unified digital tool and eliminating data redundancy.
-        </>
-      ),
-      illustrationVariant: 'manufacturing',
-    },
-    {
-      title: 'Talent Development Platform',
-      tags: ['Angular', 'Spring Boot'],
-      problem: (
-        <>
-          Alignment gap between <strong className="font-semibold text-indigo-900">individual aspirations</strong> and organizational goals.
-        </>
-      ),
-      solution: (
-        <>
-          Developed an end-to-end platform for managers and L&D teams to co-create{' '}
-          <strong className="font-semibold text-indigo-900">personalized learning roadmaps</strong>.
-        </>
-      ),
-      impact: (
-        <>
-          Streamlined <strong className="font-semibold text-indigo-900">performance evaluation</strong> and enhanced employee engagement.
-        </>
-      ),
-      illustrationVariant: 'talent',
-    }
-  ];
-
-  const sideProjects: ProjectCardProps[] = [
-    {
-      title: 'MimoSe: Make Sense of Me',
-      tags: ['React', 'Spring Boot', 'Leading-self', 'AI', 'Figma'],
-      problem: (
-        <>
-          <strong className="font-semibold text-indigo-900">High friction</strong> in traditional journaling leads to inconsistent self-awareness.
-        </>
-      ),
-      solution: (
-        <>
-          A <strong className="font-semibold text-indigo-900">Low-Friction Framework</strong> powered by{' '}
-          <strong className="font-semibold text-indigo-900">Proactive AI</strong>—acting as a companion through the{' '}
-          <strong className="font-semibold text-indigo-900">Innerverse</strong> and{' '}
-          <strong className="font-semibold text-indigo-900">Outerverse</strong>.
-        </>
-      ),
-      impact: (
-        <>
-          Empowered <strong className="font-semibold text-indigo-900">Personal Autonomy</strong> using AI-driven insights.
-        </>
-      ),
-      cta: {
-        label: 'Visit MimoSE',
-        href: 'https://dev.mimose.io.vn/',
-      },
-      illustrationVariant: 'ai',
-    },
-    {
-      title: 'Phụng Sự Đầu Tư (PS Invest)',
-      tags: ['Next.js', 'React', 'Ant Design', 'Headless CMS', 'Technical SEO'],
-      problem: (
-        <>
-          Editors needed to <strong className="font-semibold text-indigo-900">publish blogs, books, and landing pages</strong> on their own — with <strong className="font-semibold text-indigo-900">technical SEO</strong> built in — without waiting on a dev for every release.
-        </>
-      ),
-      solution: (
-        <>
-          Shipped a <strong className="font-semibold text-indigo-900">headless CMS admin</strong> (React, Ant Design, RBAC) and a <strong className="font-semibold text-indigo-900">Next.js 15 storefront</strong> with SSR, Apollo GraphQL, and SEO (metadata, JSON-LD, sitemap, slug redirects). Defined <strong className="font-semibold text-indigo-900">content modules & editor workflows</strong> for blogs, books, categories, and site-wide SEO.
-        </>
-      ),
-      impact: (
-        <>
-          <strong className="font-semibold text-indigo-900">Live at psinvest.vn</strong> — content team self-publishes; storefront serves structured SEO on articles and the High Margin landing.
-        </>
-      ),
-      cta: {
-        label: 'Visit PS Invest',
-        href: 'https://psinvest.vn/',
-      },
-    },
-  ];
+  const companyProjects = COMPANY_PROJECTS.map(projectToCardProps);
+  const sideProjects = SIDE_PROJECTS.map(projectToCardProps);
 
   return (
-    <section id="projects" className="relative py-16 lg:py-[80px] bg-[#f8f9ff] overflow-hidden">
-      {/* Decorative background elements */}
+    <section id="projects" className={`relative ${SECTION_SCROLL_MARGIN} overflow-hidden bg-[#f8f9ff]`}>
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-indigo-100/40 blur-3xl" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-blue-100/40 blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-[150px]">
-        <div className="text-center max-w-[800px] mx-auto">
-          <h2 className="text-4xl lg:text-[56px] font-bold leading-[1.1] text-[#424874] tracking-tight">
+      <div className={`relative z-10 ${SECTION_INNER}`}>
+        <div className="mx-auto max-w-[800px] text-center">
+          <h2 className="text-4xl font-bold leading-[1.1] tracking-tight text-[#424874] lg:text-[56px]">
             Showcases
           </h2>
-          <p className="mt-6 text-lg lg:text-[20px] text-[#424874]/80">
+          <p className="mt-3 text-lg text-[#424874]/80 lg:text-xl">
             Focused on clarity, scalability, and measurable outcomes
+          </p>
+          <p className="mt-2 text-sm text-[#424874]/65 lg:text-base">
+            Bosch enterprise · MimoSe · Headless CMS (live)
           </p>
         </div>
 
-        <div className="mt-16 lg:mt-[80px] grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-x-16 lg:gap-y-10">
-
-          {/* HEADERS */}
+        <div className={`${SECTION_HEADER_TO_CONTENT} grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-10`}>
           <div className="flex items-center gap-4 order-1 lg:order-none mb-2 lg:mb-0">
             <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 shadow-sm">
               <HiOutlineOfficeBuilding className="w-6 h-6" />
             </div>
             <div>
               <h3 className="text-2xl font-bold text-[#424874]">Company Projects</h3>
-              <p className="text-[#424874]/70 text-sm mt-1">Enterprise-scale platforms & solutions</p>
+              <p className="mt-2 text-sm text-[#424874]/70">Enterprise-scale platforms & solutions</p>
             </div>
           </div>
 
@@ -244,11 +179,10 @@ export default function Projects() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-[#424874]">Side Projects</h3>
-              <p className="text-[#424874]/70 text-sm mt-1">Human-Centered Product Lab</p>
+              <p className="mt-2 text-sm text-[#424874]/70">Human-Centered Product Lab</p>
             </div>
           </div>
 
-          {/* CARDS ROW 1 */}
           <div className="order-2 lg:order-none h-full">
             <ProjectCard {...companyProjects[0]} />
           </div>
@@ -256,14 +190,12 @@ export default function Projects() {
             <ProjectCard {...sideProjects[0]} />
           </div>
 
-          {/* CARDS ROW 2 */}
           <div className="order-3 lg:order-none h-full">
             <ProjectCard {...companyProjects[1]} />
           </div>
           <div className="order-6 lg:order-none h-full">
             <ProjectCard {...sideProjects[1]} />
           </div>
-
         </div>
       </div>
     </section>

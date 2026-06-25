@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "thuy-portfolio.vercel.app"
+        }
+      ],
+      "destination": "https://thuyhankim.id.vn/:path*",
+      "permanent": true
+    }
+  ]
+}

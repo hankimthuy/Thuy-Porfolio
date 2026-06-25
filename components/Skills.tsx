@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState, useEffect } from 'react';
+import { SECTION_INNER, SECTION_SCROLL_MARGIN, SECTION_HEADER_TO_CONTENT } from '@/lib/layout';
 import CodeIcon from '@mui/icons-material/Code';
 import { FaAngular } from "react-icons/fa";
 import { SiSpring } from "react-icons/si";
@@ -17,7 +18,7 @@ interface SkillCardProps {
 function SkillCard({ number, title, description, rotation = 0 }: SkillCardProps) {
   return (
     <div
-      className="bg-[#EDF0F9] border-2 border-[#585F6F] rounded-[8px] p-4 lg:p-[20px] relative overflow-hidden transition-transform hover:scale-[1.02]"
+      className="relative overflow-hidden rounded-[8px] border-2 border-[#585F6F] bg-[#EDF0F9] p-4 transition-transform hover:scale-[1.02] lg:p-5"
       style={{
         transform: `rotate(${rotation}deg)`,
         transformOrigin: 'center',
@@ -123,12 +124,15 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-8 lg:py-[50px] bg-white">
-      <h2 className="text-3xl lg:text-[56px] font-semibold leading-[1.1] text-[#242A41] text-center mb-8 lg:mb-[80px]">
-        Skill Sets
-      </h2>
-      <div className="max-w-[1728px] mx-auto px-6 lg:px-[150px]">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-[40px]">
+    <section id="skills" className={`${SECTION_SCROLL_MARGIN} bg-white`}>
+      <div className={SECTION_INNER}>
+        <h2 className="mb-2 text-center text-3xl font-semibold leading-[1.1] text-[#242A41] lg:text-[56px]">
+          Skill Sets
+        </h2>
+        <p className="mx-auto mb-8 max-w-2xl text-center text-sm text-[#585F6F] lg:mb-10 lg:text-base">
+          From clarifying user needs to shipping products people actually want to use
+        </p>
+        <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-10">
           {/* Left - Circular Tech Icons */}
           <div className="relative flex items-center justify-center flex-shrink-0 w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] lg:w-[500px] lg:h-[500px]">
             
@@ -177,8 +181,8 @@ export default function Skills() {
           </div>
 
           {/* Right Skills Cards */}
-          <div className="flex-1 min-w-0 w-full lg:w-auto" style={{ maxWidth: '800px' }}>
-            <div className="flex flex-col gap-4 lg:gap-[20px]">
+          <div className="min-w-0 w-full flex-1 lg:w-auto" style={{ maxWidth: '800px' }}>
+            <div className="flex flex-col gap-4 lg:gap-5">
               {skills.map((skill, index) => (
                 <SkillCard
                   key={index}

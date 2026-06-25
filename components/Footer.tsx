@@ -3,21 +3,25 @@
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { LuMail } from 'react-icons/lu';
 import { SiZalo } from 'react-icons/si';
+import { SECTION_INNER, SECTION_SCROLL_MARGIN } from '@/lib/layout';
 import { PERSON } from '@/lib/seo';
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer id="footer" className="bg-white border-t border-[#A6B1E1]/25">
-      <div className="max-w-7xl mx-auto px-6 py-10 lg:py-14">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-10">
-          <div className="max-w-md">
+    <footer id="footer" className={`border-t border-[#A6B1E1]/25 bg-white ${SECTION_SCROLL_MARGIN}`}>
+      <div className={SECTION_INNER}>
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+          <div className="max-w-lg">
             <h2 className="text-2xl lg:text-[2rem] font-bold text-[#424874] tracking-tight">
               Let&apos;s connect
             </h2>
             <p className="mt-2 text-sm lg:text-base text-[#424874]/65 leading-relaxed">
-              Open for product work &amp; freelance. Zalo is fastest for work inquiries.
+              Have a freelance project in mind? Zalo is the fastest way to reach me.
+            </p>
+            <p className="mt-2 text-sm text-[#424874]/55">
+              Freelance only — problem-solving &amp; UX-focused work, Vietnam (GMT+7)
             </p>
           </div>
 
@@ -43,7 +47,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-dashed border-[#A6B1E1]/35 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-dashed border-[#A6B1E1]/35 pt-6 text-sm sm:flex-row">
           <p className="font-mono font-bold text-[#424874]/80">
             {PERSON.brandName}
             <span className="text-[#583FBC]">_</span>
@@ -58,10 +62,11 @@ export default function Footer() {
               {PERSON.email}
             </a>
             <a
-              href="https://github.com/hankimthuy"
+              href={PERSON.github}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 hover:text-[#583FBC] transition-colors"
+              aria-label="GitHub — hankimthuy"
             >
               <FiGithub size={15} />
               GitHub
@@ -69,7 +74,7 @@ export default function Footer() {
           </div>
 
           <p className="text-[#424874]/45 text-xs sm:text-sm">
-            © {year} {PERSON.brandName}
+            © {year} {PERSON.brandName} ({PERSON.fullName})
           </p>
         </div>
       </div>
