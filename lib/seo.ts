@@ -29,6 +29,8 @@ export const PERSON = {
   jobTitles: ['End-to-End Product Builder'] as const,
   jobTitleSecondary: 'UX Software Engineer | Product Owner',
   email: 'thuyhankim@gmail.com',
+  gmailComposeHref:
+    'https://mail.google.com/mail/?view=cm&fs=1&to=thuyhankim%40gmail.com',
   phone: '0947 701 601',
   zaloHref: 'https://zalo.me/84947701601',
   whatsappHref: 'https://wa.me/84947701601',

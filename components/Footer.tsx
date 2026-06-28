@@ -4,7 +4,7 @@ import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { LuMail } from 'react-icons/lu';
 import { SiWhatsapp, SiZalo } from 'react-icons/si';
 import { useTranslations } from 'next-intl';
-import { SECTION_INNER, SECTION_SCROLL_MARGIN } from '@/lib/layout';
+import { SECTION_CONTAINER, SECTION_SCROLL_MARGIN } from '@/lib/layout';
 import { PERSON } from '@/lib/seo';
 
 export default function Footer() {
@@ -15,8 +15,11 @@ export default function Footer() {
   const fullName = tPerson('fullName');
 
   return (
-    <footer id="footer" className={`border-t border-[#A6B1E1]/25 bg-white ${SECTION_SCROLL_MARGIN}`}>
-      <div className={SECTION_INNER}>
+    <footer
+      id="footer"
+      className={`border-t border-[#A6B1E1]/25 bg-white ${SECTION_SCROLL_MARGIN}`}
+    >
+      <div className={`${SECTION_CONTAINER} pt-8 pb-6 lg:pt-16 lg:pb-8`}>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
           <div className="min-w-0 flex-1 lg:max-w-xl">
             <h2 className="text-2xl lg:text-[2rem] font-bold text-[#424874] tracking-tight">
@@ -67,11 +70,13 @@ export default function Footer() {
 
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[#424874]/70">
             <a
-              href={`mailto:${PERSON.email}`}
-              className="inline-flex items-center gap-1.5 hover:text-[#583FBC] transition-colors"
+              href={PERSON.gmailComposeHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-[#583FBC]"
             >
               <LuMail size={15} />
-              {PERSON.email}
+              <span className="font-bold text-[#424874]">{PERSON.email}</span>
             </a>
             <a
               href={PERSON.github}
