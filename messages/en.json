@@ -79,7 +79,7 @@
   "projects": {
     "showcases": "Showcases",
     "subtitle": "Focused on clarity, scalability, and measurable outcomes",
-    "highlights": "Bosch enterprise · MimoSe · Headless CMS (live)",
+    "highlights": "Bosch enterprise · Leading-self analysis · Headless CMS",
     "companyProjects": "Company Projects",
     "companySubtitle": "Enterprise-scale platforms & solutions",
     "sideProjects": "Side Projects",
@@ -118,15 +118,15 @@
         "impactHighlights": ["Personal Autonomy"],
         "schemaDescription": "AI-powered self-awareness journaling app built with React and Spring Boot."
       },
-      "ps-invest": {
-        "title": "Phụng Sự Đầu Tư (Headless CMS)",
-        "problemText": "Editors needed to publish blogs, books, and landing pages on their own — with technical SEO built in — without waiting on a dev for every release.",
-        "problemHighlights": ["publish blogs, books, and landing pages", "technical SEO"],
-        "solutionText": "Shipped a headless CMS admin (React, RBAC) and a Next.js 15 storefront with SSR, Apollo GraphQL, and SEO (metadata, JSON-LD, sitemap, slug redirects). Defined content modules & editor workflows for blogs, books, categories, and site-wide SEO.",
-        "solutionHighlights": ["headless CMS admin", "Next.js 15 storefront", "content modules & editor workflows"],
-        "impactText": "Live at psinvest.vn — content team self-publishes; storefront serves structured SEO on articles and the High Margin landing.",
-        "impactHighlights": ["Live at psinvest.vn"],
-        "schemaDescription": "Custom headless CMS admin and Next.js storefront with technical SEO — built for Phụng Sự Đầu Tư."
+      "content-platform": {
+        "title": "Investment Content Platform (Headless CMS)",
+        "problemText": "An editorial site needed to optimize user experience and technical SEO — without developers blocking every publish cycle.",
+        "problemHighlights": ["optimize user experience", "technical SEO"],
+        "solutionText": "Designed in Figma (wireframes → UI), defined a color and typography system, and built responsive layouts. Shipped a headless CMS admin (React, RBAC) and a Next.js storefront with SSR, metadata, JSON-LD, and sitemap — content modules and editor workflows for blogs, categories, and site-wide SEO.",
+        "solutionHighlights": ["Designed in Figma", "headless CMS admin", "Next.js storefront", "content modules and editor workflows"],
+        "impactText": "Cohesive cross-device experience; structured SEO on articles and landing pages; editorial team can self-serve content updates.",
+        "impactHighlights": ["Cohesive cross-device experience", "structured SEO"],
+        "schemaDescription": "Figma-led investment content platform with headless CMS admin, responsive UI, and technical SEO on Next.js."
       }
     }
   },

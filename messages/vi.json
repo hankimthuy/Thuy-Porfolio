@@ -78,7 +78,7 @@
   "projects": {
     "showcases": "Dự án tiêu biểu",
     "subtitle": "Tập trung vào sự rõ ràng, khả năng mở rộng và kết quả đo lường được",
-    "highlights": "Bosch doanh nghiệp · MimoSe · Headless CMS (đang live)",
+    "highlights": "Bosch doanh nghiệp · Phân tích bản thân chủ động · Headless CMS",
     "companyProjects": "Dự án công ty",
     "companySubtitle": "Nền tảng & giải pháp quy mô doanh nghiệp",
     "sideProjects": "Dự án cá nhân",
@@ -117,15 +117,15 @@
         "impactHighlights": ["tự chủ cá nhân"],
         "schemaDescription": "Ứng dụng journaling tự nhận thức với AI, xây bằng React và Spring Boot."
       },
-      "ps-invest": {
-        "title": "Phụng Sự Đầu Tư (Headless CMS)",
-        "problemText": "Biên tập viên cần tự xuất bản blog, sách và landing page — kèm technical SEO — mà không phải chờ dev mỗi lần release.",
-        "problemHighlights": ["tự xuất bản blog, sách và landing page", "technical SEO"],
-        "solutionText": "Triển khai admin headless CMS (React, Ant Design, RBAC) và storefront Next.js 15 với SSR, Apollo GraphQL và SEO (metadata, JSON-LD, sitemap, slug redirects). Định nghĩa module nội dung & quy trình biên tập cho blog, sách, danh mục và SEO toàn site.",
-        "solutionHighlights": ["admin headless CMS", "storefront Next.js 15", "module nội dung & quy trình biên tập"],
-        "impactText": "Live tại psinvest.vn — đội nội dung tự xuất bản; storefront phục vụ SEO có cấu trúc cho bài viết và landing High Margin.",
-        "impactHighlights": ["Live tại psinvest.vn"],
-        "schemaDescription": "Admin headless CMS tùy chỉnh và storefront Next.js với technical SEO — xây cho Phụng Sự Đầu Tư."
+      "content-platform": {
+        "title": "Nền tảng nội dung đầu tư (Headless CMS)",
+        "problemText": "Trang nội dung cần tập trung tối ưu trải nghiệm người dùng và technical SEO — mà không phụ thuộc dev mỗi chu kỳ xuất bản.",
+        "problemHighlights": ["tối ưu trải nghiệm người dùng", "technical SEO"],
+        "solutionText": "Thiết kế trên Figma (wireframe → UI), xây hệ màu và typography, layout responsive. Triển khai admin headless CMS (React, RBAC) và storefront Next.js với SSR, metadata, JSON-LD, sitemap — module nội dung và quy trình biên tập cho blog, danh mục, SEO toàn site.",
+        "solutionHighlights": ["Thiết kế trên Figma", "admin headless CMS", "storefront Next.js", "module nội dung và quy trình biên tập"],
+        "impactText": "Trải nghiệm thống nhất trên mọi thiết bị; SEO có cấu trúc cho bài viết và landing page; đội biên tập tự cập nhật nội dung.",
+        "impactHighlights": ["Trải nghiệm thống nhất trên mọi thiết bị", "SEO có cấu trúc"],
+        "schemaDescription": "Nền tảng nội dung đầu tư thiết kế Figma, admin headless CMS, UI responsive và technical SEO trên Next.js."
       }
     }
   },

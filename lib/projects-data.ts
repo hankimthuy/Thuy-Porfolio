@@ -32,11 +32,9 @@ export const SIDE_PROJECTS: ProjectStructure[] = [
     illustrationVariant: 'ai',
   },
   {
-    id: 'ps-invest',
+    id: 'content-platform',
     category: 'side',
-    tags: ['Next.js', 'React', 'Ant Design', 'Headless CMS', 'Technical SEO'],
-    ctaHref: 'https://psinvest.vn/',
-    schemaUrl: 'https://psinvest.vn/',
+    tags: ['Next.js', 'React', 'Figma', 'Headless CMS', 'Technical SEO'],
   },
 ];
 

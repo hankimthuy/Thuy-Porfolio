@@ -90,7 +90,7 @@ Choose and implement one approach (prefer **next-intl** or Next.js built-in `[lo
 | `Footer.tsx`                 | connect copy, button labels                                   |
 | `lib/faq-data.ts`            | move into message files                                       |
 
-**PS Invest project** (side project): keep technical terms (Next.js, GraphQL) untranslated; translate problem/solution/impact.
+**Content platform project** (side project, id `content-platform`): keep technical terms (Next.js, headless CMS, technical SEO) untranslated; translate problem/solution/impact.
 
 ### 5. OG image
 
