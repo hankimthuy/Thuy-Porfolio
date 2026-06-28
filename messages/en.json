@@ -80,14 +80,67 @@
     "showcases": "Showcases",
     "subtitle": "Focused on clarity, scalability, and measurable outcomes",
     "highlights": "Bosch enterprise · Leading-self analysis · Headless CMS",
-    "companyProjects": "Company Projects",
-    "companySubtitle": "Enterprise-scale platforms & solutions",
-    "sideProjects": "Side Projects",
-    "sideSubtitle": "Human-Centered Product Lab",
+    "enterpriseProjects": "Enterprise Delivery",
+    "enterpriseSubtitle": "Structured workflows at scale — Scrum, cross-team alignment, and production discipline",
+    "independentProjects": "Independent Builds",
+    "independentSubtitle": "End-to-end products I ship on my own — self-directed learning, freelance craft, and concept demos",
     "problem": "Problem",
     "solution": "Solution",
     "impact": "Impact",
     "viewLiveSite": "View live site",
+    "caseStudy": {
+      "previewLabel": "Concept preview",
+      "disclaimer": "Illustrative boards from the design process — not a pixel-perfect client replica.",
+      "expandConcept": "Expand concept",
+      "modalEyebrow": "Design concept",
+      "sliderLabel": "Project concept slides",
+      "prevSlide": "Previous slide",
+      "nextSlide": "Next slide",
+      "close": "Close",
+      "contactHint": "Curious how this maps to your product? Reach out on LinkedIn.",
+      "contentPlatform": {
+        "modalIntro": "How I approached UX, design system, headless CMS, and technical SEO for a content-driven platform.",
+        "slides": [
+          {
+            "title": "Figma wireframes",
+            "caption": "Early structure for navigation, article hierarchy, and editorial modules before high-fidelity UI."
+          },
+          {
+            "title": "Color & typography",
+            "caption": "Token decisions for readable long-form content, accent hierarchy, and consistent brand feel."
+          },
+          {
+            "title": "Responsive layout",
+            "caption": "Mobile-first breakpoints so listings, articles, and landing sections stay coherent across devices."
+          },
+          {
+            "title": "CMS & SEO stack",
+            "caption": "Headless admin workflows, Next.js storefront, metadata, JSON-LD, and sitemap foundations."
+          }
+        ]
+      },
+      "mimose": {
+        "modalIntro": "How I approached low-friction journaling, proactive AI companionship, and end-to-end delivery for a self-awareness product.",
+        "slides": [
+          {
+            "title": "Low-friction journal flow",
+            "caption": "Wireframes for quick capture — minimal steps from opening the app to a meaningful reflection."
+          },
+          {
+            "title": "Calm visual language",
+            "caption": "Soft palette and typography tuned for reflective use, not productivity pressure."
+          },
+          {
+            "title": "Innerverse & Outerverse",
+            "caption": "Two mental spaces — inner reflection and outer context — structured in the UX model."
+          },
+          {
+            "title": "AI & full-stack craft",
+            "caption": "Proactive AI patterns with React UI and Spring Boot backend — designed and built end-to-end."
+          }
+        ]
+      }
+    },
     "items": {
       "manufacturing-lifecycle": {
         "title": "Centralized Manufacturing Lifecycle",

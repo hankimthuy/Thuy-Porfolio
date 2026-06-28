@@ -1,15 +1,17 @@
 'use client';
 
 import type { ReactNode } from 'react';
-import { FiAlertTriangle, FiBarChart2 } from 'react-icons/fi';
-import { LuLightbulb } from 'react-icons/lu';
-import { HiOutlineOfficeBuilding, HiOutlineLightBulb } from 'react-icons/hi';
+import { FiAlertTriangle, FiBarChart2, FiExternalLink } from 'react-icons/fi';
+import { LuHammer, LuLightbulb } from 'react-icons/lu';
+import { HiOutlineClipboardList } from 'react-icons/hi';
 import { useTranslations } from 'next-intl';
 import {
   COMPANY_PROJECTS,
   SIDE_PROJECTS,
   type ProjectStructure,
 } from '@/lib/projects-data';
+// TODO: Concept demo — bổ sung ví dụ (Figma/screenshot) rồi bật lại import + nhánh caseStudy bên dưới.
+// import CaseStudyProjectCard from '@/components/projects/CaseStudyProjectCard';
 import { SECTION_INNER, SECTION_SCROLL_MARGIN, SECTION_HEADER_TO_CONTENT } from '@/lib/layout';
 
 interface ProjectCardProps {
@@ -71,9 +73,7 @@ function projectToCardProps(
     problemLabel: labels.problem,
     solutionLabel: labels.solution,
     impactLabel: labels.impact,
-    cta: project.ctaHref
-      ? { label: labels.viewLiveSite, href: project.ctaHref }
-      : undefined,
+    cta: project.ctaHref ? { label: labels.viewLiveSite, href: project.ctaHref } : undefined,
   };
 }
 
@@ -110,10 +110,9 @@ function ProjectCard({
               rel="noreferrer"
               className="mt-1 flex-shrink-0 text-indigo-400 hover:text-indigo-600 transition-colors p-2 -mr-2 rounded-full hover:bg-indigo-50"
               title={cta.label}
+              aria-label={cta.label}
             >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
+              <FiExternalLink className="w-5 h-5" aria-hidden="true" />
             </a>
           )}
         </div>
@@ -181,6 +180,57 @@ function ProjectCard({
   );
 }
 
+function renderProjectCard(
+  project: ProjectStructure,
+  props: ProjectCardProps,
+) {
+  // TODO: Concept demo — uncomment khi đã có asset ví dụ cho MimoSe & CMS.
+  // if (project.caseStudy) {
+  //   return <CaseStudyProjectCard caseStudyId={project.caseStudy} {...props} />;
+  // }
+  return <ProjectCard {...props} />;
+}
+
+type ProjectGroupProps = {
+  title: string;
+  subtitle: string;
+  icon: ReactNode;
+  iconClassName: string;
+  structures: ProjectStructure[];
+  cards: ProjectCardProps[];
+};
+
+function ProjectGroup({ title, subtitle, icon, iconClassName, structures, cards }: ProjectGroupProps) {
+  return (
+    <div className="space-y-5">
+      <div className="flex items-start gap-4">
+        <div
+          className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl shadow-sm ${iconClassName}`}
+        >
+          {icon}
+        </div>
+        <div className="min-w-0">
+          <h3 className="text-2xl font-bold text-[#424874]">{title}</h3>
+          <p className="mt-2 text-sm leading-relaxed text-[#424874]/70">{subtitle}</p>
+        </div>
+      </div>
+
+      <div className="-mx-6 overflow-x-auto px-6 pb-2 scroll-smooth [scrollbar-width:thin] lg:mx-0 lg:px-0">
+        <div className="flex snap-x snap-mandatory items-stretch gap-6">
+          {structures.map((project, index) => (
+            <div
+              key={project.id}
+              className="flex w-[min(88vw,520px)] shrink-0 snap-start lg:w-[calc((100%-1.5rem)/2)] lg:min-w-[360px]"
+            >
+              <div className="flex w-full min-h-full flex-1">{renderProjectCard(project, cards[index])}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Projects() {
   const t = useTranslations('projects');
 
@@ -195,10 +245,12 @@ export default function Projects() {
 
   const getItem = (id: string) => projectItems[id];
 
-  const companyProjects = COMPANY_PROJECTS.map((p) =>
+  const enterpriseCards = COMPANY_PROJECTS.map((p) =>
     projectToCardProps(p, getItem(p.id), labels),
   );
-  const sideProjects = SIDE_PROJECTS.map((p) => projectToCardProps(p, getItem(p.id), labels));
+  const independentCards = SIDE_PROJECTS.map((p) =>
+    projectToCardProps(p, getItem(p.id), labels),
+  );
 
   return (
     <section id="projects" className={`relative ${SECTION_SCROLL_MARGIN} overflow-hidden bg-[#f8f9ff]`}>
@@ -216,40 +268,24 @@ export default function Projects() {
           <p className="mt-2 text-sm text-[#424874]/65 lg:text-base">{t('highlights')}</p>
         </div>
 
-        <div className={`${SECTION_HEADER_TO_CONTENT} grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-10`}>
-          <div className="flex items-center gap-4 order-1 lg:order-none mb-2 lg:mb-0">
-            <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 shadow-sm">
-              <HiOutlineOfficeBuilding className="w-6 h-6" />
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-[#424874]">{t('companyProjects')}</h3>
-              <p className="mt-2 text-sm text-[#424874]/70">{t('companySubtitle')}</p>
-            </div>
-          </div>
+        <div className={`${SECTION_HEADER_TO_CONTENT} space-y-12 lg:space-y-14`}>
+          <ProjectGroup
+            title={t('independentProjects')}
+            subtitle={t('independentSubtitle')}
+            icon={<LuHammer className="h-6 w-6" aria-hidden="true" />}
+            iconClassName="bg-pink-100 text-pink-600"
+            structures={SIDE_PROJECTS}
+            cards={independentCards}
+          />
 
-          <div className="flex items-center gap-4 order-4 lg:order-none mt-6 lg:mt-0 mb-2 lg:mb-0">
-            <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-pink-100 text-pink-600 shadow-sm">
-              <HiOutlineLightBulb className="w-6 h-6" />
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-[#424874]">{t('sideProjects')}</h3>
-              <p className="mt-2 text-sm text-[#424874]/70">{t('sideSubtitle')}</p>
-            </div>
-          </div>
-
-          <div className="order-2 lg:order-none h-full">
-            <ProjectCard {...companyProjects[0]} />
-          </div>
-          <div className="order-5 lg:order-none h-full">
-            <ProjectCard {...sideProjects[0]} />
-          </div>
-
-          <div className="order-3 lg:order-none h-full">
-            <ProjectCard {...companyProjects[1]} />
-          </div>
-          <div className="order-6 lg:order-none h-full">
-            <ProjectCard {...sideProjects[1]} />
-          </div>
+          <ProjectGroup
+            title={t('enterpriseProjects')}
+            subtitle={t('enterpriseSubtitle')}
+            icon={<HiOutlineClipboardList className="h-6 w-6" aria-hidden="true" />}
+            iconClassName="bg-indigo-100 text-indigo-600"
+            structures={COMPANY_PROJECTS}
+            cards={enterpriseCards}
+          />
         </div>
       </div>
     </section>

@@ -5,7 +5,10 @@ export interface ProjectStructure {
   category: ProjectCategory;
   tags: string[];
   illustrationVariant?: 'manufacturing' | 'ai' | 'talent';
+  /** External live site (opens in new tab) */
   ctaHref?: string;
+  /** Inline concept slider on the project card */
+  caseStudy?: 'content-platform' | 'mimose';
   schemaUrl?: string;
 }
 
@@ -30,11 +33,13 @@ export const SIDE_PROJECTS: ProjectStructure[] = [
     category: 'side',
     tags: ['React', 'Spring Boot', 'Leading-self', 'AI', 'Figma'],
     illustrationVariant: 'ai',
+    // TODO: Concept demo — bật lại khi có ví dụ: caseStudy: 'mimose',
   },
   {
     id: 'content-platform',
     category: 'side',
     tags: ['Next.js', 'React', 'Figma', 'Headless CMS', 'Technical SEO'],
+    // TODO: Concept demo — bật lại khi có ví dụ: caseStudy: 'content-platform',
   },
 ];
 

@@ -29,6 +29,62 @@ const menuItemConfig = [
 
 const sectionIds = [...menuItemConfig.map((item) => item.id), 'footer'];
 
+const NAV_ACTIVE_OFFSET = HEADER_HEIGHT_PX + 8;
+const BOTTOM_SNAP_THRESHOLD_PX = 96;
+
+function resolveActiveSection(): string {
+  const nearBottom =
+    window.innerHeight + window.scrollY >=
+    document.documentElement.scrollHeight - BOTTOM_SNAP_THRESHOLD_PX;
+
+  if (nearBottom) {
+    return 'footer';
+  }
+
+  let active = sectionIds[0];
+
+  for (const id of sectionIds) {
+    const element = document.getElementById(id);
+    if (!element) continue;
+
+    if (element.getBoundingClientRect().top <= NAV_ACTIVE_OFFSET) {
+      active = id;
+    }
+  }
+
+  return active;
+}
+
+type ContactCtaLinkProps = {
+  variant: 'desktop' | 'mobile';
+  isActive?: boolean;
+  onClick: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  children: React.ReactNode;
+};
+
+function ContactCtaLink({ variant, isActive, onClick, children }: ContactCtaLinkProps) {
+  const radius = variant === 'desktop' ? 'rounded-xl' : 'rounded-full';
+  const innerRadius = variant === 'desktop' ? 'rounded-[10px]' : 'rounded-full';
+
+  const innerClass =
+    variant === 'desktop'
+      ? `contact-cta-inner inline-flex items-center justify-center ${innerRadius} bg-[#583FBC] px-4 py-2 text-sm font-semibold text-white transition-colors group-hover/cta:bg-[#4a35a3] ${
+          isActive ? 'ring-2 ring-[#7DE0EA]/70 ring-offset-1' : ''
+        }`
+      : `contact-cta-inner group inline-flex items-center gap-2.5 ${innerRadius} bg-gradient-to-r from-[#583FBC] to-[#6B4FD4] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#583FBC]/30 transition-all group-hover/cta:shadow-xl group-hover/cta:shadow-[#7DE0EA]/25 active:scale-95 ${
+          isActive ? 'ring-2 ring-[#7DE0EA]/50 ring-offset-2' : ''
+        }`;
+
+  return (
+    <span className={`group/cta contact-cta-glow relative inline-flex overflow-hidden p-[2px] ${radius}`}>
+      <span className="contact-shimmer-spin" aria-hidden />
+      <a href="#footer" onClick={onClick} className={`relative z-10 ${innerClass}`}>
+        {children}
+      </a>
+    </span>
+  );
+}
+
 const Header = () => {
   const t = useTranslations('header');
   const tPerson = useTranslations('person');
@@ -41,28 +97,27 @@ const Header = () => {
   }));
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+    const syncActiveSection = () => {
+      setActiveSection(resolveActiveSection());
+    };
 
-        if (visible[0]) {
-          setActiveSection(visible[0].target.id);
-        }
-      },
-      {
-        rootMargin: `-${HEADER_HEIGHT_PX + 8}px 0px -55% 0px`,
-        threshold: [0, 0.15, 0.35, 0.55],
-      },
-    );
+    const observer = new IntersectionObserver(syncActiveSection, {
+      rootMargin: `-${NAV_ACTIVE_OFFSET}px 0px -40% 0px`,
+      threshold: [0, 0.05, 0.1, 0.25],
+    });
 
     sectionIds.forEach((id) => {
       const element = document.getElementById(id);
       if (element) observer.observe(element);
     });
 
-    return () => observer.disconnect();
+    window.addEventListener('scroll', syncActiveSection, { passive: true });
+    syncActiveSection();
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', syncActiveSection);
+    };
   }, []);
 
   useEffect(() => {
@@ -77,15 +132,20 @@ const Header = () => {
     sectionId: string,
   ) => {
     e.preventDefault();
+    setActiveSection(sectionId);
+
     const element = document.getElementById(sectionId);
     if (element) {
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - HEADER_HEIGHT_PX;
+      const offsetPosition =
+        element.getBoundingClientRect().top + window.scrollY - HEADER_HEIGHT_PX;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 
       window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
+        top: Math.min(Math.max(offsetPosition, 0), maxScroll),
+        behavior: 'auto',
       });
+
+      setActiveSection(resolveActiveSection());
     }
     setMobileMenuOpen(false);
   };
@@ -120,7 +180,7 @@ const Header = () => {
 
         <div className="hidden lg:flex items-center gap-4 xl:gap-6">
           <div className="flex space-x-6 xl:space-x-8 text-sm lg:text-md font-medium text-[#424874]">
-            {[...menuItems, { label: t('nav.contact'), id: 'footer', icon: LuMail }].map((item) => (
+            {menuItems.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
@@ -139,13 +199,13 @@ const Header = () => {
             ))}
           </div>
           {languageSwitcher}
-          <a
-            href="#footer"
+          <ContactCtaLink
+            variant="desktop"
+            isActive={activeSection === 'footer'}
             onClick={(e) => handleNavClick(e, 'footer')}
-            className="inline-flex items-center justify-center rounded-xl bg-[#583FBC] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#4a35a3]"
           >
             {t('nav.contact')}
-          </a>
+          </ContactCtaLink>
         </div>
 
         <div className="flex items-center gap-3 lg:hidden">
@@ -232,16 +292,14 @@ const Header = () => {
               {/*
               <LanguageSwitcher />
               */}
-              <a
-                href="#footer"
+              <ContactCtaLink
+                variant="mobile"
+                isActive={activeSection === 'footer'}
                 onClick={(e) => handleNavClick(e, 'footer')}
-                className={`group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#583FBC] to-[#6B4FD4] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#583FBC]/30 transition-all hover:shadow-xl hover:shadow-[#583FBC]/35 active:scale-95 ${
-                  activeSection === 'footer' ? 'ring-2 ring-[#583FBC]/30 ring-offset-2' : ''
-                }`}
               >
                 <LuMail className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
                 {t('getInTouch')}
-              </a>
+              </ContactCtaLink>
             </div>
           </div>
         </>

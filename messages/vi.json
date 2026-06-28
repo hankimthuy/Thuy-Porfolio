@@ -79,14 +79,67 @@
     "showcases": "Dự án tiêu biểu",
     "subtitle": "Tập trung vào sự rõ ràng, khả năng mở rộng và kết quả đo lường được",
     "highlights": "Bosch doanh nghiệp · Phân tích bản thân chủ động · Headless CMS",
-    "companyProjects": "Dự án công ty",
-    "companySubtitle": "Nền tảng & giải pháp quy mô doanh nghiệp",
-    "sideProjects": "Dự án cá nhân",
-    "sideSubtitle": "Phòng thí nghiệm sản phẩm lấy con người làm trung tâm",
+    "enterpriseProjects": "Triển khai doanh nghiệp",
+    "enterpriseSubtitle": "Quy trình có cấu trúc, quy mô lớn — Scrum, phối hợp đa team và kỷ luật production",
+    "independentProjects": "Tự build & freelance",
+    "independentSubtitle": "Sản phẩm end-to-end tự triển khai — tự học có chủ đích, kinh nghiệm freelance, kèm concept demo",
     "problem": "Vấn đề",
     "solution": "Giải pháp",
     "impact": "Tác động",
     "viewLiveSite": "Xem site live",
+    "caseStudy": {
+      "previewLabel": "Xem trước concept",
+      "disclaimer": "Board minh họa từ quy trình thiết kế — không phải bản sao pixel-perfect của site client.",
+      "expandConcept": "Mở rộng concept",
+      "modalEyebrow": "Concept thiết kế",
+      "sliderLabel": "Slide concept dự án",
+      "prevSlide": "Slide trước",
+      "nextSlide": "Slide sau",
+      "close": "Đóng",
+      "contactHint": "Tò mò cách áp dụng cho sản phẩm của bạn? Hãy liên hệ qua LinkedIn.",
+      "contentPlatform": {
+        "modalIntro": "Cách tôi tiếp cận UX, design system, headless CMS và technical SEO cho nền tảng nội dung.",
+        "slides": [
+          {
+            "title": "Figma wireframe",
+            "caption": "Cấu trúc sớm cho điều hướng, thứ bậc bài viết và module editorial trước UI high-fidelity."
+          },
+          {
+            "title": "Màu & typography",
+            "caption": "Quyết định token cho nội dung dài dễ đọc, thứ bậc nhấn mạnh và cảm giác thương hiệu nhất quán."
+          },
+          {
+            "title": "Layout responsive",
+            "caption": "Breakpoint mobile-first để danh sách, bài viết và landing giữ mạch lạc trên mọi thiết bị."
+          },
+          {
+            "title": "CMS & SEO stack",
+            "caption": "Quy trình admin headless, storefront Next.js, metadata, JSON-LD và nền tảng sitemap."
+          }
+        ]
+      },
+      "mimose": {
+        "modalIntro": "Cách tôi tiếp cận journaling ít ma sát, AI đồng hành chủ động và triển khai end-to-end cho sản phẩm tự nhận thức.",
+        "slides": [
+          {
+            "title": "Luồng journal ít ma sát",
+            "caption": "Wireframe cho ghi nhanh — ít bước từ mở app đến một lần reflection có ý nghĩa."
+          },
+          {
+            "title": "Ngôn ngữ hình ảnh êm",
+            "caption": "Palette và typography mềm, phù hợp dùng suy ngẫm — không tạo áp lực productivity."
+          },
+          {
+            "title": "Innerverse & Outerverse",
+            "caption": "Hai không gian tinh thần — phản chiếu bên trong và ngữ cảnh bên ngoài — trong mô hình UX."
+          },
+          {
+            "title": "AI & full-stack",
+            "caption": "Pattern AI chủ động với UI React và backend Spring Boot — thiết kế và build end-to-end."
+          }
+        ]
+      }
+    },
     "items": {
       "manufacturing-lifecycle": {
         "title": "Quản lý vòng đời sản xuất tập trung",
