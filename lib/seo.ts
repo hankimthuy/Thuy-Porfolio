@@ -5,8 +5,10 @@ const DEFAULT_SITE_URL = 'https://thuyhankim.id.vn';
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || DEFAULT_SITE_URL;
 
-export const PORTRAIT_IMAGE_PATH = '/images/han-kim-thuy-portrait.jpg';
-export const LOGO_IMAGE_PATH = '/images/thuy-site-logo.png';
+export const PORTRAIT_IMAGE_PATH =
+  '/images/han-kim-thuy-ux-software-engineer-portrait.jpg';
+export const LOGO_IMAGE_PATH = '/images/han-kim-thuy-portfolio-logo.png';
+export const OG_IMAGE_PATH = '/images/han-kim-thuy-portfolio-og.png';
 
 export const SITE_NAME = 'Han Kim Thuy — Portfolio';
 
@@ -25,9 +27,9 @@ export const PERSON = {
   ],
   yearsExperience: '4+ Years Experience',
   yearsExperienceShort: '4+ Years',
-  jobTitle: 'End-to-End Product Builder',
-  jobTitles: ['End-to-End Product Builder'] as const,
-  jobTitleSecondary: 'UX Software Engineer | Product Owner',
+  jobTitle: 'UX Software Engineer',
+  jobTitles: ['UX Software Engineer'] as const,
+  jobTitleSecondary: 'Full-stack · Product-minded',
   email: 'thuyhankim@gmail.com',
   gmailComposeHref:
     'https://mail.google.com/mail/?view=cm&fs=1&to=thuyhankim%40gmail.com',
@@ -37,32 +39,35 @@ export const PERSON = {
   linkedin: 'https://www.linkedin.com/in/thuyhankim/',
   github: 'https://github.com/hankimthuy',
   location: 'Vietnam',
-  areaServed: 'Vietnam',
+  areaServed: 'Worldwide',
   sameAs: [
     'https://www.linkedin.com/in/thuyhankim/',
     'https://github.com/hankimthuy',
     'https://zalo.me/84947701601',
   ],
   knowsAbout: [
+    'UX Engineering',
+    'UX Software Engineering',
+    'User Experience Design',
     'Product Engineering',
     'Product Ownership',
     'Problem Solving',
-    'User Experience Design',
     'Product Discovery',
     'Customer Needs',
     'Agile Product Development',
     'UX Research',
+    'Full-stack Development',
   ],
 } as const;
 
-export const SITE_TITLE = `${PERSON.brandName} (${PERSON.fullName}) | Product Engineer — Portfolio`;
+export const SITE_TITLE = `${PERSON.brandName} (${PERSON.fullName}) | UX Software Engineer — Portfolio`;
 
 export const SITE_DESCRIPTION =
-  'Han Kim Thuy (Hàn Kim Thủy) — Product Engineer & Product Owner for hire in Vietnam. Portfolio of Thuy Han Kim / hankimthuy. Problem solver, UX-focused, open to freelance collaborations.';
+  'Han Kim Thuy (Hàn Kim Thủy) — UX Software Engineer based in Vietnam. 4+ years building CMS platforms, enterprise apps, and user-focused products. Google UX certified, full-stack, open to remote freelance worldwide.';
 
 /** Reserved for future i18n /vi route */
 export const SITE_DESCRIPTION_VI =
-  'Hàn Kim Thủy — Kỹ sư sản phẩm & Product Owner. Tập trung giải quyết vấn đề, trải nghiệm người dùng và sản phẩm có giá trị thực. Nhận dự án freelance tại Việt Nam.';
+  'Hàn Kim Thủy — Kỹ sư UX phần mềm tại Việt Nam. Hơn 4 năm xây dựng CMS, ứng dụng doanh nghiệp và sản phẩm lấy người dùng làm trung tâm. Chứng chỉ Google UX, full-stack, nhận freelance remote toàn cầu.';
 
 export const SITE_KEYWORDS = [
   'Han Kim Thuy',
@@ -73,28 +78,29 @@ export const SITE_KEYWORDS = [
   'thuyhankim',
   'thuyhankim portfolio',
   'Hàn Kim Thủy portfolio',
+  'UX Software Engineer',
+  'UX Engineer',
   'Product Engineer',
   'Product Owner',
   'Full-stack Developer',
-  'UX Software Engineer',
   'Software Engineer',
   'UX design',
   'problem solver',
   'user experience',
   'product discovery',
   'Vietnam',
+  'kỹ sư UX phần mềm',
   'kỹ sư sản phẩm',
-  'Vietnam',
+  'freelance remote',
   'freelance Vietnam',
-  'freelance product owner Vietnam',
-  'product owner Vietnam',
+  'UX engineer Vietnam',
   'product engineer Vietnam',
   'Ho Chi Minh',
 ];
 
 const googleVerification = process.env.GOOGLE_SITE_VERIFICATION;
 
-const ogImageAlt = `${PERSON.brandName} (${PERSON.fullName}) — ${PERSON.jobTitle}, portfolio · Freelance Vietnam`;
+const ogImageAlt = `${PERSON.brandName} (${PERSON.fullName}) — ${PERSON.jobTitle}, portfolio · Remote freelance`;
 
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -129,7 +135,7 @@ export const defaultMetadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: [
       {
-        url: '/og-image.png',
+        url: OG_IMAGE_PATH,
         width: 1200,
         height: 630,
         alt: ogImageAlt,
@@ -140,7 +146,7 @@ export const defaultMetadata: Metadata = {
     card: 'summary_large_image',
     title: `${PERSON.brandName} (${PERSON.fullName}) | ${PERSON.jobTitle}`,
     description: SITE_DESCRIPTION,
-    images: ['/og-image.png'],
+    images: [OG_IMAGE_PATH],
   },
   icons: {
     icon: LOGO_IMAGE_PATH,

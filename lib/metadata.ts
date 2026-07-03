@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { LOGO_IMAGE_PATH, SITE_URL } from '@/lib/seo';
+import { LOGO_IMAGE_PATH, OG_IMAGE_PATH, SITE_URL } from '@/lib/seo';
 import type { Locale } from '@/i18n/routing';
 
 const HREFLANG: Record<Locale, string> = {
@@ -60,7 +60,7 @@ export async function getLocaleMetadata(locale: Locale): Promise<Metadata> {
       description: t('description'),
       images: [
         {
-          url: '/og-image.png',
+          url: OG_IMAGE_PATH,
           width: 1200,
           height: 630,
           alt: tJsonLd('ogImageAlt'),
@@ -71,7 +71,7 @@ export async function getLocaleMetadata(locale: Locale): Promise<Metadata> {
       card: 'summary_large_image',
       title: t('ogTitle'),
       description: t('description'),
-      images: ['/og-image.png'],
+      images: [OG_IMAGE_PATH],
     },
     icons: {
       icon: LOGO_IMAGE_PATH,

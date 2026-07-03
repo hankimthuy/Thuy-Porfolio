@@ -29,17 +29,17 @@ export const COMPANY_PROJECTS: ProjectStructure[] = [
 
 export const SIDE_PROJECTS: ProjectStructure[] = [
   {
+    id: 'content-platform',
+    category: 'side',
+    tags: ['Next.js', 'React', 'Figma', 'Headless CMS', 'Technical SEO'],
+    // TODO: Concept demo — bật lại khi có ví dụ: caseStudy: 'content-platform',
+  },
+  {
     id: 'mimose',
     category: 'side',
     tags: ['React', 'Spring Boot', 'Leading-self', 'AI', 'Figma'],
     illustrationVariant: 'ai',
     // TODO: Concept demo — bật lại khi có ví dụ: caseStudy: 'mimose',
-  },
-  {
-    id: 'content-platform',
-    category: 'side',
-    tags: ['Next.js', 'React', 'Figma', 'Headless CMS', 'Technical SEO'],
-    // TODO: Concept demo — bật lại khi có ví dụ: caseStudy: 'content-platform',
   },
 ];
 

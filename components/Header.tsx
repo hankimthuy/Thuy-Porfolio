@@ -156,15 +156,7 @@ const Header = () => {
     setMobileMenuOpen(false);
   };
 
-  const languageSwitcher = (
-    <>
-      {/* === Language switcher — uncomment block below OR set LOCALE_SWITCHER_ENABLED=true === */}
-      {LOCALE_SWITCHER_ENABLED && <LanguageSwitcher />}
-      {/*
-      <LanguageSwitcher />
-      */}
-    </>
-  );
+  const languageSwitcher = LOCALE_SWITCHER_ENABLED ? <LanguageSwitcher /> : null;
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-lg z-50 border-b border-[#A6B1E1]/30 shadow-sm">
@@ -209,7 +201,7 @@ const Header = () => {
         </div>
 
         <div className="flex items-center gap-3 lg:hidden">
-          {LOCALE_SWITCHER_ENABLED && <LanguageSwitcher />}
+          {languageSwitcher && <LanguageSwitcher variant="mobile" />}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -289,9 +281,6 @@ const Header = () => {
             </div>
 
             <div className="mt-5 flex flex-col items-center gap-4 border-t border-[#A6B1E1]/20 pt-5">
-              {/*
-              <LanguageSwitcher />
-              */}
               <ContactCtaLink
                 variant="mobile"
                 isActive={activeSection === 'footer'}

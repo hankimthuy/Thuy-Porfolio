@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { LuChevronUp } from 'react-icons/lu';
 import { useTranslations } from 'next-intl';
 
 export default function ScrollToTop() {
@@ -31,29 +32,20 @@ export default function ScrollToTop() {
   }, []);
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
-      {isVisible && (
-        <button
-          onClick={scrollToTop}
-          className="p-3 rounded-full bg-indigo-600 text-white shadow-lg hover:bg-indigo-700 transition-all duration-300 focus:outline-none"
-          aria-label={t('scrollToTop')}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M5 10l7-7m0 0l7 7m-7-7v18"
-            />
-          </svg>
-        </button>
-      )}
+    <div className="fixed bottom-6 right-6 z-50 sm:bottom-8 sm:right-8">
+      <button
+        type="button"
+        onClick={scrollToTop}
+        aria-label={t('scrollToTop')}
+        aria-hidden={!isVisible}
+        className={`flex h-11 w-11 items-center justify-center rounded-full border border-[#A6B1E1]/70 bg-white/95 text-[#424874] shadow-md shadow-[#242A41]/8 backdrop-blur-sm transition-all duration-300 hover:border-[#583FBC]/50 hover:bg-[#F4EEFF] hover:text-[#583FBC] hover:shadow-lg hover:shadow-[#583FBC]/15 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#583FBC]/40 focus-visible:ring-offset-2 ${
+          isVisible
+            ? 'pointer-events-auto translate-y-0 opacity-100'
+            : 'pointer-events-none translate-y-3 opacity-0'
+        }`}
+      >
+        <LuChevronUp className="h-5 w-5" strokeWidth={2.25} aria-hidden />
+      </button>
     </div>
   );
 }

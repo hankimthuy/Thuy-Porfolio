@@ -1,21 +1,20 @@
 {
   "metadata": {
-    "title": "Han Kim Thuy | Product Engineer | Product Owner — Portfolio",
-    "description": "Han Kim Thuy — Product Engineer & Product Owner for hire in Vietnam. 4+ years building CMS platforms, enterprise apps, and freelance product work. Problem solver, UX-focused.",
-    "ogTitle": "Han Kim Thuy | Product Engineer | Product Owner",
+    "title": "Han Kim Thuy | UX Software Engineer — Portfolio",
+    "description": "Han Kim Thuy — UX Software Engineer based in Vietnam. 4+ years building CMS platforms, enterprise apps, and user-focused products. Google UX certified, full-stack, open to remote freelance worldwide.",
+    "ogTitle": "Han Kim Thuy | UX Software Engineer",
     "siteName": "Han Kim Thuy — Portfolio",
-    "keywords": "Han Kim Thuy,Hàn Kim Thủy,Thuy,hankimthuy,thuyhankim,Product Engineer,Product Owner,UX Software Engineer,Software Engineer,Vietnam,freelance Vietnam,product engineer Vietnam"
+    "keywords": "Han Kim Thuy,Hàn Kim Thủy,Thuy,hankimthuy,thuyhankim,UX Software Engineer,UX Engineer,Product Engineer,Product Owner,Software Engineer,Vietnam,freelance remote,UX engineer Vietnam"
   },
   "person": {
     "brandName": "Han Kim Thuy",
     "fullName": "Hàn Kim Thủy",
     "greeting": "Hi! I'm",
-    "greeting": "Hi! I'm",
-    "jobTitles": ["End-to-End Product Builder"],
-    "jobTitleSecondary": "UX Software Engineer | Product Owner",
+    "jobTitles": ["UX Software Engineer"],
+    "jobTitleSecondary": "Full-stack · Product-minded",
     "yearsExperience": "4+ Years Experience",
     "yearsExperienceShort": "4+ Years",
-    "jobTitle": "End-to-End Product Builder"
+    "jobTitle": "UX Software Engineer"
   },
   "header": {
     "nav": {
@@ -31,10 +30,11 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "switchLanguage": "Switch language",
-    "logoAlt": "THUY site logo"
+    "switchingLanguage": "Switching language…",
+    "logoAlt": "Han Kim Thuy — UX Software Engineer portfolio logo"
   },
   "hero": {
-    "availability": "Available for freelance · Vietnam",
+    "availability": "Available for freelance · Remote",
     "stats": {
       "experience": "4+ Years",
       "projects": "5+ Projects",
@@ -51,7 +51,7 @@
       "primary": "View Projects",
       "secondary": "Let's connect"
     },
-    "portraitAlt": "Han Kim Thuy (Hàn Kim Thủy) — End-to-End Product Builder, professional portrait",
+    "portraitAlt": "Han Kim Thuy (Hàn Kim Thủy) — UX Software Engineer, professional portrait",
     "social": {
       "linkedin": "LinkedIn Profile",
       "github": "GitHub — hankimthuy",
@@ -163,13 +163,13 @@
       },
       "mimose": {
         "title": "MimoSe: Make Sense of Me",
-        "problemText": "High friction in traditional journaling leads to inconsistent self-awareness.",
-        "problemHighlights": ["High friction"],
-        "solutionText": "A Low-Friction Framework powered by Proactive AI—acting as a companion through the Innerverse and Outerverse.",
-        "solutionHighlights": ["Low-Friction Framework", "Proactive AI", "Innerverse", "Outerverse"],
-        "impactText": "Empowered Personal Autonomy using AI-driven insights.",
-        "impactHighlights": ["Personal Autonomy"],
-        "schemaDescription": "AI-powered self-awareness journaling app built with React and Spring Boot."
+        "problemText": "Traditional journaling is high-friction—irregular habits and blank-page anxiety keep self-awareness from sticking.",
+        "problemHighlights": ["high-friction", "blank-page anxiety"],
+        "solutionText": "Self-led 0→1: researched pain points, prototyped in Figma, then built React UI and Spring Boot backend. Low-Friction Framework with Proactive AI guiding reflection across Innerverse & Outerverse.",
+        "solutionHighlights": ["Self-led 0→1", "Figma", "React UI and Spring Boot", "Proactive AI", "Innerverse & Outerverse"],
+        "impactText": "Owned product vision, UX, and engineering end-to-end—a calm companion that surfaces AI-driven patterns without productivity pressure.",
+        "impactHighlights": ["Owned product vision", "AI-driven patterns"],
+        "schemaDescription": "Self-led AI journaling app: Figma UX, React frontend, Spring Boot backend, and proactive AI for self-awareness."
       },
       "content-platform": {
         "title": "Investment Content Platform (Headless CMS)",
@@ -213,11 +213,11 @@
     "items": [
       {
         "question": "Who is Han Kim Thuy?",
-        "answer": "This is the portfolio of Han Kim Thuy (Hàn Kim Thủy), also written as Thuy Han Kim or hankimthuy online. I am a Product Engineer and Product Owner based in Vietnam. You can reach me at {email}, on GitHub (hankimthuy), LinkedIn (thuyhankim), or at {siteUrl}."
+        "answer": "This is the portfolio of Han Kim Thuy (Hàn Kim Thủy), also written as Thuy Han Kim or hankimthuy online. I am a UX Software Engineer based in Vietnam. You can reach me at {email}, on GitHub (hankimthuy), LinkedIn (thuyhankim), or at {siteUrl}."
       },
       {
-        "question": "Are you available as a freelance Product Owner or Product Engineer in Vietnam?",
-        "answer": "Yes—outside my full-time role I take scoped freelance work in Vietnam (GMT+7) and abroad. Typical engagements include product discovery, UX-oriented delivery, and helping small teams ship usable products. Message me on LinkedIn with the problem, audience, and timeline—or email if you prefer."
+        "question": "Are you available for freelance UX Software Engineer work?",
+        "answer": "Yes—outside my full-time role I take scoped freelance work remotely, with clients in Vietnam and worldwide (I work from GMT+7). Typical engagements include UX-oriented development, product discovery, and helping small teams ship user-focused products. Message me on LinkedIn with the problem, audience, and timeline—or email if you prefer."
       },
       {
         "question": "What drives you to build products?",
@@ -225,7 +225,11 @@
       },
       {
         "question": "Why do you focus on UX-Oriented Development?",
-        "answer": "As a Product Engineer, I'm the closest person to the end-user. Focusing on UX is a natural extension of that role. I believe a 'feature' isn't 'done' when the code is merged; it's 'done' when the user can achieve their goal effortlessly. This mindset is the foundation of my product-focused approach."
+        "answer": "As a UX Software Engineer, I sit at the intersection of design and code. Focusing on UX is central to how I build—not an afterthought. I believe a 'feature' isn't 'done' when the code is merged; it's 'done' when the user can achieve their goal effortlessly. This mindset is the foundation of my product-focused approach."
+      },
+      {
+        "question": "Are you pursuing Product Owner roles?",
+        "answer": "Yes—Product Owner is a career path I'm actively building toward. Today I focus on UX Software Engineer work at the design–code intersection; over time I want to own discovery, prioritization, and outcomes end to end. My Scrum background, product discovery experience, and user-first delivery all point in that direction."
       },
       {
         "question": "How do you handle ambiguity and changing requirements?",
@@ -245,21 +249,21 @@
     "connect": "Let's connect",
     "freelancePrompt": "Have a freelance project in mind? LinkedIn is the best way to reach\u00A0me.",
     "linkedinCta": "Message on LinkedIn",
-    "freelanceNote": "Available for freelance — problem-solving & UX-focused work, Vietnam (GMT+7)",
+    "freelanceNote": "Available for remote freelance — problem-solving & UX-focused work (GMT+7)",
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "copyright": "© {year} {brandName} ({fullName})"
   },
   "jsonLd": {
-    "personDescription": "Product Engineer and Product Owner available for freelance collaborations in Vietnam. Also known as Hàn Kim Thủy, Thuy Han Kim, hankimthuy, and thuyhankim.",
-    "websiteDescription": "Portfolio of Han Kim Thuy (Hàn Kim Thủy) — Product Engineer & Product Owner. Freelance collaborations in Vietnam.",
-    "profilePageName": "Han Kim Thuy (Hàn Kim Thủy) | Product Engineer — Portfolio",
-    "occupationEngineer": "Freelance product engineering and UX-oriented delivery for teams in Vietnam.",
-    "occupationOwner": "Freelance product ownership—discovery, prioritization, and shipping user-focused outcomes.",
-    "occupationEngineerName": "Product Engineer",
+    "personDescription": "UX Software Engineer based in Vietnam, available for remote freelance collaborations worldwide. Also known as Hàn Kim Thủy, Thuy Han Kim, hankimthuy, and thuyhankim.",
+    "websiteDescription": "Portfolio of Han Kim Thuy (Hàn Kim Thủy) — UX Software Engineer. Remote freelance collaborations welcome.",
+    "profilePageName": "Han Kim Thuy (Hàn Kim Thủy) | UX Software Engineer — Portfolio",
+    "occupationEngineer": "Remote freelance UX software engineering and user-focused product delivery.",
+    "occupationEngineerName": "UX Software Engineer",
+    "occupationOwner": "Product ownership—discovery, prioritization, and shipping user-focused outcomes; an active career path.",
     "occupationOwnerName": "Product Owner",
     "projectListName": "Portfolio Projects",
-    "ogImageAlt": "Han Kim Thuy (Hàn Kim Thủy) — End-to-End Product Builder, portfolio · Freelance Vietnam"
+    "ogImageAlt": "Han Kim Thuy (Hàn Kim Thủy) — UX Software Engineer portfolio · Remote freelance"
   },
   "common": {
     "scrollToTop": "Scroll to top"

@@ -63,7 +63,7 @@ export default async function JsonLd({ locale }: JsonLdProps) {
       url: BOSCH_EMPLOYER.url,
     },
     areaServed: {
-      '@type': 'Country',
+      '@type': 'Place',
       name: PERSON.areaServed,
     },
     hasOccupation: [

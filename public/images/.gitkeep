@@ -1,6 +1,5 @@
-# Images folder
-# Place Figma exported images here:
-# - hero-image.png
-# - avatar-56586a.png  
-# - testimonial-avatar.png
-
+# SEO-friendly image naming: {name}-{role-or-purpose}.{ext}
+# Examples in use:
+# - han-kim-thuy-ux-software-engineer-portrait.jpg
+# - han-kim-thuy-portfolio-logo.png
+# - han-kim-thuy-portfolio-og.png

@@ -1,20 +1,20 @@
 {
   "metadata": {
-    "title": "Hàn Kim Thủy | Kỹ sư Sản phẩm | Product Owner — Portfolio",
-    "description": "Hàn Kim Thủy — Kỹ sư sản phẩm & Product Owner. Hơn 4 năm kinh nghiệm xây dựng CMS, ứng dụng doanh nghiệp và dự án freelance. Tập trung giải quyết vấn đề, trải nghiệm người dùng và sản phẩm có giá trị thực. Nhận dự án freelance tại Việt Nam.",
-    "ogTitle": "Hàn Kim Thủy | Kỹ sư Sản phẩm | Product Owner",
+    "title": "Hàn Kim Thủy | Kỹ sư UX phần mềm — Portfolio",
+    "description": "Hàn Kim Thủy — Kỹ sư UX phần mềm tại Việt Nam. Hơn 4 năm xây dựng CMS, ứng dụng doanh nghiệp và sản phẩm lấy người dùng làm trung tâm. Chứng chỉ Google UX, full-stack, nhận freelance remote toàn cầu.",
+    "ogTitle": "Hàn Kim Thủy | Kỹ sư UX phần mềm",
     "siteName": "Hàn Kim Thủy — Portfolio",
-    "keywords": "Hàn Kim Thủy,Han Kim Thuy,Thuy,hankimthuy,thuyhankim,kỹ sư sản phẩm,Product Engineer,Product Owner,UX Software Engineer,Việt Nam,freelance Vietnam"
+    "keywords": "Hàn Kim Thủy,Han Kim Thuy,Thuy,hankimthuy,thuyhankim,kỹ sư UX phần mềm,UX Software Engineer,UX Engineer,Product Engineer,Product Owner,Việt Nam,freelance remote"
   },
   "person": {
     "brandName": "Hàn Kim Thủy",
     "fullName": "Hàn Kim Thủy",
     "greeting": "Xin chào! Tôi là",
-    "jobTitles": ["Người xây dựng sản phẩm trọn vẹn"],
-    "jobTitleSecondary": "Kỹ sư UX | Product Owner",
+    "jobTitles": ["UX Software Engineer"],
+    "jobTitleSecondary": "Full-stack · Tư duy sản phẩm",
     "yearsExperience": "Hơn 4 năm kinh nghiệm",
     "yearsExperienceShort": "4+ năm",
-    "jobTitle": "Người xây dựng sản phẩm trọn vẹn"
+    "jobTitle": "Kỹ sư UX phần mềm"
   },
   "header": {
     "nav": {
@@ -30,10 +30,11 @@
     "openMenu": "Mở menu",
     "closeMenu": "Đóng menu",
     "switchLanguage": "Chuyển ngôn ngữ",
-    "logoAlt": "Logo THUY site"
+    "switchingLanguage": "Đang chuyển ngôn ngữ…",
+    "logoAlt": "Hàn Kim Thủy — logo portfolio Kỹ sư UX phần mềm"
   },
   "hero": {
-    "availability": "Nhận freelance · Việt Nam",
+    "availability": "Nhận freelance · Remote",
     "stats": {
       "experience": "4+ năm",
       "projects": "5+ dự án",
@@ -50,7 +51,7 @@
       "primary": "Xem dự án",
       "secondary": "Kết nối"
     },
-    "portraitAlt": "Hàn Kim Thủy (Han Kim Thuy) — Người xây dựng sản phẩm trọn vẹn, ảnh chân dung chuyên nghiệp",
+    "portraitAlt": "Hàn Kim Thủy (Han Kim Thuy) — Kỹ sư UX phần mềm, ảnh chân dung chuyên nghiệp",
     "social": {
       "linkedin": "Hồ sơ LinkedIn",
       "github": "GitHub — hankimthuy",
@@ -162,13 +163,13 @@
       },
       "mimose": {
         "title": "MimoSe: Make Sense of Me",
-        "problemText": "Ma sát cao trong journaling truyền thống dẫn đến tự nhận thức không ổn định.",
-        "problemHighlights": ["Ma sát cao"],
-        "solutionText": "Khung Low-Friction Framework với Proactive AI — đồng hành qua Innerverse và Outerverse.",
-        "solutionHighlights": ["Low-Friction Framework", "Proactive AI", "Innerverse", "Outerverse"],
-        "impactText": "Trao quyền tự chủ cá nhân qua insight từ AI.",
-        "impactHighlights": ["tự chủ cá nhân"],
-        "schemaDescription": "Ứng dụng journaling tự nhận thức với AI, xây bằng React và Spring Boot."
+        "problemText": "Journaling truyền thống ma sát cao — thói quen không đều và nỗi lo trang trắng khiến tự nhận thức khó bền.",
+        "problemHighlights": ["ma sát cao", "trang trắng"],
+        "solutionText": "Tự dẫn dắt 0→1: nghiên cứu pain point, prototype Figma, rồi build UI React và backend Spring Boot. Khung Low-Friction với Proactive AI đồng hành qua Innerverse & Outerverse.",
+        "solutionHighlights": ["Tự dẫn dắt 0→1", "Figma", "React và Spring Boot", "Proactive AI", "Innerverse & Outerverse"],
+        "impactText": "Giữ trọn tầm nhìn sản phẩm, UX và kỹ thuật end-to-end — người bạn đồng hành êm ái, đưa insight từ AI mà không tạo áp lực productivity.",
+        "impactHighlights": ["tầm nhìn sản phẩm", "insight từ AI"],
+        "schemaDescription": "Ứng dụng journaling AI tự dẫn dắt: UX Figma, frontend React, backend Spring Boot và AI chủ động cho tự nhận thức."
       },
       "content-platform": {
         "title": "Nền tảng nội dung đầu tư (Headless CMS)",
@@ -212,11 +213,11 @@
     "items": [
       {
         "question": "Hàn Kim Thủy là ai?",
-        "answer": "Đây là portfolio của Hàn Kim Thủy (Han Kim Thuy), còn được viết là Thuy Han Kim hoặc hankimthuy trực tuyến. Tôi là Kỹ sư Sản phẩm và Product Owner tại Việt Nam. Bạn có thể liên hệ qua {email}, GitHub (hankimthuy), LinkedIn (thuyhankim) hoặc {siteUrl}."
+        "answer": "Đây là portfolio của Hàn Kim Thủy (Han Kim Thuy), còn được viết là Thuy Han Kim hoặc hankimthuy trực tuyến. Tôi là Kỹ sư UX phần mềm tại Việt Nam. Bạn có thể liên hệ qua {email}, GitHub (hankimthuy), LinkedIn (thuyhankim) hoặc {siteUrl}."
       },
       {
-        "question": "Bạn có nhận freelance Product Owner hoặc Kỹ sư Sản phẩm tại Việt Nam không?",
-        "answer": "Có — ngoài công việc full-time, tôi nhận dự án freelance có phạm vi rõ ràng tại Việt Nam (GMT+7) và quốc tế. Các hình thức thường gặp: khám phá sản phẩm, triển khai hướng UX và hỗ trợ team nhỏ ship sản phẩm dùng được. Nhắn LinkedIn kèm vấn đề, đối tượng và timeline — hoặc email nếu bạn thích."
+        "question": "Bạn có nhận freelance Kỹ sư UX phần mềm không?",
+        "answer": "Có — ngoài công việc full-time, tôi nhận dự án freelance remote, với khách tại Việt Nam và quốc tế (tôi làm việc từ GMT+7). Các hình thức thường gặp: phát triển hướng UX, khám phá sản phẩm và hỗ trợ team nhỏ ship sản phẩm lấy người dùng làm trung tâm. Nhắn LinkedIn kèm vấn đề, đối tượng và timeline — hoặc email nếu bạn thích."
       },
       {
         "question": "Điều gì thúc đẩy bạn xây dựng sản phẩm?",
@@ -224,7 +225,11 @@
       },
       {
         "question": "Tại sao bạn tập trung vào Phát triển hướng UX?",
-        "answer": "Là Kỹ sư Sản phẩm, tôi là người gần người dùng cuối nhất. Tập trung UX là phần mở rộng tự nhiên của vai trò đó. Tôi tin một 'tính năng' chưa 'xong' khi code được merge; nó 'xong' khi người dùng đạt mục tiêu một cách dễ dàng. Tư duy này là nền tảng cho cách tiếp cận lấy sản phẩm làm trung tâm."
+        "answer": "Là Kỹ sư UX phần mềm, tôi nằm ở giao điểm giữa thiết kế và code. Tập trung UX là trọng tâm cách tôi build — không phải phần bổ sung. Tôi tin một 'tính năng' chưa 'xong' khi code được merge; nó 'xong' khi người dùng đạt mục tiêu một cách dễ dàng. Tư duy này là nền tảng cho cách tiếp cận lấy sản phẩm làm trung tâm."
+      },
+      {
+        "question": "Bạn có hướng tới vai trò Product Owner không?",
+        "answer": "Có — Product Owner là career path tôi đang chủ động xây dựng. Hiện tại tôi tập trung vào Kỹ sư UX phần mềm ở giao điểm thiết kế–code; về lâu dài tôi muốn sở hữu discovery, ưu tiên hóa và kết quả end-to-end. Kinh nghiệm Scrum, product discovery và triển khai lấy người dùng làm trung tâm đều hướng về đó."
       },
       {
         "question": "Bạn xử lý sự mơ hồ và thay đổi yêu cầu như thế nào?",
@@ -244,21 +249,21 @@
     "connect": "Kết nối",
     "freelancePrompt": "Có dự án freelance? LinkedIn là cách liên hệ tốt nhất.",
     "linkedinCta": "Nhắn tin trên LinkedIn",
-    "freelanceNote": "Sẵn sàng nhận freelance — giải quyết vấn đề & công việc hướng UX, Việt Nam (GMT+7)",
+    "freelanceNote": "Sẵn sàng nhận freelance remote — giải quyết vấn đề & công việc hướng UX (GMT+7)",
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "copyright": "© {year} {brandName} ({fullName})"
   },
   "jsonLd": {
-    "personDescription": "Kỹ sư Sản phẩm và Product Owner nhận hợp tác freelance tại Việt Nam. Còn được biết đến là Han Kim Thuy, Thuy Han Kim, hankimthuy và thuyhankim.",
-    "websiteDescription": "Portfolio của Hàn Kim Thủy (Han Kim Thuy) — Kỹ sư Sản phẩm & Product Owner. Hợp tác freelance tại Việt Nam.",
-    "profilePageName": "Hàn Kim Thủy (Han Kim Thuy) | Kỹ sư Sản phẩm — Portfolio",
-    "occupationEngineer": "Kỹ thuật sản phẩm freelance và triển khai hướng UX cho team tại Việt Nam.",
-    "occupationOwner": "Product ownership freelance — khám phá, ưu tiên hóa và ship kết quả lấy người dùng làm trung tâm.",
-    "occupationEngineerName": "Kỹ sư Sản phẩm",
+    "personDescription": "Kỹ sư UX phần mềm tại Việt Nam, nhận hợp tác freelance remote toàn cầu. Còn được biết đến là Han Kim Thuy, Thuy Han Kim, hankimthuy và thuyhankim.",
+    "websiteDescription": "Portfolio của Hàn Kim Thủy (Han Kim Thuy) — Kỹ sư UX phần mềm. Chào đón hợp tác freelance remote.",
+    "profilePageName": "Hàn Kim Thủy (Han Kim Thuy) | Kỹ sư UX phần mềm — Portfolio",
+    "occupationEngineer": "Kỹ thuật UX phần mềm freelance remote và triển khai sản phẩm lấy người dùng làm trung tâm.",
+    "occupationEngineerName": "Kỹ sư UX phần mềm",
+    "occupationOwner": "Product ownership — khám phá, ưu tiên hóa và ship kết quả lấy người dùng làm trung tâm; career path đang theo đuổi.",
     "occupationOwnerName": "Product Owner",
     "projectListName": "Dự án Portfolio",
-    "ogImageAlt": "Hàn Kim Thủy (Han Kim Thuy) — Người xây dựng sản phẩm trọn vẹn, portfolio · Freelance Vietnam"
+    "ogImageAlt": "Hàn Kim Thủy (Han Kim Thuy) — Portfolio Kỹ sư UX phần mềm · Freelance remote"
   },
   "common": {
     "scrollToTop": "Cuộn lên đầu trang"
