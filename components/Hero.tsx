@@ -161,7 +161,7 @@ const Hero = () => {
                 className="h-auto w-full rounded-t-[12rem] rounded-b-[4rem] border-[3px] border-white object-cover shadow-2xl lg:border-4"
               />
 
-              <div className="absolute -right-3 top-10 flex flex-col items-end gap-2 sm:-right-4 sm:top-12 lg:-right-10 lg:top-12 lg:gap-2">
+              <div className="absolute -right-3 top-10 hidden flex-col items-end gap-2 sm:-right-4 sm:top-12 lg:flex lg:-right-10 lg:top-12 lg:gap-2">
                 {focusChips.map((chip) => (
                   <a
                     key={chip}
@@ -172,6 +172,35 @@ const Hero = () => {
                     {chip}
                   </a>
                 ))}
+              </div>
+            </div>
+
+            <div className="relative mt-6 w-full lg:hidden">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-6 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-[#A6B1E1]/60 to-transparent"
+              />
+              <div className="grid grid-cols-2 gap-x-4 gap-y-3 px-2">
+                {focusChips.map((chip, index) => {
+                  const offsets = [
+                    'translate-x-1 -rotate-2',
+                    '-translate-x-1 rotate-2',
+                    'translate-x-3 translate-y-0.5 -rotate-1',
+                    '-translate-x-3 translate-y-0.5 rotate-1',
+                  ];
+                  return (
+                    <a
+                      key={chip}
+                      href="#skills"
+                      onClick={(e) => scrollToSection(e, 'skills')}
+                      className={`whitespace-nowrap rounded-full border border-[#A6B1E1]/50 bg-white/95 px-3 py-2 text-center text-[11px] font-semibold text-[#424874] shadow-md shadow-[#424874]/5 backdrop-blur-sm transition-all hover:border-[#583FBC] hover:bg-[#F4EEFF] hover:text-[#583FBC] active:scale-95 sm:text-xs ${
+                        index % 2 === 0 ? 'justify-self-end' : 'justify-self-start'
+                      } ${offsets[index]}`}
+                    >
+                      {chip}
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
