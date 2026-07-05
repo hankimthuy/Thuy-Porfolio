@@ -213,7 +213,7 @@
     "items": [
       {
         "question": "Who is Han Kim Thuy?",
-        "answer": "This is the portfolio of Han Kim Thuy (Hàn Kim Thủy), also written as Thuy Han Kim or hankimthuy online. I am a UX Software Engineer based in Vietnam. You can reach me at {email}, on GitHub (hankimthuy), LinkedIn (thuyhankim), or at {siteUrl}."
+        "answer": "This is the portfolio of Han Kim Thuy (Hàn Kim Thủy). I am a UX Software Engineer based in Vietnam. You can reach me at {email}, on GitHub (hankimthuy), LinkedIn (thuyhankim), or at {siteUrl}."
       },
       {
         "question": "Are you available for freelance UX Software Engineer work?",
@@ -255,7 +255,8 @@
     "copyright": "© {year} {brandName} ({fullName})"
   },
   "jsonLd": {
-    "personDescription": "UX Software Engineer based in Vietnam, available for remote freelance collaborations worldwide. Also known as Hàn Kim Thủy, Thuy Han Kim, hankimthuy, and thuyhankim.",
+    "personDescription": "Han Kim Thuy (Hàn Kim Thủy) — UX Software Engineer based in Vietnam, available for remote freelance collaborations worldwide. Legal name: Hàn Kim Thủy (family Hàn, middle Kim, given Thủy). Online handles: thuyhankim, hankimthuy.",
+    "disambiguatingDescription": "Not Kim Thuy or Kim Thụy. Legal full name is Hàn Kim Thủy (Han Kim Thuy). thuyhankim and hankimthuy are online usernames only.",
     "websiteDescription": "Portfolio of Han Kim Thuy (Hàn Kim Thủy) — UX Software Engineer. Remote freelance collaborations welcome.",
     "profilePageName": "Han Kim Thuy (Hàn Kim Thủy) | UX Software Engineer — Portfolio",
     "occupationEngineer": "Remote freelance UX software engineering and user-focused product delivery.",

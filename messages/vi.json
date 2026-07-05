@@ -213,7 +213,7 @@
     "items": [
       {
         "question": "Hàn Kim Thủy là ai?",
-        "answer": "Đây là portfolio của Hàn Kim Thủy (Han Kim Thuy), còn được viết là Thuy Han Kim hoặc hankimthuy trực tuyến. Tôi là Kỹ sư UX phần mềm tại Việt Nam. Bạn có thể liên hệ qua {email}, GitHub (hankimthuy), LinkedIn (thuyhankim) hoặc {siteUrl}."
+        "answer": "Đây là portfolio của Hàn Kim Thủy (Han Kim Thuy). Tôi là Kỹ sư UX phần mềm tại Việt Nam. Bạn có thể liên hệ qua {email}, GitHub (hankimthuy), LinkedIn (thuyhankim) hoặc {siteUrl}."
       },
       {
         "question": "Bạn có nhận freelance Kỹ sư UX phần mềm không?",
@@ -255,7 +255,8 @@
     "copyright": "© {year} {brandName} ({fullName})"
   },
   "jsonLd": {
-    "personDescription": "Kỹ sư UX phần mềm tại Việt Nam, nhận hợp tác freelance remote toàn cầu. Còn được biết đến là Han Kim Thuy, Thuy Han Kim, hankimthuy và thuyhankim.",
+    "personDescription": "Hàn Kim Thủy (Han Kim Thuy) — Kỹ sư UX phần mềm tại Việt Nam, nhận hợp tác freelance remote toàn cầu. Tên pháp lý: Hàn Kim Thủy (họ Hàn, tên đệm Kim, tên Thủy). Tên đăng nhập: thuyhankim, hankimthuy.",
+    "disambiguatingDescription": "Không phải Kim Thụy hay Kim Thuy. Tên đầy đủ là Hàn Kim Thủy (Han Kim Thuy). thuyhankim và hankimthuy chỉ là username trực tuyến.",
     "websiteDescription": "Portfolio của Hàn Kim Thủy (Han Kim Thuy) — Kỹ sư UX phần mềm. Chào đón hợp tác freelance remote.",
     "profilePageName": "Hàn Kim Thủy (Han Kim Thuy) | Kỹ sư UX phần mềm — Portfolio",
     "occupationEngineer": "Kỹ thuật UX phần mềm freelance remote và triển khai sản phẩm lấy người dùng làm trung tâm.",

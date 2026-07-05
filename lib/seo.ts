@@ -13,17 +13,26 @@ export const OG_IMAGE_PATH = '/images/han-kim-thuy-portfolio-og.png';
 export const SITE_NAME = 'Han Kim Thuy — Portfolio';
 
 export const PERSON = {
+  /** Legal full name (Vietnamese) */
   fullName: 'Hàn Kim Thủy',
+  /** English display / romanization */
   brandName: 'Han Kim Thuy',
-  givenName: 'Thuy',
-  familyName: 'Han Kim',
+  /** Vietnamese: họ */
+  familyName: 'Hàn',
+  familyNameEn: 'Han',
+  /** Vietnamese: tên đệm */
+  additionalName: 'Kim',
+  /** Vietnamese: tên */
+  givenName: 'Thủy',
+  givenNameEn: 'Thuy',
+  /** Online handles — not legal name variants */
+  onlineHandles: ['thuyhankim', 'hankimthuy'] as const,
   alternateNames: [
-    'Thuy',
     'Han Kim Thuy',
     'Hàn Kim Thủy',
+    'Thuy',
     'thuyhankim',
     'hankimthuy',
-    'Thuy Han Kim',
   ],
   yearsExperience: '4+ Years Experience',
   yearsExperienceShort: '4+ Years',
@@ -74,7 +83,6 @@ export const SITE_KEYWORDS = [
   'Hàn Kim Thủy',
   'Thuy',
   'hankimthuy',
-  'Thuy Han Kim',
   'thuyhankim',
   'thuyhankim portfolio',
   'Hàn Kim Thủy portfolio',
