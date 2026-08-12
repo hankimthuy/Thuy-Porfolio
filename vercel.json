@@ -8,7 +8,7 @@
           "value": "thuy-portfolio.vercel.app"
         }
       ],
-      "destination": "https://thuyhankim.id.vn/:path*",
+      "destination": "https://hankimthuy.com/:path*",
       "permanent": true
     }
   ]

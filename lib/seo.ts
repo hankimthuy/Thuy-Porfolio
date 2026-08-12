@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-const DEFAULT_SITE_URL = 'https://thuyhankim.id.vn';
+const DEFAULT_SITE_URL = 'https://hankimthuy.com';
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || DEFAULT_SITE_URL;
