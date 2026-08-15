@@ -5,7 +5,7 @@ import { hasLocale } from 'next-intl';
 import type { Metadata } from 'next';
 import ScrollToTop from '@/components/ScrollToTop';
 import JsonLd from '@/components/JsonLd';
-import Umami from '@/components/Umami';
+import Analytics from '@/components/Analytics';
 import { routing, type Locale } from '@/i18n/routing';
 import { getLocaleMetadata } from '@/lib/metadata';
 
@@ -50,7 +50,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           {children}
           <ScrollToTop />
         </NextIntlClientProvider>
-        <Umami />
+        <Analytics />
       </body>
     </html>
   );
