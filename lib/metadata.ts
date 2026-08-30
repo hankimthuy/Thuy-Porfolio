@@ -13,13 +13,41 @@ const OG_LOCALE: Record<Locale, string> = {
   vi: 'vi_VN',
 };
 
+export type PageKey = 'home' | 'about' | 'showcases' | 'milestones' | 'connect';
+
+/** Route path for each page, relative to the locale prefix. */
+export const PAGE_PATHS: Record<PageKey, string> = {
+  home: '',
+  about: '/about',
+  showcases: '/showcases',
+  milestones: '/milestones',
+  connect: '/connect',
+};
+
+export const PAGE_KEYS = Object.keys(PAGE_PATHS) as PageKey[];
+
+/** hreflang alternates for one route across every locale. */
+function alternatesFor(path: string) {
+  return {
+    canonical: (locale: Locale) => `/${locale}${path}`,
+    languages: {
+      en: `/en${path}`,
+      vi: `/vi${path}`,
+      'x-default': `/en${path}`,
+    },
+  };
+}
+
+/**
+ * Site-wide defaults. Every page overrides title, description, canonical and
+ * the OpenGraph url via `getPageMetadata`; everything else is inherited.
+ */
 export async function getLocaleMetadata(locale: Locale): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'metadata' });
   const tJsonLd = await getTranslations({ locale, namespace: 'jsonLd' });
   const tPerson = await getTranslations({ locale, namespace: 'person' });
 
   const googleVerification = process.env.GOOGLE_SITE_VERIFICATION;
-  const canonicalPath = `/${locale}`;
   const keywords = t('keywords').split(',').map((k) => k.trim());
 
   return {
@@ -42,19 +70,10 @@ export async function getLocaleMetadata(locale: Locale): Promise<Metadata> {
         'max-snippet': -1,
       },
     },
-    alternates: {
-      canonical: canonicalPath,
-      languages: {
-        en: '/en',
-        vi: '/vi',
-        'x-default': '/en',
-      },
-    },
     openGraph: {
       type: 'website',
       locale: OG_LOCALE[locale],
       alternateLocale: locale === 'en' ? ['vi_VN'] : ['en_US'],
-      url: `${SITE_URL}${canonicalPath}`,
       siteName: t('siteName'),
       title: t('ogTitle'),
       description: t('description'),
@@ -80,6 +99,48 @@ export async function getLocaleMetadata(locale: Locale): Promise<Metadata> {
     ...(googleVerification
       ? { verification: { google: googleVerification } }
       : {}),
+  };
+}
+
+/**
+ * Per-route metadata: canonical, hreflang alternates and OpenGraph url all
+ * point at this page rather than at the locale root.
+ *
+ * Home keeps the hand-written SEO title verbatim (`title.absolute`); the other
+ * pages take the layout's `%s | Brand` template.
+ */
+export async function getPageMetadata(
+  locale: Locale,
+  page: PageKey,
+): Promise<Metadata> {
+  const tMeta = await getTranslations({ locale, namespace: 'metadata' });
+  const tPages = await getTranslations({ locale, namespace: 'pages' });
+
+  const path = PAGE_PATHS[page];
+  const { canonical, languages } = alternatesFor(path);
+  const isHome = page === 'home';
+
+  const title = isHome ? tMeta('title') : tPages(`${page}.title`);
+  const description = isHome
+    ? tMeta('description')
+    : tPages(`${page}.description`);
+
+  return {
+    title: isHome ? { absolute: title } : title,
+    description,
+    alternates: {
+      canonical: canonical(locale),
+      languages,
+    },
+    openGraph: {
+      url: `${SITE_URL}/${locale}${path}`,
+      title: isHome ? tMeta('ogTitle') : `${title} | ${tMeta('siteName')}`,
+      description,
+    },
+    twitter: {
+      title: isHome ? tMeta('ogTitle') : `${title} | ${tMeta('siteName')}`,
+      description,
+    },
   };
 }
 

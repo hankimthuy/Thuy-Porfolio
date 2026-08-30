@@ -54,16 +54,16 @@ export default function CaseStudySlider({
 
       <div className={`flex items-start justify-between gap-2 ${compact ? 'mt-2' : 'mt-3'}`}>
         <div className="min-w-0 flex-1">
-          <p className={`font-semibold text-[#424874] ${compact ? 'text-xs' : 'text-sm'}`}>{slide.title}</p>
+          <p className={`font-semibold text-[#1d3557] ${compact ? 'text-xs' : 'text-sm'}`}>{slide.title}</p>
           {!compact && (
-            <p className="mt-0.5 text-xs leading-snug text-[#424874]/65">{slide.caption}</p>
+            <p className="mt-0.5 text-xs leading-snug text-[#1d3557]/65">{slide.caption}</p>
           )}
         </div>
         <div className="flex shrink-0 items-center gap-1">
           <button
             type="button"
             onClick={() => go(-1)}
-            className="rounded-lg border border-indigo-100 p-1.5 text-[#424874]/70 transition-colors hover:bg-indigo-50 hover:text-[#424874]"
+            className="rounded-lg border border-indigo-100 p-1.5 text-[#1d3557]/70 transition-colors hover:bg-indigo-50 hover:text-[#1d3557]"
             aria-label={prevLabel}
           >
             <FiChevronLeft className="h-4 w-4" />
@@ -71,7 +71,7 @@ export default function CaseStudySlider({
           <button
             type="button"
             onClick={() => go(1)}
-            className="rounded-lg border border-indigo-100 p-1.5 text-[#424874]/70 transition-colors hover:bg-indigo-50 hover:text-[#424874]"
+            className="rounded-lg border border-indigo-100 p-1.5 text-[#1d3557]/70 transition-colors hover:bg-indigo-50 hover:text-[#1d3557]"
             aria-label={nextLabel}
           >
             <FiChevronRight className="h-4 w-4" />
@@ -88,7 +88,7 @@ export default function CaseStudySlider({
             aria-selected={i === index}
             aria-label={s.title}
             onClick={() => setIndex(i)}
-            className={`h-1.5 rounded-full transition-all ${i === index ? 'w-5 bg-[#583FBC]' : 'w-1.5 bg-indigo-200'}`}
+            className={`h-1.5 rounded-full transition-all ${i === index ? 'w-5 bg-[#457b9d]' : 'w-1.5 bg-indigo-200'}`}
           />
         ))}
       </div>

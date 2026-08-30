@@ -78,7 +78,7 @@ export default function LanguageSwitcher({
   return (
     <>
       <div
-        className={`inline-flex items-center rounded-lg border border-[#A6B1E1]/50 bg-[#F4EEFF]/50 p-0.5 font-semibold ${className}`}
+        className={`inline-flex items-center rounded-lg border border-ocean-200 bg-ocean-100 p-0.5 font-semibold ${className}`}
         role="group"
         aria-label={t('switchLanguage')}
       >
@@ -90,8 +90,8 @@ export default function LanguageSwitcher({
             onClick={() => switchLocale(loc)}
             className={`${buttonClass} rounded-md uppercase tracking-wide transition-colors disabled:cursor-wait disabled:opacity-60 ${
               locale === loc
-                ? 'bg-[#583FBC] text-white shadow-sm'
-                : 'text-[#424874] hover:bg-white/80 hover:text-[#583FBC]'
+                ? 'bg-ocean-500 text-white shadow-sm'
+                : 'text-ocean-700 hover:bg-surface hover:text-ocean-900'
             }`}
             aria-current={locale === loc ? 'true' : undefined}
           >

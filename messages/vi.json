@@ -10,7 +10,9 @@
     "brandName": "Hàn Kim Thủy",
     "fullName": "Hàn Kim Thủy",
     "greeting": "Xin chào! Tôi là",
-    "jobTitles": ["UX Software Engineer"],
+    "jobTitles": [
+      "UX Software Engineer"
+    ],
     "jobTitleSecondary": "Full-stack · Tư duy sản phẩm",
     "yearsExperience": "Hơn 4 năm kinh nghiệm",
     "yearsExperienceShort": "4+ năm",
@@ -18,12 +20,11 @@
   },
   "header": {
     "nav": {
+      "home": "Trang chủ",
       "about": "Giới thiệu",
-      "skills": "Kỹ năng",
-      "projects": "Dự án",
+      "showcases": "Dự án",
       "milestones": "Cột mốc",
-      "faq": "FAQ",
-      "contact": "Liên hệ"
+      "connect": "Liên hệ"
     },
     "getInTouch": "Liên hệ ngay",
     "youAreHere": "Bạn đang ở đây",
@@ -56,6 +57,39 @@
       "linkedin": "Hồ sơ LinkedIn",
       "github": "GitHub — hankimthuy",
       "email": "Gửi email"
+    }
+  },
+  "home": {
+    "philosophy": {
+      "title": "Kết nối tư duy kỹ thuật với sự đồng cảm con người.",
+      "caption": "Một tính năng hoàn thành khi người dùng đạt được mục tiêu — không phải khi code được merge."
+    },
+    "competencies": {
+      "eyebrow": "Năng lực cốt lõi",
+      "title": "Điều tôi mang đến cho đội ngũ"
+    },
+    "stats": {
+      "eyebrow": "Tổng quan nhanh"
+    },
+    "cta": {
+      "eyebrow": "Liên hệ",
+      "title": "Cùng xây dựng điều gì đó.",
+      "primary": "Xem dự án",
+      "secondary": "Liên hệ ngay"
+    },
+    "portraitCaption": "Việt Nam · GMT+7"
+  },
+  "about": {
+    "eyebrow": "Giới thiệu",
+    "title": "Câu chuyện đầy đủ hơn",
+    "subtitle": "Cách tôi nhìn nhận sản phẩm và cách tôi muốn làm việc cùng đội ngũ.",
+    "focus": {
+      "title": "Điều tôi tập trung",
+      "subtitle": "Bốn câu hỏi tôi luôn quay lại với bất kỳ sản phẩm nào."
+    },
+    "howIWork": {
+      "title": "Cách tôi làm việc",
+      "subtitle": "Từ việc làm rõ nhu cầu người dùng đến việc đưa ra sản phẩm người ta thật sự muốn dùng."
     }
   },
   "skills": {
@@ -145,40 +179,76 @@
       "manufacturing-lifecycle": {
         "title": "Quản lý vòng đời sản xuất tập trung",
         "problemText": "Quy trình phân mảnh và dữ liệu rời rạc khiến việc theo dõi toàn bộ vòng đời sản xuất trở nên không khả thi.",
-        "problemHighlights": ["Quy trình phân mảnh", "dữ liệu rời rạc"],
+        "problemHighlights": [
+          "Quy trình phân mảnh",
+          "dữ liệu rời rạc"
+        ],
         "solutionText": "Thiết kế nền tảng thống nhất tích hợp kho, quản lý BOM, hóa đơn và kiểm toán tuân thủ.",
-        "solutionHighlights": ["nền tảng thống nhất", "quản lý BOM", "kiểm toán tuân thủ"],
+        "solutionHighlights": [
+          "nền tảng thống nhất",
+          "quản lý BOM",
+          "kiểm toán tuân thủ"
+        ],
         "impactText": "Thay thế theo dõi Excel thủ công bằng công cụ số hóa thống nhất, loại bỏ trùng lặp dữ liệu.",
         "schemaDescription": "Nền tảng Angular doanh nghiệp tại Bosch số hóa vòng đời sản xuất, BOM và quản lý kho."
       },
       "talent-development": {
         "title": "Nền tảng phát triển nhân tài",
         "problemText": "Khoảng cách giữa nguyện vọng cá nhân và mục tiêu tổ chức.",
-        "problemHighlights": ["nguyện vọng cá nhân"],
+        "problemHighlights": [
+          "nguyện vọng cá nhân"
+        ],
         "solutionText": "Phát triển nền tảng end-to-end cho quản lý và đội L&D cùng xây dựng lộ trình học tập cá nhân hóa.",
-        "solutionHighlights": ["lộ trình học tập cá nhân hóa"],
+        "solutionHighlights": [
+          "lộ trình học tập cá nhân hóa"
+        ],
         "impactText": "Tinh gọn đánh giá hiệu suất và nâng cao sự gắn kết nhân viên.",
-        "impactHighlights": ["đánh giá hiệu suất"],
+        "impactHighlights": [
+          "đánh giá hiệu suất"
+        ],
         "schemaDescription": "Nền tảng phát triển nhân tài Angular và Spring Boot cho lộ trình học tập cá nhân hóa tại Bosch."
       },
       "mimose": {
         "title": "MimoSe: Make Sense of Me",
         "problemText": "Journaling truyền thống ma sát cao — thói quen không đều và nỗi lo trang trắng khiến tự nhận thức khó bền.",
-        "problemHighlights": ["ma sát cao", "trang trắng"],
+        "problemHighlights": [
+          "ma sát cao",
+          "trang trắng"
+        ],
         "solutionText": "Tự dẫn dắt 0→1: nghiên cứu pain point, prototype Figma, rồi build UI React và backend Spring Boot. Khung Low-Friction với Proactive AI đồng hành qua Innerverse & Outerverse.",
-        "solutionHighlights": ["Tự dẫn dắt 0→1", "Figma", "React và Spring Boot", "Proactive AI", "Innerverse & Outerverse"],
+        "solutionHighlights": [
+          "Tự dẫn dắt 0→1",
+          "Figma",
+          "React và Spring Boot",
+          "Proactive AI",
+          "Innerverse & Outerverse"
+        ],
         "impactText": "Giữ trọn tầm nhìn sản phẩm, UX và kỹ thuật end-to-end — người bạn đồng hành êm ái, đưa insight từ AI mà không tạo áp lực productivity.",
-        "impactHighlights": ["tầm nhìn sản phẩm", "insight từ AI"],
+        "impactHighlights": [
+          "tầm nhìn sản phẩm",
+          "insight từ AI"
+        ],
         "schemaDescription": "Ứng dụng journaling AI tự dẫn dắt: UX Figma, frontend React, backend Spring Boot và AI chủ động cho tự nhận thức."
       },
       "content-platform": {
         "title": "Nền tảng nội dung đầu tư (Headless CMS)",
         "problemText": "Trang nội dung cần tập trung tối ưu trải nghiệm người dùng và technical SEO — mà không phụ thuộc dev mỗi chu kỳ xuất bản.",
-        "problemHighlights": ["tối ưu trải nghiệm người dùng", "technical SEO"],
+        "problemHighlights": [
+          "tối ưu trải nghiệm người dùng",
+          "technical SEO"
+        ],
         "solutionText": "Thiết kế trên Figma (wireframe → UI), xây hệ màu và typography, layout responsive. Triển khai admin headless CMS (React, RBAC) và storefront Next.js với SSR, metadata, JSON-LD, sitemap — module nội dung và quy trình biên tập cho blog, danh mục, SEO toàn site.",
-        "solutionHighlights": ["Thiết kế trên Figma", "admin headless CMS", "storefront Next.js", "module nội dung và quy trình biên tập"],
+        "solutionHighlights": [
+          "Thiết kế trên Figma",
+          "admin headless CMS",
+          "storefront Next.js",
+          "module nội dung và quy trình biên tập"
+        ],
         "impactText": "Trải nghiệm thống nhất trên mọi thiết bị; SEO có cấu trúc cho bài viết và landing page; đội biên tập tự cập nhật nội dung.",
-        "impactHighlights": ["Trải nghiệm thống nhất trên mọi thiết bị", "SEO có cấu trúc"],
+        "impactHighlights": [
+          "Trải nghiệm thống nhất trên mọi thiết bị",
+          "SEO có cấu trúc"
+        ],
         "schemaDescription": "Nền tảng nội dung đầu tư thiết kế Figma, admin headless CMS, UI responsive và technical SEO trên Next.js."
       }
     }
@@ -203,7 +273,12 @@
     },
     "credential": {
       "title": "Google UX Design Professional Certificate",
-      "skills": ["Nghiên cứu UX", "Wireframing & Prototyping", "Kiểm thử khả dụng", "Cầu nối lấy người dùng làm trung tâm"]
+      "skills": [
+        "Nghiên cứu UX",
+        "Wireframing & Prototyping",
+        "Kiểm thử khả dụng",
+        "Cầu nối lấy người dùng làm trung tâm"
+      ]
     }
   },
   "faq": {
@@ -245,6 +320,11 @@
       }
     ]
   },
+  "connect": {
+    "eyebrow": "Liên hệ",
+    "title": "Cùng trao đổi về sản phẩm của bạn",
+    "subtitle": "Hãy kể tôi nghe vấn đề, ai bị ảnh hưởng và timeline của bạn — tài liệu kỹ thuật có thể tính sau."
+  },
   "footer": {
     "connect": "Kết nối",
     "freelancePrompt": "Có dự án freelance? LinkedIn là cách liên hệ tốt nhất.",
@@ -268,5 +348,27 @@
   },
   "common": {
     "scrollToTop": "Cuộn lên đầu trang"
+  },
+  "pages": {
+    "home": {
+      "title": "Kỹ sư UX phần mềm",
+      "description": "Hàn Kim Thủy — Kỹ sư UX phần mềm tại Việt Nam. Kết nối tư duy kỹ thuật với sự đồng cảm con người qua các nền tảng doanh nghiệp và sản phẩm tự phát triển."
+    },
+    "about": {
+      "title": "Giới thiệu",
+      "description": "Cách Hàn Kim Thủy tiếp cận công việc sản phẩm — phát triển hướng UX, khám phá sản phẩm và tư duy Agile lấy người dùng làm trung tâm."
+    },
+    "showcases": {
+      "title": "Dự án",
+      "description": "Các dự án tiêu biểu của Hàn Kim Thủy — sản phẩm doanh nghiệp tại Bosch và dự án tự phát triển, trình bày theo vấn đề, giải pháp và tác động."
+    },
+    "milestones": {
+      "title": "Cột mốc",
+      "description": "Các cột mốc nghề nghiệp của Hàn Kim Thủy — Bosch Global Software Technologies và chứng chỉ Google UX Design Professional."
+    },
+    "connect": {
+      "title": "Liên hệ",
+      "description": "Liên hệ Hàn Kim Thủy về công việc freelance UX software engineering từ xa, cùng giải đáp những câu hỏi khách hàng thường gặp."
+    }
   }
 }

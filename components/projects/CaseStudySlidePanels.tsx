@@ -108,7 +108,7 @@ export function CaseStudySlideVisual({ type, compact = false }: { type: SlideVis
         {['Figma', 'Headless CMS', 'Next.js', 'Technical SEO'].map((chip) => (
           <span
             key={chip}
-            className={`rounded-full border border-[#CBD5E1] bg-white font-semibold text-[#424874] shadow-sm ${compact ? 'px-2 py-0.5 text-[9px]' : 'px-3 py-1 text-[11px]'}`}
+            className={`rounded-full border border-[#CBD5E1] bg-white font-semibold text-[#1d3557] shadow-sm ${compact ? 'px-2 py-0.5 text-[9px]' : 'px-3 py-1 text-[11px]'}`}
           >
             {chip}
           </span>

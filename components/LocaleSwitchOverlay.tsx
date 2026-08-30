@@ -40,7 +40,7 @@ export default function LocaleSwitchOverlay({ visible, label }: LocaleSwitchOver
 
   return createPortal(
     <div
-      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-gradient-to-br from-white/90 via-[#F4EEFF]/75 to-white/90 backdrop-blur-md transition-opacity duration-300 ease-out ${
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-ocean-50/90 backdrop-blur-md transition-opacity duration-300 ease-out ${
         visible ? 'opacity-100' : 'opacity-0'
       }`}
       role="status"
@@ -50,7 +50,7 @@ export default function LocaleSwitchOverlay({ visible, label }: LocaleSwitchOver
     >
       <div className="relative flex flex-col items-center">
         <div
-          className="absolute -inset-8 rounded-3xl bg-[#583FBC]/[0.06] blur-2xl"
+          className="absolute -inset-8 rounded-3xl bg-ocean-500/[0.06] blur-2xl"
           aria-hidden
         />
         <div className="locale-block-loader relative" aria-hidden>
@@ -58,7 +58,7 @@ export default function LocaleSwitchOverlay({ visible, label }: LocaleSwitchOver
             <span key={index} className="locale-block-loader__piece" />
           ))}
         </div>
-        <p className="relative mt-5 text-sm font-semibold tracking-wide text-[#424874]/90">
+        <p className="relative mt-5 text-sm font-semibold tracking-wide text-ocean-700">
           {label}
         </p>
       </div>

@@ -56,3 +56,16 @@ export const BOSCH_EMPLOYER = {
   name: 'Bosch Global Software Technologies',
   url: 'https://www.bosch.com/',
 } as const;
+
+/**
+ * Technologies surfaced on the home page. Every entry is attested elsewhere in
+ * the site content — the skills cards or a project's tags.
+ */
+export const CORE_TECH = [
+  'React',
+  'Angular',
+  'TypeScript',
+  'Next.js',
+  'Spring Boot',
+  'Figma',
+] as const;
