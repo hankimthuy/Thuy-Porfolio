@@ -13,9 +13,7 @@ import {
 } from 'react-icons/lu';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
-import { LOCALE_SWITCHER_ENABLED } from '@/lib/i18n-config';
 import { SECTION_CONTAINER } from '@/lib/layout';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const navItems = [
   { key: 'home' as const, href: '/', icon: LuHouse },
@@ -25,6 +23,26 @@ const navItems = [
 ] as const;
 
 const CONNECT_HREF = '/connect';
+
+/**
+ * Splits the brand name on its last space so the given name reads light and
+ * the family name reads bold ("Han Kim **Thuy**" / "Hàn Kim **Thủy**") —
+ * still one continuous string for screen readers and for name-driven SEO.
+ * Falls back to a single bold span if the name has no space to split on.
+ */
+function Wordmark({ name }: { name: string }) {
+  const splitAt = name.lastIndexOf(' ');
+  if (splitAt === -1) {
+    return <span className="font-extrabold">{name}</span>;
+  }
+
+  return (
+    <>
+      <span className="font-normal">{name.slice(0, splitAt + 1)}</span>
+      <span className="font-extrabold">{name.slice(splitAt + 1)}</span>
+    </>
+  );
+}
 
 const Header = () => {
   const t = useTranslations('header');
@@ -47,56 +65,51 @@ const Header = () => {
     };
   }, [mobileMenuOpen]);
 
-  const languageSwitcher = LOCALE_SWITCHER_ENABLED ? <LanguageSwitcher /> : null;
-
   return (
     <nav className="fixed inset-x-0 top-0 z-50 border-b border-sand-200 bg-sand-50/90 backdrop-blur-lg">
-      <div className={`${SECTION_CONTAINER} flex h-16 items-center justify-between`}>
+      <div className={`${SECTION_CONTAINER} flex h-16 items-center gap-4`}>
         <Link
           href="/"
-          className="text-lg font-extrabold tracking-tight text-ocean-900 transition-colors hover:text-ocean-700"
+          className="shrink-0 text-lg tracking-tight text-ocean-900 transition-colors hover:text-ocean-700"
         >
-          {tPerson('brandName')}
+          <Wordmark name={tPerson('brandName')} />
         </Link>
 
-        <div className="hidden items-center gap-6 lg:flex xl:gap-8">
-          <div className="flex items-center gap-6 text-sm font-medium xl:gap-8">
-            {navItems.map((item) => {
-              const active = isActive(item.href);
+        <div className="hidden flex-1 items-center justify-center gap-8 lg:flex xl:gap-10">
+          {navItems.map((item) => {
+            const active = isActive(item.href);
 
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  aria-current={active ? 'page' : undefined}
-                  className={`group relative transition-colors ${
-                    active ? 'text-ocean-900' : 'text-ocean-700 hover:text-ocean-900'
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? 'page' : undefined}
+                className={`group relative text-sm font-medium transition-colors ${
+                  active ? 'text-ocean-900' : 'text-ocean-700 hover:text-ocean-900'
+                }`}
+              >
+                {t(`nav.${item.key}`)}
+                <span
+                  className={`absolute -bottom-1.5 left-0 h-0.5 bg-ocean-500 transition-all duration-300 ${
+                    active ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}
-                >
-                  {t(`nav.${item.key}`)}
-                  <span
-                    className={`absolute -bottom-1.5 left-0 h-0.5 bg-ocean-500 transition-all duration-300 ${
-                      active ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`}
-                  />
-                </Link>
-              );
-            })}
-          </div>
-          {languageSwitcher}
-          <Link
-            href={CONNECT_HREF}
-            aria-current={isActive(CONNECT_HREF) ? 'page' : undefined}
-            className={`inline-flex items-center justify-center rounded-xl bg-ocean-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-ocean-700 ${
-              isActive(CONNECT_HREF) ? 'bg-ocean-700' : ''
-            }`}
-          >
-            {t('nav.connect')}
-          </Link>
+                />
+              </Link>
+            );
+          })}
         </div>
 
-        <div className="flex items-center gap-3 lg:hidden">
-          {languageSwitcher && <LanguageSwitcher variant="mobile" />}
+        <Link
+          href={CONNECT_HREF}
+          aria-current={isActive(CONNECT_HREF) ? 'page' : undefined}
+          className={`hidden shrink-0 items-center justify-center rounded-xl bg-ocean-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-ocean-700 lg:inline-flex ${
+            isActive(CONNECT_HREF) ? 'bg-ocean-700' : ''
+          }`}
+        >
+          {t('nav.connect')}
+        </Link>
+
+        <div className="ml-auto flex items-center gap-3 lg:hidden">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
