@@ -50,7 +50,7 @@ const Header = () => {
   const languageSwitcher = LOCALE_SWITCHER_ENABLED ? <LanguageSwitcher /> : null;
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 border-b border-ocean-200 bg-ocean-50/90 backdrop-blur-lg">
+    <nav className="fixed inset-x-0 top-0 z-50 border-b border-sand-200 bg-sand-50/90 backdrop-blur-lg">
       <div className={`${SECTION_CONTAINER} flex h-16 items-center justify-between`}>
         <Link
           href="/"
@@ -75,7 +75,7 @@ const Header = () => {
                 >
                   {t(`nav.${item.key}`)}
                   <span
-                    className={`absolute -bottom-1.5 left-0 h-0.5 bg-coral-500 transition-all duration-300 ${
+                    className={`absolute -bottom-1.5 left-0 h-0.5 bg-ocean-500 transition-all duration-300 ${
                       active ? 'w-full' : 'w-0 group-hover:w-full'
                     }`}
                   />
@@ -104,11 +104,11 @@ const Header = () => {
             aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-ocean-200 bg-surface text-ocean-700 transition-colors hover:border-ocean-500">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-sand-200 bg-surface text-ocean-700 transition-colors hover:border-ocean-500">
                 <LuX className="h-5 w-5" />
               </span>
             ) : (
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl text-ocean-700 transition-colors hover:bg-ocean-100">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl text-ocean-700 transition-colors hover:bg-sand-100">
                 <LuMenu className="h-6 w-6" />
               </span>
             )}
@@ -124,7 +124,7 @@ const Header = () => {
             className="fixed inset-0 top-16 z-40 bg-ocean-900/20 backdrop-blur-[2px] lg:hidden"
             onClick={() => setMobileMenuOpen(false)}
           />
-          <div className="absolute left-0 top-16 z-50 w-full border-t border-ocean-200 bg-ocean-50/95 p-5 shadow-bento-hover backdrop-blur-xl lg:hidden">
+          <div className="absolute left-0 top-16 z-50 w-full border-t border-sand-200 bg-sand-50/95 p-5 shadow-bento-hover backdrop-blur-xl lg:hidden">
             <div className="flex flex-col gap-2">
               {navItems.map((item) => {
                 const Icon = item.icon;
@@ -138,14 +138,14 @@ const Header = () => {
                     className={`group flex items-center gap-3 rounded-2xl border px-4 py-3.5 transition-all active:scale-[0.98] ${
                       active
                         ? 'border-ocean-500/40 bg-surface shadow-bento'
-                        : 'border-ocean-200 bg-surface/60 hover:bg-surface'
+                        : 'border-sand-200 bg-surface/60 hover:bg-surface'
                     }`}
                   >
                     <span
                       className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors ${
                         active
                           ? 'bg-ocean-500 text-white'
-                          : 'bg-ocean-100 text-ocean-700 group-hover:bg-ocean-200'
+                          : 'bg-sand-100 text-ocean-700 group-hover:bg-sand-200'
                       }`}
                     >
                       <Icon className="h-5 w-5" aria-hidden />
@@ -159,14 +159,14 @@ const Header = () => {
                         {t(`nav.${item.key}`)}
                       </span>
                       {active && (
-                        <span className="mt-0.5 block text-xs font-medium text-coral-500">
+                        <span className="mt-0.5 block text-xs font-medium text-ocean-700">
                           {t('youAreHere')}
                         </span>
                       )}
                     </span>
                     <LuChevronRight
                       className={`h-5 w-5 shrink-0 transition-transform group-hover:translate-x-0.5 ${
-                        active ? 'text-ocean-900' : 'text-ocean-300'
+                        active ? 'text-ocean-900' : 'text-ocean-500'
                       }`}
                       aria-hidden
                     />
@@ -175,7 +175,7 @@ const Header = () => {
               })}
             </div>
 
-            <div className="mt-5 border-t border-ocean-200 pt-5">
+            <div className="mt-5 border-t border-sand-200 pt-5">
               <Link
                 href={CONNECT_HREF}
                 aria-current={isActive(CONNECT_HREF) ? 'page' : undefined}

@@ -6,7 +6,7 @@ import BentoCard from '@/components/bento/BentoCard';
 import { PERSON } from '@/lib/seo';
 
 const SOCIAL_LINK_CLASS =
-  'flex h-11 w-11 items-center justify-center rounded-xl border border-ocean-200 text-ocean-700 transition-colors hover:border-ocean-500 hover:bg-ocean-100 hover:text-ocean-900';
+  'flex h-11 w-11 items-center justify-center rounded-xl border border-sand-200 text-ocean-700 transition-colors hover:border-ocean-500 hover:bg-sand-100 hover:text-ocean-900';
 
 export default async function HeroCard() {
   const t = await getTranslations('hero');
@@ -63,7 +63,7 @@ export default async function HeroCard() {
           </Link>
           <Link
             href="/connect"
-            className="inline-flex items-center justify-center rounded-xl border border-ocean-200 bg-ocean-50 px-6 py-3 text-sm font-semibold text-ocean-700 transition-colors hover:border-ocean-500 hover:bg-ocean-100"
+            className="inline-flex items-center justify-center rounded-xl border border-sand-200 bg-sand-50 px-6 py-3 text-sm font-semibold text-ocean-700 transition-colors hover:border-ocean-500 hover:bg-sand-100"
           >
             {tHome('cta.secondary')}
           </Link>

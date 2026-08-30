@@ -6,7 +6,7 @@ import BentoCard from '@/components/bento/BentoCard';
 import { PERSON } from '@/lib/seo';
 
 const SECONDARY_LINK_CLASS =
-  'inline-flex items-center justify-center gap-2 rounded-xl border border-ocean-200 bg-ocean-50 px-5 py-3 text-sm font-semibold text-ocean-700 transition-colors hover:border-ocean-500 hover:bg-ocean-100';
+  'inline-flex items-center justify-center gap-2 rounded-xl border border-sand-200 bg-sand-50 px-5 py-3 text-sm font-semibold text-ocean-700 transition-colors hover:border-ocean-500 hover:bg-sand-100';
 
 /** The contact surface for the Connect page. */
 export default async function ContactPanel() {
@@ -61,9 +61,9 @@ export default async function ContactPanel() {
           href={PERSON.gmailComposeHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-4 rounded-xl border border-ocean-200 bg-surface px-5 py-4 transition-colors hover:border-ocean-500"
+          className="group flex items-center gap-4 rounded-xl border border-sand-200 bg-surface px-5 py-4 transition-colors hover:border-ocean-500"
         >
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-ocean-100 text-ocean-700 transition-colors group-hover:bg-ocean-500 group-hover:text-white">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sand-100 text-ocean-700 transition-colors group-hover:bg-ocean-500 group-hover:text-white">
             <LuMail className="h-5 w-5" aria-hidden />
           </span>
           <span className="min-w-0">
@@ -80,9 +80,9 @@ export default async function ContactPanel() {
           href={PERSON.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-4 rounded-xl border border-ocean-200 bg-surface px-5 py-4 transition-colors hover:border-ocean-500"
+          className="group flex items-center gap-4 rounded-xl border border-sand-200 bg-surface px-5 py-4 transition-colors hover:border-ocean-500"
         >
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-ocean-100 text-ocean-700 transition-colors group-hover:bg-ocean-500 group-hover:text-white">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sand-100 text-ocean-700 transition-colors group-hover:bg-ocean-500 group-hover:text-white">
             <FiGithub className="h-5 w-5" aria-hidden />
           </span>
           <span className="min-w-0">
@@ -99,9 +99,9 @@ export default async function ContactPanel() {
           href={PERSON.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-4 rounded-xl border border-ocean-200 bg-surface px-5 py-4 transition-colors hover:border-ocean-500"
+          className="group flex items-center gap-4 rounded-xl border border-sand-200 bg-surface px-5 py-4 transition-colors hover:border-ocean-500"
         >
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-ocean-100 text-ocean-700 transition-colors group-hover:bg-ocean-500 group-hover:text-white">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sand-100 text-ocean-700 transition-colors group-hover:bg-ocean-500 group-hover:text-white">
             <FiLinkedin className="h-5 w-5" aria-hidden />
           </span>
           <span className="min-w-0">

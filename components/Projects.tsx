@@ -78,13 +78,15 @@ function projectToCardProps(
 }
 
 /**
- * Problem -> Solution -> Impact. One accent per step, all drawn from the ocean
- * ramp so the card reads as a single system rather than three loose chips.
+ * Problem -> Solution -> Impact. One neutral chip for all three — the icon
+ * carries the difference, so four cards of these don't read as colour noise.
  */
+const STEP_CHIP = 'border-sand-200 bg-sand-100 text-ocean-700';
+
 const STEPS = [
-  { key: 'problem', icon: FiAlertTriangle, accent: 'bg-coral-50 text-coral-500 border-coral-500/20' },
-  { key: 'solution', icon: LuLightbulb, accent: 'bg-ocean-100 text-ocean-700 border-ocean-200' },
-  { key: 'impact', icon: FiBarChart2, accent: 'bg-ocean-300/30 text-ocean-700 border-ocean-300' },
+  { key: 'problem', icon: FiAlertTriangle },
+  { key: 'solution', icon: LuLightbulb },
+  { key: 'impact', icon: FiBarChart2 },
 ] as const;
 
 function ProjectCard(props: ProjectCardProps) {
@@ -109,7 +111,7 @@ function ProjectCard(props: ProjectCardProps) {
             href={cta.href}
             target="_blank"
             rel="noreferrer"
-            className="-mr-2 shrink-0 rounded-lg p-2 text-ocean-700 transition-colors hover:bg-ocean-100 hover:text-ocean-900"
+            className="-mr-2 shrink-0 rounded-lg p-2 text-ocean-700 transition-colors hover:bg-sand-100 hover:text-ocean-900"
             title={cta.label}
             aria-label={cta.label}
           >
@@ -122,7 +124,7 @@ function ProjectCard(props: ProjectCardProps) {
         {tags.map((tag) => (
           <li
             key={tag}
-            className="rounded-full border border-ocean-200 bg-ocean-50 px-3 py-1 text-xs font-semibold text-ocean-700"
+            className="rounded-full border border-sand-200 bg-sand-50 px-3 py-1 text-xs font-semibold text-ocean-700"
           >
             {tag}
           </li>
@@ -136,7 +138,7 @@ function ProjectCard(props: ProjectCardProps) {
           return (
             <div key={step.key} className="flex gap-3.5">
               <span
-                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border ${step.accent}`}
+                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border ${STEP_CHIP}`}
               >
                 <StepIcon className="h-4 w-4" aria-hidden="true" />
               </span>
@@ -179,7 +181,7 @@ function ProjectGroup({ title, subtitle, icon, structures, cards }: ProjectGroup
   return (
     <section className="space-y-5">
       <div className="flex items-start gap-3.5">
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-ocean-200 bg-ocean-100 text-ocean-700">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-sand-200 bg-sand-100 text-ocean-700">
           {icon}
         </span>
         <div className="min-w-0">

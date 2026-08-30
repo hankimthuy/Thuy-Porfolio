@@ -104,9 +104,9 @@ export default async function AboutPage({ params }: Props) {
               return (
                 <li
                   key={chip}
-                  className="flex items-center gap-3 rounded-xl border border-ocean-200 bg-surface px-4 py-3.5"
+                  className="flex items-center gap-3 rounded-xl border border-sand-200 bg-surface px-4 py-3.5"
                 >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ocean-100 text-ocean-700">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sand-100 text-ocean-700">
                     <Icon className="h-4 w-4" aria-hidden />
                   </span>
                   <span className="text-sm font-semibold text-ocean-900">{chip}</span>
@@ -128,7 +128,7 @@ export default async function AboutPage({ params }: Props) {
             {skillCards.map((card) => (
               <article
                 key={card.title}
-                className="rounded-xl border border-ocean-200 bg-ocean-50 p-5"
+                className="rounded-xl border border-sand-200 bg-sand-50 p-5"
               >
                 <h3 className="text-base font-bold text-ocean-900">{card.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ocean-700">

@@ -78,7 +78,7 @@ export default function LanguageSwitcher({
   return (
     <>
       <div
-        className={`inline-flex items-center rounded-lg border border-ocean-200 bg-ocean-100 p-0.5 font-semibold ${className}`}
+        className={`inline-flex items-center rounded-lg border border-sand-200 bg-sand-100 p-0.5 font-semibold ${className}`}
         role="group"
         aria-label={t('switchLanguage')}
       >

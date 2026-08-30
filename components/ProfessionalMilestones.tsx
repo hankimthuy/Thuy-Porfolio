@@ -41,7 +41,7 @@ export default async function ProfessionalMilestones() {
             <h2 className="text-xl font-bold leading-snug text-ocean-900 lg:text-2xl">
               {t('bosch.title')}
             </h2>
-            <span className="inline-flex items-center rounded-full border border-ocean-200 bg-ocean-100 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-ocean-700">
+            <span className="inline-flex items-center rounded-full border border-sand-200 bg-sand-100 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-ocean-700">
               {tPerson('yearsExperienceShort')}
             </span>
           </div>
@@ -49,7 +49,7 @@ export default async function ProfessionalMilestones() {
           <ul className="mt-6 space-y-5">
             {BOSCH_POINTS.map(({ key, icon: Icon }) => (
               <li key={key} className="flex gap-3.5">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-ocean-200 bg-ocean-50 text-ocean-700">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-sand-200 bg-sand-50 text-ocean-700">
                   <Icon aria-hidden="true" className="h-4 w-4" />
                 </span>
                 <p className="min-w-0 text-sm leading-relaxed text-ocean-900/80">
@@ -87,7 +87,7 @@ export default async function ProfessionalMilestones() {
             <div className="lg:basis-1/2">
               <PdfThumbnail
                 pdfUrl={GOOGLE_UX_CREDENTIAL.pdfPath}
-                className="w-full overflow-hidden rounded-xl border border-ocean-200 bg-surface"
+                className="w-full overflow-hidden rounded-xl border border-sand-200 bg-surface"
               />
             </div>
           </div>

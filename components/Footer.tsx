@@ -20,7 +20,7 @@ export default function Footer() {
   const fullName = tPerson('fullName');
 
   return (
-    <footer className="border-t border-ocean-200 bg-surface">
+    <footer className="border-t border-sand-200 bg-surface">
       <div
         className={`${SECTION_CONTAINER} flex flex-col items-center justify-between gap-4 py-8 text-sm sm:flex-row`}
       >

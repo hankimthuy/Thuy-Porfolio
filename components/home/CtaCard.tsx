@@ -18,7 +18,7 @@ export default async function CtaCard() {
         <h2 className="mt-2 text-xl font-bold text-ocean-900 lg:text-2xl">{t('title')}</h2>
       </div>
 
-      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-ocean-100 text-ocean-700 transition-colors group-hover:bg-ocean-500 group-hover:text-white">
+      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sand-100 text-ocean-700 transition-colors group-hover:bg-ocean-500 group-hover:text-white">
         <LuMail className="h-5 w-5 md:hidden" aria-hidden />
         <LuArrowUpRight className="hidden h-5 w-5 md:block" aria-hidden />
       </span>

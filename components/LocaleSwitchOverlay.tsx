@@ -40,7 +40,7 @@ export default function LocaleSwitchOverlay({ visible, label }: LocaleSwitchOver
 
   return createPortal(
     <div
-      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-ocean-50/90 backdrop-blur-md transition-opacity duration-300 ease-out ${
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-sand-50/90 backdrop-blur-md transition-opacity duration-300 ease-out ${
         visible ? 'opacity-100' : 'opacity-0'
       }`}
       role="status"

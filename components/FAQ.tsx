@@ -15,12 +15,12 @@ interface FAQItemProps {
 
 function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-ocean-200 bg-surface">
+    <div className="overflow-hidden rounded-2xl border border-sand-200 bg-surface">
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="flex w-full items-center justify-between gap-4 p-5 text-left transition-colors hover:bg-ocean-50 lg:p-6"
+        className="flex w-full items-center justify-between gap-4 p-5 text-left transition-colors hover:bg-sand-50 lg:p-6"
       >
         <span className="flex-1 text-base font-bold leading-snug text-ocean-900">
           {question}

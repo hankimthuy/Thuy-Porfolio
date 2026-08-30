@@ -29,18 +29,26 @@ const config: Config = {
         /** Bento card surface */
         surface: "#ffffff",
         /**
-         * Summer Ocean Breeze. 100/300/500/900 are the palette the owner
-         * picked; 50/200/700 are added steps so text and hairlines stay
-         * accessible on a light ground.
+         * Warm neutral ground. The palette's #f1faee reads green once it
+         * covers a whole page, so the base is a warm off-white instead and
+         * colour is spent only on the accents below.
          *
-         * Contrast: 500 on 50 is ~4.1:1 — fine for >=18px text, icons,
+         * 50 = page background, 100 = tinted card, 200 = hairline borders.
+         */
+        sand: {
+          50: "#faf8f5",
+          100: "#f4f1ec",
+          200: "#e8e3da",
+        },
+        /**
+         * Summer Ocean Breeze accents. 300/500/900 are the palette the owner
+         * picked; 700 is an added step so small text stays accessible.
+         *
+         * Contrast: 500 on sand-50 is ~4.4:1 — fine for >=18px text, icons,
          * borders, and as a fill under white text, but NOT for small body
          * copy. Small text and inline links use 700; body copy uses 900.
          */
         ocean: {
-          50: "#f6fbf7",
-          100: "#f1faee",
-          200: "#e2eef1",
           300: "#a8dadc",
           500: "#457b9d",
           700: "#2f5c78",

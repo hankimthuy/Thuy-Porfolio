@@ -23,11 +23,11 @@ const ROW_CLASS: Record<1 | 2, string> = {
 const TONE_CLASS: Record<BentoTone, string> = {
   surface: 'bg-surface text-ocean-900',
   ink: 'bg-ocean-900 text-white border-ocean-900',
-  tint: 'bg-ocean-100 text-ocean-900',
+  tint: 'bg-sand-100 text-ocean-900',
 };
 
 const INTERACTIVE_CLASS =
-  'transition duration-300 motion-reduce:transition-none hover:-translate-y-1 hover:shadow-bento-hover motion-reduce:hover:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500 focus-visible:ring-offset-2 focus-visible:ring-offset-ocean-50';
+  'transition duration-300 motion-reduce:transition-none hover:-translate-y-1 hover:shadow-bento-hover motion-reduce:hover:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500 focus-visible:ring-offset-2 focus-visible:ring-offset-sand-50';
 
 type BentoCardProps = {
   children: React.ReactNode;

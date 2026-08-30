@@ -19,7 +19,7 @@ export default async function CompetenciesCard() {
         {cards.map((card) => (
           <li
             key={card.title}
-            className="rounded-xl border border-ocean-200 bg-ocean-50 px-4 py-3.5 text-sm font-semibold text-ocean-900"
+            className="rounded-xl border border-sand-200 bg-sand-50 px-4 py-3.5 text-sm font-semibold text-ocean-900"
           >
             {card.title}
           </li>
@@ -30,7 +30,7 @@ export default async function CompetenciesCard() {
         {CORE_TECH.map((tech) => (
           <li
             key={tech}
-            className="rounded-full border border-ocean-200 bg-surface px-3.5 py-1.5 text-xs font-semibold text-ocean-700"
+            className="rounded-full border border-sand-200 bg-surface px-3.5 py-1.5 text-xs font-semibold text-ocean-700"
           >
             {tech}
           </li>
