@@ -9,7 +9,7 @@ export default async function CtaCard() {
     <BentoCard
       span="full"
       href="/connect"
-      className="flex items-center justify-between gap-6 !border-transparent bg-gradient-to-r from-plum-900 via-plum-700 to-magenta-700 p-7 md:p-8"
+      className="flex items-center justify-between gap-6 !border-transparent !bg-magenta-700 p-7 md:p-8"
     >
       <div className="min-w-0">
         <p className="text-xs font-bold uppercase tracking-[0.14em] text-white/70">

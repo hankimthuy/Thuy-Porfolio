@@ -26,7 +26,7 @@ const ROW_CLASS: Record<1 | 2, string> = {
 // win over the shared hairline border.
 const TONE_CLASS: Record<BentoTone, string> = {
   surface: 'bg-surface text-foreground',
-  ink: 'bg-gradient-to-br from-plum-900 to-plum-700 text-white !border-plum-900',
+  ink: 'bg-plum-900 text-white !border-plum-900',
   // taupe-100 sat almost on top of the taupe-50 page background, so the
   // "tinted" card had no real contrast and looked like it sank into the page
   // next to a white card. taupe-200 + a slightly deeper hairline gives it the
