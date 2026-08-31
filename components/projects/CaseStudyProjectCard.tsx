@@ -61,16 +61,16 @@ export default function CaseStudyProjectCard({ caseStudyId: _caseStudyId, ...pro
   return (
     <>
       <div className="relative flex h-full flex-col rounded-[14px] overflow-hidden border border-indigo-100 bg-white shadow-sm transition-transform duration-300 will-change-transform hover:shadow-xl hover:shadow-indigo-200/60 hover:-translate-y-1">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#F4EEFF]/60 via-white to-[#DCD6F7]/40" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#f1faee]/60 via-white to-[#e2eef1]/40" />
 
         <div className="relative z-10 flex flex-1 flex-col p-6 lg:p-8">
-          <h3 className="text-xl lg:text-[26px] font-bold leading-[1.2] text-[#424874]">{props.title}</h3>
+          <h3 className="text-xl lg:text-[26px] font-bold leading-[1.2] text-[#1d3557]">{props.title}</h3>
 
           <div className="mt-4 flex flex-wrap gap-2">
             {props.tags.map((tag, index) => (
               <span
                 key={index}
-                className="bg-white text-[#424874] border border-indigo-100/80 px-3 py-1.5 rounded-[10px] text-[13px] font-semibold tracking-wide shadow-sm"
+                className="bg-white text-[#1d3557] border border-indigo-100/80 px-3 py-1.5 rounded-[10px] text-[13px] font-semibold tracking-wide shadow-sm"
               >
                 {tag}
               </span>
@@ -79,7 +79,7 @@ export default function CaseStudyProjectCard({ caseStudyId: _caseStudyId, ...pro
 
           {/* --- Concept demo (tắt tạm — bổ sung ví dụ rồi uncomment) ---
           <div className="mt-5 shrink-0 rounded-xl border border-indigo-100/80 bg-white/80 p-3 backdrop-blur-sm">
-            <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-[#583FBC]">
+            <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-[#457b9d]">
               {t('previewLabel')}
             </p>
             <CaseStudySlider
@@ -90,11 +90,11 @@ export default function CaseStudyProjectCard({ caseStudyId: _caseStudyId, ...pro
               prevLabel={t('prevSlide')}
               nextLabel={t('nextSlide')}
             />
-            <p className="mt-2 text-[11px] leading-snug text-[#424874]/55">{t('disclaimer')}</p>
+            <p className="mt-2 text-[11px] leading-snug text-[#1d3557]/55">{t('disclaimer')}</p>
             <button
               type="button"
               onClick={() => setModalOpen(true)}
-              className="mt-3 w-full rounded-[10px] border border-[#583FBC]/25 bg-[#F4EEFF]/50 px-4 py-2 text-sm font-semibold text-[#583FBC] transition-colors hover:bg-[#F4EEFF]"
+              className="mt-3 w-full rounded-[10px] border border-[#457b9d]/25 bg-[#f1faee]/50 px-4 py-2 text-sm font-semibold text-[#457b9d] transition-colors hover:bg-[#f1faee]"
             >
               {t('expandConcept')}
             </button>
@@ -102,7 +102,7 @@ export default function CaseStudyProjectCard({ caseStudyId: _caseStudyId, ...pro
           --- end concept demo preview --- */}
 
           <div className="mt-8 flex-1">
-            <div className="relative space-y-6 text-[15px] leading-[1.65] text-[#424874]/90">
+            <div className="relative space-y-6 text-[15px] leading-[1.65] text-[#1d3557]/90">
               <div className="pointer-events-none absolute left-[15px] top-6 bottom-6 z-0 border-l-2 border-dashed border-indigo-200/70" />
 
               {(
@@ -127,7 +127,7 @@ export default function CaseStudyProjectCard({ caseStudyId: _caseStudyId, ...pro
                     </div>
                   </div>
                   <div className="min-w-0 pt-1">
-                    <div className="text-[#424874] font-bold text-[13px] uppercase tracking-wider mb-1">
+                    <div className="text-[#1d3557] font-bold text-[13px] uppercase tracking-wider mb-1">
                       {label}
                     </div>
                     <div className="text-gray-600">{content}</div>
@@ -156,22 +156,22 @@ export default function CaseStudyProjectCard({ caseStudyId: _caseStudyId, ...pro
           <div className="relative z-10 w-full max-w-lg rounded-2xl border border-indigo-100 bg-white p-5 shadow-2xl sm:p-6">
             <div className="flex items-start justify-between gap-3">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-[#583FBC]">{t('modalEyebrow')}</p>
-                <h4 id={titleId} className="mt-1 text-lg font-bold text-[#424874]">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#457b9d]">{t('modalEyebrow')}</p>
+                <h4 id={titleId} className="mt-1 text-lg font-bold text-[#1d3557]">
                   {props.title}
                 </h4>
               </div>
               <button
                 type="button"
                 onClick={() => setModalOpen(false)}
-                className="rounded-full p-2 text-[#424874]/60 hover:bg-indigo-50"
+                className="rounded-full p-2 text-[#1d3557]/60 hover:bg-indigo-50"
                 aria-label={t('close')}
               >
                 <FiX className="h-5 w-5" />
               </button>
             </div>
 
-            <p className="mt-2 text-sm text-[#424874]/70">{bundle.modalIntro}</p>
+            <p className="mt-2 text-sm text-[#1d3557]/70">{bundle.modalIntro}</p>
 
             <div className="mt-4">
               <CaseStudySlider
@@ -183,8 +183,8 @@ export default function CaseStudyProjectCard({ caseStudyId: _caseStudyId, ...pro
               />
             </div>
 
-            <p className="mt-4 text-xs leading-relaxed text-[#424874]/55">{t('disclaimer')}</p>
-            <p className="mt-3 text-sm font-medium text-[#424874]/80">{t('contactHint')}</p>
+            <p className="mt-4 text-xs leading-relaxed text-[#1d3557]/55">{t('disclaimer')}</p>
+            <p className="mt-3 text-sm font-medium text-[#1d3557]/80">{t('contactHint')}</p>
           </div>
         </div>
       )}

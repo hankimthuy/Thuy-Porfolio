@@ -20,32 +20,36 @@ const personAlternateNames = [
   ),
 ];
 
-type JsonLdProps = {
-  locale: Locale;
-};
+/**
+ * Person and WebSite are anchored to the locale root on every route, so that
+ * page-scoped schemas can reference them by `@id` from any URL.
+ */
+const personId = (locale: Locale) => `${SITE_URL}/${locale}/#person`;
+const websiteId = (locale: Locale) => `${SITE_URL}/${locale}/#website`;
 
-export default async function JsonLd({ locale }: JsonLdProps) {
+/** Renders one `<script type="application/ld+json">` for the given schemas. */
+export function JsonLdScript({ schemas }: { schemas: unknown[] }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+    />
+  );
+}
+
+/** Site-wide: emitted from the locale layout on every route. */
+export async function buildSiteSchemas(locale: Locale) {
   const t = await getTranslations({ locale, namespace: 'jsonLd' });
   const tPerson = await getTranslations({ locale, namespace: 'person' });
-  const tProjects = await getTranslations({ locale, namespace: 'projects' });
-  const tFaq = await getTranslations({ locale, namespace: 'faq' });
   const tMetadata = await getTranslations({ locale, namespace: 'metadata' });
 
   const localeUrl = `${SITE_URL}/${locale}`;
-  const inLanguage = IN_LANGUAGE[locale];
-  const brandName = tPerson('brandName');
-
-  const faqItems = tFaq.raw('items') as Array<{ question: string; answer: string }>;
-  const projectItems = tProjects.raw('items') as Record<
-    string,
-    { title: string; schemaDescription: string }
-  >;
 
   const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    '@id': `${localeUrl}/#person`,
-    name: brandName,
+    '@id': personId(locale),
+    name: tPerson('brandName'),
     alternateName: personAlternateNames,
     familyName: locale === 'vi' ? PERSON.familyName : PERSON.familyNameEn,
     additionalName: PERSON.additionalName,
@@ -92,66 +96,72 @@ export default async function JsonLd({ locale }: JsonLdProps) {
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': `${localeUrl}/#website`,
+    '@id': websiteId(locale),
     name: tMetadata('siteName'),
     url: localeUrl,
     description: t('websiteDescription'),
-    inLanguage,
-    author: { '@id': `${localeUrl}/#person` },
+    inLanguage: IN_LANGUAGE[locale],
+    author: { '@id': personId(locale) },
   };
 
-  const profilePageSchema = {
+  return [personSchema, websiteSchema];
+}
+
+/** Home and About: the pages that are about the person herself. */
+export async function buildProfilePageSchema(locale: Locale, path = '') {
+  const t = await getTranslations({ locale, namespace: 'jsonLd' });
+  const pageUrl = `${SITE_URL}/${locale}${path}`;
+
+  return {
     '@context': 'https://schema.org',
     '@type': 'ProfilePage',
-    '@id': `${localeUrl}/#profilepage`,
-    url: localeUrl,
+    '@id': `${pageUrl}/#profilepage`,
+    url: pageUrl,
     name: t('profilePageName'),
-    isPartOf: { '@id': `${localeUrl}/#website` },
-    about: { '@id': `${localeUrl}/#person` },
-    mainEntity: { '@id': `${localeUrl}/#person` },
-    inLanguage,
+    isPartOf: { '@id': websiteId(locale) },
+    about: { '@id': personId(locale) },
+    mainEntity: { '@id': personId(locale) },
+    inLanguage: IN_LANGUAGE[locale],
   };
+}
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    '@id': `${localeUrl}/#faq`,
-    mainEntity: faqItems.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer
-          .replace('{email}', PERSON.email)
-          .replace('{siteUrl}', SITE_URL)
-          .replace('{brandName}', brandName),
-      },
-    })),
-  };
+/** Showcases only. */
+export async function buildProjectListSchema(locale: Locale) {
+  const t = await getTranslations({ locale, namespace: 'jsonLd' });
+  const tProjects = await getTranslations({ locale, namespace: 'projects' });
 
-  const projectListSchema = {
+  const pageUrl = `${SITE_URL}/${locale}/showcases`;
+  const projectItems = tProjects.raw('items') as Record<
+    string,
+    { title: string; schemaDescription: string }
+  >;
+
+  return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    '@id': `${localeUrl}/#projects`,
+    '@id': `${pageUrl}/#projects`,
     name: t('projectListName'),
     itemListElement: ALL_PROJECTS.map((project, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       item: {
         '@type': 'CreativeWork',
-        '@id': `${localeUrl}/#project-${project.id}`,
+        '@id': `${pageUrl}/#project-${project.id}`,
         name: projectItems[project.id].title,
         description: projectItems[project.id].schemaDescription,
         ...(project.schemaUrl ? { url: project.schemaUrl } : {}),
-        author: { '@id': `${localeUrl}/#person` },
+        author: { '@id': personId(locale) },
       },
     })),
   };
+}
 
-  const credentialSchema = {
+/** Milestones only. */
+export function buildCredentialSchema(locale: Locale) {
+  return {
     '@context': 'https://schema.org',
     '@type': 'EducationalOccupationalCredential',
-    '@id': `${localeUrl}/#credential-google-ux`,
+    '@id': `${SITE_URL}/${locale}/milestones/#credential-google-ux`,
     name: GOOGLE_UX_CREDENTIAL.name,
     credentialCategory: 'Professional Certificate',
     recognizedBy: {
@@ -160,20 +170,37 @@ export default async function JsonLd({ locale }: JsonLdProps) {
     },
     url: `${SITE_URL}${GOOGLE_UX_CREDENTIAL.pdfPath}`,
   };
+}
 
-  const schemas = [
-    personSchema,
-    websiteSchema,
-    profilePageSchema,
-    faqSchema,
-    projectListSchema,
-    credentialSchema,
-  ];
+/** Connect only — the single page that carries the FAQ. */
+export async function buildFaqSchema(locale: Locale) {
+  const tFaq = await getTranslations({ locale, namespace: 'faq' });
+  const tPerson = await getTranslations({ locale, namespace: 'person' });
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
-    />
-  );
+  const faqItems = tFaq.raw('items') as Array<{
+    question: string;
+    answer: string;
+  }>;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': `${SITE_URL}/${locale}/connect/#faq`,
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer
+          .replace('{email}', PERSON.email)
+          .replace('{siteUrl}', SITE_URL)
+          .replace('{brandName}', tPerson('brandName')),
+      },
+    })),
+  };
+}
+
+/** Site-wide schemas, ready to drop into the locale layout's <head>. */
+export default async function JsonLd({ locale }: { locale: Locale }) {
+  return <JsonLdScript schemas={await buildSiteSchemas(locale)} />;
 }

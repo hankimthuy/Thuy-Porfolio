@@ -38,7 +38,7 @@ export default function ScrollToTop() {
         onClick={scrollToTop}
         aria-label={t('scrollToTop')}
         aria-hidden={!isVisible}
-        className={`flex h-11 w-11 items-center justify-center rounded-full border border-[#A6B1E1]/70 bg-white/95 text-[#424874] shadow-md shadow-[#242A41]/8 backdrop-blur-sm transition-all duration-300 hover:border-[#583FBC]/50 hover:bg-[#F4EEFF] hover:text-[#583FBC] hover:shadow-lg hover:shadow-[#583FBC]/15 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#583FBC]/40 focus-visible:ring-offset-2 ${
+        className={`flex h-11 w-11 items-center justify-center rounded-full border border-sand-200 bg-surface/95 text-ocean-700 shadow-bento backdrop-blur-sm transition-all duration-300 hover:border-ocean-500 hover:bg-sand-100 hover:text-ocean-900 hover:shadow-bento-hover active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500 focus-visible:ring-offset-2 ${
           isVisible
             ? 'pointer-events-auto translate-y-0 opacity-100'
             : 'pointer-events-none translate-y-3 opacity-0'

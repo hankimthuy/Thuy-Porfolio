@@ -10,7 +10,9 @@
     "brandName": "Han Kim Thuy",
     "fullName": "Hàn Kim Thủy",
     "greeting": "Hi! I'm",
-    "jobTitles": ["UX Software Engineer"],
+    "jobTitles": [
+      "UX Software Engineer"
+    ],
     "jobTitleSecondary": "Full-stack · Product-minded",
     "yearsExperience": "4+ Years Experience",
     "yearsExperienceShort": "4+ Years",
@@ -18,19 +20,16 @@
   },
   "header": {
     "nav": {
+      "home": "Home",
       "about": "About",
-      "skills": "Skill Sets",
-      "projects": "Projects",
+      "showcases": "Showcases",
       "milestones": "Milestones",
-      "faq": "FAQ",
-      "contact": "Contact"
+      "connect": "Connect"
     },
     "getInTouch": "Get in touch",
     "youAreHere": "You are here",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "switchLanguage": "Switch language",
-    "switchingLanguage": "Switching language…",
     "logoAlt": "Han Kim Thuy — UX Software Engineer portfolio logo"
   },
   "hero": {
@@ -56,6 +55,39 @@
       "linkedin": "LinkedIn Profile",
       "github": "GitHub — hankimthuy",
       "email": "Send Email"
+    }
+  },
+  "home": {
+    "philosophy": {
+      "title": "Bridging technical logic with human empathy.",
+      "caption": "A feature is done when the user reaches their goal — not when the code merges."
+    },
+    "competencies": {
+      "eyebrow": "Core competencies",
+      "title": "What I bring to a team"
+    },
+    "stats": {
+      "eyebrow": "At a glance"
+    },
+    "cta": {
+      "eyebrow": "Connect",
+      "title": "Let's build something.",
+      "primary": "View showcases",
+      "secondary": "Get in touch"
+    },
+    "portraitCaption": "Vietnam · GMT+7"
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "The longer version",
+    "subtitle": "How I think about products, and the way I like to work with a team.",
+    "focus": {
+      "title": "Where I focus",
+      "subtitle": "The four questions I keep coming back to on any product."
+    },
+    "howIWork": {
+      "title": "How I work",
+      "subtitle": "From clarifying user needs to shipping products people actually want to use."
     }
   },
   "skills": {
@@ -145,40 +177,76 @@
       "manufacturing-lifecycle": {
         "title": "Centralized Manufacturing Lifecycle",
         "problemText": "Fragmented workflows and data silos made tracking the end-to-end manufacturing lifecycle impossible.",
-        "problemHighlights": ["Fragmented workflows", "data silos"],
+        "problemHighlights": [
+          "Fragmented workflows",
+          "data silos"
+        ],
         "solutionText": "Architected a unified platform integrating inventory, BOM management, invoicing, and compliance audits.",
-        "solutionHighlights": ["unified platform", "BOM management", "compliance audits"],
+        "solutionHighlights": [
+          "unified platform",
+          "BOM management",
+          "compliance audits"
+        ],
         "impactText": "Replaced manual Excel tracking with a unified digital tool and eliminating data redundancy.",
         "schemaDescription": "Enterprise Angular platform at Bosch digitalizing manufacturing lifecycle, BOM, and inventory management."
       },
       "talent-development": {
         "title": "Talent Development Platform",
         "problemText": "Alignment gap between individual aspirations and organizational goals.",
-        "problemHighlights": ["individual aspirations"],
+        "problemHighlights": [
+          "individual aspirations"
+        ],
         "solutionText": "Developed an end-to-end platform for managers and L&D teams to co-create personalized learning roadmaps.",
-        "solutionHighlights": ["personalized learning roadmaps"],
+        "solutionHighlights": [
+          "personalized learning roadmaps"
+        ],
         "impactText": "Streamlined performance evaluation and enhanced employee engagement.",
-        "impactHighlights": ["performance evaluation"],
+        "impactHighlights": [
+          "performance evaluation"
+        ],
         "schemaDescription": "Angular and Spring Boot talent development platform for personalized learning roadmaps at Bosch."
       },
       "mimose": {
         "title": "MimoSe: Make Sense of Me",
         "problemText": "Traditional journaling is high-friction—irregular habits and blank-page anxiety keep self-awareness from sticking.",
-        "problemHighlights": ["high-friction", "blank-page anxiety"],
+        "problemHighlights": [
+          "high-friction",
+          "blank-page anxiety"
+        ],
         "solutionText": "Self-led 0→1: researched pain points, prototyped in Figma, then built React UI and Spring Boot backend. Low-Friction Framework with Proactive AI guiding reflection across Innerverse & Outerverse.",
-        "solutionHighlights": ["Self-led 0→1", "Figma", "React UI and Spring Boot", "Proactive AI", "Innerverse & Outerverse"],
+        "solutionHighlights": [
+          "Self-led 0→1",
+          "Figma",
+          "React UI and Spring Boot",
+          "Proactive AI",
+          "Innerverse & Outerverse"
+        ],
         "impactText": "Owned product vision, UX, and engineering end-to-end—a calm companion that surfaces AI-driven patterns without productivity pressure.",
-        "impactHighlights": ["Owned product vision", "AI-driven patterns"],
+        "impactHighlights": [
+          "Owned product vision",
+          "AI-driven patterns"
+        ],
         "schemaDescription": "Self-led AI journaling app: Figma UX, React frontend, Spring Boot backend, and proactive AI for self-awareness."
       },
       "content-platform": {
         "title": "Investment Content Platform (Headless CMS)",
         "problemText": "An editorial site needed to optimize user experience and technical SEO — without developers blocking every publish cycle.",
-        "problemHighlights": ["optimize user experience", "technical SEO"],
+        "problemHighlights": [
+          "optimize user experience",
+          "technical SEO"
+        ],
         "solutionText": "Designed in Figma (wireframes → UI), defined a color and typography system, and built responsive layouts. Shipped a headless CMS admin (React, RBAC) and a Next.js storefront with SSR, metadata, JSON-LD, and sitemap — content modules and editor workflows for blogs, categories, and site-wide SEO.",
-        "solutionHighlights": ["Designed in Figma", "headless CMS admin", "Next.js storefront", "content modules and editor workflows"],
+        "solutionHighlights": [
+          "Designed in Figma",
+          "headless CMS admin",
+          "Next.js storefront",
+          "content modules and editor workflows"
+        ],
         "impactText": "Cohesive cross-device experience; structured SEO on articles and landing pages; editorial team can self-serve content updates.",
-        "impactHighlights": ["Cohesive cross-device experience", "structured SEO"],
+        "impactHighlights": [
+          "Cohesive cross-device experience",
+          "structured SEO"
+        ],
         "schemaDescription": "Figma-led investment content platform with headless CMS admin, responsive UI, and technical SEO on Next.js."
       }
     }
@@ -203,7 +271,12 @@
     },
     "credential": {
       "title": "Google UX Design Professional Certificate",
-      "skills": ["UX Research", "Wireframing & Prototyping", "Usability Testing", "User-Centric Bridge"]
+      "skills": [
+        "UX Research",
+        "Wireframing & Prototyping",
+        "Usability Testing",
+        "User-Centric Bridge"
+      ]
     }
   },
   "faq": {
@@ -245,9 +318,14 @@
       }
     ]
   },
+  "connect": {
+    "eyebrow": "Connect",
+    "title": "Let's talk about your product",
+    "subtitle": "Tell me the problem, who it affects, and your timeline — a technical spec can wait."
+  },
   "footer": {
     "connect": "Let's connect",
-    "freelancePrompt": "Have a freelance project in mind? LinkedIn is the best way to reach\u00A0me.",
+    "freelancePrompt": "Have a freelance project in mind? LinkedIn is the best way to reach me.",
     "linkedinCta": "Message on LinkedIn",
     "freelanceNote": "Available for remote freelance — problem-solving & UX-focused work (GMT+7)",
     "linkedin": "LinkedIn",
@@ -268,5 +346,27 @@
   },
   "common": {
     "scrollToTop": "Scroll to top"
+  },
+  "pages": {
+    "home": {
+      "title": "UX Software Engineer",
+      "description": "Han Kim Thuy — UX Software Engineer in Vietnam. Bridging technical logic with human empathy across enterprise platforms and self-led products."
+    },
+    "about": {
+      "title": "About",
+      "description": "How Han Kim Thuy approaches product work — UX-oriented development, product discovery, and an Agile, user-first way of shipping."
+    },
+    "showcases": {
+      "title": "Showcases",
+      "description": "Selected work by Han Kim Thuy — enterprise delivery at Bosch and independent builds, each framed as problem, solution, and impact."
+    },
+    "milestones": {
+      "title": "Milestones",
+      "description": "Professional milestones of Han Kim Thuy — Bosch Global Software Technologies and the Google UX Design Professional Certificate."
+    },
+    "connect": {
+      "title": "Connect",
+      "description": "Get in touch with Han Kim Thuy about remote freelance UX software engineering, plus answers to the questions clients ask most."
+    }
   }
 }
