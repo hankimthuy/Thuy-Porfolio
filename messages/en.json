@@ -120,6 +120,8 @@
     "solution": "Solution",
     "impact": "Impact",
     "viewLiveSite": "View live site",
+    "showMore": "Show more",
+    "showLess": "Show less",
     "caseStudy": {
       "previewLabel": "Concept preview",
       "disclaimer": "Illustrative boards from the design process — not a pixel-perfect client replica.",

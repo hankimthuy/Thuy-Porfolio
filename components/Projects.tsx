@@ -1,8 +1,8 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { FiAlertTriangle, FiBarChart2, FiExternalLink } from 'react-icons/fi';
-import { LuHammer, LuLightbulb } from 'react-icons/lu';
+import { LuChevronDown, LuHammer, LuLightbulb } from 'react-icons/lu';
 import { HiOutlineClipboardList } from 'react-icons/hi';
 import { useTranslations } from 'next-intl';
 import {
@@ -23,6 +23,8 @@ interface ProjectCardProps {
   problemLabel: string;
   solutionLabel: string;
   impactLabel: string;
+  showMoreLabel: string;
+  showLessLabel: string;
   cta?: {
     label: string;
     href: string;
@@ -62,7 +64,14 @@ type ProjectItemMessages = {
 function projectToCardProps(
   project: ProjectStructure,
   item: ProjectItemMessages,
-  labels: { problem: string; solution: string; impact: string; viewLiveSite: string },
+  labels: {
+    problem: string;
+    solution: string;
+    impact: string;
+    viewLiveSite: string;
+    showMore: string;
+    showLess: string;
+  },
 ): ProjectCardProps {
   return {
     title: item.title,
@@ -73,6 +82,8 @@ function projectToCardProps(
     problemLabel: labels.problem,
     solutionLabel: labels.solution,
     impactLabel: labels.impact,
+    showMoreLabel: labels.showMore,
+    showLessLabel: labels.showLess,
     cta: project.ctaHref ? { label: labels.viewLiveSite, href: project.ctaHref } : undefined,
   };
 }
@@ -107,7 +118,8 @@ const TAG_TONES = [
 ];
 
 function ProjectCard(props: ProjectCardProps & { index: number }) {
-  const { title, tags, cta, index } = props;
+  const { title, tags, cta, index, showMoreLabel, showLessLabel } = props;
+  const [expanded, setExpanded] = useState(false);
 
   const steps = [
     { ...STEPS[0], label: props.problemLabel, body: props.problem },
@@ -166,7 +178,11 @@ function ProjectCard(props: ProjectCardProps & { index: number }) {
                 <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-plum-700">
                   {step.label}
                 </p>
-                <p className="mt-1 text-sm leading-relaxed text-plum-900/80">
+                <p
+                  className={`mt-1 text-sm leading-relaxed text-plum-900/80 ${
+                    expanded ? '' : 'line-clamp-2'
+                  }`}
+                >
                   {step.body}
                 </p>
               </div>
@@ -174,6 +190,21 @@ function ProjectCard(props: ProjectCardProps & { index: number }) {
           );
         })}
       </div>
+
+      <button
+        type="button"
+        onClick={() => setExpanded((prev) => !prev)}
+        aria-expanded={expanded}
+        className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-plum-700 transition-colors hover:text-plum-900"
+      >
+        {expanded ? showLessLabel : showMoreLabel}
+        <LuChevronDown
+          className={`h-3.5 w-3.5 transition-transform duration-200 motion-reduce:transition-none ${
+            expanded ? 'rotate-180' : ''
+          }`}
+          aria-hidden="true"
+        />
+      </button>
     </article>
   );
 }
@@ -230,6 +261,8 @@ export default function Projects() {
     solution: t('solution'),
     impact: t('impact'),
     viewLiveSite: t('viewLiveSite'),
+    showMore: t('showMore'),
+    showLess: t('showLess'),
   };
 
   const projectItems = t.raw('items') as Record<string, ProjectItemMessages>;

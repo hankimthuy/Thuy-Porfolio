@@ -120,6 +120,8 @@
     "solution": "Giải pháp",
     "impact": "Tác động",
     "viewLiveSite": "Xem site live",
+    "showMore": "Xem thêm",
+    "showLess": "Thu gọn",
     "caseStudy": {
       "previewLabel": "Xem trước concept",
       "disclaimer": "Board minh họa từ quy trình thiết kế — không phải bản sao pixel-perfect của site client.",
