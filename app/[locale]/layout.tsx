@@ -60,7 +60,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <JsonLd locale={locale as Locale} />
       </head>
       <body
-        className="flex min-h-screen flex-col bg-sand-50 text-ocean-900 antialiased"
+        className="flex min-h-screen flex-col bg-taupe-50 text-plum-900 antialiased"
         suppressHydrationWarning
       >
         <NextIntlClientProvider messages={messages}>

@@ -25,23 +25,23 @@ export default async function ProfessionalMilestones() {
 
   return (
     <>
-      <header className="max-w-2xl">
-        <p className="text-xs font-bold uppercase tracking-[0.14em] text-ocean-700">
+      <header className="max-w-2xl lg:max-w-4xl">
+        <p className="text-xs font-bold uppercase tracking-[0.14em] text-plum-700">
           {tPerson('yearsExperience')}
         </p>
-        <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-ocean-900 text-balance lg:text-4xl">
+        <h1 className="mt-3 max-w-2xl text-3xl font-extrabold tracking-tight text-plum-900 text-balance lg:text-4xl">
           {t('title')}
         </h1>
-        <p className="mt-4 text-base leading-relaxed text-ocean-700">{t('subtitle')}</p>
+        <p className="mt-4 text-base leading-relaxed text-plum-700">{t('subtitle')}</p>
       </header>
 
       <BentoGrid className={SECTION_HEADER_TO_CONTENT}>
         <BentoCard span={2} rows={2} className="p-7 md:p-8">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-            <h2 className="text-xl font-bold leading-snug text-ocean-900 lg:text-2xl">
+            <h2 className="text-xl font-bold leading-snug text-plum-900 lg:text-2xl">
               {t('bosch.title')}
             </h2>
-            <span className="inline-flex items-center rounded-full border border-sand-200 bg-sand-100 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-ocean-700">
+            <span className="inline-flex items-center rounded-full border border-taupe-200 bg-taupe-100 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-plum-700">
               {tPerson('yearsExperienceShort')}
             </span>
           </div>
@@ -49,11 +49,11 @@ export default async function ProfessionalMilestones() {
           <ul className="mt-6 space-y-5">
             {BOSCH_POINTS.map(({ key, icon: Icon }) => (
               <li key={key} className="flex gap-3.5">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-sand-200 bg-sand-50 text-ocean-700">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-taupe-200 bg-taupe-50 text-plum-700">
                   <Icon aria-hidden="true" className="h-4 w-4" />
                 </span>
-                <p className="min-w-0 text-sm leading-relaxed text-ocean-900/80">
-                  <strong className="font-bold text-ocean-900">
+                <p className="min-w-0 text-sm leading-relaxed text-plum-900/80">
+                  <strong className="font-bold text-plum-900">
                     {t(`bosch.${key}.label`)}
                   </strong>{' '}
                   {t(`bosch.${key}.text`)}
@@ -63,8 +63,8 @@ export default async function ProfessionalMilestones() {
           </ul>
         </BentoCard>
 
-        <BentoCard span={2} rows={2} className="p-7 md:p-8">
-          <h2 className="text-xl font-bold leading-snug text-ocean-900 lg:text-2xl">
+        <BentoCard span={2} rows={2} tone="tint" className="p-7 md:p-8">
+          <h2 className="text-xl font-bold leading-snug text-plum-900 lg:text-2xl">
             {t('credential.title')}
           </h2>
 
@@ -73,10 +73,10 @@ export default async function ProfessionalMilestones() {
               {credentialSkills.map((skill) => (
                 <li
                   key={skill}
-                  className="flex items-center gap-2.5 text-sm font-semibold text-ocean-900"
+                  className="flex items-center gap-2.5 text-sm font-semibold text-plum-900"
                 >
                   <LuBadgeCheck
-                    className="h-4 w-4 shrink-0 text-ocean-700"
+                    className="h-4 w-4 shrink-0 text-plum-700"
                     aria-hidden="true"
                   />
                   {skill}
@@ -87,7 +87,7 @@ export default async function ProfessionalMilestones() {
             <div className="lg:basis-1/2">
               <PdfThumbnail
                 pdfUrl={GOOGLE_UX_CREDENTIAL.pdfPath}
-                className="w-full overflow-hidden rounded-xl border border-sand-200 bg-surface"
+                className="w-full overflow-hidden rounded-xl border border-taupe-200 bg-surface"
               />
             </div>
           </div>

@@ -80,15 +80,15 @@ export default function PdfThumbnail({ pdfUrl, className, pageNumber = 1, scale 
                 <canvas ref={canvasRef} className="w-full h-auto" />
 
                 {status === 'loading' && (
-                    <div className="absolute inset-0 flex items-center justify-center text-sm text-ocean-700 bg-surface/60">
+                    <div className="absolute inset-0 flex items-center justify-center text-sm text-plum-700 bg-surface/60">
                         Loading preview...
                     </div>
                 )}
 
                 {status === 'error' && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-sm text-ocean-700 px-4 text-center bg-surface/80">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-sm text-plum-700 px-4 text-center bg-surface/80">
                         <div>Unable to preview PDF</div>
-                        {errorMessage && <div className="text-xs text-ocean-700/70">{errorMessage}</div>}
+                        {errorMessage && <div className="text-xs text-plum-700/70">{errorMessage}</div>}
                     </div>
                 )}
             </div>

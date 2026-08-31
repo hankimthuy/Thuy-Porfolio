@@ -29,43 +29,47 @@ const config: Config = {
         /** Bento card surface */
         surface: "#ffffff",
         /**
-         * Warm neutral ground. The palette's #f1faee reads green once it
-         * covers a whole page, so the base is a warm off-white instead and
-         * colour is spent only on the accents below.
-         *
-         * 50 = page background, 100 = tinted card, 200 = hairline borders.
+         * Tertiary/neutral ground, from the brand palette's taupe swatch
+         * (#D7CCC8). 50 = page background, 100 = tinted card, 200 = hairline
+         * borders, 300 = the exact brand hex, for a deeper tint variant.
          */
-        sand: {
-          50: "#faf8f5",
-          100: "#f4f1ec",
-          200: "#e8e3da",
+        taupe: {
+          50: "#faf8f7",
+          100: "#f3eeec",
+          200: "#e7deda",
+          300: "#d7ccc8",
         },
         /**
-         * Summer Ocean Breeze accents. 300/500/900 are the palette the owner
-         * picked; 700 is an added step so small text stays accessible.
+         * Primary brand accent, from #311B92. 700 is the exact brand hex;
+         * 900 is a darkened step for "ink" dark cards and heading text; 500
+         * is a lifted, more vivid step for buttons/interactive fills; 300 is
+         * a light step for icons/accents sitting on a dark surface.
          *
-         * Contrast: 500 on sand-50 is ~4.4:1 — fine for >=18px text, icons,
-         * borders, and as a fill under white text, but NOT for small body
-         * copy. Small text and inline links use 700; body copy uses 900.
+         * Contrast: plum-500 on taupe-50 is comfortably >=4.5:1 for body
+         * text and UI fills. Small text and inline links use 700; headings
+         * and body copy use 900 for maximum contrast on light surfaces.
          */
-        ocean: {
-          300: "#a8dadc",
-          500: "#457b9d",
-          700: "#2f5c78",
-          900: "#1d3557",
+        plum: {
+          300: "#b9a9e8",
+          500: "#5b3fb0",
+          700: "#311b92",
+          900: "#1a0f52",
         },
-        /** A spice, never a surface: availability dot, active nav underline. */
-        coral: {
-          50: "#fdeced",
-          500: "#e63946",
-          /** Darkened for small text on coral-50 — 500 is only 3.65:1 there. */
-          700: "#b31f2b",
+        /**
+         * Secondary brand accent, from #D81B60. A spice, never a whole
+         * surface: availability dot, active nav underline, tag accents.
+         */
+        magenta: {
+          50: "#fce4ec",
+          500: "#d81b60",
+          /** Darkened for small text on magenta-50 — 500 is only 3.4:1 there. */
+          700: "#a3134a",
         },
       },
       boxShadow: {
-        bento: "0 1px 2px rgba(29, 53, 87, 0.04), 0 4px 16px rgba(29, 53, 87, 0.06)",
+        bento: "0 1px 2px rgba(26, 15, 82, 0.04), 0 4px 16px rgba(26, 15, 82, 0.06)",
         "bento-hover":
-          "0 2px 4px rgba(29, 53, 87, 0.06), 0 12px 28px rgba(29, 53, 87, 0.10)",
+          "0 2px 4px rgba(26, 15, 82, 0.06), 0 12px 28px rgba(26, 15, 82, 0.10)",
       },
     },
   },

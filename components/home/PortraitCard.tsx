@@ -20,7 +20,7 @@ export default async function PortraitCard() {
         className="absolute inset-0 h-full w-full object-cover object-top"
       />
 
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ocean-900/75 to-transparent p-5 pt-16">
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-plum-900/75 to-transparent p-5 pt-16">
         <p className="flex items-center gap-1.5 text-sm font-semibold text-white">
           <LuMapPin className="h-4 w-4 shrink-0" aria-hidden />
           {tHome('portraitCaption')}

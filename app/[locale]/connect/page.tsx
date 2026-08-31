@@ -32,13 +32,13 @@ export default async function ConnectPage({ params }: Props) {
       <JsonLdScript schemas={[await buildFaqSchema(locale)]} />
 
       <header className="max-w-2xl">
-        <p className="text-xs font-bold uppercase tracking-[0.14em] text-ocean-700">
+        <p className="text-xs font-bold uppercase tracking-[0.14em] text-plum-700">
           {t('eyebrow')}
         </p>
-        <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-ocean-900 text-balance lg:text-4xl">
+        <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-plum-900 text-balance lg:text-4xl">
           {t('title')}
         </h1>
-        <p className="mt-4 text-base leading-relaxed text-ocean-700">{t('subtitle')}</p>
+        <p className="mt-4 text-base leading-relaxed text-plum-700">{t('subtitle')}</p>
       </header>
 
       <BentoGrid className="mt-10 lg:mt-12">

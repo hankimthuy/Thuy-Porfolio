@@ -330,7 +330,8 @@
     "freelanceNote": "Sẵn sàng nhận freelance remote — giải quyết vấn đề & công việc hướng UX (GMT+7)",
     "linkedin": "LinkedIn",
     "github": "GitHub",
-    "copyright": "© {year} {brandName} ({fullName})"
+    "copyright": "© {year} {brandName} ({fullName})",
+    "switchLanguage": "Chuyển sang {language}"
   },
   "jsonLd": {
     "personDescription": "Hàn Kim Thủy (Han Kim Thuy) — Kỹ sư UX phần mềm tại Việt Nam, nhận hợp tác freelance remote toàn cầu. Tên pháp lý: Hàn Kim Thủy (họ Hàn, tên đệm Kim, tên Thủy). Tên đăng nhập: thuyhankim, hankimthuy.",
