@@ -13,8 +13,8 @@ export default async function PortraitCard() {
       <Image
         src={PORTRAIT_IMAGE_PATH}
         alt={t('portraitAlt')}
-        width={690}
-        height={920}
+        width={590}
+        height={787}
         priority
         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
         className="absolute inset-0 h-full w-full object-cover object-top"
