@@ -2,17 +2,19 @@ import { getTranslations } from 'next-intl/server';
 import BentoCard from '@/components/bento/BentoCard';
 import { CORE_TECH } from '@/lib/projects-data';
 
-/** Cycled across the pillar/tech lists so the row isn't a single flat tone. */
+// Fixed pastel chips (plum-50/magenta-50) pair with fixed brand-color text so
+// they read the same "sticker" way in both themes; the taupe-50 one is
+// theme-reactive so its text flips too.
 const PILLAR_TONES = [
   'border-plum-500/20 bg-plum-50/60 text-plum-900',
   'border-magenta-500/20 bg-magenta-50 text-plum-900',
-  'border-taupe-200 bg-taupe-50 text-plum-900',
+  'border-taupe-200 bg-taupe-50 text-foreground',
 ];
 
 const TAG_TONES = [
-  'border-plum-500/25 text-plum-700',
+  'border-plum-500/25 text-muted',
   'border-magenta-500/25 text-magenta-700',
-  'border-taupe-200 text-plum-700',
+  'border-taupe-200 text-muted',
 ];
 
 export default async function CompetenciesCard() {
@@ -23,10 +25,10 @@ export default async function CompetenciesCard() {
 
   return (
     <BentoCard span={3} className="p-7 md:p-8">
-      <p className="text-xs font-bold uppercase tracking-[0.14em] text-plum-700">
+      <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted">
         {t('eyebrow')}
       </p>
-      <h2 className="mt-2 text-lg font-bold text-plum-900 lg:text-xl">{t('title')}</h2>
+      <h2 className="mt-2 text-lg font-bold text-foreground lg:text-xl">{t('title')}</h2>
 
       <ul className="mt-6 grid gap-3 sm:grid-cols-3">
         {cards.map((card, index) => (

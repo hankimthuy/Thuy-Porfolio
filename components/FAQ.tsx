@@ -22,18 +22,18 @@ function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
         aria-expanded={isOpen}
         className="flex w-full items-center justify-between gap-4 p-5 text-left transition-colors hover:bg-taupe-50 lg:p-6"
       >
-        <span className="flex-1 text-base font-bold leading-snug text-plum-900">
+        <span className="flex-1 text-base font-bold leading-snug text-foreground">
           {question}
         </span>
         <LuChevronDown
-          className={`h-5 w-5 shrink-0 text-plum-700 transition-transform duration-200 motion-reduce:transition-none ${
+          className={`h-5 w-5 shrink-0 text-muted transition-transform duration-200 motion-reduce:transition-none ${
             isOpen ? 'rotate-180' : ''
           }`}
           aria-hidden="true"
         />
       </button>
       {isOpen && (
-        <p className="px-5 pb-5 text-sm leading-relaxed text-plum-700 lg:px-6 lg:pb-6">
+        <p className="px-5 pb-5 text-sm leading-relaxed text-muted lg:px-6 lg:pb-6">
           {answer}
         </p>
       )}
@@ -59,10 +59,10 @@ export default function FAQ() {
 
   return (
     <section className="mt-14 lg:mt-20">
-      <h2 className="text-2xl font-extrabold tracking-tight text-plum-900 lg:text-3xl">
+      <h2 className="text-2xl font-extrabold tracking-tight text-foreground lg:text-3xl">
         {t('title')}
       </h2>
-      <p className="mt-3 max-w-2xl text-sm leading-relaxed text-plum-700 lg:text-base">
+      <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted lg:text-base">
         {t('contactLine', { brandName })}
       </p>
 

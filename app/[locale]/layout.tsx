@@ -58,9 +58,19 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale} className={sans.variable} suppressHydrationWarning>
       <head>
         <JsonLd locale={locale as Locale} />
+        {/*
+          Runs before hydration so the page never flashes the wrong theme.
+          Mirrors ThemeToggle's storage key and time boundary (06:00–17:59 =
+          light) — keep the two in sync if either changes.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var s=localStorage.getItem('theme-preference');var d;if(s==='light'||s==='dark'){d=s==='dark';}else{var h=new Date().getHours();d=h<6||h>=18;}document.documentElement.classList.toggle('dark',d);}catch(e){}})();`,
+          }}
+        />
       </head>
       <body
-        className="flex min-h-screen flex-col bg-taupe-50 text-plum-900 antialiased"
+        className="flex min-h-screen flex-col bg-taupe-50 text-foreground antialiased"
         suppressHydrationWarning
       >
         <NextIntlClientProvider messages={messages}>

@@ -25,13 +25,15 @@ const ROW_CLASS: Record<1 | 2, string> = {
 // string order, so a tone's own border color needs `!important` to reliably
 // win over the shared hairline border.
 const TONE_CLASS: Record<BentoTone, string> = {
-  surface: 'bg-surface text-plum-900',
+  surface: 'bg-surface text-foreground',
   ink: 'bg-gradient-to-br from-plum-900 to-plum-700 text-white !border-plum-900',
   // taupe-100 sat almost on top of the taupe-50 page background, so the
   // "tinted" card had no real contrast and looked like it sank into the page
   // next to a white card. taupe-200 + a slightly deeper hairline gives it the
   // same visual weight as a surface card.
-  tint: 'bg-taupe-200 text-plum-900 !border-taupe-300',
+  tint: 'bg-taupe-200 text-foreground !border-taupe-300',
+  // Fixed pastel chip, not theme-reactive — pairs with fixed plum-900 text
+  // like the other magenta-50/plum-50 badges across the site.
   accent: 'bg-magenta-50 text-plum-900 !border-magenta-500/15',
 };
 
