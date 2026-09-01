@@ -69,9 +69,14 @@ export default function ShowcasePanel({
         active ? 'h-auto lg:flex-[4]' : 'h-24 lg:h-full lg:flex-1'
       } lg:h-full`}
     >
+      {/* A flat solid fill read as too heavy/dense — this dark scrim over the
+          brand color gives the card depth ("fancy") while keeping the top
+          area close to the pure color underneath. */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
+
       {/* Collapsed teaser — always present, fades out (and stops blocking clicks) once active */}
       <div
-        className={`absolute inset-0 flex flex-col justify-end p-5 transition-opacity duration-300 ${
+        className={`absolute inset-0 z-10 flex flex-col justify-end p-5 transition-opacity duration-300 ${
           active ? 'pointer-events-none opacity-0' : 'opacity-100'
         }`}
       >
@@ -81,7 +86,7 @@ export default function ShowcasePanel({
 
       {/* Expanded detail */}
       <div
-        className={`p-6 transition-opacity duration-300 lg:p-8 ${
+        className={`relative z-10 p-6 transition-opacity duration-300 lg:p-8 ${
           active ? 'opacity-100 delay-150' : 'pointer-events-none absolute inset-0 opacity-0'
         }`}
       >
