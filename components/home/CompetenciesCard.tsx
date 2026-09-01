@@ -2,14 +2,10 @@ import { getTranslations } from 'next-intl/server';
 import BentoCard from '@/components/bento/BentoCard';
 import { CORE_TECH } from '@/lib/projects-data';
 
-// Fixed pastel chips (plum-50/magenta-50) pair with fixed brand-color text so
-// they read the same "sticker" way in both themes; the taupe-50 one is
-// theme-reactive so its text flips too.
-const PILLAR_TONES = [
-  'border-plum-500/20 bg-plum-50/60 text-plum-900',
-  'border-magenta-500/20 bg-magenta-50 text-plum-900',
-  'border-taupe-200 bg-taupe-50 text-foreground',
-];
+// One shared tone for all three pillar cards: they carry equal weight, so no
+// single card (e.g. "Full-Stack Development") should read as more important
+// than the others via a louder background color.
+const PILLAR_TONE = 'border-plum-500/20 bg-plum-50/60 text-plum-900';
 
 const TAG_TONES = [
   'border-plum-500/25 text-muted',
@@ -31,10 +27,10 @@ export default async function CompetenciesCard() {
       <h2 className="mt-2 text-lg font-bold text-foreground lg:text-xl">{t('title')}</h2>
 
       <ul className="mt-6 grid gap-3 sm:grid-cols-3">
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <li
             key={card.title}
-            className={`rounded-xl border px-4 py-3.5 text-sm font-semibold ${PILLAR_TONES[index % PILLAR_TONES.length]}`}
+            className={`rounded-xl border px-4 py-3.5 text-sm font-semibold ${PILLAR_TONE}`}
           >
             {card.title}
           </li>
