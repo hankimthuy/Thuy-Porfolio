@@ -187,7 +187,7 @@
           "optimize user experience",
           "technical SEO"
         ],
-        "solutionText": "Designed in Figma (wireframes → UI), defined a color and typography system, and built responsive layouts. Shipped a headless CMS admin (React, RBAC) and a Next.js storefront with SSR, metadata, JSON-LD, and sitemap — content modules and editor workflows for blogs, categories, and site-wide SEO.",
+        "solutionText": "Designed in Figma end-to-end, then shipped a headless CMS admin (React, RBAC) and a Next.js storefront with SSR, JSON-LD, and sitemap — with content modules and editor workflows for blogs, categories, and site-wide SEO.",
         "solutionHighlights": [
           "Designed in Figma",
           "headless CMS admin",
