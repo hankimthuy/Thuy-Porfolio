@@ -166,16 +166,15 @@
         "problemHighlights": [
           "easy to give up"
         ],
-        "solutionText": "Started as my first React project, inspired by Reflectly, with a reminder feature to keep the daily-logging habit alive. Then grew further: an AI Coach, a relationship map (PRM), and a Johari Window — helping users lead themselves based on what they’ve already recorded.",
+        "solutionText": "Started as my first React project, inspired by Reflectly, with a reminder feature to build the daily-logging habit — grown into a full self-leadership toolkit: an AI Coach, a relationship map (PRM), and a Johari Window.",
         "solutionHighlights": [
           "AI Coach",
           "relationship map (PRM)",
           "Johari Window"
         ],
-        "impactText": "Now a live AI-Coach product with relationship mapping and self-reflection tools — evolved from a simple daily journal into a broader self-leadership platform.",
+        "impactText": "A live AI-Coach platform for relationship mapping and self-reflection — evolved from a simple daily journal.",
         "impactHighlights": [
-          "AI-Coach product",
-          "self-leadership platform"
+          "AI-Coach platform"
         ],
         "schemaDescription": "Aura Self AI: an AI coach and self-reflection app with a personal relationship map (PRM) and Johari Window, evolved from an early React journaling project."
       },
