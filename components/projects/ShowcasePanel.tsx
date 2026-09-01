@@ -76,7 +76,7 @@ export default function ShowcasePanel({
       aria-expanded={active}
       aria-label={active ? undefined : `${shortTitle} — ${tagline}`}
       className={`relative overflow-hidden rounded-3xl text-white outline-none transition-[flex-grow,height] duration-500 ease-out ${tone} ${
-        active ? 'h-auto lg:flex-[4]' : 'h-24 lg:h-full lg:flex-1'
+        active ? 'h-auto lg:flex-[4]' : 'h-32 lg:h-full lg:flex-1'
       } lg:h-full`}
     >
       {/* A flat solid fill read as too heavy/dense — this dark scrim over the
@@ -117,15 +117,18 @@ export default function ShowcasePanel({
           </div>
         )}
 
-        <div className="relative flex-1">
-          {/* Collapsed teaser — always present, fades out (and stops blocking clicks) once active */}
+        <div className="relative flex-1 overflow-hidden">
+          {/* Collapsed teaser — always present, fades out (and stops blocking clicks) once active.
+              Clamped to stay short: the collapsed card is only h-32 on mobile, and
+              unclamped text (a longer tagline, a long localized title) could grow
+              taller than that and bleed up into the browser-chrome bar above it. */}
           <div
-            className={`absolute inset-0 flex flex-col justify-end p-5 transition-opacity duration-300 ${
+            className={`absolute inset-0 flex flex-col justify-end p-4 transition-opacity duration-300 ${
               active ? 'pointer-events-none opacity-0' : 'opacity-100'
             }`}
           >
-            <h3 className="text-base font-bold leading-snug lg:text-lg">{shortTitle}</h3>
-            <p className="mt-1 text-xs leading-snug text-white/70 lg:text-sm">{tagline}</p>
+            <h3 className="line-clamp-2 text-base font-bold leading-snug lg:text-lg">{shortTitle}</h3>
+            <p className="mt-1 line-clamp-1 text-xs leading-snug text-white/70 lg:text-sm">{tagline}</p>
           </div>
 
           {/* Expanded detail */}
