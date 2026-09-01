@@ -151,21 +151,17 @@ export default function ShowcasePanel({
               ))}
             </ul>
 
-            <div className="mt-6 space-y-5">
+            <div className="mt-6 space-y-4">
               {steps.map((step) => {
                 const StepIcon = step.icon;
 
                 return (
-                  <div key={step.key} className="flex gap-3.5">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/10 text-white/90">
-                      <StepIcon className="h-4 w-4" aria-hidden="true" />
-                    </span>
-                    <div className="min-w-0">
-                      <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-white/70">
-                        {step.label}
-                      </p>
-                      <p className="mt-1 text-sm leading-relaxed text-white/90">{step.body}</p>
-                    </div>
+                  <div key={step.key}>
+                    <p className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-white/70">
+                      <StepIcon className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                      {step.label}
+                    </p>
+                    <p className="mt-1 text-sm leading-relaxed text-white/90">{step.body}</p>
                   </div>
                 );
               })}
