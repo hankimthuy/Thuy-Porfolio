@@ -96,15 +96,15 @@
     "cards": [
       {
         "title": "Tư duy hướng UX",
-        "description": "Được Google chứng nhận về Thiết kế UX, tôi kết hợp kỹ thuật với nguyên tắc lấy người dùng làm trung tâm để xây dựng ứng dụng vừa chức năng vừa trực quan."
+        "description": "Được Google chứng nhận về Thiết kế UX, tôi kết hợp tư duy kỹ thuật với nguyên tắc lấy người dùng làm trung tâm, xây dựng ứng dụng vừa hoạt động tốt, vừa trực quan dễ dùng."
       },
       {
         "title": "Phát triển Full-Stack",
-        "description": "Thành thạo React, Angular và Spring Boot (Java). Tôi chuyên thiết kế ứng dụng web có khả năng mở rộng, dữ liệu hóa, đảm bảo tích hợp liền mạch giữa logic backend phức tạp và trải nghiệm frontend trực quan."
+        "description": "Thành thạo React, Angular và Spring Boot (Java). Tôi xây dựng ứng dụng web có khả năng mở rộng, tích hợp mượt mà giữa backend và frontend."
       },
       {
         "title": "Tư duy Agile & Sản phẩm",
-        "description": "Là thành viên tích cực trong môi trường Scrum, tôi tập trung cải tiến quy trình, thúc đẩy hợp tác nhóm và nhìn sản phẩm một cách toàn diện từ ý tưởng đến ra mắt."
+        "description": "Là thành viên tích cực trong môi trường Scrum, tôi tập trung cải tiến quy trình, thúc đẩy hợp tác nhóm và nhìn sản phẩm một cách toàn diện, từ ý tưởng đến khi ra mắt."
       }
     ]
   },
