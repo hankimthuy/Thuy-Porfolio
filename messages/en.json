@@ -120,100 +120,11 @@
     "solution": "Solution",
     "impact": "Impact",
     "viewLiveSite": "View live site",
-    "showMore": "Show more",
-    "showLess": "Show less",
-    "previousProject": "Previous project",
-    "nextProject": "Next project",
-    "caseStudy": {
-      "previewLabel": "Concept preview",
-      "disclaimer": "Illustrative boards from the design process — not a pixel-perfect client replica.",
-      "sliderLabel": "Project concept slides",
-      "prevSlide": "Previous slide",
-      "nextSlide": "Next slide",
-      "contentPlatform": {
-        "slides": [
-          {
-            "title": "Figma wireframes",
-            "caption": "Early structure for navigation, article hierarchy, and editorial modules before high-fidelity UI."
-          },
-          {
-            "title": "Color & typography",
-            "caption": "Token decisions for readable long-form content, accent hierarchy, and consistent brand feel."
-          },
-          {
-            "title": "Responsive layout",
-            "caption": "Mobile-first breakpoints so listings, articles, and landing sections stay coherent across devices."
-          },
-          {
-            "title": "CMS & SEO stack",
-            "caption": "Headless admin workflows, Next.js storefront, metadata, JSON-LD, and sitemap foundations."
-          }
-        ]
-      },
-      "mimose": {
-        "slides": [
-          {
-            "title": "Low-friction journal flow",
-            "caption": "Wireframes for quick capture — minimal steps from opening the app to a meaningful reflection."
-          },
-          {
-            "title": "Calm visual language",
-            "caption": "Soft palette and typography tuned for reflective use, not productivity pressure."
-          },
-          {
-            "title": "Innerverse & Outerverse",
-            "caption": "Two mental spaces — inner reflection and outer context — structured in the UX model."
-          },
-          {
-            "title": "AI & full-stack craft",
-            "caption": "Proactive AI patterns with React UI and Spring Boot backend — designed and built end-to-end."
-          }
-        ]
-      },
-      "manufacturingLifecycle": {
-        "slides": [
-          {
-            "title": "Inventory & BOM dashboard",
-            "caption": "A single live view of stock, bill-of-materials, and status — replacing scattered spreadsheets across teams."
-          },
-          {
-            "title": "A utilitarian visual system",
-            "caption": "A steel-and-amber palette built for dense operational data, so status and alerts stay legible at a glance."
-          },
-          {
-            "title": "From spreadsheets to one platform",
-            "caption": "Manual Excel and paper tracking consolidated into a single unified system end to end."
-          },
-          {
-            "title": "Angular & Restful API stack",
-            "caption": "Inventory, BOM management, invoicing, and compliance audits — one integrated Angular platform."
-          }
-        ]
-      },
-      "talentDevelopment": {
-        "slides": [
-          {
-            "title": "Personalized learning roadmap",
-            "caption": "Milestones a manager and employee set together — a clear path instead of a generic training list."
-          },
-          {
-            "title": "A growth-toned visual language",
-            "caption": "Forest and gold tones chosen for coaching conversations, not corporate compliance forms."
-          },
-          {
-            "title": "Individual ↔ organization alignment",
-            "caption": "Closing the gap between personal aspirations and company goals in one shared view."
-          },
-          {
-            "title": "Angular & Spring Boot stack",
-            "caption": "Manager and L&D collaboration, performance evaluation, and roadmap tracking — end to end."
-          }
-        ]
-      }
-    },
     "items": {
       "manufacturing-lifecycle": {
         "title": "Centralized Manufacturing Lifecycle",
+        "shortTitle": "Manufacturing Lifecycle",
+        "tagline": "One platform replacing fragmented Excel tracking.",
         "problemText": "Fragmented workflows and data silos made tracking the end-to-end manufacturing lifecycle impossible.",
         "problemHighlights": [
           "Fragmented workflows",
@@ -230,6 +141,8 @@
       },
       "talent-development": {
         "title": "Talent Development Platform",
+        "shortTitle": "Talent Development",
+        "tagline": "Personalized learning roadmaps for managers and teams.",
         "problemText": "Alignment gap between individual aspirations and organizational goals.",
         "problemHighlights": [
           "individual aspirations"
@@ -246,6 +159,8 @@
       },
       "mimose": {
         "title": "MimoSe: Make Sense of Me",
+        "shortTitle": "MimoSe",
+        "tagline": "A calm AI companion for low-friction journaling.",
         "problemText": "Traditional journaling is high-friction—irregular habits and blank-page anxiety keep self-awareness from sticking.",
         "problemHighlights": [
           "high-friction",
@@ -268,6 +183,8 @@
       },
       "content-platform": {
         "title": "Investment Content Platform (Headless CMS)",
+        "shortTitle": "Content Platform",
+        "tagline": "Headless CMS with built-in SEO and editorial workflows.",
         "problemText": "An editorial site needed to optimize user experience and technical SEO — without developers blocking every publish cycle.",
         "problemHighlights": [
           "optimize user experience",
