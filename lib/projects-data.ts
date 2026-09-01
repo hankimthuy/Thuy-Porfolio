@@ -4,11 +4,8 @@ export interface ProjectStructure {
   id: string;
   category: ProjectCategory;
   tags: string[];
-  illustrationVariant?: 'manufacturing' | 'ai' | 'talent';
   /** External live site (opens in new tab) */
   ctaHref?: string;
-  /** Inline concept slider on the project card */
-  caseStudy?: 'content-platform' | 'mimose';
   schemaUrl?: string;
 }
 
@@ -17,13 +14,11 @@ export const COMPANY_PROJECTS: ProjectStructure[] = [
     id: 'manufacturing-lifecycle',
     category: 'company',
     tags: ['Angular 20+', 'Figma', 'Restful API'],
-    illustrationVariant: 'manufacturing',
   },
   {
     id: 'talent-development',
     category: 'company',
     tags: ['Angular', 'Spring Boot'],
-    illustrationVariant: 'talent',
   },
 ];
 
@@ -32,18 +27,27 @@ export const SIDE_PROJECTS: ProjectStructure[] = [
     id: 'content-platform',
     category: 'side',
     tags: ['Next.js', 'React', 'Figma', 'Headless CMS', 'Technical SEO'],
-    // TODO: Concept demo — bật lại khi có ví dụ: caseStudy: 'content-platform',
   },
   {
     id: 'mimose',
     category: 'side',
     tags: ['React', 'Spring Boot', 'Leading-self', 'AI', 'Figma'],
-    illustrationVariant: 'ai',
-    // TODO: Concept demo — bật lại khi có ví dụ: caseStudy: 'mimose',
   },
 ];
 
 export const ALL_PROJECTS: ProjectStructure[] = [...COMPANY_PROJECTS, ...SIDE_PROJECTS];
+
+/**
+ * Showcases' display order: "The Range" — one continuous story from a
+ * personal weekend build to enterprise software used by hundreds, instead of
+ * two disconnected "independent vs. enterprise" groups.
+ */
+export const SHOWCASE_ORDER: ProjectStructure[] = [
+  SIDE_PROJECTS[0], // content-platform
+  SIDE_PROJECTS[1], // mimose
+  COMPANY_PROJECTS[1], // talent-development
+  COMPANY_PROJECTS[0], // manufacturing-lifecycle
+];
 
 export const GOOGLE_UX_CREDENTIAL = {
   name: 'Google UX Design Professional Certificate',

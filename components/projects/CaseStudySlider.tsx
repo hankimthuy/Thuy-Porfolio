@@ -47,23 +47,23 @@ export default function CaseStudySlider({
   return (
     <div className="w-full" aria-roledescription="carousel" aria-label={ariaLabel}>
       <div
-        className={`overflow-hidden rounded-xl border border-indigo-100/90 bg-white shadow-inner ${compact ? 'h-[148px]' : 'h-[220px] sm:h-[260px]'}`}
+        className={`overflow-hidden rounded-xl border border-taupe-200 bg-surface shadow-inner ${compact ? 'h-[148px]' : 'h-[220px] sm:h-[260px]'}`}
       >
         <CaseStudySlideVisual type={visual} compact={compact} />
       </div>
 
       <div className={`flex items-start justify-between gap-2 ${compact ? 'mt-2' : 'mt-3'}`}>
         <div className="min-w-0 flex-1">
-          <p className={`font-semibold text-[#1d3557] ${compact ? 'text-xs' : 'text-sm'}`}>{slide.title}</p>
+          <p className={`font-semibold text-foreground ${compact ? 'text-xs' : 'text-sm'}`}>{slide.title}</p>
           {!compact && (
-            <p className="mt-0.5 text-xs leading-snug text-[#1d3557]/65">{slide.caption}</p>
+            <p className="mt-0.5 text-xs leading-snug text-muted/80">{slide.caption}</p>
           )}
         </div>
         <div className="flex shrink-0 items-center gap-1">
           <button
             type="button"
             onClick={() => go(-1)}
-            className="rounded-lg border border-indigo-100 p-1.5 text-[#1d3557]/70 transition-colors hover:bg-indigo-50 hover:text-[#1d3557]"
+            className="rounded-lg border border-taupe-200 p-1.5 text-muted transition-colors hover:bg-taupe-100 hover:text-foreground"
             aria-label={prevLabel}
           >
             <FiChevronLeft className="h-4 w-4" />
@@ -71,7 +71,7 @@ export default function CaseStudySlider({
           <button
             type="button"
             onClick={() => go(1)}
-            className="rounded-lg border border-indigo-100 p-1.5 text-[#1d3557]/70 transition-colors hover:bg-indigo-50 hover:text-[#1d3557]"
+            className="rounded-lg border border-taupe-200 p-1.5 text-muted transition-colors hover:bg-taupe-100 hover:text-foreground"
             aria-label={nextLabel}
           >
             <FiChevronRight className="h-4 w-4" />
@@ -88,7 +88,7 @@ export default function CaseStudySlider({
             aria-selected={i === index}
             aria-label={s.title}
             onClick={() => setIndex(i)}
-            className={`h-1.5 rounded-full transition-all ${i === index ? 'w-5 bg-[#457b9d]' : 'w-1.5 bg-indigo-200'}`}
+            className={`h-1.5 rounded-full transition-all ${i === index ? 'w-5 bg-plum-500' : 'w-1.5 bg-taupe-200'}`}
           />
         ))}
       </div>

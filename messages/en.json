@@ -109,9 +109,9 @@
     ]
   },
   "projects": {
-    "showcases": "Showcases",
-    "subtitle": "Focused on clarity, scalability, and measurable outcomes",
-    "highlights": "Bosch enterprise · Leading-self analysis · Headless CMS",
+    "showcases": "Four projects, one process",
+    "subtitle": "From a weekend build to enterprise software used by hundreds — the same problem-solving process, at every scale.",
+    "highlights": "The Range",
     "enterpriseProjects": "Enterprise Delivery",
     "enterpriseSubtitle": "Structured workflows at scale — Scrum, cross-team alignment, and production discipline",
     "independentProjects": "Independent Builds",
@@ -122,18 +122,15 @@
     "viewLiveSite": "View live site",
     "showMore": "Show more",
     "showLess": "Show less",
+    "previousProject": "Previous project",
+    "nextProject": "Next project",
     "caseStudy": {
       "previewLabel": "Concept preview",
       "disclaimer": "Illustrative boards from the design process — not a pixel-perfect client replica.",
-      "expandConcept": "Expand concept",
-      "modalEyebrow": "Design concept",
       "sliderLabel": "Project concept slides",
       "prevSlide": "Previous slide",
       "nextSlide": "Next slide",
-      "close": "Close",
-      "contactHint": "Curious how this maps to your product? Reach out on LinkedIn.",
       "contentPlatform": {
-        "modalIntro": "How I approached UX, design system, headless CMS, and technical SEO for a content-driven platform.",
         "slides": [
           {
             "title": "Figma wireframes",
@@ -154,7 +151,6 @@
         ]
       },
       "mimose": {
-        "modalIntro": "How I approached low-friction journaling, proactive AI companionship, and end-to-end delivery for a self-awareness product.",
         "slides": [
           {
             "title": "Low-friction journal flow",
@@ -171,6 +167,46 @@
           {
             "title": "AI & full-stack craft",
             "caption": "Proactive AI patterns with React UI and Spring Boot backend — designed and built end-to-end."
+          }
+        ]
+      },
+      "manufacturingLifecycle": {
+        "slides": [
+          {
+            "title": "Inventory & BOM dashboard",
+            "caption": "A single live view of stock, bill-of-materials, and status — replacing scattered spreadsheets across teams."
+          },
+          {
+            "title": "A utilitarian visual system",
+            "caption": "A steel-and-amber palette built for dense operational data, so status and alerts stay legible at a glance."
+          },
+          {
+            "title": "From spreadsheets to one platform",
+            "caption": "Manual Excel and paper tracking consolidated into a single unified system end to end."
+          },
+          {
+            "title": "Angular & Restful API stack",
+            "caption": "Inventory, BOM management, invoicing, and compliance audits — one integrated Angular platform."
+          }
+        ]
+      },
+      "talentDevelopment": {
+        "slides": [
+          {
+            "title": "Personalized learning roadmap",
+            "caption": "Milestones a manager and employee set together — a clear path instead of a generic training list."
+          },
+          {
+            "title": "A growth-toned visual language",
+            "caption": "Forest and gold tones chosen for coaching conversations, not corporate compliance forms."
+          },
+          {
+            "title": "Individual ↔ organization alignment",
+            "caption": "Closing the gap between personal aspirations and company goals in one shared view."
+          },
+          {
+            "title": "Angular & Spring Boot stack",
+            "caption": "Manager and L&D collaboration, performance evaluation, and roadmap tracking — end to end."
           }
         ]
       }

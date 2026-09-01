@@ -109,9 +109,9 @@
     ]
   },
   "projects": {
-    "showcases": "Dự án tiêu biểu",
-    "subtitle": "Tập trung vào sự rõ ràng, khả năng mở rộng và kết quả đo lường được",
-    "highlights": "Bosch doanh nghiệp · Phân tích bản thân chủ động · Headless CMS",
+    "showcases": "Bốn dự án, một quy trình",
+    "subtitle": "Từ một sản phẩm làm lúc rảnh đến phần mềm doanh nghiệp được hàng trăm người dùng — cùng một cách tư duy giải quyết vấn đề, ở mọi quy mô.",
+    "highlights": "Một quy trình",
     "enterpriseProjects": "Triển khai doanh nghiệp",
     "enterpriseSubtitle": "Quy trình có cấu trúc, quy mô lớn — Scrum, phối hợp đa team và kỷ luật production",
     "independentProjects": "Tự build & freelance",
@@ -122,18 +122,15 @@
     "viewLiveSite": "Xem site live",
     "showMore": "Xem thêm",
     "showLess": "Thu gọn",
+    "previousProject": "Dự án trước",
+    "nextProject": "Dự án tiếp theo",
     "caseStudy": {
       "previewLabel": "Xem trước concept",
       "disclaimer": "Board minh họa từ quy trình thiết kế — không phải bản sao pixel-perfect của site client.",
-      "expandConcept": "Mở rộng concept",
-      "modalEyebrow": "Concept thiết kế",
       "sliderLabel": "Slide concept dự án",
       "prevSlide": "Slide trước",
       "nextSlide": "Slide sau",
-      "close": "Đóng",
-      "contactHint": "Tò mò cách áp dụng cho sản phẩm của bạn? Hãy liên hệ qua LinkedIn.",
       "contentPlatform": {
-        "modalIntro": "Cách tôi tiếp cận UX, design system, headless CMS và technical SEO cho nền tảng nội dung.",
         "slides": [
           {
             "title": "Figma wireframe",
@@ -154,7 +151,6 @@
         ]
       },
       "mimose": {
-        "modalIntro": "Cách tôi tiếp cận journaling ít ma sát, AI đồng hành chủ động và triển khai end-to-end cho sản phẩm tự nhận thức.",
         "slides": [
           {
             "title": "Luồng journal ít ma sát",
@@ -171,6 +167,46 @@
           {
             "title": "AI & full-stack",
             "caption": "Pattern AI chủ động với UI React và backend Spring Boot — thiết kế và build end-to-end."
+          }
+        ]
+      },
+      "manufacturingLifecycle": {
+        "slides": [
+          {
+            "title": "Bảng điều khiển kho & BOM",
+            "caption": "Một cái nhìn tổng quan thời gian thực về tồn kho, BOM và trạng thái — thay thế các file Excel rời rạc giữa các nhóm."
+          },
+          {
+            "title": "Hệ thống hình ảnh mang tính ứng dụng",
+            "caption": "Bảng màu thép và hổ phách được thiết kế cho dữ liệu vận hành dày đặc, giúp trạng thái và cảnh báo luôn dễ đọc."
+          },
+          {
+            "title": "Từ Excel đến một nền tảng duy nhất",
+            "caption": "Việc theo dõi thủ công bằng Excel và giấy tờ được hợp nhất thành một hệ thống thống nhất từ đầu đến cuối."
+          },
+          {
+            "title": "Angular & Restful API",
+            "caption": "Quản lý kho, BOM, hóa đơn và kiểm toán tuân thủ — trên một nền tảng Angular tích hợp."
+          }
+        ]
+      },
+      "talentDevelopment": {
+        "slides": [
+          {
+            "title": "Lộ trình học tập cá nhân hóa",
+            "caption": "Các mốc do quản lý và nhân viên cùng thiết lập — một lộ trình rõ ràng thay vì danh sách đào tạo chung chung."
+          },
+          {
+            "title": "Ngôn ngữ hình ảnh mang tinh thần phát triển",
+            "caption": "Tông màu xanh rừng và vàng được chọn cho các buổi coaching, không phải biểu mẫu tuân thủ hành chính."
+          },
+          {
+            "title": "Gắn kết cá nhân ↔ tổ chức",
+            "caption": "Thu hẹp khoảng cách giữa nguyện vọng cá nhân và mục tiêu công ty trong một giao diện chung."
+          },
+          {
+            "title": "Angular & Spring Boot",
+            "caption": "Phối hợp quản lý và L&D, đánh giá hiệu suất và theo dõi lộ trình — từ đầu đến cuối."
           }
         ]
       }

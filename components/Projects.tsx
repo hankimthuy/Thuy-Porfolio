@@ -1,35 +1,13 @@
 'use client';
 
-import { useState, type ReactNode } from 'react';
-import { FiAlertTriangle, FiBarChart2, FiExternalLink } from 'react-icons/fi';
-import { LuChevronDown, LuHammer, LuLightbulb } from 'react-icons/lu';
-import { HiOutlineClipboardList } from 'react-icons/hi';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
 import { useTranslations } from 'next-intl';
-import {
-  COMPANY_PROJECTS,
-  SIDE_PROJECTS,
-  type ProjectStructure,
-} from '@/lib/projects-data';
-// TODO: Concept demo — bổ sung ví dụ (Figma/screenshot) rồi bật lại import + nhánh caseStudy bên dưới.
-// import CaseStudyProjectCard from '@/components/projects/CaseStudyProjectCard';
+import { SHOWCASE_ORDER, type ProjectStructure } from '@/lib/projects-data';
+import ShowcasePanel from '@/components/projects/ShowcasePanel';
+import type { CaseStudySlide } from '@/components/projects/CaseStudySlider';
+import type { CaseStudyId } from '@/components/projects/CaseStudySlidePanels';
 import { SECTION_HEADER_TO_CONTENT } from '@/lib/layout';
-
-interface ProjectCardProps {
-  title: string;
-  tags: string[];
-  problem: ReactNode;
-  solution: ReactNode;
-  impact: ReactNode;
-  problemLabel: string;
-  solutionLabel: string;
-  impactLabel: string;
-  showMoreLabel: string;
-  showLessLabel: string;
-  cta?: {
-    label: string;
-    href: string;
-  };
-}
 
 function highlightText(text: string, highlights?: string[]): ReactNode {
   if (!highlights?.length) return text;
@@ -61,252 +39,162 @@ type ProjectItemMessages = {
   impactHighlights?: string[];
 };
 
-function projectToCardProps(
-  project: ProjectStructure,
-  item: ProjectItemMessages,
-  labels: {
-    problem: string;
-    solution: string;
-    impact: string;
-    viewLiveSite: string;
-    showMore: string;
-    showLess: string;
-  },
-): ProjectCardProps {
-  return {
-    title: item.title,
-    tags: project.tags,
-    problem: highlightText(item.problemText, item.problemHighlights),
-    solution: highlightText(item.solutionText, item.solutionHighlights),
-    impact: highlightText(item.impactText, item.impactHighlights),
-    problemLabel: labels.problem,
-    solutionLabel: labels.solution,
-    impactLabel: labels.impact,
-    showMoreLabel: labels.showMore,
-    showLessLabel: labels.showLess,
-    cta: project.ctaHref ? { label: labels.viewLiveSite, href: project.ctaHref } : undefined,
-  };
-}
-
-/**
- * Problem -> Solution -> Impact. One neutral chip for all three — the icon
- * carries the difference, so four cards of these don't read as colour noise.
- */
-const STEP_CHIP = 'border-taupe-200 bg-taupe-100 text-muted';
-
-const STEPS = [
-  { key: 'problem', icon: FiAlertTriangle },
-  { key: 'solution', icon: LuLightbulb },
-  { key: 'impact', icon: FiBarChart2 },
-] as const;
-
-/**
- * Cycled per card (within a group) so the grid doesn't read as one flat
- * white wall — a soft Apple-Bento tint, a slim colored top bar, and matching
- * tag pills, all keyed off the same index. Card backgrounds stay on the
- * reactive surface/taupe scale (the card's own text is theme-reactive too),
- * with the top bar carrying the brand-color variety instead.
- */
-const CARD_TONES = [
-  { bg: 'bg-surface', bar: 'bg-plum-500' },
-  { bg: 'bg-taupe-100/60', bar: 'bg-magenta-500' },
-  { bg: 'bg-surface', bar: 'bg-taupe-300' },
-  { bg: 'bg-taupe-200/40', bar: 'bg-plum-500' },
-];
-
-const TAG_TONES = [
-  'border-taupe-200 bg-taupe-50 text-muted',
-  // Fixed pastel chip — pairs with fixed brand-color text, same "sticker"
-  // reasoning as the other plum-50/magenta-50 badges across the site.
-  'border-plum-500/20 bg-plum-50 text-plum-700',
-];
-
-function ProjectCard(props: ProjectCardProps & { index: number }) {
-  const { title, tags, cta, index, showMoreLabel, showLessLabel } = props;
-  const [expanded, setExpanded] = useState(false);
-
-  const steps = [
-    { ...STEPS[0], label: props.problemLabel, body: props.problem },
-    { ...STEPS[1], label: props.solutionLabel, body: props.solution },
-    { ...STEPS[2], label: props.impactLabel, body: props.impact },
-  ];
-  const tone = CARD_TONES[index % CARD_TONES.length];
-
-  return (
-    <article
-      className={`relative overflow-hidden rounded-3xl border border-taupe-200/80 ${tone.bg} p-6 shadow-[0_4px_20px_-4px_rgba(26,15,82,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_24px_-4px_rgba(26,15,82,0.08)] motion-reduce:hover:translate-y-0 lg:p-8`}
-    >
-      <span className={`absolute inset-x-0 top-0 h-1 ${tone.bar}`} aria-hidden />
-
-      <div className="flex items-start justify-between gap-3">
-        <h3 className="text-lg font-bold leading-snug text-foreground lg:text-xl">
-          {title}
-        </h3>
-        {cta && (
-          <a
-            href={cta.href}
-            target="_blank"
-            rel="noreferrer"
-            className="-mr-2 shrink-0 rounded-lg p-2 text-muted transition-colors hover:bg-taupe-100 hover:text-foreground"
-            title={cta.label}
-            aria-label={cta.label}
-          >
-            <FiExternalLink className="h-5 w-5" aria-hidden="true" />
-          </a>
-        )}
-      </div>
-
-      <ul className="mt-4 flex flex-wrap gap-1.5">
-        {tags.map((tag, tagIndex) => (
-          <li
-            key={tag}
-            className={`rounded-full border px-3 py-1 text-xs font-semibold ${TAG_TONES[tagIndex % TAG_TONES.length]}`}
-          >
-            {tag}
-          </li>
-        ))}
-      </ul>
-
-      <div className="mt-6 space-y-5">
-        {steps.map((step) => {
-          const StepIcon = step.icon;
-
-          return (
-            <div key={step.key} className="flex gap-3.5">
-              <span
-                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border ${STEP_CHIP}`}
-              >
-                <StepIcon className="h-4 w-4" aria-hidden="true" />
-              </span>
-              <div className="min-w-0">
-                <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted">
-                  {step.label}
-                </p>
-                <p
-                  className={`mt-1 text-sm leading-relaxed text-foreground/80 ${
-                    expanded ? '' : 'line-clamp-2'
-                  }`}
-                >
-                  {step.body}
-                </p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      <button
-        type="button"
-        onClick={() => setExpanded((prev) => !prev)}
-        aria-expanded={expanded}
-        className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-muted transition-colors hover:text-foreground"
-      >
-        {expanded ? showLessLabel : showMoreLabel}
-        <LuChevronDown
-          className={`h-3.5 w-3.5 transition-transform duration-200 motion-reduce:transition-none ${
-            expanded ? 'rotate-180' : ''
-          }`}
-          aria-hidden="true"
-        />
-      </button>
-    </article>
-  );
-}
-
-function renderProjectCard(
-  project: ProjectStructure,
-  props: ProjectCardProps,
-  index: number,
-) {
-  // TODO: Concept demo — uncomment khi đã có asset ví dụ cho MimoSe & CMS.
-  // if (project.caseStudy) {
-  //   return <CaseStudyProjectCard caseStudyId={project.caseStudy} {...props} />;
-  // }
-  return <ProjectCard {...props} index={index} />;
-}
-
-type ProjectGroupProps = {
-  title: string;
-  subtitle: string;
-  icon: ReactNode;
-  structures: ProjectStructure[];
-  cards: ProjectCardProps[];
+/** messages/*.json keys projects.caseStudy.<key>, camelCased from the project id. */
+const CASE_STUDY_KEY: Record<string, string> = {
+  'content-platform': 'contentPlatform',
+  mimose: 'mimose',
+  'talent-development': 'talentDevelopment',
+  'manufacturing-lifecycle': 'manufacturingLifecycle',
 };
-
-function ProjectGroup({ title, subtitle, icon, structures, cards }: ProjectGroupProps) {
-  return (
-    <section className="space-y-5">
-      <div className="flex items-start gap-3.5">
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-taupe-200 bg-taupe-100 text-muted">
-          {icon}
-        </span>
-        <div className="min-w-0">
-          <h2 className="text-xl font-bold text-foreground lg:text-2xl">{title}</h2>
-          <p className="mt-1 text-sm leading-relaxed text-muted">{subtitle}</p>
-        </div>
-      </div>
-
-      <div className="grid gap-4 md:gap-5 lg:grid-cols-2">
-        {structures.map((project, index) => (
-          <div key={project.id} className="flex">
-            {renderProjectCard(project, cards[index], index)}
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
 
 export default function Projects() {
   const t = useTranslations('projects');
 
-  const labels = {
-    problem: t('problem'),
-    solution: t('solution'),
-    impact: t('impact'),
-    viewLiveSite: t('viewLiveSite'),
-    showMore: t('showMore'),
-    showLess: t('showLess'),
-  };
+  const railRef = useRef<HTMLDivElement | null>(null);
+  const panelRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const projectItems = t.raw('items') as Record<string, ProjectItemMessages>;
-  const getItem = (id: string) => projectItems[id];
+  const caseStudies = t.raw('caseStudy') as Record<string, { slides: CaseStudySlide[] }>;
 
-  const enterpriseCards = COMPANY_PROJECTS.map((p) =>
-    projectToCardProps(p, getItem(p.id), labels),
-  );
-  const independentCards = SIDE_PROJECTS.map((p) =>
-    projectToCardProps(p, getItem(p.id), labels),
-  );
+  const panels = SHOWCASE_ORDER.map((project: ProjectStructure) => {
+    const item = projectItems[project.id];
+    const caseStudyKey = CASE_STUDY_KEY[project.id];
+
+    return {
+      id: project.id,
+      caseStudyId: project.id as CaseStudyId,
+      categoryLabel: project.category === 'company' ? t('enterpriseProjects') : t('independentProjects'),
+      title: item.title,
+      tags: project.tags,
+      problem: highlightText(item.problemText, item.problemHighlights),
+      solution: highlightText(item.solutionText, item.solutionHighlights),
+      impact: highlightText(item.impactText, item.impactHighlights),
+      cta: project.ctaHref ? { label: t('viewLiveSite'), href: project.ctaHref } : undefined,
+      slides: caseStudies[caseStudyKey].slides,
+    };
+  });
+
+  useEffect(() => {
+    const rail = railRef.current;
+    if (!rail) return;
+
+    // A callback only carries entries whose ratio crossed a threshold since
+    // the last firing, not every observed panel's current state — so during
+    // a fast programmatic scroll (clicking a dot 3 panels away) the last
+    // batch can be the panel being scrolled *away* from, not the one landed
+    // on. Track every panel's last-known ratio ourselves and always pick the
+    // max across all of them, not just whatever happened to be in this batch.
+    const ratios = new Map<Element, number>();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => ratios.set(entry.target, entry.intersectionRatio));
+
+        let bestIndex = -1;
+        let bestRatio = 0;
+        panelRefs.current.forEach((panel, index) => {
+          const ratio = panel ? (ratios.get(panel) ?? 0) : 0;
+          if (ratio > bestRatio) {
+            bestRatio = ratio;
+            bestIndex = index;
+          }
+        });
+        if (bestIndex !== -1) setActiveIndex(bestIndex);
+      },
+      { root: rail, threshold: [0, 0.25, 0.5, 0.75, 1] },
+    );
+
+    panelRefs.current.forEach((panel) => panel && observer.observe(panel));
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToIndex = (index: number) => {
+    const clamped = Math.max(0, Math.min(index, panels.length - 1));
+    panelRefs.current[clamped]?.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+  };
 
   return (
     <>
       <header className="max-w-2xl">
-        <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted">
-          {t('highlights')}
-        </p>
+        <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted">{t('highlights')}</p>
         <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground text-balance lg:text-4xl">
           {t('showcases')}
         </h1>
         <p className="mt-4 text-base leading-relaxed text-muted">{t('subtitle')}</p>
       </header>
 
-      <div className={`${SECTION_HEADER_TO_CONTENT} space-y-10 lg:space-y-14`}>
-        <ProjectGroup
-          title={t('independentProjects')}
-          subtitle={t('independentSubtitle')}
-          icon={<LuHammer className="h-5 w-5" aria-hidden="true" />}
-          structures={SIDE_PROJECTS}
-          cards={independentCards}
-        />
+      <div className={SECTION_HEADER_TO_CONTENT}>
+        <div className="flex items-center justify-end gap-2 pb-3">
+          <button
+            type="button"
+            onClick={() => scrollToIndex(activeIndex - 1)}
+            disabled={activeIndex === 0}
+            aria-label={t('previousProject')}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-taupe-200 text-muted transition-colors hover:border-plum-500 hover:text-foreground disabled:pointer-events-none disabled:opacity-40"
+          >
+            <LuChevronLeft className="h-4 w-4" aria-hidden />
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToIndex(activeIndex + 1)}
+            disabled={activeIndex === panels.length - 1}
+            aria-label={t('nextProject')}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-taupe-200 text-muted transition-colors hover:border-plum-500 hover:text-foreground disabled:pointer-events-none disabled:opacity-40"
+          >
+            <LuChevronRight className="h-4 w-4" aria-hidden />
+          </button>
+        </div>
 
-        <ProjectGroup
-          title={t('enterpriseProjects')}
-          subtitle={t('enterpriseSubtitle')}
-          icon={<HiOutlineClipboardList className="h-5 w-5" aria-hidden="true" />}
-          structures={COMPANY_PROJECTS}
-          cards={enterpriseCards}
-        />
+        <div
+          ref={railRef}
+          className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 -mx-5 px-5 sm:-mx-6 sm:px-6 lg:-mx-10 lg:px-10"
+        >
+          {panels.map((panel, index) => (
+            <ShowcasePanel
+              key={panel.id}
+              ref={(el) => {
+                panelRefs.current[index] = el;
+              }}
+              index={index}
+              caseStudyId={panel.caseStudyId}
+              categoryLabel={panel.categoryLabel}
+              title={panel.title}
+              tags={panel.tags}
+              problem={panel.problem}
+              solution={panel.solution}
+              impact={panel.impact}
+              problemLabel={t('problem')}
+              solutionLabel={t('solution')}
+              impactLabel={t('impact')}
+              cta={panel.cta}
+              slides={panel.slides}
+              sliderLabel={t('caseStudy.sliderLabel')}
+              prevSlideLabel={t('caseStudy.prevSlide')}
+              nextSlideLabel={t('caseStudy.nextSlide')}
+              disclaimer={t('caseStudy.disclaimer')}
+            />
+          ))}
+        </div>
+
+        <div className="mt-1 flex items-center justify-center gap-2">
+          {panels.map((panel, index) => (
+            <button
+              key={panel.id}
+              type="button"
+              onClick={() => scrollToIndex(index)}
+              aria-label={panel.title}
+              aria-current={index === activeIndex}
+              className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold transition-colors ${
+                index === activeIndex
+                  ? 'bg-plum-500 text-white'
+                  : 'bg-taupe-100 text-muted hover:bg-taupe-200'
+              }`}
+            >
+              {String(index + 1).padStart(2, '0')}
+            </button>
+          ))}
+        </div>
       </div>
     </>
   );
