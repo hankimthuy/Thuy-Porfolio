@@ -10,6 +10,28 @@
       ],
       "destination": "https://hankimthuy.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "thuyhankim.id.vn"
+        }
+      ],
+      "destination": "https://hankimthuy.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.thuyhankim.id.vn"
+        }
+      ],
+      "destination": "https://hankimthuy.com/:path*",
+      "permanent": true
     }
   ]
 }
