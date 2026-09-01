@@ -12,7 +12,7 @@ export default async function StatsCard() {
 
   return (
     <BentoCard tone="tint" className="p-7 md:p-8">
-      <p className="text-xs font-bold uppercase tracking-[0.14em] text-plum-700">
+      <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted">
         {tHome('stats.eyebrow')}
       </p>
 
@@ -20,7 +20,7 @@ export default async function StatsCard() {
         {stats.map((stat, index) => (
           <li
             key={stat}
-            className={`border-l-2 ${STAT_BORDER_TONES[index % STAT_BORDER_TONES.length]} pl-3 text-sm font-bold text-plum-900`}
+            className={`border-l-2 ${STAT_BORDER_TONES[index % STAT_BORDER_TONES.length]} pl-3 text-sm font-bold text-foreground`}
           >
             {stat}
           </li>

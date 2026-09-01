@@ -120,6 +120,8 @@
     "solution": "Solution",
     "impact": "Impact",
     "viewLiveSite": "View live site",
+    "showMore": "Show more",
+    "showLess": "Show less",
     "caseStudy": {
       "previewLabel": "Concept preview",
       "disclaimer": "Illustrative boards from the design process — not a pixel-perfect client replica.",
@@ -331,7 +333,9 @@
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "copyright": "© {year} {brandName} ({fullName})",
-    "switchLanguage": "Switch to {language}"
+    "switchLanguage": "Switch to {language}",
+    "switchToDark": "Switch to dark mode",
+    "switchToLight": "Switch to light mode"
   },
   "jsonLd": {
     "personDescription": "Han Kim Thuy (Hàn Kim Thủy) — UX Software Engineer based in Vietnam, available for remote freelance collaborations worldwide. Legal name: Hàn Kim Thủy (family Hàn, middle Kim, given Thủy). Online handles: thuyhankim, hankimthuy.",

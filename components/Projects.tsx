@@ -1,8 +1,8 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { FiAlertTriangle, FiBarChart2, FiExternalLink } from 'react-icons/fi';
-import { LuHammer, LuLightbulb } from 'react-icons/lu';
+import { LuChevronDown, LuHammer, LuLightbulb } from 'react-icons/lu';
 import { HiOutlineClipboardList } from 'react-icons/hi';
 import { useTranslations } from 'next-intl';
 import {
@@ -23,6 +23,8 @@ interface ProjectCardProps {
   problemLabel: string;
   solutionLabel: string;
   impactLabel: string;
+  showMoreLabel: string;
+  showLessLabel: string;
   cta?: {
     label: string;
     href: string;
@@ -40,7 +42,7 @@ function highlightText(text: string, highlights?: string[]): ReactNode {
 
   return parts.map((part, i) =>
     highlights.some((h) => h.toLowerCase() === part.toLowerCase()) ? (
-      <strong key={i} className="font-bold text-plum-900">
+      <strong key={i} className="font-bold text-foreground">
         {part}
       </strong>
     ) : (
@@ -62,7 +64,14 @@ type ProjectItemMessages = {
 function projectToCardProps(
   project: ProjectStructure,
   item: ProjectItemMessages,
-  labels: { problem: string; solution: string; impact: string; viewLiveSite: string },
+  labels: {
+    problem: string;
+    solution: string;
+    impact: string;
+    viewLiveSite: string;
+    showMore: string;
+    showLess: string;
+  },
 ): ProjectCardProps {
   return {
     title: item.title,
@@ -73,6 +82,8 @@ function projectToCardProps(
     problemLabel: labels.problem,
     solutionLabel: labels.solution,
     impactLabel: labels.impact,
+    showMoreLabel: labels.showMore,
+    showLessLabel: labels.showLess,
     cta: project.ctaHref ? { label: labels.viewLiveSite, href: project.ctaHref } : undefined,
   };
 }
@@ -81,7 +92,7 @@ function projectToCardProps(
  * Problem -> Solution -> Impact. One neutral chip for all three — the icon
  * carries the difference, so four cards of these don't read as colour noise.
  */
-const STEP_CHIP = 'border-taupe-200 bg-taupe-100 text-plum-700';
+const STEP_CHIP = 'border-taupe-200 bg-taupe-100 text-muted';
 
 const STEPS = [
   { key: 'problem', icon: FiAlertTriangle },
@@ -92,22 +103,27 @@ const STEPS = [
 /**
  * Cycled per card (within a group) so the grid doesn't read as one flat
  * white wall — a soft Apple-Bento tint, a slim colored top bar, and matching
- * tag pills, all keyed off the same index.
+ * tag pills, all keyed off the same index. Card backgrounds stay on the
+ * reactive surface/taupe scale (the card's own text is theme-reactive too),
+ * with the top bar carrying the brand-color variety instead.
  */
 const CARD_TONES = [
-  { bg: 'bg-white', bar: 'bg-plum-500' },
+  { bg: 'bg-surface', bar: 'bg-plum-500' },
   { bg: 'bg-taupe-100/60', bar: 'bg-magenta-500' },
-  { bg: 'bg-white', bar: 'bg-taupe-300' },
-  { bg: 'bg-plum-50', bar: 'bg-plum-500' },
+  { bg: 'bg-surface', bar: 'bg-taupe-300' },
+  { bg: 'bg-taupe-200/40', bar: 'bg-plum-500' },
 ];
 
 const TAG_TONES = [
-  'border-taupe-200 bg-taupe-50 text-plum-700',
+  'border-taupe-200 bg-taupe-50 text-muted',
+  // Fixed pastel chip — pairs with fixed brand-color text, same "sticker"
+  // reasoning as the other plum-50/magenta-50 badges across the site.
   'border-plum-500/20 bg-plum-50 text-plum-700',
 ];
 
 function ProjectCard(props: ProjectCardProps & { index: number }) {
-  const { title, tags, cta, index } = props;
+  const { title, tags, cta, index, showMoreLabel, showLessLabel } = props;
+  const [expanded, setExpanded] = useState(false);
 
   const steps = [
     { ...STEPS[0], label: props.problemLabel, body: props.problem },
@@ -123,7 +139,7 @@ function ProjectCard(props: ProjectCardProps & { index: number }) {
       <span className={`absolute inset-x-0 top-0 h-1 ${tone.bar}`} aria-hidden />
 
       <div className="flex items-start justify-between gap-3">
-        <h3 className="text-lg font-bold leading-snug text-plum-900 lg:text-xl">
+        <h3 className="text-lg font-bold leading-snug text-foreground lg:text-xl">
           {title}
         </h3>
         {cta && (
@@ -131,7 +147,7 @@ function ProjectCard(props: ProjectCardProps & { index: number }) {
             href={cta.href}
             target="_blank"
             rel="noreferrer"
-            className="-mr-2 shrink-0 rounded-lg p-2 text-plum-700 transition-colors hover:bg-taupe-100 hover:text-plum-900"
+            className="-mr-2 shrink-0 rounded-lg p-2 text-muted transition-colors hover:bg-taupe-100 hover:text-foreground"
             title={cta.label}
             aria-label={cta.label}
           >
@@ -163,10 +179,14 @@ function ProjectCard(props: ProjectCardProps & { index: number }) {
                 <StepIcon className="h-4 w-4" aria-hidden="true" />
               </span>
               <div className="min-w-0">
-                <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-plum-700">
+                <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted">
                   {step.label}
                 </p>
-                <p className="mt-1 text-sm leading-relaxed text-plum-900/80">
+                <p
+                  className={`mt-1 text-sm leading-relaxed text-foreground/80 ${
+                    expanded ? '' : 'line-clamp-2'
+                  }`}
+                >
                   {step.body}
                 </p>
               </div>
@@ -174,6 +194,21 @@ function ProjectCard(props: ProjectCardProps & { index: number }) {
           );
         })}
       </div>
+
+      <button
+        type="button"
+        onClick={() => setExpanded((prev) => !prev)}
+        aria-expanded={expanded}
+        className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-muted transition-colors hover:text-foreground"
+      >
+        {expanded ? showLessLabel : showMoreLabel}
+        <LuChevronDown
+          className={`h-3.5 w-3.5 transition-transform duration-200 motion-reduce:transition-none ${
+            expanded ? 'rotate-180' : ''
+          }`}
+          aria-hidden="true"
+        />
+      </button>
     </article>
   );
 }
@@ -202,12 +237,12 @@ function ProjectGroup({ title, subtitle, icon, structures, cards }: ProjectGroup
   return (
     <section className="space-y-5">
       <div className="flex items-start gap-3.5">
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-taupe-200 bg-taupe-100 text-plum-700">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-taupe-200 bg-taupe-100 text-muted">
           {icon}
         </span>
         <div className="min-w-0">
-          <h2 className="text-xl font-bold text-plum-900 lg:text-2xl">{title}</h2>
-          <p className="mt-1 text-sm leading-relaxed text-plum-700">{subtitle}</p>
+          <h2 className="text-xl font-bold text-foreground lg:text-2xl">{title}</h2>
+          <p className="mt-1 text-sm leading-relaxed text-muted">{subtitle}</p>
         </div>
       </div>
 
@@ -230,6 +265,8 @@ export default function Projects() {
     solution: t('solution'),
     impact: t('impact'),
     viewLiveSite: t('viewLiveSite'),
+    showMore: t('showMore'),
+    showLess: t('showLess'),
   };
 
   const projectItems = t.raw('items') as Record<string, ProjectItemMessages>;
@@ -245,13 +282,13 @@ export default function Projects() {
   return (
     <>
       <header className="max-w-2xl">
-        <p className="text-xs font-bold uppercase tracking-[0.14em] text-plum-700">
+        <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted">
           {t('highlights')}
         </p>
-        <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-plum-900 text-balance lg:text-4xl">
+        <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground text-balance lg:text-4xl">
           {t('showcases')}
         </h1>
-        <p className="mt-4 text-base leading-relaxed text-plum-700">{t('subtitle')}</p>
+        <p className="mt-4 text-base leading-relaxed text-muted">{t('subtitle')}</p>
       </header>
 
       <div className={`${SECTION_HEADER_TO_CONTENT} space-y-10 lg:space-y-14`}>

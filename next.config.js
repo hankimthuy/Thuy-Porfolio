@@ -1,3 +1,6 @@
+// This file is intentionally CommonJS (Next.js loads next.config.js this
+// way), so `require` here is correct, not a stray import style.
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const createNextIntlPlugin = require('next-intl/plugin');
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');

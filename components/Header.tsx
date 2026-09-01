@@ -70,7 +70,7 @@ const Header = () => {
       <div className={`${SECTION_CONTAINER} flex h-14 items-center gap-4`}>
         <Link
           href="/"
-          className="shrink-0 text-lg tracking-tight text-plum-900 transition-colors hover:text-plum-700"
+          className="shrink-0 text-lg tracking-tight text-foreground transition-colors hover:text-muted"
         >
           <Wordmark name={tPerson('brandName')} />
         </Link>
@@ -85,7 +85,7 @@ const Header = () => {
                 href={item.href}
                 aria-current={active ? 'page' : undefined}
                 className={`group relative text-sm font-medium transition-colors ${
-                  active ? 'text-plum-900' : 'text-plum-700 hover:text-plum-900'
+                  active ? 'text-foreground' : 'text-muted hover:text-foreground'
                 }`}
               >
                 {t(`nav.${item.key}`)}
@@ -117,11 +117,11 @@ const Header = () => {
             aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-taupe-200 bg-surface text-plum-700 transition-colors hover:border-plum-500">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-taupe-200 bg-surface text-muted transition-colors hover:border-plum-500">
                 <LuX className="h-5 w-5" />
               </span>
             ) : (
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl text-plum-700 transition-colors hover:bg-taupe-100">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl text-muted transition-colors hover:bg-taupe-100">
                 <LuMenu className="h-6 w-6" />
               </span>
             )}
@@ -158,7 +158,7 @@ const Header = () => {
                       className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors ${
                         active
                           ? 'bg-plum-500 text-white'
-                          : 'bg-taupe-100 text-plum-700 group-hover:bg-taupe-200'
+                          : 'bg-taupe-100 text-muted group-hover:bg-taupe-200'
                       }`}
                     >
                       <Icon className="h-5 w-5" aria-hidden />
@@ -166,20 +166,20 @@ const Header = () => {
                     <span className="min-w-0 flex-1">
                       <span
                         className={`block text-base font-semibold ${
-                          active ? 'text-plum-900' : 'text-plum-700'
+                          active ? 'text-foreground' : 'text-muted'
                         }`}
                       >
                         {t(`nav.${item.key}`)}
                       </span>
                       {active && (
-                        <span className="mt-0.5 block text-xs font-medium text-plum-700">
+                        <span className="mt-0.5 block text-xs font-medium text-muted">
                           {t('youAreHere')}
                         </span>
                       )}
                     </span>
                     <LuChevronRight
                       className={`h-5 w-5 shrink-0 transition-transform group-hover:translate-x-0.5 ${
-                        active ? 'text-plum-900' : 'text-plum-500'
+                        active ? 'text-foreground' : 'text-plum-500'
                       }`}
                       aria-hidden
                     />

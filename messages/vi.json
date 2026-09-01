@@ -120,6 +120,8 @@
     "solution": "Giải pháp",
     "impact": "Tác động",
     "viewLiveSite": "Xem site live",
+    "showMore": "Xem thêm",
+    "showLess": "Thu gọn",
     "caseStudy": {
       "previewLabel": "Xem trước concept",
       "disclaimer": "Board minh họa từ quy trình thiết kế — không phải bản sao pixel-perfect của site client.",
@@ -331,7 +333,9 @@
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "copyright": "© {year} {brandName} ({fullName})",
-    "switchLanguage": "Chuyển sang {language}"
+    "switchLanguage": "Chuyển sang {language}",
+    "switchToDark": "Chuyển sang chế độ tối",
+    "switchToLight": "Chuyển sang chế độ sáng"
   },
   "jsonLd": {
     "personDescription": "Hàn Kim Thủy (Han Kim Thuy) — Kỹ sư UX phần mềm tại Việt Nam, nhận hợp tác freelance remote toàn cầu. Tên pháp lý: Hàn Kim Thủy (họ Hàn, tên đệm Kim, tên Thủy). Tên đăng nhập: thuyhankim, hankimthuy.",

@@ -6,7 +6,7 @@ import BentoCard from '@/components/bento/BentoCard';
 import { PERSON } from '@/lib/seo';
 
 const SOCIAL_LINK_CLASS =
-  'flex h-11 w-11 items-center justify-center rounded-xl border border-taupe-200 text-plum-700 transition-colors hover:border-plum-500 hover:bg-taupe-100 hover:text-plum-900';
+  'flex h-11 w-11 items-center justify-center rounded-xl border border-taupe-200 text-muted transition-colors hover:border-plum-500 hover:bg-taupe-100 hover:text-foreground';
 
 export default async function HeroCard() {
   const t = await getTranslations('hero');
@@ -26,7 +26,7 @@ export default async function HeroCard() {
       </span>
 
       <div className="mt-8">
-        <h1 className="font-extrabold tracking-tight text-plum-900">
+        <h1 className="font-extrabold tracking-tight text-foreground">
           <span className="block text-[1.75rem] leading-[1.15] text-balance sm:text-4xl lg:text-5xl">
             {tPerson('greeting')} {tPerson('brandName')}
           </span>
@@ -35,20 +35,20 @@ export default async function HeroCard() {
           </span>
         </h1>
 
-        <p className="mt-2 text-sm font-medium text-plum-700 lg:text-base">
+        <p className="mt-2 text-sm font-medium text-muted lg:text-base">
           {tPerson('jobTitleSecondary')}
         </p>
 
-        <p className="mt-5 max-w-xl text-[0.95rem] leading-relaxed text-plum-900/80 lg:text-base">
+        <p className="mt-5 max-w-xl text-[0.95rem] leading-relaxed text-foreground/80 lg:text-base">
           {t.rich('bio', {
             technicalLogic: (chunks) => (
-              <strong className="font-bold text-plum-900">{chunks}</strong>
+              <strong className="font-bold text-foreground">{chunks}</strong>
             ),
             humanEmpathy: (chunks) => (
-              <strong className="font-bold text-plum-900">{chunks}</strong>
+              <strong className="font-bold text-foreground">{chunks}</strong>
             ),
-            why: (chunks) => <strong className="font-bold text-plum-900">{chunks}</strong>,
-            how: (chunks) => <strong className="font-bold text-plum-900">{chunks}</strong>,
+            why: (chunks) => <strong className="font-bold text-foreground">{chunks}</strong>,
+            how: (chunks) => <strong className="font-bold text-foreground">{chunks}</strong>,
           })}
         </p>
       </div>
@@ -63,7 +63,7 @@ export default async function HeroCard() {
           </Link>
           <Link
             href="/connect"
-            className="inline-flex items-center justify-center rounded-xl border border-taupe-200 bg-taupe-50 px-6 py-3 text-sm font-semibold text-plum-700 transition-colors hover:border-plum-500 hover:bg-taupe-100"
+            className="inline-flex items-center justify-center rounded-xl border border-taupe-200 bg-taupe-50 px-6 py-3 text-sm font-semibold text-muted transition-colors hover:border-plum-500 hover:bg-taupe-100"
           >
             {tHome('cta.secondary')}
           </Link>
