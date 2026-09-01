@@ -1,7 +1,11 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { getDocument, GlobalWorkerOptions } from 'pdfjs-dist/legacy/build/pdf.mjs';
+import {
+    getDocument,
+    GlobalWorkerOptions,
+    type PDFDocumentProxy,
+} from 'pdfjs-dist/legacy/build/pdf.mjs';
 
 GlobalWorkerOptions.workerSrc = new URL(
     'pdfjs-dist/legacy/build/pdf.worker.min.mjs',
@@ -28,11 +32,11 @@ export default function PdfThumbnail({ pdfUrl, className, pageNumber = 1, scale 
                 setStatus('loading');
                 setErrorMessage('');
 
-                const loadingTask = (getDocument as any)({ url: pdfUrl, disableWorker: true });
+                const loadingTask = getDocument({ url: pdfUrl });
 
-                const pdf: any = await Promise.race([
+                const pdf: PDFDocumentProxy = await Promise.race([
                     loadingTask.promise,
-                    new Promise((_, reject) => {
+                    new Promise<never>((_, reject) => {
                         window.setTimeout(() => {
                             try {
                                 loadingTask.destroy();
@@ -56,7 +60,7 @@ export default function PdfThumbnail({ pdfUrl, className, pageNumber = 1, scale 
                 canvas.width = Math.floor(viewport.width);
                 canvas.height = Math.floor(viewport.height);
 
-                await (page as any).render({ canvasContext: context, viewport, canvas }).promise;
+                await page.render({ canvasContext: context, viewport, canvas }).promise;
 
                 if (cancelled) return;
                 setStatus('idle');
@@ -80,15 +84,15 @@ export default function PdfThumbnail({ pdfUrl, className, pageNumber = 1, scale 
                 <canvas ref={canvasRef} className="w-full h-auto" />
 
                 {status === 'loading' && (
-                    <div className="absolute inset-0 flex items-center justify-center text-sm text-ocean-700 bg-surface/60">
+                    <div className="absolute inset-0 flex items-center justify-center text-sm text-muted bg-surface/60">
                         Loading preview...
                     </div>
                 )}
 
                 {status === 'error' && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-sm text-ocean-700 px-4 text-center bg-surface/80">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-sm text-muted px-4 text-center bg-surface/80">
                         <div>Unable to preview PDF</div>
-                        {errorMessage && <div className="text-xs text-ocean-700/70">{errorMessage}</div>}
+                        {errorMessage && <div className="text-xs text-muted/70">{errorMessage}</div>}
                     </div>
                 )}
             </div>

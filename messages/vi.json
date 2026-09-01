@@ -110,7 +110,7 @@
   },
   "projects": {
     "showcases": "Dự án tiêu biểu",
-    "subtitle": "Tập trung vào sự rõ ràng, khả năng mở rộng và kết quả đo lường được",
+    "subtitle": "Từ một sản phẩm làm lúc rảnh đến phần mềm doanh nghiệp được hàng trăm người dùng — cùng một cách tư duy giải quyết vấn đề, ở mọi quy mô.",
     "highlights": "Bosch doanh nghiệp · Phân tích bản thân chủ động · Headless CMS",
     "enterpriseProjects": "Triển khai doanh nghiệp",
     "enterpriseSubtitle": "Quy trình có cấu trúc, quy mô lớn — Scrum, phối hợp đa team và kỷ luật production",
@@ -120,62 +120,12 @@
     "solution": "Giải pháp",
     "impact": "Tác động",
     "viewLiveSite": "Xem site live",
-    "caseStudy": {
-      "previewLabel": "Xem trước concept",
-      "disclaimer": "Board minh họa từ quy trình thiết kế — không phải bản sao pixel-perfect của site client.",
-      "expandConcept": "Mở rộng concept",
-      "modalEyebrow": "Concept thiết kế",
-      "sliderLabel": "Slide concept dự án",
-      "prevSlide": "Slide trước",
-      "nextSlide": "Slide sau",
-      "close": "Đóng",
-      "contactHint": "Tò mò cách áp dụng cho sản phẩm của bạn? Hãy liên hệ qua LinkedIn.",
-      "contentPlatform": {
-        "modalIntro": "Cách tôi tiếp cận UX, design system, headless CMS và technical SEO cho nền tảng nội dung.",
-        "slides": [
-          {
-            "title": "Figma wireframe",
-            "caption": "Cấu trúc sớm cho điều hướng, thứ bậc bài viết và module editorial trước UI high-fidelity."
-          },
-          {
-            "title": "Màu & typography",
-            "caption": "Quyết định token cho nội dung dài dễ đọc, thứ bậc nhấn mạnh và cảm giác thương hiệu nhất quán."
-          },
-          {
-            "title": "Layout responsive",
-            "caption": "Breakpoint mobile-first để danh sách, bài viết và landing giữ mạch lạc trên mọi thiết bị."
-          },
-          {
-            "title": "CMS & SEO stack",
-            "caption": "Quy trình admin headless, storefront Next.js, metadata, JSON-LD và nền tảng sitemap."
-          }
-        ]
-      },
-      "mimose": {
-        "modalIntro": "Cách tôi tiếp cận journaling ít ma sát, AI đồng hành chủ động và triển khai end-to-end cho sản phẩm tự nhận thức.",
-        "slides": [
-          {
-            "title": "Luồng journal ít ma sát",
-            "caption": "Wireframe cho ghi nhanh — ít bước từ mở app đến một lần reflection có ý nghĩa."
-          },
-          {
-            "title": "Ngôn ngữ hình ảnh êm",
-            "caption": "Palette và typography mềm, phù hợp dùng suy ngẫm — không tạo áp lực productivity."
-          },
-          {
-            "title": "Innerverse & Outerverse",
-            "caption": "Hai không gian tinh thần — phản chiếu bên trong và ngữ cảnh bên ngoài — trong mô hình UX."
-          },
-          {
-            "title": "AI & full-stack",
-            "caption": "Pattern AI chủ động với UI React và backend Spring Boot — thiết kế và build end-to-end."
-          }
-        ]
-      }
-    },
+    "privateProject": "Dự án nội bộ",
     "items": {
       "manufacturing-lifecycle": {
         "title": "Quản lý vòng đời sản xuất tập trung",
+        "shortTitle": "Vòng đời sản xuất",
+        "tagline": "Một nền tảng duy nhất thay thế theo dõi Excel rời rạc.",
         "problemText": "Quy trình phân mảnh và dữ liệu rời rạc khiến việc theo dõi toàn bộ vòng đời sản xuất trở nên không khả thi.",
         "problemHighlights": [
           "Quy trình phân mảnh",
@@ -192,6 +142,8 @@
       },
       "talent-development": {
         "title": "Nền tảng phát triển nhân tài",
+        "shortTitle": "Phát triển nhân tài",
+        "tagline": "Lộ trình học tập cá nhân hóa cho quản lý và đội nhóm.",
         "problemText": "Khoảng cách giữa nguyện vọng cá nhân và mục tiêu tổ chức.",
         "problemHighlights": [
           "nguyện vọng cá nhân"
@@ -206,30 +158,31 @@
         ],
         "schemaDescription": "Nền tảng phát triển nhân tài Angular và Spring Boot cho lộ trình học tập cá nhân hóa tại Bosch."
       },
-      "mimose": {
-        "title": "MimoSe: Make Sense of Me",
-        "problemText": "Journaling truyền thống ma sát cao — thói quen không đều và nỗi lo trang trắng khiến tự nhận thức khó bền.",
+      "aura-self-ai": {
+        "title": "Aura Self AI",
+        "shortTitle": "Aura Self AI",
+        "tagline": "AI Coach đồng hành giúp bạn thấu hiểu chính mình.",
+        "problemText": "Ghi nhận cảm xúc mỗi ngày là một thử thách — dễ bỏ dở nếu không có gì nhắc mình quay lại.",
         "problemHighlights": [
-          "ma sát cao",
-          "trang trắng"
+          "dễ bỏ dở"
         ],
-        "solutionText": "Tự dẫn dắt 0→1: nghiên cứu pain point, prototype Figma, rồi build UI React và backend Spring Boot. Khung Low-Friction với Proactive AI đồng hành qua Innerverse & Outerverse.",
+        "solutionText": "Aura là dự án React đầu tiên của tôi, lấy ý tưởng từ Reflectly, bắt đầu với tính năng nhắc nhở để duy trì thói quen ghi nhật ký. Sau đó tôi đi xa hơn: tích hợp AI Coach, bản đồ mối quan hệ (PRM) và Cửa sổ Johari — giúp người dùng tự dẫn dắt bản thân dựa trên chính những gì họ đã ghi lại.",
         "solutionHighlights": [
-          "Tự dẫn dắt 0→1",
-          "Figma",
-          "React và Spring Boot",
-          "Proactive AI",
-          "Innerverse & Outerverse"
+          "AI Coach",
+          "bản đồ mối quan hệ (PRM)",
+          "Cửa sổ Johari"
         ],
-        "impactText": "Giữ trọn tầm nhìn sản phẩm, UX và kỹ thuật end-to-end — người bạn đồng hành êm ái, đưa insight từ AI mà không tạo áp lực productivity.",
+        "impactText": "Giờ đã là một sản phẩm AI Coach hoàn chỉnh với bản đồ mối quan hệ và công cụ tự thấu hiểu — phát triển từ một cuốn nhật ký đơn giản thành nền tảng tự dẫn dắt bản thân.",
         "impactHighlights": [
-          "tầm nhìn sản phẩm",
-          "insight từ AI"
+          "sản phẩm AI Coach hoàn chỉnh",
+          "nền tảng tự dẫn dắt bản thân"
         ],
-        "schemaDescription": "Ứng dụng journaling AI tự dẫn dắt: UX Figma, frontend React, backend Spring Boot và AI chủ động cho tự nhận thức."
+        "schemaDescription": "Aura Self AI: ứng dụng AI Coach và tự thấu hiểu bản thân với bản đồ mối quan hệ (PRM) và Cửa sổ Johari, phát triển từ dự án nhật ký React ban đầu."
       },
       "content-platform": {
         "title": "Nền tảng nội dung đầu tư (Headless CMS)",
+        "shortTitle": "Content Platform",
+        "tagline": "Headless CMS tích hợp sẵn SEO và quy trình biên tập.",
         "problemText": "Trang nội dung cần tập trung tối ưu trải nghiệm người dùng và technical SEO — mà không phụ thuộc dev mỗi chu kỳ xuất bản.",
         "problemHighlights": [
           "tối ưu trải nghiệm người dùng",
@@ -248,6 +201,25 @@
           "SEO có cấu trúc"
         ],
         "schemaDescription": "Nền tảng nội dung đầu tư thiết kế Figma, admin headless CMS, UI responsive và technical SEO trên Next.js."
+      },
+      "time-machine": {
+        "title": "Cỗ Máy Thời Gian",
+        "shortTitle": "Cỗ Máy Thời Gian",
+        "tagline": "Trang cá nhân để nhìn lại những điều có ý nghĩa.",
+        "problemText": "Những điều đã học, đã tò mò, và những cuộc gặp gỡ trên đường đi rất dễ bị quên nếu không có nơi để nhìn lại.",
+        "problemHighlights": [
+          "dễ bị quên"
+        ],
+        "solutionText": "Một hành trình \"trạm dừng\" cá nhân — Life, Product & Work, Mind, System, Radar — xây bằng Next.js và React, mỗi trạm được minh hoạ và viết như một câu chuyện đáng quay lại.",
+        "solutionHighlights": [
+          "trạm dừng",
+          "Next.js và React"
+        ],
+        "impactText": "Một nhật ký cá nhân sống động, biến những ghi chú rời rạc thành thứ đáng chia sẻ — và đáng quay lại.",
+        "impactHighlights": [
+          "đáng chia sẻ"
+        ],
+        "schemaDescription": "Cỗ Máy Thời Gian: trang cá nhân minh hoạ, sắp xếp bài học và chiêm nghiệm cuộc sống theo các \"trạm dừng\" chủ đề, xây bằng Next.js và React."
       }
     }
   },
@@ -330,7 +302,10 @@
     "freelanceNote": "Sẵn sàng nhận freelance remote — giải quyết vấn đề & công việc hướng UX (GMT+7)",
     "linkedin": "LinkedIn",
     "github": "GitHub",
-    "copyright": "© {year} {brandName} ({fullName})"
+    "copyright": "© {year} {brandName} ({fullName})",
+    "switchLanguage": "Chuyển sang {language}",
+    "switchToDark": "Chuyển sang chế độ tối",
+    "switchToLight": "Chuyển sang chế độ sáng"
   },
   "jsonLd": {
     "personDescription": "Hàn Kim Thủy (Han Kim Thuy) — Kỹ sư UX phần mềm tại Việt Nam, nhận hợp tác freelance remote toàn cầu. Tên pháp lý: Hàn Kim Thủy (họ Hàn, tên đệm Kim, tên Thủy). Tên đăng nhập: thuyhankim, hankimthuy.",

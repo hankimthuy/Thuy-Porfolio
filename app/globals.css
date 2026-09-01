@@ -2,9 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/**
+ * The two standard palettes. Each variable is an `R G B` triplet (no
+ * `rgb()` wrapper) so Tailwind's `rgb(var(--x) / <alpha-value>)` color
+ * definitions in tailwind.config.ts can apply opacity modifiers. Swap a
+ * whole theme by editing the block below — every class in the app
+ * (bg-taupe-50, text-foreground, bg-surface, …) picks up the new values
+ * automatically, nothing else needs to change.
+ */
 :root {
-  --background: #faf8f5;
-  --foreground: #1d3557;
+  color-scheme: light;
+
+  --color-background: 250 248 247; /* #FAF8F7 */
+  --color-foreground: 26 15 82; /* #1A0F52 */
+  --color-muted: 49 27 146; /* #311B92 */
+  --color-surface: 255 255 255; /* #FFFFFF */
+  --color-taupe-50: 250 248 247; /* #FAF8F7 */
+  --color-taupe-100: 243 238 236; /* #F3EEEC */
+  --color-taupe-200: 231 222 218; /* #E7DEDA */
+  --color-taupe-300: 215 204 200; /* #D7CCC8 */
+}
+
+.dark {
+  color-scheme: dark;
+
+  --color-background: 15 11 36; /* #0F0B24 */
+  --color-foreground: 237 233 250; /* #EDE9FA */
+  --color-muted: 184 168 224; /* #B8A8E0 */
+  --color-surface: 27 22 64; /* #1B1640 */
+  --color-taupe-50: 15 11 36; /* #0F0B24, matches background */
+  --color-taupe-100: 36 29 82; /* #241D52 */
+  --color-taupe-200: 51 43 102; /* #332B66 */
+  --color-taupe-300: 70 60 130; /* #463C82 */
 }
 
 html {
@@ -12,7 +41,7 @@ html {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: rgb(var(--color-foreground));
+  background: rgb(var(--color-background));
   font-family: var(--font-sans), system-ui, sans-serif;
 }

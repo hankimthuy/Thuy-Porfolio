@@ -9,16 +9,16 @@ export default async function CtaCard() {
     <BentoCard
       span="full"
       href="/connect"
-      className="flex items-center justify-between gap-6 p-7 md:p-8"
+      className="flex items-center justify-between gap-6 !border-transparent !bg-magenta-700 p-7 md:p-8"
     >
       <div className="min-w-0">
-        <p className="text-xs font-bold uppercase tracking-[0.14em] text-ocean-700">
+        <p className="text-xs font-bold uppercase tracking-[0.14em] text-white/70">
           {t('eyebrow')}
         </p>
-        <h2 className="mt-2 text-xl font-bold text-ocean-900 lg:text-2xl">{t('title')}</h2>
+        <h2 className="mt-2 text-xl font-bold text-white lg:text-2xl">{t('title')}</h2>
       </div>
 
-      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sand-100 text-ocean-700 transition-colors group-hover:bg-ocean-500 group-hover:text-white">
+      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white transition-colors group-hover:bg-white group-hover:text-plum-900">
         <LuMail className="h-5 w-5 md:hidden" aria-hidden />
         <LuArrowUpRight className="hidden h-5 w-5 md:block" aria-hidden />
       </span>

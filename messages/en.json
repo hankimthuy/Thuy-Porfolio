@@ -110,7 +110,7 @@
   },
   "projects": {
     "showcases": "Showcases",
-    "subtitle": "Focused on clarity, scalability, and measurable outcomes",
+    "subtitle": "From a weekend build to enterprise software used by hundreds — the same problem-solving process, at every scale.",
     "highlights": "Bosch enterprise · Leading-self analysis · Headless CMS",
     "enterpriseProjects": "Enterprise Delivery",
     "enterpriseSubtitle": "Structured workflows at scale — Scrum, cross-team alignment, and production discipline",
@@ -120,62 +120,12 @@
     "solution": "Solution",
     "impact": "Impact",
     "viewLiveSite": "View live site",
-    "caseStudy": {
-      "previewLabel": "Concept preview",
-      "disclaimer": "Illustrative boards from the design process — not a pixel-perfect client replica.",
-      "expandConcept": "Expand concept",
-      "modalEyebrow": "Design concept",
-      "sliderLabel": "Project concept slides",
-      "prevSlide": "Previous slide",
-      "nextSlide": "Next slide",
-      "close": "Close",
-      "contactHint": "Curious how this maps to your product? Reach out on LinkedIn.",
-      "contentPlatform": {
-        "modalIntro": "How I approached UX, design system, headless CMS, and technical SEO for a content-driven platform.",
-        "slides": [
-          {
-            "title": "Figma wireframes",
-            "caption": "Early structure for navigation, article hierarchy, and editorial modules before high-fidelity UI."
-          },
-          {
-            "title": "Color & typography",
-            "caption": "Token decisions for readable long-form content, accent hierarchy, and consistent brand feel."
-          },
-          {
-            "title": "Responsive layout",
-            "caption": "Mobile-first breakpoints so listings, articles, and landing sections stay coherent across devices."
-          },
-          {
-            "title": "CMS & SEO stack",
-            "caption": "Headless admin workflows, Next.js storefront, metadata, JSON-LD, and sitemap foundations."
-          }
-        ]
-      },
-      "mimose": {
-        "modalIntro": "How I approached low-friction journaling, proactive AI companionship, and end-to-end delivery for a self-awareness product.",
-        "slides": [
-          {
-            "title": "Low-friction journal flow",
-            "caption": "Wireframes for quick capture — minimal steps from opening the app to a meaningful reflection."
-          },
-          {
-            "title": "Calm visual language",
-            "caption": "Soft palette and typography tuned for reflective use, not productivity pressure."
-          },
-          {
-            "title": "Innerverse & Outerverse",
-            "caption": "Two mental spaces — inner reflection and outer context — structured in the UX model."
-          },
-          {
-            "title": "AI & full-stack craft",
-            "caption": "Proactive AI patterns with React UI and Spring Boot backend — designed and built end-to-end."
-          }
-        ]
-      }
-    },
+    "privateProject": "Private project",
     "items": {
       "manufacturing-lifecycle": {
         "title": "Centralized Manufacturing Lifecycle",
+        "shortTitle": "Manufacturing Lifecycle",
+        "tagline": "One platform replacing fragmented Excel tracking.",
         "problemText": "Fragmented workflows and data silos made tracking the end-to-end manufacturing lifecycle impossible.",
         "problemHighlights": [
           "Fragmented workflows",
@@ -192,6 +142,8 @@
       },
       "talent-development": {
         "title": "Talent Development Platform",
+        "shortTitle": "Talent Development",
+        "tagline": "Personalized learning roadmaps for managers and teams.",
         "problemText": "Alignment gap between individual aspirations and organizational goals.",
         "problemHighlights": [
           "individual aspirations"
@@ -206,30 +158,31 @@
         ],
         "schemaDescription": "Angular and Spring Boot talent development platform for personalized learning roadmaps at Bosch."
       },
-      "mimose": {
-        "title": "MimoSe: Make Sense of Me",
-        "problemText": "Traditional journaling is high-friction—irregular habits and blank-page anxiety keep self-awareness from sticking.",
+      "aura-self-ai": {
+        "title": "Aura Self AI",
+        "shortTitle": "Aura Self AI",
+        "tagline": "An AI coach and self-reflection companion.",
+        "problemText": "Logging emotions every day is hard — easy to give up without something bringing you back to it.",
         "problemHighlights": [
-          "high-friction",
-          "blank-page anxiety"
+          "easy to give up"
         ],
-        "solutionText": "Self-led 0→1: researched pain points, prototyped in Figma, then built React UI and Spring Boot backend. Low-Friction Framework with Proactive AI guiding reflection across Innerverse & Outerverse.",
+        "solutionText": "Started as my first React project, inspired by Reflectly, with a reminder feature to keep the daily-logging habit alive. Then grew further: an AI Coach, a relationship map (PRM), and a Johari Window — helping users lead themselves based on what they’ve already recorded.",
         "solutionHighlights": [
-          "Self-led 0→1",
-          "Figma",
-          "React UI and Spring Boot",
-          "Proactive AI",
-          "Innerverse & Outerverse"
+          "AI Coach",
+          "relationship map (PRM)",
+          "Johari Window"
         ],
-        "impactText": "Owned product vision, UX, and engineering end-to-end—a calm companion that surfaces AI-driven patterns without productivity pressure.",
+        "impactText": "Now a live AI-Coach product with relationship mapping and self-reflection tools — evolved from a simple daily journal into a broader self-leadership platform.",
         "impactHighlights": [
-          "Owned product vision",
-          "AI-driven patterns"
+          "AI-Coach product",
+          "self-leadership platform"
         ],
-        "schemaDescription": "Self-led AI journaling app: Figma UX, React frontend, Spring Boot backend, and proactive AI for self-awareness."
+        "schemaDescription": "Aura Self AI: an AI coach and self-reflection app with a personal relationship map (PRM) and Johari Window, evolved from an early React journaling project."
       },
       "content-platform": {
         "title": "Investment Content Platform (Headless CMS)",
+        "shortTitle": "Content Platform",
+        "tagline": "Headless CMS with built-in SEO and editorial workflows.",
         "problemText": "An editorial site needed to optimize user experience and technical SEO — without developers blocking every publish cycle.",
         "problemHighlights": [
           "optimize user experience",
@@ -248,6 +201,25 @@
           "structured SEO"
         ],
         "schemaDescription": "Figma-led investment content platform with headless CMS admin, responsive UI, and technical SEO on Next.js."
+      },
+      "time-machine": {
+        "title": "Time Machine (Cỗ Máy Thời Gian)",
+        "shortTitle": "Time Machine",
+        "tagline": "A personal site for looking back on what mattered.",
+        "problemText": "Lessons, curiosities, and encounters along the way are easy to lose without a place to revisit them.",
+        "problemHighlights": [
+          "easy to lose"
+        ],
+        "solutionText": "A personal \"stations\" journey — Life, Product & Work, Mind, System, and Radar — built with Next.js and React, each stop illustrated and written as a story worth revisiting.",
+        "solutionHighlights": [
+          "stations",
+          "Next.js and React"
+        ],
+        "impactText": "A living, illustrated personal journal that turns scattered notes into something worth sharing — and revisiting.",
+        "impactHighlights": [
+          "worth sharing"
+        ],
+        "schemaDescription": "Cỗ Máy Thời Gian (Time Machine): a personal, illustrated journey site organizing life lessons and reflections into themed \"stations\", built with Next.js and React."
       }
     }
   },
@@ -330,7 +302,10 @@
     "freelanceNote": "Available for remote freelance — problem-solving & UX-focused work (GMT+7)",
     "linkedin": "LinkedIn",
     "github": "GitHub",
-    "copyright": "© {year} {brandName} ({fullName})"
+    "copyright": "© {year} {brandName} ({fullName})",
+    "switchLanguage": "Switch to {language}",
+    "switchToDark": "Switch to dark mode",
+    "switchToLight": "Switch to light mode"
   },
   "jsonLd": {
     "personDescription": "Han Kim Thuy (Hàn Kim Thủy) — UX Software Engineer based in Vietnam, available for remote freelance collaborations worldwide. Legal name: Hàn Kim Thủy (family Hàn, middle Kim, given Thủy). Online handles: thuyhankim, hankimthuy.",

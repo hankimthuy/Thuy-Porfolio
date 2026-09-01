@@ -7,11 +7,11 @@ export const SECTION_PADDING = 'py-10 lg:py-16';
 /** Section content wrapper: container width + horizontal + vertical padding */
 export const SECTION_INNER = `${SECTION_CONTAINER} ${SECTION_PADDING}`;
 
-/** Clears the fixed header on every routed page */
-export const PAGE_SHELL = `${SECTION_CONTAINER} pt-24 pb-16 lg:pt-28 lg:pb-24`;
+/** Header is static now, so this is just breathing room, not header clearance */
+export const PAGE_SHELL = `${SECTION_CONTAINER} pt-6 pb-10 lg:pt-8 lg:pb-14`;
 
 /** Shared rhythm: section title block -> main content */
-export const SECTION_HEADER_TO_CONTENT = 'mt-8 lg:mt-10';
+export const SECTION_HEADER_TO_CONTENT = 'mt-6 lg:mt-8';
 
 /** Four-column bento that collapses to two at md and one on mobile */
 export const BENTO_GRID =
@@ -19,6 +19,6 @@ export const BENTO_GRID =
 
 /** Shared look of every bento tile */
 export const BENTO_CARD_BASE =
-  'relative overflow-hidden rounded-2xl border border-ocean-200 shadow-bento';
+  'relative overflow-hidden rounded-2xl border border-taupe-200 shadow-bento';
 
-export const HEADER_HEIGHT_PX = 64;
+export const HEADER_HEIGHT_PX = 56;

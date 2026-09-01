@@ -7,7 +7,7 @@ export default async function PhilosophyCard() {
 
   return (
     <BentoCard rows={2} tone="ink" className="flex flex-col justify-between p-7 md:p-8">
-      <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-ocean-300">
+      <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-plum-300">
         <LuBrain className="h-5 w-5" aria-hidden />
       </span>
 
