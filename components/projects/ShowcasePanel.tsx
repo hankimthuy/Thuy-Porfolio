@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { FiAlertTriangle, FiBarChart2, FiExternalLink } from 'react-icons/fi';
-import { LuLightbulb } from 'react-icons/lu';
+import { LuLightbulb, LuLock } from 'react-icons/lu';
 
 const STEPS = [
   { key: 'problem', icon: FiAlertTriangle },
@@ -10,6 +10,14 @@ const STEPS = [
 
 /** Alternated so the row reads as a mix of the two brand accents, not one flat tone. */
 const TONE = ['bg-plum-900', 'bg-magenta-700'];
+
+function hostnameOf(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return url;
+  }
+}
 
 export type ShowcasePanelProps = {
   index: number;
@@ -27,6 +35,7 @@ export type ShowcasePanelProps = {
   solutionLabel: string;
   impactLabel: string;
   cta?: { label: string; href: string };
+  privateLabel: string;
 };
 
 export default function ShowcasePanel({
@@ -45,6 +54,7 @@ export default function ShowcasePanel({
   solutionLabel,
   impactLabel,
   cta,
+  privateLabel,
 }: ShowcasePanelProps) {
   const steps = [
     { ...STEPS[0], label: problemLabel, body: problem },
@@ -74,72 +84,93 @@ export default function ShowcasePanel({
           area close to the pure color underneath. */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
 
-      {/* Collapsed teaser — always present, fades out (and stops blocking clicks) once active */}
-      <div
-        className={`absolute inset-0 z-10 flex flex-col justify-end p-5 transition-opacity duration-300 ${
-          active ? 'pointer-events-none opacity-0' : 'opacity-100'
-        }`}
-      >
-        <h3 className="text-base font-bold leading-snug lg:text-lg">{shortTitle}</h3>
-        <p className="mt-1 text-xs leading-snug text-white/70 lg:text-sm">{tagline}</p>
-      </div>
+      <div className="relative z-10 flex h-full flex-col">
+        {/* Browser-chrome bar — makes it unmistakably "a website" at a
+            glance, even collapsed, with the real domain in the address bar
+            instead of a made-up screenshot. */}
+        {cta ? (
+          <a
+            href={cta.href}
+            target="_blank"
+            rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            title={cta.label}
+            className="flex shrink-0 items-center gap-1.5 border-b border-white/10 bg-black/20 px-3 py-2 transition-colors hover:bg-black/30"
+          >
+            <span className="h-2 w-2 shrink-0 rounded-full bg-white/30" />
+            <span className="h-2 w-2 shrink-0 rounded-full bg-white/30" />
+            <span className="h-2 w-2 shrink-0 rounded-full bg-white/30" />
+            <span className="ml-1.5 flex min-w-0 flex-1 items-center gap-1 truncate rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-medium text-white/75">
+              <FiExternalLink className="h-2.5 w-2.5 shrink-0" aria-hidden />
+              <span className="truncate">{hostnameOf(cta.href)}</span>
+            </span>
+          </a>
+        ) : (
+          <div className="flex shrink-0 items-center gap-1.5 border-b border-white/10 bg-black/20 px-3 py-2">
+            <span className="h-2 w-2 shrink-0 rounded-full bg-white/30" />
+            <span className="h-2 w-2 shrink-0 rounded-full bg-white/30" />
+            <span className="h-2 w-2 shrink-0 rounded-full bg-white/30" />
+            <span className="ml-1.5 flex min-w-0 flex-1 items-center gap-1 truncate rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-medium text-white/60">
+              <LuLock className="h-2.5 w-2.5 shrink-0" aria-hidden />
+              <span className="truncate">{privateLabel}</span>
+            </span>
+          </div>
+        )}
 
-      {/* Expanded detail */}
-      <div
-        className={`relative z-10 p-6 transition-opacity duration-300 lg:p-8 ${
-          active ? 'opacity-100 delay-150' : 'pointer-events-none absolute inset-0 opacity-0'
-        }`}
-      >
-        <span className="inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold">
-          {categoryLabel}
-        </span>
+        <div className="relative flex-1">
+          {/* Collapsed teaser — always present, fades out (and stops blocking clicks) once active */}
+          <div
+            className={`absolute inset-0 flex flex-col justify-end p-5 transition-opacity duration-300 ${
+              active ? 'pointer-events-none opacity-0' : 'opacity-100'
+            }`}
+          >
+            <h3 className="text-base font-bold leading-snug lg:text-lg">{shortTitle}</h3>
+            <p className="mt-1 text-xs leading-snug text-white/70 lg:text-sm">{tagline}</p>
+          </div>
 
-        <div className="mt-3 flex items-start justify-between gap-3">
-          <h3 className="text-xl font-bold leading-snug lg:text-2xl">{title}</h3>
-          {cta && (
-            <a
-              href={cta.href}
-              target="_blank"
-              rel="noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="-mr-2 shrink-0 rounded-lg p-2 text-white/80 transition-colors hover:bg-white/10 hover:text-white"
-              title={cta.label}
-              aria-label={cta.label}
-            >
-              <FiExternalLink className="h-5 w-5" aria-hidden="true" />
-            </a>
-          )}
-        </div>
+          {/* Expanded detail */}
+          <div
+            className={`p-6 transition-opacity duration-300 lg:p-8 ${
+              active ? 'opacity-100 delay-150' : 'pointer-events-none absolute inset-0 opacity-0'
+            }`}
+          >
+            <span className="inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold">
+              {categoryLabel}
+            </span>
 
-        <ul className="mt-3 flex flex-wrap gap-1.5">
-          {tags.map((tag) => (
-            <li
-              key={tag}
-              className="rounded-full border border-white/20 px-3 py-1 text-xs font-semibold text-white/85"
-            >
-              {tag}
-            </li>
-          ))}
-        </ul>
+            <h3 className="mt-3 text-xl font-bold leading-snug lg:text-2xl">{title}</h3>
 
-        <div className="mt-6 space-y-5">
-          {steps.map((step) => {
-            const StepIcon = step.icon;
+            <ul className="mt-3 flex flex-wrap gap-1.5">
+              {tags.map((tag) => (
+                <li
+                  key={tag}
+                  className="rounded-full border border-white/20 px-3 py-1 text-xs font-semibold text-white/85"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
 
-            return (
-              <div key={step.key} className="flex gap-3.5">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/10 text-white/90">
-                  <StepIcon className="h-4 w-4" aria-hidden="true" />
-                </span>
-                <div className="min-w-0">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-white/70">
-                    {step.label}
-                  </p>
-                  <p className="mt-1 text-sm leading-relaxed text-white/90">{step.body}</p>
-                </div>
-              </div>
-            );
-          })}
+            <div className="mt-6 space-y-5">
+              {steps.map((step) => {
+                const StepIcon = step.icon;
+
+                return (
+                  <div key={step.key} className="flex gap-3.5">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/10 text-white/90">
+                      <StepIcon className="h-4 w-4" aria-hidden="true" />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-white/70">
+                        {step.label}
+                      </p>
+                      <p className="mt-1 text-sm leading-relaxed text-white/90">{step.body}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </div>

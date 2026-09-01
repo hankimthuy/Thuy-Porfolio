@@ -29,24 +29,33 @@ export const SIDE_PROJECTS: ProjectStructure[] = [
     tags: ['Next.js', 'React', 'Figma', 'Headless CMS', 'Technical SEO'],
   },
   {
-    id: 'mimose',
+    id: 'aura-self-ai',
     category: 'side',
-    tags: ['React', 'Spring Boot', 'Leading-self', 'AI', 'Figma'],
+    tags: ['React', 'Spring Boot', 'AI Reflection', 'PRM'],
+    ctaHref: 'https://www.mimose.io.vn/',
+  },
+  {
+    id: 'time-machine',
+    category: 'side',
+    tags: ['Next.js', 'React', 'Storytelling'],
+    ctaHref: 'https://journey.hankimthuy.com/',
+    schemaUrl: 'https://journey.hankimthuy.com/',
   },
 ];
 
 export const ALL_PROJECTS: ProjectStructure[] = [...COMPANY_PROJECTS, ...SIDE_PROJECTS];
 
 /**
- * Showcases' display order: "The Range" — one continuous story from a
- * personal weekend build to enterprise software used by hundreds, instead of
- * two disconnected "independent vs. enterprise" groups.
+ * Showcases' display order: one continuous story instead of two disconnected
+ * "independent vs. enterprise" groups — small personal builds, through
+ * enterprise scale, closing on the personal/creative side project.
  */
 export const SHOWCASE_ORDER: ProjectStructure[] = [
   SIDE_PROJECTS[0], // content-platform
-  SIDE_PROJECTS[1], // mimose
+  SIDE_PROJECTS[1], // aura-self-ai
   COMPANY_PROJECTS[1], // talent-development
   COMPANY_PROJECTS[0], // manufacturing-lifecycle
+  SIDE_PROJECTS[2], // time-machine
 ];
 
 export const GOOGLE_UX_CREDENTIAL = {

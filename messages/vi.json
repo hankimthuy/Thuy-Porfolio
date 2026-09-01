@@ -120,6 +120,7 @@
     "solution": "Giải pháp",
     "impact": "Tác động",
     "viewLiveSite": "Xem site live",
+    "privateProject": "Dự án nội bộ",
     "items": {
       "manufacturing-lifecycle": {
         "title": "Quản lý vòng đời sản xuất tập trung",
@@ -157,29 +158,26 @@
         ],
         "schemaDescription": "Nền tảng phát triển nhân tài Angular và Spring Boot cho lộ trình học tập cá nhân hóa tại Bosch."
       },
-      "mimose": {
-        "title": "MimoSe: Make Sense of Me",
-        "shortTitle": "MimoSe",
-        "tagline": "Người bạn AI đồng hành ghi nhật ký ít ma sát.",
-        "problemText": "Journaling truyền thống ma sát cao — thói quen không đều và nỗi lo trang trắng khiến tự nhận thức khó bền.",
+      "aura-self-ai": {
+        "title": "Aura Self AI",
+        "shortTitle": "Aura Self AI",
+        "tagline": "AI Coach đồng hành giúp bạn thấu hiểu chính mình.",
+        "problemText": "Ghi nhận cảm xúc mỗi ngày là một thử thách — dễ bỏ dở nếu không có gì nhắc mình quay lại.",
         "problemHighlights": [
-          "ma sát cao",
-          "trang trắng"
+          "dễ bỏ dở"
         ],
-        "solutionText": "Tự dẫn dắt 0→1: nghiên cứu pain point, prototype Figma, rồi build UI React và backend Spring Boot. Khung Low-Friction với Proactive AI đồng hành qua Innerverse & Outerverse.",
+        "solutionText": "Aura là dự án React đầu tiên của tôi, lấy ý tưởng từ Reflectly, bắt đầu với tính năng nhắc nhở để duy trì thói quen ghi nhật ký. Sau đó tôi đi xa hơn: tích hợp AI Coach, bản đồ mối quan hệ (PRM) và Cửa sổ Johari — giúp người dùng tự dẫn dắt bản thân dựa trên chính những gì họ đã ghi lại.",
         "solutionHighlights": [
-          "Tự dẫn dắt 0→1",
-          "Figma",
-          "React và Spring Boot",
-          "Proactive AI",
-          "Innerverse & Outerverse"
+          "AI Coach",
+          "bản đồ mối quan hệ (PRM)",
+          "Cửa sổ Johari"
         ],
-        "impactText": "Giữ trọn tầm nhìn sản phẩm, UX và kỹ thuật end-to-end — người bạn đồng hành êm ái, đưa insight từ AI mà không tạo áp lực productivity.",
+        "impactText": "Giờ đã là một sản phẩm AI Coach hoàn chỉnh với bản đồ mối quan hệ và công cụ tự thấu hiểu — phát triển từ một cuốn nhật ký đơn giản thành nền tảng tự dẫn dắt bản thân.",
         "impactHighlights": [
-          "tầm nhìn sản phẩm",
-          "insight từ AI"
+          "sản phẩm AI Coach hoàn chỉnh",
+          "nền tảng tự dẫn dắt bản thân"
         ],
-        "schemaDescription": "Ứng dụng journaling AI tự dẫn dắt: UX Figma, frontend React, backend Spring Boot và AI chủ động cho tự nhận thức."
+        "schemaDescription": "Aura Self AI: ứng dụng AI Coach và tự thấu hiểu bản thân với bản đồ mối quan hệ (PRM) và Cửa sổ Johari, phát triển từ dự án nhật ký React ban đầu."
       },
       "content-platform": {
         "title": "Nền tảng nội dung đầu tư (Headless CMS)",
@@ -203,6 +201,25 @@
           "SEO có cấu trúc"
         ],
         "schemaDescription": "Nền tảng nội dung đầu tư thiết kế Figma, admin headless CMS, UI responsive và technical SEO trên Next.js."
+      },
+      "time-machine": {
+        "title": "Cỗ Máy Thời Gian",
+        "shortTitle": "Cỗ Máy Thời Gian",
+        "tagline": "Trang cá nhân để nhìn lại những điều có ý nghĩa.",
+        "problemText": "Những điều đã học, đã tò mò, và những cuộc gặp gỡ trên đường đi rất dễ bị quên nếu không có nơi để nhìn lại.",
+        "problemHighlights": [
+          "dễ bị quên"
+        ],
+        "solutionText": "Một hành trình \"trạm dừng\" cá nhân — Life, Product & Work, Mind, System, Radar — xây bằng Next.js và React, mỗi trạm được minh hoạ và viết như một câu chuyện đáng quay lại.",
+        "solutionHighlights": [
+          "trạm dừng",
+          "Next.js và React"
+        ],
+        "impactText": "Một nhật ký cá nhân sống động, biến những ghi chú rời rạc thành thứ đáng chia sẻ — và đáng quay lại.",
+        "impactHighlights": [
+          "đáng chia sẻ"
+        ],
+        "schemaDescription": "Cỗ Máy Thời Gian: trang cá nhân minh hoạ, sắp xếp bài học và chiêm nghiệm cuộc sống theo các \"trạm dừng\" chủ đề, xây bằng Next.js và React."
       }
     }
   },

@@ -1,10 +1,15 @@
 'use client';
 
-import { useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
 import { SHOWCASE_ORDER, type ProjectStructure } from '@/lib/projects-data';
 import ShowcasePanel from '@/components/projects/ShowcasePanel';
 import { SECTION_HEADER_TO_CONTENT } from '@/lib/layout';
+
+/** How long each panel stays open before auto-advancing to the next. */
+const AUTO_ADVANCE_MS = 4500;
+/** How long a manual hover/tap/focus pauses auto-advance before it resumes. */
+const RESUME_AFTER_MS = 8000;
 
 function highlightText(text: string, highlights?: string[]): ReactNode {
   if (!highlights?.length) return text;
@@ -42,6 +47,8 @@ export default function Projects() {
   const t = useTranslations('projects');
   // Second project opens by default, per the reference layout.
   const [activeIndex, setActiveIndex] = useState(1);
+  const [autoPaused, setAutoPaused] = useState(false);
+  const resumeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const projectItems = t.raw('items') as Record<string, ProjectItemMessages>;
 
@@ -62,6 +69,30 @@ export default function Projects() {
     };
   });
 
+  // Cycles through the panels on its own so a 5-wide row doesn't just sit
+  // there — pauses for a while whenever the visitor hovers/taps/tabs to one
+  // themselves, then picks the cycle back up.
+  useEffect(() => {
+    if (autoPaused) return;
+    const id = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % panels.length);
+    }, AUTO_ADVANCE_MS);
+    return () => clearInterval(id);
+  }, [autoPaused, panels.length]);
+
+  useEffect(() => {
+    return () => {
+      if (resumeTimeout.current) clearTimeout(resumeTimeout.current);
+    };
+  }, []);
+
+  const activate = (index: number) => {
+    setActiveIndex(index);
+    setAutoPaused(true);
+    if (resumeTimeout.current) clearTimeout(resumeTimeout.current);
+    resumeTimeout.current = setTimeout(() => setAutoPaused(false), RESUME_AFTER_MS);
+  };
+
   return (
     <>
       <header className="max-w-2xl">
@@ -80,7 +111,7 @@ export default function Projects() {
             key={panel.id}
             index={index}
             active={index === activeIndex}
-            onActivate={() => setActiveIndex(index)}
+            onActivate={() => activate(index)}
             shortTitle={panel.shortTitle}
             tagline={panel.tagline}
             categoryLabel={panel.categoryLabel}
@@ -93,6 +124,7 @@ export default function Projects() {
             solutionLabel={t('solution')}
             impactLabel={t('impact')}
             cta={panel.cta}
+            privateLabel={t('privateProject')}
           />
         ))}
       </div>

@@ -120,6 +120,7 @@
     "solution": "Solution",
     "impact": "Impact",
     "viewLiveSite": "View live site",
+    "privateProject": "Private project",
     "items": {
       "manufacturing-lifecycle": {
         "title": "Centralized Manufacturing Lifecycle",
@@ -157,29 +158,26 @@
         ],
         "schemaDescription": "Angular and Spring Boot talent development platform for personalized learning roadmaps at Bosch."
       },
-      "mimose": {
-        "title": "MimoSe: Make Sense of Me",
-        "shortTitle": "MimoSe",
-        "tagline": "A calm AI companion for low-friction journaling.",
-        "problemText": "Traditional journaling is high-friction—irregular habits and blank-page anxiety keep self-awareness from sticking.",
+      "aura-self-ai": {
+        "title": "Aura Self AI",
+        "shortTitle": "Aura Self AI",
+        "tagline": "An AI coach and self-reflection companion.",
+        "problemText": "Logging emotions every day is hard — easy to give up without something bringing you back to it.",
         "problemHighlights": [
-          "high-friction",
-          "blank-page anxiety"
+          "easy to give up"
         ],
-        "solutionText": "Self-led 0→1: researched pain points, prototyped in Figma, then built React UI and Spring Boot backend. Low-Friction Framework with Proactive AI guiding reflection across Innerverse & Outerverse.",
+        "solutionText": "Started as my first React project, inspired by Reflectly, with a reminder feature to keep the daily-logging habit alive. Then grew further: an AI Coach, a relationship map (PRM), and a Johari Window — helping users lead themselves based on what they’ve already recorded.",
         "solutionHighlights": [
-          "Self-led 0→1",
-          "Figma",
-          "React UI and Spring Boot",
-          "Proactive AI",
-          "Innerverse & Outerverse"
+          "AI Coach",
+          "relationship map (PRM)",
+          "Johari Window"
         ],
-        "impactText": "Owned product vision, UX, and engineering end-to-end—a calm companion that surfaces AI-driven patterns without productivity pressure.",
+        "impactText": "Now a live AI-Coach product with relationship mapping and self-reflection tools — evolved from a simple daily journal into a broader self-leadership platform.",
         "impactHighlights": [
-          "Owned product vision",
-          "AI-driven patterns"
+          "AI-Coach product",
+          "self-leadership platform"
         ],
-        "schemaDescription": "Self-led AI journaling app: Figma UX, React frontend, Spring Boot backend, and proactive AI for self-awareness."
+        "schemaDescription": "Aura Self AI: an AI coach and self-reflection app with a personal relationship map (PRM) and Johari Window, evolved from an early React journaling project."
       },
       "content-platform": {
         "title": "Investment Content Platform (Headless CMS)",
@@ -203,6 +201,25 @@
           "structured SEO"
         ],
         "schemaDescription": "Figma-led investment content platform with headless CMS admin, responsive UI, and technical SEO on Next.js."
+      },
+      "time-machine": {
+        "title": "Time Machine (Cỗ Máy Thời Gian)",
+        "shortTitle": "Time Machine",
+        "tagline": "A personal site for looking back on what mattered.",
+        "problemText": "Lessons, curiosities, and encounters along the way are easy to lose without a place to revisit them.",
+        "problemHighlights": [
+          "easy to lose"
+        ],
+        "solutionText": "A personal \"stations\" journey — Life, Product & Work, Mind, System, and Radar — built with Next.js and React, each stop illustrated and written as a story worth revisiting.",
+        "solutionHighlights": [
+          "stations",
+          "Next.js and React"
+        ],
+        "impactText": "A living, illustrated personal journal that turns scattered notes into something worth sharing — and revisiting.",
+        "impactHighlights": [
+          "worth sharing"
+        ],
+        "schemaDescription": "Cỗ Máy Thời Gian (Time Machine): a personal, illustrated journey site organizing life lessons and reflections into themed \"stations\", built with Next.js and React."
       }
     }
   },
