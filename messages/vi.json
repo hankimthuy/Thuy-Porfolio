@@ -166,16 +166,15 @@
         "problemHighlights": [
           "dễ bỏ dở"
         ],
-        "solutionText": "Aura là dự án React đầu tiên của tôi, lấy ý tưởng từ Reflectly, bắt đầu với tính năng nhắc nhở để duy trì thói quen ghi nhật ký. Sau đó tôi đi xa hơn: tích hợp AI Coach, bản đồ mối quan hệ (PRM) và Cửa sổ Johari — giúp người dùng tự dẫn dắt bản thân dựa trên chính những gì họ đã ghi lại.",
+        "solutionText": "Lấy ý tưởng từ Reflectly, Aura bắt đầu với tính năng nhắc nhở để duy trì thói quen ghi nhật ký — rồi phát triển thành một bộ công cụ tự dẫn dắt bản thân toàn diện: AI Coach, bản đồ mối quan hệ (PRM) và Cửa sổ Johari.",
         "solutionHighlights": [
           "AI Coach",
           "bản đồ mối quan hệ (PRM)",
           "Cửa sổ Johari"
         ],
-        "impactText": "Giờ đã là một sản phẩm AI Coach hoàn chỉnh với bản đồ mối quan hệ và công cụ tự thấu hiểu — phát triển từ một cuốn nhật ký đơn giản thành nền tảng tự dẫn dắt bản thân.",
+        "impactText": "Một nền tảng AI Coach cho bản đồ mối quan hệ và tự thấu hiểu bản thân — phát triển từ một cuốn nhật ký đơn giản.",
         "impactHighlights": [
-          "sản phẩm AI Coach hoàn chỉnh",
-          "nền tảng tự dẫn dắt bản thân"
+          "nền tảng AI Coach"
         ],
         "schemaDescription": "Aura Self AI: ứng dụng AI Coach và tự thấu hiểu bản thân với bản đồ mối quan hệ (PRM) và Cửa sổ Johari, phát triển từ dự án nhật ký React ban đầu."
       },
@@ -188,7 +187,7 @@
           "tối ưu trải nghiệm người dùng",
           "technical SEO"
         ],
-        "solutionText": "Thiết kế trên Figma (wireframe → UI), xây hệ màu và typography, layout responsive. Triển khai admin headless CMS (React, RBAC) và storefront Next.js với SSR, metadata, JSON-LD, sitemap — module nội dung và quy trình biên tập cho blog, danh mục, SEO toàn site.",
+        "solutionText": "Thiết kế trên Figma (wireframe → UI). Triển khai admin headless CMS (React, RBAC) và storefront Next.js với SSR, JSON-LD, sitemap — cùng module nội dung và quy trình biên tập cho blog, danh mục, SEO toàn site.",
         "solutionHighlights": [
           "Thiết kế trên Figma",
           "admin headless CMS",
