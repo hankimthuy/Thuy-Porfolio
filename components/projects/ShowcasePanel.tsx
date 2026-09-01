@@ -137,13 +137,12 @@ export default function ShowcasePanel({
               active ? 'opacity-100 delay-150' : 'pointer-events-none absolute inset-0 opacity-0'
             }`}
           >
-            <span className="inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold">
-              {categoryLabel}
-            </span>
-
-            <h3 className="mt-3 text-xl font-bold leading-snug lg:text-2xl">{title}</h3>
+            <h3 className="text-xl font-bold leading-snug lg:text-2xl">{title}</h3>
 
             <ul className="mt-3 flex flex-wrap gap-1.5">
+              <li className="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold">
+                {categoryLabel}
+              </li>
               {tags.map((tag) => (
                 <li
                   key={tag}

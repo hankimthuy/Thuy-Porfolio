@@ -79,7 +79,7 @@
   },
   "about": {
     "eyebrow": "About",
-    "title": "The longer version",
+    "title": "Beyond the Resume",
     "subtitle": "How I think about products, and the way I like to work with a team.",
     "focus": {
       "title": "Where I focus",
@@ -100,7 +100,7 @@
       },
       {
         "title": "Full-Stack Development",
-        "description": "Proficient in React, Angular, and Spring Boot (Java). I specialize in architecting scalable, data-driven web applications, ensuring seamless integration between complex backend logic and intuitive frontend experiences."
+        "description": "React, Angular, Spring Boot (Java). I build scalable web apps with seamless backend–frontend integration."
       },
       {
         "title": "Agile & Product Mindset",
@@ -137,7 +137,7 @@
           "BOM management",
           "compliance audits"
         ],
-        "impactText": "Replaced manual Excel tracking with a unified digital tool and eliminating data redundancy.",
+        "impactText": "Replaced manual Excel tracking with a unified digital tool, eliminating data redundancy.",
         "schemaDescription": "Enterprise Angular platform at Bosch digitalizing manufacturing lifecycle, BOM, and inventory management."
       },
       "talent-development": {
@@ -166,16 +166,15 @@
         "problemHighlights": [
           "easy to give up"
         ],
-        "solutionText": "Started as my first React project, inspired by Reflectly, with a reminder feature to keep the daily-logging habit alive. Then grew further: an AI Coach, a relationship map (PRM), and a Johari Window — helping users lead themselves based on what they’ve already recorded.",
+        "solutionText": "Inspired by Reflectly, Aura started as a reminder feature to build the daily-logging habit — then grew into a full self-leadership toolkit: an AI Coach, a relationship map (PRM), and a Johari Window.",
         "solutionHighlights": [
           "AI Coach",
           "relationship map (PRM)",
           "Johari Window"
         ],
-        "impactText": "Now a live AI-Coach product with relationship mapping and self-reflection tools — evolved from a simple daily journal into a broader self-leadership platform.",
+        "impactText": "A live AI-Coach platform for relationship mapping and self-reflection — evolved from a simple daily journal.",
         "impactHighlights": [
-          "AI-Coach product",
-          "self-leadership platform"
+          "AI-Coach platform"
         ],
         "schemaDescription": "Aura Self AI: an AI coach and self-reflection app with a personal relationship map (PRM) and Johari Window, evolved from an early React journaling project."
       },
@@ -188,7 +187,7 @@
           "optimize user experience",
           "technical SEO"
         ],
-        "solutionText": "Designed in Figma (wireframes → UI), defined a color and typography system, and built responsive layouts. Shipped a headless CMS admin (React, RBAC) and a Next.js storefront with SSR, metadata, JSON-LD, and sitemap — content modules and editor workflows for blogs, categories, and site-wide SEO.",
+        "solutionText": "Designed in Figma end-to-end, then shipped a headless CMS admin (React, RBAC) and a Next.js storefront with SSR, JSON-LD, and sitemap — with content modules and editor workflows for blogs, categories, and site-wide SEO.",
         "solutionHighlights": [
           "Designed in Figma",
           "headless CMS admin",

@@ -79,15 +79,15 @@
   },
   "about": {
     "eyebrow": "Giới thiệu",
-    "title": "Câu chuyện đầy đủ hơn",
+    "title": "Câu chuyện về tôi",
     "subtitle": "Cách tôi nhìn nhận sản phẩm và cách tôi muốn làm việc cùng đội ngũ.",
     "focus": {
       "title": "Điều tôi tập trung",
-      "subtitle": "Bốn câu hỏi tôi luôn quay lại với bất kỳ sản phẩm nào."
+      "subtitle": "Bốn câu hỏi tôi luôn đặt ra cho bất kỳ sản phẩm nào."
     },
     "howIWork": {
       "title": "Cách tôi làm việc",
-      "subtitle": "Từ việc làm rõ nhu cầu người dùng đến việc đưa ra sản phẩm người ta thật sự muốn dùng."
+      "subtitle": "Từ việc làm rõ nhu cầu người dùng đến khi cho ra đời sản phẩm mà họ thật sự muốn dùng."
     }
   },
   "skills": {
@@ -96,15 +96,15 @@
     "cards": [
       {
         "title": "Tư duy hướng UX",
-        "description": "Được Google chứng nhận về Thiết kế UX, tôi kết hợp kỹ thuật với nguyên tắc lấy người dùng làm trung tâm để xây dựng ứng dụng vừa chức năng vừa trực quan."
+        "description": "Được Google chứng nhận về Thiết kế UX, tôi kết hợp tư duy kỹ thuật với nguyên tắc lấy người dùng làm trung tâm, xây dựng ứng dụng vừa hoạt động tốt, vừa trực quan dễ dùng."
       },
       {
         "title": "Phát triển Full-Stack",
-        "description": "Thành thạo React, Angular và Spring Boot (Java). Tôi chuyên thiết kế ứng dụng web có khả năng mở rộng, dữ liệu hóa, đảm bảo tích hợp liền mạch giữa logic backend phức tạp và trải nghiệm frontend trực quan."
+        "description": "Thành thạo React, Angular và Spring Boot (Java). Tôi xây dựng ứng dụng web có khả năng mở rộng, tích hợp mượt mà giữa backend và frontend."
       },
       {
         "title": "Tư duy Agile & Sản phẩm",
-        "description": "Là thành viên tích cực trong môi trường Scrum, tôi tập trung cải tiến quy trình, thúc đẩy hợp tác nhóm và nhìn sản phẩm một cách toàn diện từ ý tưởng đến ra mắt."
+        "description": "Là thành viên tích cực trong môi trường Scrum, tôi tập trung cải tiến quy trình, thúc đẩy hợp tác nhóm và nhìn sản phẩm một cách toàn diện, từ ý tưởng đến khi ra mắt."
       }
     ]
   },
@@ -166,16 +166,15 @@
         "problemHighlights": [
           "dễ bỏ dở"
         ],
-        "solutionText": "Aura là dự án React đầu tiên của tôi, lấy ý tưởng từ Reflectly, bắt đầu với tính năng nhắc nhở để duy trì thói quen ghi nhật ký. Sau đó tôi đi xa hơn: tích hợp AI Coach, bản đồ mối quan hệ (PRM) và Cửa sổ Johari — giúp người dùng tự dẫn dắt bản thân dựa trên chính những gì họ đã ghi lại.",
+        "solutionText": "Lấy ý tưởng từ Reflectly, Aura bắt đầu với tính năng nhắc nhở để duy trì thói quen ghi nhật ký — rồi phát triển thành một bộ công cụ tự dẫn dắt bản thân toàn diện: AI Coach, bản đồ mối quan hệ (PRM) và Cửa sổ Johari.",
         "solutionHighlights": [
           "AI Coach",
           "bản đồ mối quan hệ (PRM)",
           "Cửa sổ Johari"
         ],
-        "impactText": "Giờ đã là một sản phẩm AI Coach hoàn chỉnh với bản đồ mối quan hệ và công cụ tự thấu hiểu — phát triển từ một cuốn nhật ký đơn giản thành nền tảng tự dẫn dắt bản thân.",
+        "impactText": "Một nền tảng AI Coach cho bản đồ mối quan hệ và tự thấu hiểu bản thân — phát triển từ một cuốn nhật ký đơn giản.",
         "impactHighlights": [
-          "sản phẩm AI Coach hoàn chỉnh",
-          "nền tảng tự dẫn dắt bản thân"
+          "nền tảng AI Coach"
         ],
         "schemaDescription": "Aura Self AI: ứng dụng AI Coach và tự thấu hiểu bản thân với bản đồ mối quan hệ (PRM) và Cửa sổ Johari, phát triển từ dự án nhật ký React ban đầu."
       },
@@ -188,7 +187,7 @@
           "tối ưu trải nghiệm người dùng",
           "technical SEO"
         ],
-        "solutionText": "Thiết kế trên Figma (wireframe → UI), xây hệ màu và typography, layout responsive. Triển khai admin headless CMS (React, RBAC) và storefront Next.js với SSR, metadata, JSON-LD, sitemap — module nội dung và quy trình biên tập cho blog, danh mục, SEO toàn site.",
+        "solutionText": "Thiết kế trên Figma (wireframe → UI). Triển khai admin headless CMS (React, RBAC) và storefront Next.js với SSR, JSON-LD, sitemap — cùng module nội dung và quy trình biên tập cho blog, danh mục, SEO toàn site.",
         "solutionHighlights": [
           "Thiết kế trên Figma",
           "admin headless CMS",
@@ -270,11 +269,11 @@
       },
       {
         "question": "Tại sao bạn tập trung vào Phát triển hướng UX?",
-        "answer": "Là Kỹ sư UX phần mềm, tôi nằm ở giao điểm giữa thiết kế và code. Tập trung UX là trọng tâm cách tôi build — không phải phần bổ sung. Tôi tin một 'tính năng' chưa 'xong' khi code được merge; nó 'xong' khi người dùng đạt mục tiêu một cách dễ dàng. Tư duy này là nền tảng cho cách tiếp cận lấy sản phẩm làm trung tâm."
+        "answer": "Là Kỹ sư UX phần mềm, tôi làm việc ở giao điểm giữa thiết kế và lập trình, nên tư duy UX chính là kim chỉ nam trong cách tôi xây dựng sản phẩm. Với tôi, một 'tính năng' chưa tính là xong khi code được merge, mà chỉ thực sự xong khi người dùng hài lòng và đạt được mục tiêu của họ một cách dễ dàng. Đó cũng là nền tảng cho cách tiếp cận lấy người dùng làm trung tâm của tôi."
       },
       {
         "question": "Bạn có hướng tới vai trò Product Owner không?",
-        "answer": "Có — Product Owner là career path tôi đang chủ động xây dựng. Hiện tại tôi tập trung vào Kỹ sư UX phần mềm ở giao điểm thiết kế–code; về lâu dài tôi muốn sở hữu discovery, ưu tiên hóa và kết quả end-to-end. Kinh nghiệm Scrum, product discovery và triển khai lấy người dùng làm trung tâm đều hướng về đó."
+        "answer": "Có — Product Owner là hướng đi sự nghiệp tôi đang chủ động theo đuổi. Hiện tại tôi tập trung vào Kỹ sư UX phần mềm ở giao điểm thiết kế–code; về lâu dài tôi muốn đảm nhận trọn vẹn từ khâu discovery, ưu tiên hóa đến kết quả cuối cùng. Kinh nghiệm Scrum, product discovery và triển khai lấy người dùng làm trung tâm đều hướng về đó."
       },
       {
         "question": "Bạn xử lý sự mơ hồ và thay đổi yêu cầu như thế nào?",

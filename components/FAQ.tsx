@@ -44,7 +44,7 @@ function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
 export default function FAQ() {
   const t = useTranslations('faq');
   const tPerson = useTranslations('person');
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndexes, setOpenIndexes] = useState<Set<number>>(() => new Set([0, 1]));
 
   const brandName = tPerson('brandName');
   const faqItems = t.raw('items') as Array<{ question: string; answer: string }>;
@@ -58,7 +58,7 @@ export default function FAQ() {
   }));
 
   return (
-    <section className="mt-14 lg:mt-20">
+    <section className="mt-10 lg:mt-14">
       <h2 className="text-2xl font-extrabold tracking-tight text-foreground lg:text-3xl">
         {t('title')}
       </h2>
@@ -72,8 +72,18 @@ export default function FAQ() {
             key={faq.question}
             question={faq.question}
             answer={faq.answer}
-            isOpen={openIndex === index}
-            onToggle={() => setOpenIndex(openIndex === index ? null : index)}
+            isOpen={openIndexes.has(index)}
+            onToggle={() =>
+              setOpenIndexes((prev) => {
+                const next = new Set(prev);
+                if (next.has(index)) {
+                  next.delete(index);
+                } else {
+                  next.add(index);
+                }
+                return next;
+              })
+            }
           />
         ))}
       </div>

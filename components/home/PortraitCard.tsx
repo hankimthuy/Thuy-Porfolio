@@ -9,7 +9,7 @@ export default async function PortraitCard() {
   const tHome = await getTranslations('home');
 
   return (
-    <BentoCard rows={2} className="group min-h-[320px] p-0">
+    <BentoCard rows={2} className="group min-h-[420px] p-0 sm:min-h-[480px] lg:min-h-0">
       <Image
         src={PORTRAIT_IMAGE_PATH}
         alt={t('portraitAlt')}

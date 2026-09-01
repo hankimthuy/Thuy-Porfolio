@@ -41,7 +41,7 @@ export default async function ConnectPage({ params }: Props) {
         <p className="mt-4 text-base leading-relaxed text-muted">{t('subtitle')}</p>
       </header>
 
-      <BentoGrid className="mt-10 lg:mt-12">
+      <BentoGrid className="mt-8 lg:mt-10">
         <ContactPanel />
       </BentoGrid>
 
